@@ -1,0 +1,1705 @@
+%%%%% META DATA %%%%%%%%%%%%
+\newcommand\Course{Algebra for Secondary Mathematics Teaching} % e.g., Algebra, Geometry, Modeling, Statistics
+\newcommand\Location{University of Nebraska-Lincoln} % affiliation and course
+\newcommand\Term{Spring 2018} % term taught
+
+ \newcommand\MODULES{$\textnormal{MODULE}(\textnormal{S}^2)$}
+ \title{{\normalsize{Mathematics Of Doing, Understand, Learning, and Educating Secondary Schools} }\\  $\;$ \\ \MODULES: \\  \Course}
+ \author{Adapted for \Location} 
+ \date{Version \Term} 
+ 
+ % Input a course graphic or leave the { } empty:
+\newcommand\coursegraphic{DoubleRectangles.png} 
+ 
+ %%%%%%%DOCUMENT FORMATTING %%%%%%%%%%
+\documentclass[11pt]{article}
+\linespread{1.03}% 6 lpi http://tex.stackexchange.com/questions/23824/6-lines-in-one-inch
+\parskip6pt
+\usepackage{amsmath, amsthm, amsfonts, amssymb, mathpazo, url, graphicx, stackrel, mdwlist, enumitem, mdframed, ifthen}
+	% usual suspects, palatino, hyperlink capability, PDF graphics, symbol stacking, list customizations, boxes, ifthenelse macros
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry} % 8.5" x 11" pages with 1 inch margins
+\usepackage[pdftex, bookmarks, colorlinks, breaklinks]{hyperref} % prettier hyperlinks
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor} % defines colors for text and tikz graphics
+\definecolor{darkred}{rgb}{0.8,0.1,0.2} % for hyperlinks
+\definecolor{darkblue}{rgb}{0.2,0.1,0.7} % for hyperlinks
+\hypersetup{linkcolor=darkred,citecolor=blue,filecolor=dullmagenta,urlcolor=darkblue} % colors for links
+\usepackage[none]{hyphenat} % prettier hyphenating
+\raggedright \parskip4pt  \parindent0pt 
+\usepackage{array} % tables with paragraphs of set widths
+\renewcommand{\arraystretch}{1.3} % makes tables more legible
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\usepackage{rotating} % rotating figures and tables, provides sidewaystable and sidewaysfigure
+\usepackage{lipsum} % text testing
+
+
+%%%%%%% DOCUMENT MANAGEMENT %%%%%%%%%%%%
+% To do notes and commenting 
+\usepackage{comment}
+
+% View instructor notes 
+\newif\ifinstructor 
+ \instructortrue  % view as instructor 
+% \instructorfalse  % view as student
+  
+%%%%%%% SECTION FORMATTING %%%%%%%%%%%%
+% sections
+\usepackage{titlesec}
+\titleformat{\subsection}[block]{\Large \bfseries \filcenter}{}{0em}{}
+\titleformat{\subsubsection}[block]{\large \scshape\filcenter}{}{0em}{}
+\newcommand{\handout}{\subsubsection}
+\newcommand\header[1]{\vspace*{4pt}\par {\large {\bf #1}}\par}
+\newcommand\about{\textasciitilde}
+
+% itemize - second layer is an open circle instead of dash
+\def\labelitemii{$\circ$}
+
+% table colors - mostly for fun
+\definecolor{yellow}{RGB}{255, 255, 0}
+\definecolor{red}{RGB}{226, 30, 60}
+\definecolor{orange}{RGB}{255, 159, 12}
+\definecolor{green}{RGB}{16, 168, 112}
+\definecolor{blue}{RGB}{1,200,255}
+\definecolor{periwinkle}{RGB}{200,200,255}
+\definecolor{lightteal}{RGB}{200,250,250}
+\definecolor{purple}{RGB}{113, 1, 232}
+%\definecolor{pink}{RGB}{255,70,192}
+\definecolor{pink}{RGB}{232,1,193}
+\definecolor{gray}{RGB}{100, 100, 100}
+
+% instructor notes
+\ifinstructor 
+\newenvironment{bignote}[1][Instructor note]% default note is an "Instructor Note"
+	{\begin{mdframed}\raggedright{\bf #1.~}}
+	{\end{mdframed}}  
+\else \excludecomment{bignote}
+\fi
+
+\ifinstructor
+\newcommand\smallnote[1]
+	{\begin{mdframed}\raggedright  {\bf Instructor note.} {#1} \end{mdframed}}
+\else \newcommand\smallnote[1]{}
+\fi
+
+\ifinstructor  \usepackage{todonotes} 
+\else \usepackage[disable]{todonotes}
+\fi
+
+% in-class task
+\newenvironment{task}
+	{\begin{mdframed}[linecolor=lightgray, linewidth=3pt]\raggedright}
+	{\end{mdframed}}
+
+%%% GRAPHICS / TIKZ %%%%%%%%%%%
+\graphicspath{{Images/}}
+
+\usepackage{tikz}
+\usepackage{tkz-euclide} % tikz package for Euclidean geometry
+\usepackage{siunitx} % typesetting quantities
+\usepackage{pgfplots} \pgfplotsset{compat=1.13} % plotting graphs
+\usetikzlibrary{calc} % calculations within tikz
+\usetkzobj{all} % needed for tkz-euclide package
+ 
+%%%%% MATH NOTATION %%%%%%%%
+
+\newcommand\tn{\textnormal}
+
+% systems
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+
+% notation tweaking
+\renewcommand\phi\varphi  % normal \phi looks too much like the empty set.
+\renewcommand\subset\subseteq 
+\renewcommand\supset\supseteq  % to be careful about strict subsets and nonstrict subsets
+\newcommand\st{:}
+
+% divisibility
+\newcommand\divides{\;|\;}
+\newcommand\notdivides{\;|\hspace{-2pt}\backslash\hspace{2pt}\;}
+
+% trig and geometry
+\newcommand\degrees{^\circ}
+
+%%%%%%%%%% THEOREMS AND RELATED STRUCTURES %%%%%
+\renewcommand\emph[1]{\underline{\bf{#1}}} % terminology
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{claim}{Claim}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{case}{Case}
+
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{example*}{Example}
+\newtheorem*{question*}{Question}
+\newtheorem*{claim*}{Claim}
+\newtheorem*{definition*}{Definition}
+
+\newenvironment{solution}{{\it Solution.} }{\hfill {\color{lightgray}$\blacksquare$}}
+
+\newcommand\qedpart[1]{ \hfill \framebox(6,6){\tiny #1}}
+\renewcommand\qed{\hfill \framebox(6,6){}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 	
+%%%%%%%% DOCUMENT BEGINS %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\begin{document}
+
+%%%%%% COVER PAGE %%%%%%%%%%%%%%% 
+\pagenumbering{gobble} % no page number
+\maketitle
+\ifthenelse{\equal{\coursegraphic}{}} % insert course graphic if one exists
+	{}
+	{\begin{center}\includegraphics[width=3in]{\coursegraphic}\end{center}}
+	
+\vfill 
+% copyleft
+\begin{center} \includegraphics[width=1in]{by-nc-sa.png} \end{center}
+\footnotesize{ This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License. }
+
+ % acknowledgments 
+\footnotesize{
+The Mathematics Of Doing, Understand, Learning, and Educating Secondary Schools (\MODULES) project is partially supported by funding from a collaborative grant of the National Science Foundation under Grant Nos.~DUE-1726707,1726804, 1726252, 1726723, 1726744, and 1726098.  Any opinions, findings, and conclusions or recommendations expressed in this material are those of the authors and do not necessarily reflect the views of the National Science Foundation.}
+\newpage
+%%%%%% TABLE OF CONTENTS %%%%%%%%%%%%%%% 	
+\thispagestyle{plain} \pagenumbering{roman}  
+\listoftodos
+\tableofcontents
+\newpage \pagenumbering{arabic}
+
+\setcounter{section}{-1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% 0 COMMUNICATING MATHEMATICS IN THIS COURSE AND BEYOND %%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Communicating Mathematics in this Course and Beyond}\label{section: communicating mathematics}
+
+	
+%%%%%%%% 0 REFERENCE: SET & LOGICAL NOTATION %%%%%%%%%%%
+\subsection{Set and Logical Notation}
+
+
+{\bf Set Notation}
+
+\hspace*{6pt}{\bf Definition \ref {definition: set}.} A \emph{set} is a collection of objects, which are called the \emph{elements} of the set.
+
+
+\vspace*{8pt}
+\begin{tabular}{L{1in}L{5in}}
+$x\in D$ & ``$x$ is an element of the set $D$"  (a proposition about $x$ and its {\it domain} $D$)\\
+
+$P(x)$ & A proposition about the variable $x$; may be true or false depending on $x$ \\
+
+$\{x \in D\st P(x)\}$ 
+
+$\{x\in D \hspace*{2.5pt}|\hspace*{2.5pt} P(x)\hspace*{.25pt}\}$ & The set of all elements of $D$ for which $P(x)$ is true (a subset of $D$)\\ 
+
+$A \subseteq B$ & ``$A$ is a subset of $B$"  (a proposition about sets $A$ and $B$)\\
+
+$A \subsetneq B$ & ``$A$ is a strict subset of $B$'', i.e., ``$A\subseteq B$ and $A \neq B$" \\
+$A \supseteq B$ & ``$A$ is a superset of $B$'' or ``$B$ is a subset of $A$" \\
+
+$A \supsetneq B$ &  ``$A$ is a strict superset of $B$'' or ``$B$ is a strict subset of $A$'',  i.e., ``$A\supseteq B$ and $A \neq B$"   \\ 
+
+
+$A \cap B$ & The intersection of the sets $A$ and $B$  (a set)\\
+
+$A \cup B$ & The union of the sets $A$ and $B$  (a set)\\
+
+$\emptyset$ & The {\it empty set} (the set with no elements); also known as {\it null set}\\
+$|A|$ & The cardinality (``size'') of $A$. When $A$ is finite, $|A|$ is the number of elements in $A$.
+\end{tabular}
+
+\vspace*{8pt}
+
+\begin{tabular}{L{6in}}{\bf Note.} The notation for subset (without the bottom line) is ambiguous: some people use it to mean $A \subseteq B$ and others use it to mean $A \subsetneq B$. So we don't use it here. \\ 
+
+ {\bf Definition \ref{definition: set equality}}.
+Given sets $A$ and $B$. We say $A$ \emph{is equal to} $B$ if $A\subset B$ and $B\subset A$. 
+
+{\it Notation:} $A=B$.
+\end{tabular}
+
+\vfill 
+{\bf Logical notation}
+
+\begin{tabular}{L{1in}L{5in}}
+$\neg P(x)$ & The negation of $P(x)$ \\
+
+$\forall x, P(x)$ & The proposition ``For all values of $x$, $P(x)$ is true." \\
+
+$\exists x: P(x)$ & The proposition ``There exists a value of $x$ such that $P(x)$ is true." \\
+
+$\forall x, P(x) \Rightarrow Q(x)$ & The proposition ``For all values of $x$, if $P(x)$ is true then $Q(x)$ is true."\\
+
+$\forall x, P(x) \Leftrightarrow Q(x)$ & The proposition ``For all values of $x$, $P(x)$ is true if and only if $Q(x)$ is true." 
+\end{tabular}
+
+
+\vfill
+{\bf Proof structures}
+
+\begin{tabular}{L{1in}L{5in}}
+To show that \dots & Requires showing that \dots \\
+{\bf $x\in A$} & $x$ satisfies set membership rules for $A$ \\
+{\bf $x\notin A$} & $x$ does not satisfy at least one set membership rule of $A$ \\ 
+{\bf $A\subset B$} & If $x\in A$, then $x\in B$ \\ 
+{\bf $A\subsetneq B$} & (1) $A\subset B$ \quad (2) there is an element of $B$ that is not in $A$ \\ 
+{\bf $A=B$} & (1) $A\subset B$ \quad (2) $B\subset A$
+\end{tabular}
+
+\vfill 
+
+{\bf Sets of numbers}
+
+\begin{tabular}{ll}
+$\N$ & The set of {\em natural numbers} (positive whole numbers) \\
+$\Z$ & The set of {\em integers} (all whole numbers -- positive, negative, and zero) \\
+$\Q$ & The set of {\em rational numbers} (all fractions) \\
+$\R$ & The set of {\em real numbers} (all numbers on the real line; equivalently, all decimal numbers) \\
+$\C$ & The set of {\em complex numbers} (all numbers of the form $a+bi$, where $a$ and $b$ are real)
+\end{tabular}
+
+
+%%%%%%%% 0 REFERENCE: PROPERTIES OF R and Z%%%%%%%%%%%
+\newpage
+\subsection{Properties of $\R$ and $\Z$} \label{s: properties of R and Z}
+
+{\bf Operations are well-defined}
+\vspace*{-4pt}
+\begin{itemize}
+\item[] Well-defined: There is an answer, and there isn't more than one answer.
+
+\item[] Operations $+, -, \times$ on $\R$ are well-defined: This means that when we add two numbers, we get exactly one answer (we don't expect there two be two answers to ``What is $a+b$?'' and we expect that there is an answer); similarly, when we subtract one number from another, or multiply two numbers, we get exactly one answer.
+
+\item[] Division by nonzero numbers is well-defined. (There is no good numerical answer to ``What is $a/0$?'')
+\end{itemize}
+
+{\bf Arithmetic Properties of $\Z$ and $\R$}
+
+We state them below for $\Z$. They also hold for $\R$.
+
+\begin{tabular}{C{0.2in}|L{3.5in}|L{2.25in}}
+1 & $a,b \in \Z \implies a+b\in \Z$ &  $\Z$ is closed under addition \\ 
+2 & $a,b,c\in \Z\implies$ $a+(b+c)=(a+b)+c$ & Addition in $\Z$ is associative \\
+3 & $a,b \in \Z \implies a+b=b+a$&  Addition in $\Z$ is commutative \\ 
+4 & $a\in \Z \implies a+0=a=0+a$ & $0$ is an additive identity in $\Z$ \\ 
+5 & $\forall a\in \Z$, the equation $a+x=0$ has a solution in $\Z$ & Additive inverses exist in $\Z$ \\ 
+6 & $a,b\in\Z \implies ab\in \Z$ & $\Z$ is closed under multiplication \\ 
+7 & $a,b,c\in \Z \implies a(bc)=(ab)c$ & Multiplication in $\Z$ is associative \\ 
+8 & $a,b,c\in \Z\implies$  $a(b+c)=ab+ac$ and $(a+b)c=ac+bc$& Distributive property \\
+9 & $a,b\in \Z\implies ab=ba$ & Multiplication in $\Z$ is commutative \\  
+10 &$a\in\Z\implies a\cdot 1=a=1\cdot a$ & $1$ is a multiplicative identity in $\Z$ \\ 
+11 & $a,b\in \Z, ab=0 \implies a=0 \tn { or } b=0$ & $\Z$ has no zero divisors
+\end{tabular} 
+
+\vspace*{4pt}
+{\bf Divides, Divisor, Factor} 
+
+\vspace*{-8pt}
+\begin{itemize}
+\item  Given $a, b\in \Z$, not both zero. We say \underline{$b$ {\it divides} $a$}  if $a=bc$ for some integer $c$.   Notation: $b\divides a$
+		 
+		 These all mean the same thing:
+		\begin{itemize}[label={$\circ$}]
+		\item $b$ divides $a$
+		\item $b$ is a divisor of $a$
+		\item $b$ is a factor of $a$
+		\item $b\divides a$
+		\end{itemize}
+		
+		 If we want to say that $b$ does not divide $a$, we write $b\notdivides a$.
+
+\item A factor of a number is \underline {\it trivial} if it is $\pm 1$ or the $\pm$ number.  A \underline{\it nontrivial} factor that is not trivial.
+
+\item All nonzero natural numbers have a finite number of factors.
+
+\item Let $a,b,c\in \Z$. If $a\divides b$ and $b\divides c$, then $a\divides c$.
+\end{itemize}
+
+{\bf Prime, Composite} 
+\vspace*{-6pt}
+\begin{itemize} 
+\item An integer $p$ is \underline{{\it prime}} if $p\neq 0, \pm1 $ if the only divisors of $p$ are $\pm 1$ and $\pm p$. 
+
+An integer $n$ is \underline{\it composite} if $n\neq 0, \pm 1$, and it is not prime.
+
+\item Let $a\in \Z$. If $p,q$ are primes such that $p\divides a$ and $q\divides a$, and $p\neq q$, then $pq\divides a$.
+\end{itemize}
+
+{\bf Even number}
+\vspace*{-6pt}
+\begin{itemize} 
+\item[] An integer $n$ is even if it is divisible by $2$.
+\end{itemize}
+
+{\bf Fundamental Theorem of Arithmetic} 
+\vspace*{-6pt}
+\begin{itemize}\item[] There is only one way to write any whole number as a product of positive primes (reordering doesn't count as a different way).
+\end{itemize}
+
+
+%%%%%%%% 0 REFERENCE: SAMPLE HANDWRITTEN PROOF %%%%%%%%%%%%
+
+\newpage
+\subsection{Sample handwritten proof}
+
+Let's use one of the proofs we did in class as an example.  We begin with the typed up version and then show one way that this same proof might be handwritten.
+
+\begin{mdframed}
+\begin{claim*}
+If $A=\{ 3n \st n \in \Z\}$ and $B=\{ 6n \st n\in \Z\}$, then $B\subsetneq A$.
+\end{claim*}
+\begin{proof}
+Given $A=\{ 3n \st n \in \Z\}$ and $B=\{ 6n \st n\in \Z\}$. 
+
+\begin{enumerate}
+\item {\it Why $A\subset B$}: This was done in the claim we just showed. \qedpart{1}
+
+\item {\it Why there is an element of $B$ that is not in $A$.}
+If $x\in B$, then $x$ is an even number because if $x=6k$ for some $k\in\Z$, then $x$ as $x=2\cdot (3k)$. Closure of multiplication in $\Z$ implies $3k\in \Z$, so $x$ satisfies the definition of even number. 
+
+However, some members of $A$ are odd numbers: $3, 9, 15, \dots $. 
+
+Hence there are elements of $A$ that are not in $B$. \qedpart{2}
+
+\end{enumerate}
+Why this means $B\subsetneq A$: We showed $B\subset A$ and found elements of $A$ not in $B$. By definition of $\subseteq$, we have $A\subsetneq B$.
+\end{proof}
+\end{mdframed}
+
+\begin{mdframed}
+{}
+[Handwritten version of this proof goes here]
+\end{mdframed}
+\todo{Create handwritten version of proof, insert in reference for section 1}
+
+
+
+%%%%%%%% 0 REFERENCE: GOOD PROOF COMMUNICATION %%%%%%%%%%%
+\newpage
+\subsection{Good proof communication}
+
+Here is the same proof, with key features pointed out. These features are explained at the bottom. In general, you want to incorporate most if not all of these features into any proof you write. Even though it might seem strange at first, you may find eventually that you learn math better when you develop the habits of incorporating these features into your own writing and being aware of these features in proofs you encounter.
+
+\begin{mdframed}{}
+[Handwritten version of this proof goes here]
+\end{mdframed}
+\todo{After creating handwritten version of this proof, label the features below by number.}
+
+
+\begin{minipage}{5.5in}
+\begin{mdframed}\raggedright\parskip2pt
+Features of communicating proof well:
+
+({\bf Essential features in bold})
+
+\begin{enumerate*}
+\item {\bf Label the claim.}
+\item {\bf State the claim precisely.}
+\item {\bf Label the proof beginning.}
+\item Begin a proof by reminding yourself and readers of the starting point:\\ the conditions of the claim.
+\item End the proof with where you need to go: the conclusions of the claim.
+\item Summarize your approach to the reader. 
+\item {\bf Label the proof end.} A traditional way is to use a box.
+\item {\bf Write up parts within a proof properly}. {\bf Label when they begin and end.}
+	\begin{itemize} 
+	\item Give them a name (e.g., Claim A) if it is a proof within a proof
+	\item {\bf Use labels like $[\Rightarrow]$ and $[\Leftarrow]$ if doing an if and only if proof.}
+	\end{itemize}
+
+\item Diagrams are good only if you explain what you are showing. Give a caption.
+\end{enumerate*}
+\end{mdframed}
+\end{minipage}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 	
+%%%%%% PART 1 %%%%%%%%%%%%%%%%%%%%%	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 	
+\newpage 
+\part{How We Talk and Explore Math} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 	
+%%%%%% LESSON 1 %%%%%%%%%%%%%%%%%%%%	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\section{Sets, Claims, Negations (Week 1) (Length: 2.5 hours)}  % Use Title Case for Title
+
+%%%%%%%%% 1 OVERVIEW  %%%%%%%%%%%%%%%%%%%%
+\subsection{Overview}
+ 
+ \vspace*{-16pt}
+\begin{tabular}{L{6.5in}} 
+{\bf Content} \\ \hline \parskip4pt
+\emph{``Parent'' relation}, implicitly defined as a relation which assigns elements of $\N$ to its factors; used to examine subsets, mathematical statements and their negations, properties of $\R$ and $\Z$, and to engage in mathematical practices. 
+
+(Looking ahead:) The parent relation is used in Section \ref{s: relations} to introduce relations and inverse relations.
+
+\emph{Subset}, \emph{superset}, \emph{strict subset}, and \emph{strict superset}; \emph{equality of sets} $A$ and $B$, defined as $A\subset B$ and $B\subset A$.
+
+\emph{Mathematical statements}, defined as those which can be evaluated as true or false; and 
+
+\emph{Negation} of mathematical statement $S$, defined as a statement which is false if and only if $S$ is true.
+
+\emph{Properties of $\R$ and $\Z$} assumed. (These may have been introduced previously in an abstract algebra course.)
+\end{tabular}
+
+\begin{tabular}{L{3.2in}|L{3.2in}}
+{\bf Proof Structures} & {\bf Mathematical/Teaching Practices} \\ 
+\hline \parskip4pt
+\emph{To show that $x\in A$} means showing that $x$ satisfies set membership rules for $A$; and \emph{to show that $x\notin A$} means showing that $x$ does not satisfy at least one set membership rule of $A$.
+
+\emph{To show that $A\subset B$ }requires showing that if $x\in A$, then $x\in B$.
+
+\emph{To show that $A\subsetneq B$} requires showing that: (1) $A\subset B$; (2) there is an element of $B$ that is not in $A$.
+
+\emph{To show that $A=B$} requires showing that: (1) $A\subset B$; (2) $B\subset A$.
+&
+% Mathematical/Teaching Practices
+\parskip6pt
+\emph{Clarifying mathematical questions}, meaning to determine how different interpretations of question statements may have different mathematical consequences.
+ 
+\emph{Conjecturing and being precise}, in the sense of giving ``satisfying'' answers to mathematical questions
+
+\emph{Communicating proofs well}, which includes specifying claims, the body of the proof, and givens and conclusions explicitly, clearly, and correctly.
+\end{tabular}
+
+
+
+%%%%%%%%%%%%%%
+\header{Summary}
+ 
+We introduce the ``parent relation'' as a context for engaging in mathematical practices as well as learning how to work with each other on exploratory tasks.  The main tasks in this lesson are:
+	\begin{itemize}
+	\item {\it Which numbers have more than one pair of parents?}  
+	\item {\it Is one of these sets a subset of the other set? Check the mathematically correct statements. If you put a check in the $A\neq B$ column, list an element that is in one but not the other.}		
+		\begin{tabular}{C{2.1in}||C{0.37in}|C{0.37in}|C{0.37in}|C{0.37in}|C{0.37in}|C{0.4in}|C{0.5in}}
+			& $A\subset B$ & $A\subsetneq B$ & $A\supset B$ & $A\supsetneq B$ & $A = B$& $A\neq B$ 
+			& \tiny{Neither is subset of the other} \\ \hline	
+		$A= \tn{multiples of 3}$, 
+		$B= \tn{multiples of 6}$ 
+			& & & & & & & \\ \hline
+		$A= \tn{multiples of 6}$, 
+		$B= \tn{multiples of 9}$ 
+			 & & & & & & & \\  \hline
+		$A=\{ n^2 \st n\in \N, n>0 \}$, 
+		$B=\{1+3+\dots +(2n+1) \st n\in \N\}$ 
+			& & & & & & & \\ \hline	
+		$A=\tn{functions of the form $x\mapsto 16^{ax}$}$, 
+		$B=\tn{functions of the form $x\mapsto 2^{ax}$}$
+			& & & & & & & \\  \hline
+		\end{tabular}
+	\end{itemize}
+
+Along the way we introduce notation for sets and subsets, discuss mathematical statements and their negations, and describe properties of $\R$ and $\Z$ assumed for now. There are also tasks in this lesson addressing these ideas.
+
+%%%%%%%%%%%%%%
+{\it Acknowledgements.} The structure and some tasks of \nameref{s: set notation} and \nameref{s: statements and negations} are from notes from Mira Bernstein and used with permission.
+
+%%%%%%%%%%%%%%
+\newpage
+\begin{bignote}[Materials]
+\begin{itemize}
+\item All pages in Section \ref{section: communicating mathematics}: Communicating Mathematics (can be printed double-sided)
+\item Handouts in In-Class Resources (can be printed double-sided)
+\item Colored chalk / markers to highlight different parts of good proof communication
+\end{itemize}
+\end{bignote}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Opening inquiry: Number parents}
+We begin this lesson with the following inquiry:
+
+\begin{task}
+Two numbers are parents of a child if the child is their product. 
+
+A child cannot be its own parent.
+
+Which numbers have more than one pair of parents?
+
+\begin{center}
+\begin{tabular}{C{1.5in}|C{1.5in}}
+Child & Parents \\
+\hline 
+ 6 & 2, 3 \\  
+ 4 & ?? \\  
+ 12 & 4, 3 \\ 
+ 12 & 2, 6 
+\end{tabular}
+\end{center}
+\end{task}
+
+
+\smallnote{
+Distribute handout with this question. As teachers work on it, circulate and listen to the questions and comments they make. They may say and do things that will lead into a discussion on clarifying the question, precision, and also what it means to have less or more satisfying answers to a question.
+}
+
+As we discussed this question, we learned some issues that arise when asking and answering mathematical questions:
+
+\begin{itemize}
+\item {\it Clarifying the question.}  Let's assume that we are only working with natural numbers (0, 1, 2, \dots), and that 2, 2 is a set of parents for 4. So we are looking for natural numbers that have more than one pair of parents. We allow pairs of parents to repeat parents.
+\item {\it Finding and improving possible answers (conjecturing well).} Here are some possible answers (without explanations) to this question. Which is the most satisfying answer (without explanation)? Why?
+	\begin{enumerate}
+	\item 12 has more than one pair of parents.
+	\item 12, 18, 20, 28, 30, 42, 44 each have more than one pair of parents.
+	\item Any number with at least least three different factors has more than one pair of parents.
+	\item Any number with at least three different factors (that aren't itself or 1) has more than one pair of parents.
+	\item Any number with at least three different factors (that aren't itself or 1) has more than one pair of parents. There are no other numbers with more than one pair of parents.
+	\end{enumerate}
+\end{itemize}
+
+\smallnote{The above are answers that prospective teachers in previous courses have given. You might use some of these answers as ringers for your own class discussion, or simply use a variety of answers that teachers in your class have given. The main thing is to have a variety of levels of how satisfying the answers are.}
+
+We concluded that an answer is satisfying when it gives the most complete and correct understanding of a situation. We also gave the analogy of answering a question that a child asks, and that the quality of being ``satisfying'' when giving an answer to a mathematical may well be similar to what makes an answer ``satisfying'' to a child. 
+
+\begin{itemize}
+\item The first two are dissatisfying because they don't give any sort of pattern or big picture of what's going on. They
+raise the question: ``Are those the only ones?'' 
+\item The third one is almost there, but is actually slightly incorrect. The fourth one is getting there, and it is correct. But still, neither answer the question of whether there are more answers.
+\item The fifth answer is the most satisfying because it provides the big picture of when a number works, and also says, yes, these are the only answers.
+\end{itemize}
+
+We also gave a name to the process of finding and improving answers to mathematical question: the practice of {\it conjecturing}. Before we get into proving or disproving our conjectures, we first talk about sets. This will give us a structure for addressing this inquiry more completely.
+
+\vspace*{8pt}
+\subsection{Sets, subsets, supersets, and set equality}
+
+\subsubsection{Set notation}\label{s: set notation}
+
+\smallnote{In Section \ref{s: relations}, we coin the term ``superdomain'', thus  we introduce superset here.}
+
+\vspace*{8pt}
+
+\begin{definition}\label{definition: set} A \emph{set} is a collection of objects, which are called the \emph{elements} of the set.
+\end{definition}
+
+\vspace*{8pt}
+\begin{tabular}{L{1in}L{5in}}
+$x\in D$ & ``$x$ is an element of the set $D$"  (a proposition about $x$ and its {\it domain} $D$)\\
+
+$P(x)$ & A proposition about the variable $x$; may be true or false depending on $x$ \\
+
+$\{x \in D\st P(x)\}$ 
+
+$\{x\in D \hspace*{3.5pt}|\hspace*{3.5pt} P(x)\hspace*{.5pt}\}$ & The set of all elements of $D$ for which $P(x)$ is true (a subset of $D$)\\ 
+
+$A \subseteq B$ & ``$A$ is a subset of $B$"  (a proposition about sets $A$ and $B$)\\
+
+$A \subsetneq B$ & ``$A$ is a strict subset of $B$'', i.e., ``$A\subseteq B$ and $A \neq B$" \\
+$A \supseteq B$ & ``$A$ is a superset of $B$'' or ``$B$ is a subset of $A$" \\
+
+$A \supsetneq B$ &  ``$A$ is a strict superset of $B$'' or ``$B$ is a strict subset of $A$'',  i.e., ``$A\supseteq B$ and $A \neq B$"   \\ 
+
+
+$A \cap B$ & The intersection of the sets $A$ and $B$  (a set)\\
+
+$A \cup B$ & The union of the sets $A$ and $B$  (a set)\\
+
+$\emptyset$ & The {\it empty set} (the set with no elements); also known as {\it null set}\\
+$|A|$ & The cardinality (``size'') of $A$. When $A$ is finite, $|A|$ is the number of elements in $A$.
+\end{tabular}
+
+\vspace*{8pt}
+
+\begin{note} The notation for subset (without the bottom line) is ambiguous: some people use it to mean $A \subseteq B$ and others use it to mean $A \subsetneq B$. So we don't use it here.
+\end{note}
+
+\begin{definition}\label{definition: set equality}
+Given sets $A$ and $B$. We say $A$ \emph{is equal to} $B$ if $A\subset B$ and $B\subset A$. We denote equality with $A=B$.
+\end{definition}
+
+
+\begin{task}
+\begin{enumerate}
+\item Let $A = \{1,2,\{3,4\}, \{5\}\}$.  
+Decide whether each of the following statements is true or false: \\
+	(\emph{Hint:} There are exactly six true statements.)
+		\begin{align*}
+			1 \in A,  && \{1, 2\} \in A, && \{1, 2\} \subseteq A, && \emptyset \in A,\\
+			3 \in A,  && \{3, 4\} \in A, && \{3, 4\} \subseteq A, && \emptyset \subseteq  A,\\
+			\{1\} \in A, && \{1\} \subseteq A, && \{5\} \in A, && \{5\} \subseteq A.
+		\end{align*}
+
+
+\item True or false? ``All students in this class who are under 5 years old are also over 100 years old.''
+\end{enumerate}
+\end{task}
+\begin{solution}
+\begin{enumerate}
+\item $\;$ \\ \vspace*{-12pt} \begin{tabular}{lcclcclccl}
+			(a) TRUE && (b) false && (c) TRUE && (d) false \\
+			(e) false && (f) TRUE && (g) false && (h) TRUE\\
+			(i) false && (j) TRUE && (k) TRUE && (l) false
+		\end{tabular}
+		
+{\it Reasoning.} There are four elements of the set $A$:  
+	\vspace*{-4pt}
+	\begin{itemize*}
+	\item 1 (the number 1)
+	\item 2 (the number 2)
+	\item $\{3,4\}$ (the set containing the numbers 3, 4)
+	\item $\{5\}$  (the set containing the number 5)
+	\end{itemize*}
+	
+The notation $\in$ means ``is an element of'' is . That's why (a), (f), (k) are TRUE and (b), (d), (e), (i)  are false.
+
+The notation $\subset$ means ``is a subset of''. The set is a subset of $A$ if each of its elements are also elements of $A$.  That's why (c), (j) are TRUE and (g), (l) are false.
+
+Finally, (h) is TRUE on a technicality. It contains no elements. So all zero of its elements are part of A.  The empty set is a subset of any set for this reason. 
+
+\item For most sections of mathematics courses at university level, this statement should be TRUE.\end{enumerate}	
+
+\vspace*{-18pt}$\;$
+\end{solution}
+
+\begin{note}
+One helpful metaphor may be thinking of the braces (the $\{$ and $\}$ ) as permanent packaging, like gift wrap that doesn't come off. You can't take out what's inside the packaging. You can only hold the whole package. Even if only one thing is wrapped, you still can't hold the thing by itself, you can only hold it with its gift wrap. But if an object not wrapped, you can hold that object by itself.
+\end{note}
+
+{\bf Proof Structure: Showing set membership.} To show that $x\in S$ means showing that $x$ satisfies set membership rules for $S$; to show that $x\notin S$ means showing that $x$ does not satisfy at least one set membership rule of $A$.
+
+\begin{task}
+Let $S=\{ x\in \Q \st x \tn{ can be written as a fraction with denominator 2 and } |x|<2 \}$. 
+
+True or false? \quad\quad $0.5\in S$, \quad\quad $3.5 \in S$, \quad\quad $0.25\in S$,\quad\quad $1\in S$.
+\end{task}
+
+\begin{solution}{\it (Partial)}
+
+\vspace*{-8pt}
+\begin{enumerate}[label=(\alph*)]
+\item $0.5 \in S$ is TRUE because it can be written as the fraction $\frac{1}{2}$ and $|0.5|<2$. The number $0.5$ satisfies all the rules of membership of $S$, so it is an element of $S$.
+\item $3.5 \in S$ is FALSE because even though it can be written as the fraction $\frac{7}{2}$, it does not satisfy the condition $|x|<2$. The number $3.5$ does not satisfy all the rules of membership of $S$, so it is not an element of $S$.
+\item $0.25\in S$ is FALSE. (Why?)  
+\item $1\in S$ is TRUE. (Why? Hint: The fraction does not have to be in lowest terms \dots)
+\end{enumerate}
+
+\vspace*{-18pt}$\;$
+\end{solution}
+
+\vspace*{-12pt}
+\subsubsection{Subset exploration}\label{s: subset exploration}
+
+\vspace*{-6pt}
+\begin{task}
+Is $A$ a subset of $B$ or vice versa? Complete this table with ``yes'' or ``no'' in each cell.
+
+		\begin{tabular}{C{2in}||C{0.37in}|C{0.37in}|C{0.37in}|C{0.37in}|C{0.37in}|C{0.4in}|C{0.5in}}
+			& $A\subset B$ & $A\subsetneq B$ & $A\supset B$ & $A\supsetneq B$ & $A = B$& $A\neq B$ 
+			& \tiny{Neither is subset of the other} \\ \hline	
+		$A= \tn{multiples of 3}$, 
+		$B= \tn{multiples of 6}$ 
+			& & & & & & & \\ \hline
+		$A= \tn{multiples of 6}$, 
+		$B= \tn{multiples of 9}$ 
+			 & & & & & & & \\  \hline
+		$A=\{ n^2 | n\in \N, n>0 \}$, 
+		$B=\{1+3+\dots +(2n+1) | n\in \N\}$ 
+			& & & & & & & \\ \hline	
+		$A=\tn{functions of the form $x\mapsto 16^{ax}$}$, 
+		$B=\tn{functions of the form $x\mapsto 2^{ax}$}$
+			& & & & & & & \\  \hline
+		\end{tabular}
+\end{task}
+
+{\it Clarifying the question.} We found that there were several ways that these questions needed to be clarified: In Row 1 and 2, we asked: what kind of multiples? We decided to consider only integer multiples. In Row 4, we asked: What is $a$? If $a\in \Z$, there are different consequences than when $a\in \Q$. We added this interpretation as a different row.
+
+{\it Making conjectures/observations and improving them.}  Possible conjectures about this table include:
+
+	\begin{itemize}
+	\item (set of integer multiples of 3) $\supset$ (set of integer multiples of 6)
+	\item (set of integer multiples of 3) $\supsetneq$ (set of integer multiples of 6)
+	\item (set of integer multiples of 6) and (set of integer multiples of 9) are not subsets of each other
+	\item (set of perfect squares) $=$ (set of sum of consecutive odd positive numbers)
+	\item  When $a\in \Z$, (set of functions of the form $x\mapsto 16^{ax}$) $\subsetneq$ (set of functions of the form $x\mapsto 2^{ax}$)
+	\item  When $a \in \Q$, (set of functions of the	form $x\mapsto 16^{ax}$) $=$ (set of functions of the form $x\mapsto 2^{ax}$)
+	\end{itemize}
+
+{\it Proving conjectures.}  
+We will use the properties listed in Section \ref{s: properties of R and Z}. We also use the following proof structures.
+
+{\bf Proof Structure: Showing one set is a subset or strict subset of another}.
+	\begin{itemize}
+	\item To show that $B\subset A$ requires showing: if $x\in B$, then $x\in A$.
+	\item To show that $B\subsetneq A$ requires showing: (1) $B\subset A$; (2) there is an element of $A$ that is not in $B$.
+	\end{itemize}
+
+{\bf Proof Structure: Showing set equality}. 
+	\begin{itemize}
+	\item To show that $A=B$ requires showing: (1) $A\subset B$; (2) $B\subset A$.
+	\end{itemize}
+		
+\begin{claim*}
+If $A=\{ 3n \st n \in \Z\}$ and $B=\{ 6n \st n\in \Z\}$, then $B\subset A$.
+\end{claim*}
+\begin{proof}
+Given $A=\{ 3n \st n \in \Z\}$ and $B=\{ 6n \st  n\in \Z\}$. Showing that $B\subset A$ means showing: if $x\in B$, then $x\in A$.
+
+Given $x\in B$. Then:
+	\begin{eqnarray*}
+	x &=&6k, k\in \Z, \tn{ by definition of $B$} \\ 
+	   &=& 3\cdot 2k \\ 
+	   &=& 3n, n\in \Z, \tn{ because $2\in \Z, k\in \Z$, and $\Z$ is closed under multiplication}
+	\end{eqnarray*}
+Therefore $x$ satisfies set membership rules of $A$, implying $x\in A$. 
+
+We have shown that if $x\in B$, then $x\in A$. Thus $B\subset A$, by definition of subset.
+\end{proof}
+
+\begin{claim*}
+If $A=\{ 3n \st n \in \Z\}$ and $B=\{ 6n \st n\in \Z\}$, then $B\subsetneq A$.
+\end{claim*}
+\begin{proof}
+Given $A=\{ 3n \st n \in \Z\}$ and $B=\{ 6n \st n\in \Z\}$. 
+
+\begin{enumerate}
+\item {\it Why $A\subset B$}: This was done in the claim we just showed. \qedpart{1}
+
+\item {\it Why there is an element of $B$ that is not in $A$.}
+If $x\in B$, then $x$ is an even number because if $x=6k$ for some $k\in\Z$, then $x$ as $x=2\cdot (3k)$. Closure of multiplication in $\Z$ implies $3k\in \Z$, so $x$ satisfies the definition of even number. 
+
+However, some members of $A$ are odd numbers: $3, 9, 15, \dots $. 
+
+Hence there are elements of $A$ that are not in $B$. \qedpart{2}
+
+\end{enumerate}
+Why this means $B\subsetneq A$: We showed $B\subset A$ and found elements of $A$ not in $B$. By definition of $\subseteq$, we have $A\subsetneq B$.
+\end{proof}
+
+
+\begin{claim*}
+If $A=\{f:\R\to \R, x\mapsto 16^{ax} \st a\in \Q\}$ and $B=\{f:\R\to \R, x\mapsto 2^{ax} \st a\in \Q\}$, then $A=B$.
+\end{claim*}
+\begin{proof}[Sketch of proof] 
+Given $A=\{f:\R\to \R, x\mapsto 16^{ax} \st a\in \Q\}$ and $B=\{f:\R\to \R, x\mapsto 2^{ax} \st a\in \Q\}$.
+
+We outline the steps of the proof for you to fill in.
+
+\begin{enumerate}
+\item {\it Why $A\subset B$:} \qedpart{1}
+
+
+\item {\it Why $B\subset A$:} \qedpart{2}
+\end{enumerate}
+
+Why the above means that $A=B$:
+\end{proof}
+
+\begin{bignote}[Modeling proof communication]
+\end{bignote} \todo{write instructor note modeling proof communication, use the proof of strict subset, point out relevant handout from Section 0}
+
+
+\begin{bignote}[Teaching the table task and definition of equality of sets]
+Take the table task one row at a time, emphasizing the mathematical practices of clarifying the question and then finding and improving possible answers.  The goal is to generate conjectures rather than proving them, although proofs could occur for subset conclusions. Proofs about set equality occur after introducing the definition of set equality.
+
+Rows 1, 2, and 4 can be interpreted in different ways with different mathematical consequences. You may decide with your class to interpret:
+	\begin{itemize*}
+	\item Row 1, 2: Multiples should mean ``integer multiples''
+	\item Row 4: $a$ should be considered in two cases, $a\in \Z$ and $a\in \Q$.
+	\end{itemize*}
+
+This means revising Row 4 and adding a Row 5 to the table:
+		\begin{tabular}{C{2in}||C{0.5in}|C{0.5in}|C{0.5in}|C{0.5in}|C{1.2in}}
+		$A=\tn{functions of the form $x\mapsto 16^{ax}$}$, 
+		$B=\tn{functions of the form $x\mapsto 2^{ax}$}$, where $a\in \Z$
+				& & & & & \\  \hline
+		$A=\tn{functions of the form $x\mapsto 16^{ax}$}$, 
+		$B=\tn{functions of the form $x\mapsto 2^{ax}$}$, where $a\in \Q$
+				& & & & & \\  \hline				
+		\end{tabular}
+
+Row 3 may need clarification as far as set notation and what the ``\dots'' mean, but is otherwise precisely phrased.
+
+Row 3 may be assigned as homework after discussing what there is to prove. 
+
+This task is designed to show why equality of sets requires showing both that $A\subset B$ and $B\subset A$. Often we have found that students think of showing one direction as sufficient, and that this is reinforced by tasks where containment follows practically tautologically by definition. The examples in rows 3 and 4 do require inference from the definitions, not just the definitions themselves. 
+\end{bignote}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%
+\subsection{Mathematical statements and their negations}
+\label{s: statements and negations}
+
+{\bf Logical notation}
+
+\begin{tabular}{L{1in}L{5in}}
+$P(x)$ & A proposition about the variable $x$; may be true or false depending on $x$ \\
+
+$\neg P(x)$ & The negation of $P(x)$ \\
+
+$\forall x, P(x)$ & The proposition ``For all values of $x$, $P(x)$ is true." \\
+
+$\exists x: P(x)$ & The proposition ``There exists a value of $x$ such that $P(x)$ is true." \\
+
+$\forall x, P(x) \Rightarrow Q(x)$ & The proposition ``For all values of $x$, if $P(x)$ is true then $Q(x)$ is true."\\
+
+$\forall x, P(x) \Leftrightarrow Q(x)$ & The proposition ``For all values of $x$, $P(x)$ is true if and only if $Q(x)$ is true." 
+\end{tabular}
+
+\begin{task}
+\begin{enumerate}
+\item For each of the following statements, figure out what it means, and decide whether it is true, false, or neither. 
+	 \begin{enumerate}
+	 \item $\forall x\in \R, \exists y\in \R \st y+x\in\{z\in \Z \st z > 0\}$
+	  \item $\forall x\in \Z, \exists y\in \Z \st y+x\notin \Z$
+	 \item$\forall g:\R\to\R, x\mapsto 2^{ax},  \exists h:\R\to\R, x\mapsto 4^{bx} \st \forall x\in \R, g(x)=h(x)$
+	  \item$\forall g:\R\to\R, x\mapsto 4^{ax},  \exists h:\R\to\R, x\mapsto 2^{bx} \st \forall x\in \R, g(x)=h(x)$
+	 \end{enumerate}
+\item Negate the following statements without using any negative words (``no'', ``not'', ''neither \dots nor'', etc.) Try to make your negation sound as much like normal English as possible. 
+	\begin{enumerate}
+	\item Every word on this page starts with a consonant and ends with a vowel.
+	\item The set $A$ is equal to the set $B$.
+	\item There is a book on this shelf in which every page has a word that starts and ends with a vowel.
+	\item The set $A$ is a strict subset of the set $B$.
+	\end{enumerate}
+\end{enumerate}
+\end{task}
+
+\smallnote{There is typically only time to do one or two of each task, with the rest assigned for homework.  For (1), we recommend (a) or (b), and then as time allows, (c) or (d). For (2) We recommend doing least one word negation ((a) or (c)) in class, and then as time allows, one negation having to do with concepts of sets ((b) or (d)).}
+
+\begin{solution}({\it Partial})
+\begin{enumerate}
+\item  \begin{enumerate}
+	\item For each real number $x$, there is a real number $y$ so that $x+y$ is a positive integer.  TRUE.  
+	
+{\it Reasoning:} If $x\in \R$, then take $y=1-x$. Then $x+y=1$, which is a positive integer. Or take any positive integer $n$ and take $y=n-x$.
+
+	\item  What it means: \dots (fill in the rest). FALSE.
+	
+	{\it Reasoning:}  (Why?)
+	\item For each function $g(x)=2^{ax}$ there is a function $f(x)=4^{bx}$ so that $g(x)=h(x)$ on every possible real value of $x$. NEITHER. 
+	
+	{\it Reasoning:} The truth of this statement depends on the possible values of $a$ and $b$. If $a$ and $b$ must be integers, then there are some $a$ where $2^{ax}$ cannot equal $4^{bx}$. (All odd integers.) If $a$ and $b$ are rational or real, then for each $a$, we can take $b=\frac{a}{2}$, and then $2^{ax}=4^{bx}$
+	\item What it means: \dots (fill in the rest). TRUE. 
+	
+	{\it Reasoning:}  (Why?)
+	\end{enumerate}
+\item 
+	\begin{enumerate}
+	\item THERE IS a word on this page that starts with a vowel OR ends with a consonant.
+	\item The set $A$ has at least one element that is not in $B$ OR the set $B$ has at least one element that is not in $A$.
+	\item EVERY book on this shelf (\dots fill in the rest)
+	\item The set $A$ equals $B$ OR (\dots fill in the rest)
+	\end{enumerate}
+\end{enumerate}
+\vspace*{-18pt}$\;$
+\end{solution}
+
+\subsection{Back to the opening inquiry}
+
+We have now spent some time discussing set notation and logical notation.
+
+We began this class considering ``parents'' of numbers. We conjectured that:
+
+\begin{quote}
+If a number has least three different factors (that are not itself or 1), then it has more than one pair of parents. There are no other numbers with more than one pair of parents.
+\end{quote}
+
+One way of saying ``factors of a number that are not itself or 1'' is to say ``nontrivial factors''.
+
+{\bf Applying set notation.} Using set notation, we can interpret the conjecture as saying:
+
+\begin{conjecture}[Number parent conjecture, take 1]
+Let \begin{eqnarray*}
+	S&=&\{ n\in \N\st n\tn{ has at least three different non-trivial factors}\} \\ 
+	T&=&\{ n\in \N \st n \tn{ has more than one pair of parents}\} 
+	\end{eqnarray*}
+Then $S=T$.	
+\end{conjecture}
+
+\begin{task}
+How does this way of phrasing the conjecture match up with the original way? 
+	\begin{itemize}
+	\item Look up the definition of set equality. What does $S=T$ mean by definition of set equality?
+	\item Which part of set equality implies the first sentence (``If a number has least three different nontrivial factors, then it has more than one pair of parents.'')? 
+	\item Which part of set quality implies the second sentence? (``There are no other numbers with more than one pair of parents'') 
+	\end{itemize}
+\end{task}
+
+\begin{solution}
+By definition, $S=T$ means $S\subset T$ and $T\subset S$.
+
+$S\subset T$ implies that ``If a number has least three different nontrivial factors, then it has more than one pair of parents.''
+
+$T\subset S$ means that ``there are no other numbers with more than one pair of parents.'' 
+\end{solution}
+
+\bigskip
+{\bf Applying logical notation.} There is another mathematically equivalent way of saying the conjecture using the logical notation we developed. 
+
+\begin{conjecture}[Number parent conjecture, take 2]
+$\forall n\in \N$, $n$ has more than one pair of parents $\iff$ $n$ has at least three nontrivial factors.
+\end{conjecture}
+
+\begin{task}
+How does this way of phrasing the conjecture match up with the original way? 
+	\begin{itemize}
+	\item What does ``if and only if'' mean? 
+	\item Which part of ``iff'' implies the first sentence (``If a number has least three different nontrivial factors, then it has more than one pair of parents.'')?   (An abbreviation for ``if and only if'' is ``iff'')
+	\item Which part of ``iff'' implies the second sentence? (``There are no other numbers with more than one pair of parents'') 
+	\end{itemize}
+\end{task}
+
+
+\begin{solution}
+By definition, $P$ iff $Q$ means that both $P\implies Q$ and $Q\implies P$ are true statements.
+
+Given $n\in \N$, let the statement $P$ be ``$n$ has more than one pair of parents'', and the statement $Q$ be statement ``$n$ has at least three nontrivial factors''.
+
+$Q\implies P$ being true implies that ``if a number has least three different nontrivial factors, then it has more than one pair of parents.'' 
+
+$P\implies Q$ being true implies that ``there are no other numbers with more than one pair of parents.'' 
+\end{solution}
+
+\bigskip
+
+
+(The following is stated in two equivalent ways) 
+\begin{proposition}[Number parent proposition]
+\hspace*{-6pt}\begin{tabular}{L{3.5in}|L{2.8in}}
+If $S=\{ n\in \N\st n\tn{ \it has at least three different non-trivial factors}\}$ and $T=\{ n\in \N \st n \tn{ \it has more than one pair of parents}\}$, then $S=T$.
+& 
+For all $n\in \N$, $n$ has more than one pair of parents if and only if $n$ has at least three nontrivial factors.
+\end{tabular}
+\end{proposition}
+
+\begin{proof}
+Given $S=\{ n\in \N\st n\tn{ \it has at least three different non-trivial factors}\}$ and $T=\{ n\in \N \st n \tn{ \it has more than one pair of parents}\}$.
+\begin{enumerate}
+\item {\it Why $S\subset T$:}
+Let $n\in S$. Then there exist distinct $a, b, c \in \N$ such that $a\divides n$, $b\divides n$, and $c\divides n$. Either each of these are paired with another one of $a,b,c$ to be a pair of parents of $n$ or they are not. If they are not paired with any of each other, then $n$ has at least three pairs of parents, which is more than one. If one of them is paired with another, there is still a third factor that cannot be paired with the other two (because they are already paired). So it is part of a second pair of parents. Thus $n\in T$.
+
+We have shown that if $n\in S$, then $n\in T$. By definition of subset, this shows $S\subset T$. \qedpart{1}
+
+\item {\it Why $T\subset S$:} 
+Let $n\in T$. Then there exist at least two pairs $a, a'\in \N$ and $b, b'\in \N$ such that $aa'=n$ and $b,b'=n$, and $\{a,a'\} \neq \{b, b'\}$.
+
+If $a\neq a'$ and $b\neq b'$, then $n$ has at least four factors, so $n\in S$.
+
+It may be true that $a=a'$ or $b=b'$. If $a=a'$, though, then $n$ is a perfect square and $b\neq b'$, since there is only one positive square root possible for every $n$. Similarly, if $b=b'$, then $a\neq a'$. In either case, $n$ has at least three factors (either $a, b, b'$ or $a, a', b$), so $n\in S$.
+
+We have shown that if $n\in T$, then $n\in S$. By definition of subset, this shows $T\subset S$. \qedpart{2}
+\end{enumerate}
+We have shown that $S\subset T$ and $T\subset S$. By definition of set equality, we have shown $S=T$.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%
+\subsection{Summary of mathematical practices}
+ 
+ 
+\subsubsection*{Clarifying the question}
+ \begin{itemize}
+ \item Make the best sense as you can of the question with what is available.
+ \item Identify what is unambiguous, and then identify what is ambiguous.
+ \item For the ambiguous parts, play around with different possibilities to see what is the most mathematically interesting possibility. Sometimes you may find that there are multiple interesting mathematical possibilities.
+ \end{itemize}
+\subsubsection*{Conjecturing and Claim making}
+
+\begin{itemize}
+\item Think of claims as an ``I bet'' statement. 
+
+If you're the arbitrator for a bet between people, you would want to make absolutely sure that everyone knows exactly what the statement means, and also that everyone would agree on what evidence would count as showing the bet is true or not true! 
+
+The same is true about mathematical statements. A mathematical statement needs to be crystal clear about what it means.
+
+\item Mathematical claims should either be true or false; if they ``depend'' on something, this means that there is often a better claim that can be made. 
+
+\item The more general a claim, the better it is. 
+
+For instance, ``12 has more than one pair of parents'' is a true claim, but a better claim is ``All numbers with at least three distinct factors have more than one pair of parents'' is an even better claim.
+
+\item The more ``directions'' a claim addresses, the better it is. 
+
+For instance, ``All numbers with at least three distinct factors have more than one pair of parents'' is a true claim, but ``A number has more than one pair of parents if and only if it has at least three distinct factors'' goes even further to understanding the situation.
+\end{itemize}
+
+\subsubsection*{Exploring math: Our expectations}
+
+\begin{itemize}
+\item Make claims.
+
+\item Try to prove them.
+
+\item If you get stuck, consider the negations of the claim.
+
+\item Try to prove those.
+
+\item Consider the ``opposite direction'' claim. (The ``converse'' of the claim.)  
+
+\item Try to prove those.
+
+\item Aim to make the most satisfying claims possible.
+
+\item Rewrite, rewrite, rewrite! Use the rewriting process to help things get clear for yourself, your future students, and your future self, and your peers.
+
+\end{itemize}
+
+
+
+
+
+\newpage
+
+\begin{bignote}[Things to keep in mind on the first day]
+This first lesson is an important place to do what can be called ``setting norms and expectations''. What this means is communicating to prospective teachers, both implicitly and explicitly, what productive conversation, exploration, questioning, and justification look and feel like. For instance, you may want to teach a class where:
+	\begin{itemize*}
+	\item {\it Students embrace learning from their own individual and each others' work} -- they view their own mistakes courageously and with an open mind; they accept that making errors and learning from them is a natural part of the mathematical process; they  recognize what is worthwhile about others' reasoning and what needs further thought, and they do so constructively; they celebrate others' ideas. 
+	\item {\it Students view mathematical reasoning as the ultimate mathematical authority} -- they have faith in their ability to learn to reason mathematically; they come back to the mathematics rather than to a perceived authority figure such as an instructor or a ``smart'' student to figure out what works; they seek precision in language while also understanding that going from informal language to precise language may take some time, may not happen right away, but is a valuable goal.
+	\item {\it Students persist in seeking mathematical questions and answers} -- they accept that setbacks are an important part of learning; they can work for an extended amount of time on one problem in productive ways; they celebrate when they do come to an understanding of a mathematical idea, especially one that is hard-won.
+	\end{itemize*}
+
+If these are values that you see a productive class expressing, you can do much to foster these values beginning the first day. There are many different things you can do and say, and certainly different things may work better or worse for different instructors and different students. Here are some examples of things to do and say that have helped previous \MODULES instructors:
+	\begin{itemize*}
+	\item {\it Praise thoughtful errors.} It's easy to spot ``right'' answers and there can be a temptation to run with the way that some students have found exactly the ``right'' way to approach a problem. There is also a temptation to respond to ``wrong'' answers with saying matter-of-factly, ``Not quite; what did others get?'' But if you respond in these ways, and exclusively so as your form of interacting with students about their thinking, what message does that send to students about the role of mistakes in the process of working through mathematics? It may well send the message that the best work is the work that is correct the first try, or worse, that the most worthy students are those that only do correct mathematics and make no mistakes. Instead, an alternative approach is to look for thoughtful errors -- the kind of thinking that is ultimately mathematically incorrect for some reason, but where thinking through the mistake has the potential to really get at something fundamental about the mathematics at hand or in the future. Moves that you can make to acknowledge thoughtful errors might include:
+		\begin{itemize*}
+		\item ``I am so glad that you brought that up, [student name]. Did everyone understand what [student name] said? Can someone say in their own words what they understand of [student name]'s reasoning?'' [If someone raises their hand to counter this idea] ''Right now we're not interested in whether we agree or disagree with [student name], we are trying to understand what [student name] is thinking. What might they thinking? Why does it make sense to do this?''
+		\item ``Let's see what happens when we follow this reasoning.''
+		\item ``We just learned a really important lesson about doing mathematics because of this reasoning. Thank you, [student name], for sharing your idea. This was incredibly helpful. Let's remember the lesson we learned throughout today and also as we move forward in this class.''  
+		\end{itemize*}
+	\item {\it Do not make a big deal when students get a correct answer right away.  Focus on the process of getting to the answer, and on understanding the answer, rather than the answer itself.}  The Fields Medalist William Thurston (1994) observed of his colleagues, ``I thought that what they sought was a collection of powerful proven theorems that might be applied to answer further mathematical questions. But that's only one part of the story. More than the knowledge,
+people want {\it personal understanding.}'' (p.~51, emphasis by Thurston). The same is true of students, or at least we would like to be a truth about students. Moves that emphasize understanding over the answer might include:
+		\begin{itemize*}
+		\item (As a matter-of-fact first reaction to the correct answer) ``You answered $X$. What was your reasoning for that answer?''  \dots ``What do others think of this reasoning?'' 
+		\item ``[Student name] arrived at the solution $X$, and just shared their reasoning. Did anyone else arrive at this solution? Did you have similar reasoning or different reasoning?'' 
+		\item ``Let's think back on why this answer makes sense.''
+		\end{itemize*} 
+	\item {\it Relinquish your authority to the students and the mathematics.} A common question instructors hear is, ``What do you want?'' or ``Is this what you are looking for?'' Sometimes the answer to these questions really does rest with you, the instructor -- especially if it is about specific directions that you are setting for your students that can't be derived from mathematical reasoning. However, answering these questions from your authority as an instructor can be less useful if the questions are actually about mathematical reasoning, for instance, if the question is about whether a proof or solution is correct. In these cases, it can be more productive to return the responsibility of these questions to the students and the mathematics:
+		\begin{itemize*}
+		\item ``Can you tell me more about how you arrived at this?''
+		\item ``Tell me about what's here.''
+		\item ``How does this help to give a solution to the question we are working on?'' 
+		\item ``How complete do you think it is?'' \dots ``What about your work are you sure about, and what are you less sure about?''
+		\end{itemize*}
+	
+	\item {\it Give students ways to work constructively with each other.} Working with each other on mathematics is not necessarily a natural skill; it is a learned skill. Help your students find ways to talk to each other about their thinking. While students are working, stir the pot (meaning, find ways to provoke productive disagreement and/or discussion). 
+		\begin{itemize*}
+		\item ``I see that [student A] and [student B] have different answers. It looks like you have something to resolve. [Student A] and [Student B], will you share how you did your work with each other and figure out what's really going on?'' 
+		\item ``I see that [student A] and [student B] have arrived at the same answer, but it looks like you've done it in different ways. Will you compare what you've done and see how they match each other or do not?'' 
+		\item ``It looks like [student A] has drawn a graph and [student B] has used mostly equations. Are you thinking about the same thing? Will you talk to each other about how your thinking matches up or not?'' 
+		\item ``It looks like [Student A] worked on [Case 1] whereas [student B] worked on [Case 2]. Are there more cases to consider? Are both cases necessary? You should talk to each other to figure this out.''
+		\end{itemize*}
+	\end{itemize*}
+\end{bignote}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% 1 IN-CLASS RESOURCES %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage \subsection{In-Class Resources}  
+
+%%%%%%%% 1 OPENING INQUIRY %%%%%%
+\subsubsection{Opening Inquiry}
+
+Two numbers are parents of a child if the child is their product. 
+
+A child cannot be its own parent.
+
+Which numbers have more than one pair of parents?
+
+\begin{center}
+\begin{tabular}{C{1.5in}|C{1.5in}}
+Child & Parents \\
+\hline 
+ 6 & 2, 3 \\  
+ 4 & ?? \\  
+ 12 & 4, 3 \\ 
+ 12 & 2, 6 
+\end{tabular}
+\end{center}
+
+\vfill
+\hrule
+
+Clarifying what it means to be a pair of parents:
+
+\vspace*{1in}
+Notes on finding and improving answers to mathematical questions:
+\vspace*{1.5in}
+%%%%%%%% 1 GETTING TO KNOW SET AND LOGICAL NOTATION %%%%%%
+\newpage
+\subsubsection{Getting to know set notation}
+
+\begin{enumerate}
+\item Let $A = \{1,2,\{3,4\}, \{5\}\}$.  
+Decide whether each of the following statements is true or false: \\
+	(\emph{Hint:} There are exactly six true statements.)
+		\begin{align*}
+			1 \in A,  && \{1, 2\} \in A, && \{1, 2\} \subseteq A, && \emptyset \in A,\\
+			3 \in A,  && \{3, 4\} \in A, && \{3, 4\} \subseteq A, && \emptyset \subseteq  A,\\
+			\{1\} \in A, && \{1\} \subseteq A, && \{5\} \in A, && \{5\} \subseteq A.
+		\end{align*}
+\item True or false? ``All students in this class who are under 5 years old are also over 100 years old.''
+\end{enumerate}
+\begin{enumerate}[resume] 
+\item Let $S=\{ x\in \Q \st x \tn{ can be written as a fraction with denominator 2 and } |x|<2 \}$. 
+
+True or false? \quad\quad $0.5\in S$, \quad\quad $3.5 \in S$, \quad\quad $0.25\in S$,\quad\quad $1\in S$.
+\end{enumerate}
+\vfill
+
+
+\hrule
+
+\subsubsection{Getting to know logical notation}
+
+\begin{enumerate}
+\item For each of the following statements, figure out what it means, and decide whether it is true, false, or neither. 
+	 \begin{enumerate}
+	 \item $\forall x\in \R, \exists y\in \R \st y+x\in\{z\in \Z \st z > 0\}$
+	 \item $\forall x\in \Z, \exists y\in \Z \st y+x\notin \Z$
+	 %\item$\forall g:\R\to\R, x\mapsto 2^{ax},  \exists h:\R\to\R, x\mapsto 4^{bx} \st \forall x\in \R, g(x)=h(x)$
+	  %\item$\forall g:\R\to\R, x\mapsto 4^{ax},  \exists h:\R\to\R, x\mapsto 2^{bx} \st \forall x\in \R, g(x)=h(x)$
+	 \end{enumerate}
+\item Negate the following statements without using any negative words (``no'', ``not'', ''neither \dots nor'', etc.) Try to make your negation sound as much like normal English as possible. 
+	\begin{enumerate}
+	\item Every word on this page starts with a consonant and ends with a vowel.
+	\item The set $A$ is equal to the set $B$.
+	%\item There is a book on this shelf in which every page has a word that starts and ends with a vowel.
+	%\item The set $A$ is a strict subset of the set $B$.
+	\end{enumerate}
+\end{enumerate}
+
+\vfill
+
+
+%%%%%%%% 1 SUBSET EXPLORATION %%%%%%
+\newpage
+\subsubsection{Subset exploration}
+Is $A$ a subset of $B$ or vice versa? Complete this table with ``yes'' or ``no'' in each cell.
+
+		\begin{tabular}{C{2in}||C{0.37in}|C{0.37in}|C{0.37in}|C{0.37in}|C{0.37in}|C{0.4in}|C{0.5in}}
+			& $A\subset B$ & $A\subsetneq B$ & $A\supset B$ & $A\supsetneq B$ & $A = B$& $A\neq B$ 
+			& Neither is subset of the other \\ \hline	
+		$A= \tn{multiples of 3}$, 
+		$B= \tn{multiples of 6}$ 
+			& & & & & & & \\ \hline
+		$A= \tn{multiples of 6}$, 
+		$B= \tn{multiples of 9}$ 
+			 & & & & & & & \\  \hline
+		$A=\{ n^2 | n\in \N, n>0 \}$, 
+		$B=\{1+3+\dots +(2n+1) | n\in \N\}$ 
+			& & & & & & & \\ \hline	
+		$A=\tn{functions of the form $x\mapsto 16^{ax}$}$, 
+		$B=\tn{functions of the form $x\mapsto 2^{ax}$}$
+			& & & & & & & \\  \hline
+		\end{tabular}
+
+
+
+%%%%%%%% 1 BACK TO OPENING INQUIRY %%%%%%%%%%%
+\newpage
+\subsubsection{Back to the opening inquiry}
+We began this class considering ``parents'' of numbers. We conjectured that:
+
+\begin{mdframed}
+\vspace*{1in}
+\end{mdframed}
+
+{\bf Applying set notation.} Using set notation, we can interpret the conjecture as saying:
+\begin{mdframed}
+\vspace*{1in}
+\end{mdframed}
+
+How does this way of phrasing the conjecture match up with the original way? 
+	\begin{itemize}
+	\item Look up the definition of set equality. What does $S=T$ mean by definition of set equality?
+	\item Which part of set equality implies the first sentence (``If a number has least three different nontrivial factors, then it has more than one pair of parents.'')? 
+	\item Which part of set quality implies the second sentence? (``There are no other numbers with more than one pair of parents'') 
+	\end{itemize}
+
+\vfill
+
+{\bf Applying logical notation.} There is another mathematically equivalent way of saying the conjecture using the logical notation we developed:
+\begin{mdframed}
+\vspace*{1in}
+\end{mdframed}
+How does this way of phrasing the conjecture match up with the original way? 
+	\begin{itemize}
+	\item What does ``if and only if'' mean? 
+	\item Which part of ``iff'' implies the first sentence (``If a number has least three different nontrivial factors, then it has more than one pair of parents.'')?   (An abbreviation for ``if and only if'' is ``iff'')
+	\item Which part of ``iff'' implies the second sentence? (``There are no other numbers with more than one pair of parents'') 
+	\end{itemize}
+	
+\vfill
+
+
+
+%%%%%%%%% 1 HOMEWORK %%%%%%%%%%%%%%%%%%%%
+\newpage \subsection{Homework}  
+\todo{finalize Homework 1}
+\begin{enumerate}
+\item Proving set membership problem
+\item Proving subset, subsetneq problem
+\item Proving set equality problem (possibly assign even number, consecutive odd numbers); can also assign exponential function problem
+\item Proof comprehension question about parent relation proof
+\item Something about assigning parents to children, to introduce the idea of a relation as a set of assignments. Possibly the opener to Lesson 2. 
+\item Something to introduce Cartesian product $D\times R$. (Note that it's also called cross product, but it's not the linear algebra thing.)
+\end{enumerate}
+
+\smallnote{For homework, you may want to make sure to assign at least one problem on parent relation and the problem with Cartesian product. These are used in the next lesson, in Section \ref{s: relations}, and beyond.}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 	
+%%%%%% PART # %%%%%%%%%%%%%%%%%%%%%	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 	
+\newpage \part{Relations and Functions} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 	
+%%%%%% LESSON 2 %%%%%%%%%%%%%%%%%%%%	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\section{Relations (Week 2) (Length: \about 2.5 hours)}\label{s: relations}  % 
+%%%%%%%%% 2 OVERVIEW  %%%%%%%%%%%%%%%%%%%%
+\subsection{Overview}
+
+\begin{tabular}{L{6.5in}} 
+{\bf Content} \\ \hline \parskip4pt
+\emph{Cartesian product} of two sets $A$ and $C$, denoted $A\times C$, defined as the set of ordered pairs $\{ (a,c) \st a\in A, c\in C \}$.
+
+\emph{Relation} from a set $S$ to a codomain $C$, defined from three different perspectives: the ``middle school'', ``high school'', and ``university''; and their mathematically equivalence.
+
+\emph{Inverse of a relation}, defined from these three perspectives; their mathematically equivalence.
+
+\emph{Function} from a set $S$ to a codomain $C$, defined as a relation from $S$ to $C$ such that each input in $S$ is assigned to no more than one output in $C$. How this definition can be interpreted from each of the three perspectives.
+\end{tabular}
+
+\begin{tabular}{L{3.2in}|L{3.2in}}
+{\bf Proof Structures} & {\bf Mathematical/Teaching Practices} \\ 
+\hline \parskip4pt
+% Proof structures
+\emph{To show that \dots } means showing that  \dots
+
+\emph{To show that \dots } means showing that  \dots
+&
+% Mathematical/Teaching Practices
+\parskip6pt
+\emph{Fill this in \dots }, 
+
+\end{tabular}
+\todo{fill in overview proof structures and math/teaching practices}
+
+%%%%%%%%%%%%%%
+\header{Summary}
+% {\it Acknowledgements.}   <-- fill this in as appropriate.
+%%%%%%%%%%%%%%
+\newpage
+\begin{bignote}[Materials]
+\begin{itemize*}
+\item Handouts from In-Class Resources (can be printed double-sided)
+         % \item other things as necessary, such as colored chalk or markers; other handouts; other props
+\end{itemize*}
+\end{bignote}
+%%%%%% 2 OPENER %%%%%%
+\subsection{Opening example: Parent relation}
+
+\begin{task}
+We learned about natural number parents and children last time.
+
+\begin{enumerate}
+\item What is the definition of a parent of a natural number child? 
+\item 
+Let $P$ assign a natural number to each of its parents. We can represent $P$ as a set of arrows from $\N$ to $\N$.  Some arrows below have been filled in, for example $P$ assigns $6$ to $2$ and $3$, and assigns $12$ to $2, 3, 4, 6$.  Draw in more arrows.
+
+\item Consider this statement: ``Some children have no parents, some children have exactly one parent, and some children have multiple parents.''  
+
+Is this statement true or false? Why?
+
+\item How about this statement? ``Some numbers have no children, and some numbers have multiple children.'' 
+\end{enumerate}
+
+\vfill
+\begin{center}
+\begin{tikzpicture}
+\def\pt{circle (0.05)}
+\foreach \x in {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
+	{\filldraw(0,-0.5*\x) node[left]{$\x$} \pt;
+	\filldraw(5,-0.5*\x) node[right]{$\x$} \pt;
+	}
+	\draw 
+		(2.5, 1) node[]{$P$}
+		(0,0.7) node[] {$\N$}
+		(5,0.7) node[] {$\N$}
+		(0, -0.5*15) node[]{$\vdots$}
+		(5, -0.5*15) node[]{$\vdots$};
+	\draw[->=stealth, yscale=-0.5] (0,6) -- (4.94, 1.9);
+	\draw[->, yscale=-0.5] (0,6) -- (4.94, 2.9);
+	\draw[->, yscale=-0.5] (0, 12)-- (4.94, 2.1);
+	\draw[->, yscale=-0.5] (0, 12) -- (4.94, 3.1);
+	\draw[->, yscale=-0.5] (0, 12) -- (4.94, 4);
+	\draw[->, yscale=-0.5] (0, 12) -- (4.94, 6);
+\draw[xshift=-1cm] (0,0) arc (180:0:1) (0,-7) arc (180:360:1) (0,0)-- (0,-7) (2,0) -- (2,-7); 
+\draw[xshift=4cm] (0,0) arc (180:0:1) (0,-7) arc (180:360:1) (0,0)-- (0,-7) (2,0) -- (2,-7); 
+\end{tikzpicture}
+\end{center}
+\end{task}
+
+\begin{solution}({\it Partial})
+Given a number $n\in \N$, a parent of $n$ is a nontrivial factor of $n$.
+
+The first statement is true: 
+
+\vspace*{-8pt}
+\begin{itemize*}
+	\item $n$ has no parents when $n$ is 0, 1, or prime \\ 
+	\item $n$ has exactly one parent when $n$ is a perfect square of a prime number \\
+	\item $n$ has multiple parents otherwise
+\end{itemize*}
+\vspace*{-8pt}
+These are represented by no arrows starting at a number, exactly one arrow starting at a number, and multiple arrows starting at a number.
+
+The second statement is also true. $0$ and $1$ have no children. All other numbers have multiple children (infinitely many, in fact). These are represented by arrows ending a number or not.
+\end{solution}
+
+%%%%%%% 2 CARTESIAN PRODUCT %%%%%%%%% 
+
+\subsection{Cartesian products}
+Let's discuss Cartesian products, which you first saw in your homework from last week.
+
+\begin{definition}
+Let $D$ and $R$ be sets. The \emph{Cartesian product} of $D$ and $R$ is defined as the set of ordered pairs $\{ (x,y) \st x\in D, y\in R\}$. It is denoted $D\times R$.
+\end{definition}
+
+\begin{task}
+Let $A=\{5, 6, 10\}$, $B=\{-1, -2, -3\}$, $C=\{-1,1\}$. Let $\N$ denote natural numbers, $\Z$ the integers,  and $\R$ the real numbers.
+
+List the elements of the following Cartesian products:
+	\begin{itemize}
+	\item $A\times B$ 
+	\item $A\times C$
+	\item $\Z \times C$
+	\item $C\times \Z$
+	\item $\N \times \N$.
+	\end{itemize}
+
+Which of the above sets contains the element $(6, -1)$? How about $(-1, 10)$?
+
+How would you describe $\R\times \R$? 
+
+How about $\R\times (\R\times \R)$?
+\end{task}
+
+\begin{solution} ({\it Partial})
+$(6,-1)\in A\times B, \Z \times C, \N\times \N$. It is not an element of any of the other sets.
+
+$(-1,10) \in C\times \Z, \N\times \N$. It is not an element of any of the other sets.
+
+$\R\times \R$ is the coordinate plane.
+
+$\R\times (\R\times \R)$ can be thought of as all the coordinates of 3-space.
+\end{solution}
+
+%%%%%%% 2 RELATIONS %%%%%%%
+\subsection{Relations}
+
+In middle school, if relations are introduced, they are often done so in the form of a cloud diagram, such as drawn in the opening task. 
+
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+\def\pt{circle (0.05)}
+\foreach \x in {0, 1, 2, 3, 4, 5, 6, 7}
+	{\filldraw(0,-\x) node[left]{$\x$} \pt;
+	\filldraw(5,-\x) node[right]{$\x$} \pt;
+	}
+	\draw 
+		(2.5, 1) node[]{$P$}
+		(0,0.7) node[] {$\N$}
+		(5,0.7) node[] {$\N$}
+		(0, -8) node[]{$\vdots$}
+		(5, -8) node[]{$\vdots$};
+	\draw[->=stealth, yscale=-0.5] (0,6) -- (4.94, 1.9);
+	\draw[->, yscale=-0.5] (0,6) -- (4.94, 2.9);
+	\draw[->, yscale=-0.5] (0, 12)-- (4.94, 2.1);
+	\draw[->, yscale=-0.5] (0, 12) -- (4.94, 3.1);
+	\draw[->, yscale=-0.5] (0, 12) -- (4.94, 4);
+	\draw[->, yscale=-0.5] (0, 12) -- (4.94, 6);
+\draw[xshift=-1cm] (0,0.5) arc (180:0:1) (0,-9) arc (180:360:1) (0,0.5)-- (0,-9) (2,0.5) -- (2,-9); 
+\draw[xshift=4cm] (0,0.5) arc (180:0:1) (0,-9) arc (180:360:1) (0,0.5)-- (0,-9) (2,0.5) -- (2,-9); 
+\end{tikzpicture}
+\end{center}
+
+In our example, a relation $P$ maps numbers in $\N$ to numbers in $\N$, and the map is represented by arrows connecting input numbers to output numbers. 
+
+\begin{definition}[Relation: Middle school version]\label{d: relation middle school}
+A \emph{relation} from a set $D$ to a set $R$ is a set of arrows going from elements of $D$ to elements of $R$.  
+\end{definition}
+
+We use the notation $P:D\to R$ to mean a relation from $D$ to $R$ called $P$.
+
+\begin{definition}[Parent relation]\label{d: parent relation}
+The parent relation $P:\N\to\N$ is the set of arrows from each element of $\N$ to its nontrivial factors.
+
+If there is an arrow from and element $x$ to an element $y$, we say the relation \emph{maps} $x$ to $y$.
+\end{definition}
+
+\begin{note}
+A relation $P:D\to R$ may map an element of $D$ to no elements of $R$, exactly one element of $R$, or multiple elements of $R$. 
+
+An element of $R$ may have no elements of $D$ mapping to it, exactly one element of $D$ mapping to it, or multiple elements of $D$ mapping to it.
+\end{note}
+
+\begin{definition}\label{d: superdomain etc}
+For a relation $P:D \to R$, we say that 
+	\begin{itemize}
+	\item $D$ is the \emph{superdomain};
+	\item $R$ is the \emph{superrange};
+	\item the \emph{image} of an element $x\in  P$ is the set of elements of $R$ that $x$ is mapped to.
+	\item the \emph{domain} of $P$ is the subset $D'\subset D$ of elements that are mapped to an element of the superrange, in other words, the subset of the superdomain with nonempty assignments; 
+	\item the \emph{preimage} of an element of $R$ is the set of elements of $D$ that map to $R$; and 
+	\item the \emph{range} (or \emph{image}) of the relation $P$ is the subset $R\subset D$ of elements that have elements of the domain mapped to it, in other words, the subset of the superrange with nonempty preimage.
+	\end{itemize}
+\end{definition}
+
+We have seen examples of most of these in the parent relation. Other examples of relations might be:
+	\begin{itemize}
+	\item The relation from the superdomain of all cars in the world to superrange of all people in the world, mapping a car to its owner(s).
+	\item The relation from the superdomain of rooms in the mathematics building to superrange of courses taking place at 1pm, mapping a room to the course being taught in it at 1pm.
+	\end{itemize}
+In these examples, we can see how each condition of the note about relations may apply.
+
+\begin{task}
+% connections to word problems in MS and HS math
+What are the domain and range of the car-owner relation and the room-course relation? 
+
+Suppose this table contains course assignments to rooms at 1pm. What is the image of Math Bldg Room 100? What is the preimage of Math 996, Math 405, Math 100, and Math 221 under the room-course relation? 
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+Room & Course in room at 1pm \\ \hline
+Math Bldg room 100 & Math 996 \\ 
+Math Bldg room 104 & Math 100 \\ 
+Engineering Bldg room 750 & Math 405 \\ 
+not being offered this term & Math 221 \\ \hline
+\end{tabular}
+\end{center}
+
+Let $T$ be the relation that maps each day of the year 2030 to the its average temperature in $\degrees F$ that day. Describe a possible superdomain, domain, superrange, and range of this relation.
+
+% connection to trig
+Let $A$ be the relation that maps each degree in the interval $[0\degrees, 360\degrees)$ to all degrees in the interval $(-\infty,\infty)$ that give an equivalent angle measure. What is the preimage of $361\degrees$? What is the image of $0\degrees$? 
+
+% connection to geometry
+Let $\rho$ be the relation that maps a point in the plane to its rotation about the origin by $90\degrees$. What is the image of the point $(1,0)$? What is the preimage of the point $(-2,0)$? 
+
+% connection to graphing 
+Let $G$ be the relation that maps $x$ to every $y$ such that $x=y^2$. What is the image of $4$? What is the preimage of $-6$?
+
+\end{task}
+
+\begin{task}
+Interpret the definitions of superdomain, domain, image, preimage, superrange, and range in terms of arrows and their start and end points.
+\end{task}
+
+At the high school level, textbooks generally do not use cloud diagrams any more, nor do they talk about arrows. Instead, discussion of relations (and functions) are in terms of assignments. The definition in high school is mathematically equivalent to the middle school version, but stated in a way that more directly allows for defining concepts like the graph of a relation or later, the behavior of a function.  (We note that as we will discuss later, a function is a kind of relation.)
+
+\begin{definition}[Relation: High school version]\label{d: relation high school}
+A \emph{relation} $P$ from a set $D$ to a set $R$ a set of assignments from elements of $D$, called inputs, to elements of $R$, called outputs.
+\end{definition}
+
+\begin{note}
+We use the notation $P:D\to R$ to mean a relation from $D$ to $R$, and the notation $x\mapsto y$ to denote an assignment from $x\in D$ to $y\in R$. Something to keep in mind for ``assignment'' is that an assignment has to map something to something. So we think of an assignment not just as an ``arrow'' but as an arrow with specific start and end points.
+\end{note}
+
+\begin{task}
+What are some example assignments of the relation $A$ mapping each degree in the interval $[0\degrees, 360\degrees)$ to all degrees in the interval $(-\infty,\infty)$ that give an equivalent angle measure? Use the $x\mapsto y$ notation to write down your examples.
+\end{task}
+
+\begin{solution}
+Some examples of assignments are: $0\degrees \mapsto 360\degrees$, $0\degrees \mapsto 0\degrees$, $359\degrees \mapsto -1\degrees$, $90\degrees \mapsto 810\degrees$.
+\end{solution}
+
+\begin{task}
+Suppose we were to graph the relation $A$. What might this graph look like? What are some examples of coordinates that are contained in this graph?
+\end{task}
+
+\begin{solution}
+It would look like the set of all lines of the form $y=x+360n$, where $n\in \Z$. Some example coordinates are $(0, 360), (0,0), (359, -1), (90, 810)$.
+\end{solution}
+
+\begin{task}
+Suppose we were to graph the parent relation. What might this graph look like? What are some examples of coordinates that are contained in this graph?
+\end{task}
+
+In undergraduate courses such as real analysis as well as in graduate courses in analysis, we go one step farther. Rather than defining relations in terms of assignments, we define relations in terms of ordered pairs. The ordered pairs represent the assignments. 
+
+\begin{definition}[Relation: University version]\label{d: relation university}
+A relation $P:D\to R$ is a subset of the ordered pairs of $D\times R$, i.e., $P\subset D\times R$.
+\end{definition}
+
+One way to think about this definition is that we are defining the relation as its graph in the space $D\times R$. 
+
+%%%%%%% 2 INVERSE OF A RELATIONS %%%%%%%
+\subsection{Inverse relation}
+
+\todo{Look at definitions of inverse relation and possibly revise them}
+
+\begin{definition}[Inverse relation: Middle school version]\label{d: inverse relation middle school}
+If $P$ is a relation from a set $D$ to $R$, then the \emph{inverse relation} of $P$ is the relation that swaps the direction of the arrows of $P$.  The arrows of the inverse relation go from elements of $R$ to elements of $D$.
+\end{definition}
+
+\begin{definition}[Inverse relation: High school version]\label{d: inverse relation high school}
+Given a relation $P:D\to R$, the \emph{inverse relation} of $P$ is the set of assignments $y\mapsto x$ such that $x\mapsto y$ is an assignment of $P$. The inverse relation is denoted $P^{-1}$.
+\end{definition}
+
+\begin{definition}[Inverse relation: University version]\label{d: inverse relation university}
+Given a relation $P:D\to R$, the \emph{inverse relation} of $P$ is defined as 
+	$$P^{-1} = \{(y, x) \st (x,y)\in P\}.$$
+\end{definition}
+
+\begin{task}
+Discuss these definitions. What do they each say? How would you represent them? What makes them mathematically equivalent?
+\end{task}
+
+%%%%%%% 2 FUNCTIONS %%%%%%%
+\subsection{Functions}
+
+\todo{Look at definitions of function and possibly revise them}
+
+\begin{definition}[Function: Middle and High school version]\label{d: function middle high school}
+A \emph{function} $f$ from $D$ to $R$ is a relation from $D$ to $R$ where each input in $D$ is assigned to no more than one output in $C$.
+\end{definition} 
+ 
+\begin{definition}[Function: University version]\label{d: function university} 
+A \emph{function} is a relation $f: D \to R$, such that if $(x,y), (x, y')\in f$, then $y=y'$.
+\end{definition}
+
+\begin{task}
+Discuss these definitions. What do they each say? How would you represent them? What makes them mathematically equivalent?
+\end{task}
+
+Example: 1/x, sqrt, other examples 
+
+Things high school students should be thinking about:
+\begin{itemize*}
+\item codomain
+\item range (image)
+\item domain
+\end{itemize*}
+
+Pose these as problems. 
+
+Discuss vertical line test. Eventually explaining this becomes one of the SoPs.
+
+Crib homework problems from combination of Bremigan, Bremigan, and Lorch and Sultan and Artzt. They have some good conceptual problems in there about relations and functions.
+
+%%%%%%% 2 INVERSE OF A FUNCTION (INTRO) %%%%%%%
+\subsection{Intro to inverse of a functions}
+
+We are now going to say something that may seem strange: every function as an inverse! The reason why this statement is true is that every function has an {\it inverse relation}. This is because functions are relations, and all relations have inverses. (What about concepts like ``inverse function'' and ``invertibiliity''? Stay tuned for the next time.)
+
+To finish this class, let's do an exploration: \todo{need to reword exploration task for inverses of functions, this is copying p.~203 of Mason, Burton, and Stacey's (2010) book verbatim}
+\begin{task}
+Under what conditions can you rotate the graph of a function about theorigin, and still have the resulting graph being the graph of a function? Ifthe graph of a function cannot be rotated about the origin without ceasingto be the graph of a function, might there be other points which could actas centre of rotation and preserve the property of being the graph of afunction?
+\end{task}
+
+Next time: Define invertibility. Put intro to this in homework.  
+
+\begin{bignote}
+In the next section, the definitions we will use are:
+
+\begin{definition}[Inverse function: Middle school version]{d: inverse function middle school}
+A function is \emph{invertible} if its inverse relation is a function. 
+
+If a function is invertible, then its \emph{inverse function} is its inverse relation.
+\end{definition}
+
+\begin{definition}[Inverse function: High school version]{d: inverse function high school}
+A function $f:D\to R$ is \emph{invertible} if there exists a function $g:R\to D$ such that for all elements $x$ in the domain of $f$, we have $g\circ f(x)=x$; and for all elements $y$ in the image of $f$, we have $f\circ g(y)=y$. In this case, we say that $g$ is the \emph{inverse function} of $f$.
+\end{definition}
+
+\begin{definition}[Inverse function: University version]{d: inverse function university}
+A function $f:D\to R$ is invertible if there exists a function $g:R\to D$ such that for all elements $x$ in the domain of $f$, the composition $g\circ f$ is the identity function on $D$, and for all elements $y$ in the image of $f$, the composition $f\circ g$ is the identity function on $R$. 
+
+A function is \emph{left invertible} if there exists a function $g:R\to D$ such that for all elements $x$ in the domain of $f$, the composition $g\circ f$ is the identity function on $D$.
+
+A function is \emph{right invertible} if there exists a function $g:R\to D$ such that for all elements $y$ in the image of $f$, the composition $f\circ g$ is the identity function on $R$. 
+\end{definition}
+
+In this next section, we will introduce partial inverses as well.
+\end{bignote}
+
+%%%%%%%%%%%%%%
+% \header{Preparation for next lesson}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% 1 IN-CLASS RESOURCES %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage \subsection{In-Class Resources}  
+
+% \handout{Handout Title}
+
+%%%%%%%%% 1 HOMEWORK %%%%%%%%%%%%
+\newpage \subsection{Homework}
+Define invertibility of function somewhere in homework.
+
+
+%%%%%%%%% PART 1 WRITTEN SIMULATION OF PRACTICE  %%%%%%%%%%%%
+\newpage \subsection{Simulation of Practice: Title of Simulation 1}
+%%%%%%%%% PART 1 VIDEO SIMULATION OF PRACTICE  %%%%%%%%%%%%
+\newpage \subsection{Simulation of Practice: Title of Simulation 2}
+
+
+
+
+
+\end{document} 
+
+Cut and paste the below for a new part and/or lesson:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 	
+%%%%%% PART # %%%%%%%%%%%%%%%%%%%%%	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 	
+\part{Part Title} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 	
+%%%%%% LESSON # %%%%%%%%%%%%%%%%%%%%	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\newpage \section{Lesson Title (Length: \about ## minutes)}  % Use Title Case for Title
+%%%%%%%%% # OVERVIEW  %%%%%%%%%%%%%%%%%%%%
+\subsection{Overview}
+%%%%%%%%%%%%%%
+\header{Summary}
+% {\it Acknowledgements.}   <-- fill this in as appropriate.
+%%%%%%%%%%%%%%
+\begin{bignote}[Materials]
+\begin{itemize*}
+\item Handouts from In-Class Resources (can be printed double-sided)
+         % \item other things as necessary, such as colored chalk or markers; other handouts; other props
+\end{itemize*}
+\end{bignote}
+%%%%%%%% # CONTENT %%%%%%
+\subsection{Content}
+%%%%%%%%%%%%%%
+\header{Preparation for next lesson}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% # IN-CLASS RESOURCES %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage \subsection{In-Class Resources}  
+\handout{Handout Title}
+%%%%%%%%% # HOMEWORK %%%%%%%%%%%%
+\newpage \subsection{Homework}
+%%%%%%%%% # WRITTEN SIMULATION OF PRACTICE  %%%%%%%%%%%%
+\newpage \subsection{Simulation of Practice: Title of Simulation 1}
+%%%%%%%%% # VIDEO SIMULATION OF PRACTICE  %%%%%%%%%%%%
+\newpage \subsection{Simulation of Practice: Title of Simulation 2}
+%%%%%%%%% # ADDITIONAL NOTES %%%%%%%%%%%%%%%%%%%%
+\newpage \subsection{Title of an Additional Note} 
+
