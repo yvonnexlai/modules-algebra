@@ -583,7 +583,6 @@ We also gave a name to the process of finding and improving answers to mathemati
 
 \subsubsection{Set notation}\label{s: set notation}
 
-\smallnote{In Section \ref{s: relations}, we coin the term ``superdomain'', thus  we introduce superset here.}
 
 \vspace*{8pt}
 
@@ -719,6 +718,34 @@ Is $A$ a subset of $B$ or vice versa? Complete this table with ``yes'' or ``no''
 		\end{tabular}
 \end{task}
 
+
+\begin{bignote}[Teaching the subset exploration task]
+Take this task one row at a time, emphasizing the mathematical practices of {\it clarifying the question} and then {\it finding and improving possible answers (aka conjecturing)}.  The goal is first to generate conjectures; then, after generating satisfying conjectures, to {\it prove (or disprove) the conjectures}.
+
+Rows 1, 2, and 4 can be interpreted in different ways with different mathematical consequences. You may decide with your class to interpret:
+	\begin{itemize*}
+	\item Row 1, 2: Multiples should mean ``integer multiples''
+	\item Row 4: $a$ should be considered in two cases, $a\in \Z$ and $a\in \Q$.
+	\end{itemize*}
+
+This means revising Row 4 and adding a Row 5 to the table:
+		\begin{tabular}{C{2in}||C{0.5in}|C{0.5in}|C{0.5in}|C{0.5in}|C{1.2in}}
+		$A=\tn{functions of the form $x\mapsto 16^{ax}$}$, 
+		$B=\tn{functions of the form $x\mapsto 2^{ax}$}$, where $a\in \Z$
+				& & & & & \\  \hline
+		$A=\tn{functions of the form $x\mapsto 16^{ax}$}$, 
+		$B=\tn{functions of the form $x\mapsto 2^{ax}$}$, where $a\in \Q$
+				& & & & & \\  \hline				
+		\end{tabular}
+
+Row 3 may need clarification as far as set notation and what the ``\dots'' mean, but is otherwise precisely phrased.
+
+Row 3 may be assigned as homework after discussing what there is to prove. 
+
+This task is designed to show why equality of sets requires showing both that $A\subset B$ and $B\subset A$. Often we have found that students think of showing one direction as sufficient, and that this is reinforced by tasks where containment follows practically tautologically by definition. The examples in rows 3 and 4 do require inference from the definitions, not just the definitions themselves. 
+\end{bignote}
+
+
 {\it Clarifying the question.} We found that there were several ways that these questions needed to be clarified: In Row 1 and 2, we asked: what kind of multiples? We decided to consider only integer multiples. In Row 4, we asked: What is $a$? If $a\in \Z$, there are different consequences than when $a\in \Q$. We added this interpretation as a different row.
 
 {\it Making conjectures/observations and improving them.}  Possible conjectures about this table include:
@@ -803,34 +830,10 @@ Why the above means that $A=B$:
 \end{proof}
 
 \begin{bignote}[Modeling proof communication]
+
+\vspace*{2in}
 \end{bignote} \todo{write instructor note modeling proof communication, use the proof of strict subset, point out relevant handout from Section 0}
 
-
-\begin{bignote}[Teaching the table task and definition of equality of sets]
-Take the table task one row at a time, emphasizing the mathematical practices of clarifying the question and then finding and improving possible answers.  The goal is to generate conjectures rather than proving them, although proofs could occur for subset conclusions. Proofs about set equality occur after introducing the definition of set equality.
-
-Rows 1, 2, and 4 can be interpreted in different ways with different mathematical consequences. You may decide with your class to interpret:
-	\begin{itemize*}
-	\item Row 1, 2: Multiples should mean ``integer multiples''
-	\item Row 4: $a$ should be considered in two cases, $a\in \Z$ and $a\in \Q$.
-	\end{itemize*}
-
-This means revising Row 4 and adding a Row 5 to the table:
-		\begin{tabular}{C{2in}||C{0.5in}|C{0.5in}|C{0.5in}|C{0.5in}|C{1.2in}}
-		$A=\tn{functions of the form $x\mapsto 16^{ax}$}$, 
-		$B=\tn{functions of the form $x\mapsto 2^{ax}$}$, where $a\in \Z$
-				& & & & & \\  \hline
-		$A=\tn{functions of the form $x\mapsto 16^{ax}$}$, 
-		$B=\tn{functions of the form $x\mapsto 2^{ax}$}$, where $a\in \Q$
-				& & & & & \\  \hline				
-		\end{tabular}
-
-Row 3 may need clarification as far as set notation and what the ``\dots'' mean, but is otherwise precisely phrased.
-
-Row 3 may be assigned as homework after discussing what there is to prove. 
-
-This task is designed to show why equality of sets requires showing both that $A\subset B$ and $B\subset A$. Often we have found that students think of showing one direction as sufficient, and that this is reinforced by tasks where containment follows practically tautologically by definition. The examples in rows 3 and 4 do require inference from the definitions, not just the definitions themselves. 
-\end{bignote}
 
 
 
@@ -984,8 +987,9 @@ For all $n\in \N$, $n$ has more than one pair of parents if and only if $n$ has 
 \begin{proof}
 Given $S=\{ n\in \N\st n\tn{ \it has at least three different non-trivial factors}\}$ and $T=\{ n\in \N \st n \tn{ \it has more than one pair of parents}\}$.
 \begin{enumerate}
-\item {\it Why $S\subset T$:}
+\item {\it Why $S\subset T$:}\todo{This part of the proof needs to be cleaned up. It is correct but really confusing.} 
 Let $n\in S$. Then there exist distinct $a, b, c \in \N$ such that $a\divides n$, $b\divides n$, and $c\divides n$. Either each of these are paired with another one of $a,b,c$ to be a pair of parents of $n$ or they are not. If they are not paired with any of each other, then $n$ has at least three pairs of parents, which is more than one. If one of them is paired with another, there is still a third factor that cannot be paired with the other two (because they are already paired). So it is part of a second pair of parents. Thus $n\in T$.
+
 
 We have shown that if $n\in S$, then $n\in T$. By definition of subset, this shows $S\subset T$. \qedpart{1}
 
@@ -1456,22 +1460,35 @@ A relation $P:D\to R$ may map an element of $D$ to no elements of $R$, exactly o
 An element of $R$ may have no elements of $D$ mapping to it, exactly one element of $D$ mapping to it, or multiple elements of $D$ mapping to it.
 \end{note}
 
-\begin{definition}\label{d: superdomain etc}
+\begin{definition}\label{d: candidate domain etc}
 For a relation $P:D \to R$, we say that 
 	\begin{itemize}
-	\item $D$ is the \emph{superdomain};
-	\item $R$ is the \emph{superrange};
-	\item the \emph{image} of an element $x\in  P$ is the set of elements of $R$ that $x$ is mapped to.
-	\item the \emph{domain} of $P$ is the subset $D'\subset D$ of elements that are mapped to an element of the superrange, in other words, the subset of the superdomain with nonempty assignments; 
-	\item the \emph{preimage} of an element of $R$ is the set of elements of $D$ that map to $R$; and 
-	\item the \emph{range} (or \emph{image}) of the relation $P$ is the subset $R\subset D$ of elements that have elements of the domain mapped to it, in other words, the subset of the superrange with nonempty preimage.
+	\item $D$ is the \emph{candidate domain};
+	\item $R$ is the \emph{candidate range} (or \emph{codomain});
+	\item the \emph{image} of an element $x\in  D$ is the set of elements of $R$ that $x$ is mapped to. Similarly, the \emph{image} of a subset of $S\subset D$ is the subset of $R$ that $x\in S$ are mapped to. It is the union of the image of all elements $x\in S$;
+	\item the \emph{domain} of $P$ is the subset $D'\subset D$ of elements that are mapped to an element of the candidate range, in other words, the subset of the candidate domain with nonempty assignments; 
+	\item the \emph{preimage} of an element of $R$ is the set of elements of $D$ that map to $R$. Simlarly, the \emph{preimage} of a subset $T\subset R$ is the subset of $D$ whose elements map to $R$; and
+	\item the \emph{range} (or \emph{image}) of the relation $P$ is the subset $R\subset D$ of elements that have elements of the domain mapped to it, in other words, the subset of the candidate range with nonempty preimage.
 	\end{itemize}
 \end{definition}
 
-We have seen examples of most of these in the parent relation. Other examples of relations might be:
+\begin{note}
+In these materials, we will use the terms ``codomain'' and ``candidate range'' interchangeably. We will also use the terms ``range'' and ``image'' interchangeably. The terms ``codomain'' and ``image'' typically do not show up in K-12 materials; they are typically introduced in university or graduate mathematics. The term ``range'' is standard to middle school and high school materials, though sometimes ``range'' is used to mean ``candidate range'' and other times it is used to mean ``the set of elements with nonempty preimage''. In these materials, ``range'' only refers to the latter.
+\end{note}
+
+\begin{bignote}
+In writing these materials, we sought to find a standard term for what we call the ``candidate domain.'' To our knowledge, there is no well-known standard term for this concept. This is perhaps in part because the distinction matters primarily in undergraduate level mathematics and beyond, for instance in defining function composition; and perhaps also because at times at this level, a certain amount of notational interpretation is assumed and we loosen the restriction. For instance, meromorphic functions on C are really holomorphic functions on the complement of a discrete set in $\mathbb{C}$. Functions in
+$L^2(\mathbb{R})$ are technically only well defined up to equality of all integrals, so
+they don't have a strict notion of  ``domain''; however, mathematicians still talk about the ``domain'' of an  $L^2$ function.
+
+In this context, we want to be careful about differentiating between the ``candidate domain'' and the ``domain'', so that we have language for talking about real functions and their domain. The term ``candidate domain'' was suggested to us by a high school mathematics teacher as a term that would have meaning to high school teachers that could potentially be explained to high school students. Another term we considered was ``corange'' as a parallel to ``codomain'', as suggested by some mathematicians. However, we decided to use ``candidate domain'' instead because the term seemed more down-to-earth, and moreover problematizes the issue of finding the domain. The term suggests the question, ``Is this really the domain? If not, how can we fix it to be the domain?''
+
+The term ``candidate range'' was chosen to mirror ``candidate domain'', as the phrase ``a relation (or function) from a candidate domain to a candidate range'' is more straightforward to high school teachers than ``a relation (or function) from a candidate domain to a codomain''.  \end{bignote}
+
+We have seen examples of most of these concepts in the parent relation. Other examples of relations might be:
 	\begin{itemize}
-	\item The relation from the superdomain of all cars in the world to superrange of all people in the world, mapping a car to its owner(s).
-	\item The relation from the superdomain of rooms in the mathematics building to superrange of courses taking place at 1pm, mapping a room to the course being taught in it at 1pm.
+	\item The relation from the candidate domain of all cars in the world to candidate range of all people in the world, mapping a car to its owner(s).
+	\item The relation from the candidate domain of rooms in the mathematics building to candidate range of courses taking place at 1pm, mapping a room to the course being taught in it at 1pm.
 	\end{itemize}
 In these examples, we can see how each condition of the note about relations may apply.
 
@@ -1492,7 +1509,7 @@ not being offered this term & Math 221 \\ \hline
 \end{tabular}
 \end{center}
 
-Let $T$ be the relation that maps each day of the year 2030 to the its average temperature in $\degrees F$ that day. Describe a possible superdomain, domain, superrange, and range of this relation.
+Let $T$ be the relation that maps each day of the year 2030 to the its average temperature in $\degrees F$ that day. Describe a possible candidate domain, domain, candidate range, and range of this relation.
 
 % connection to trig
 Let $A$ be the relation that maps each degree in the interval $[0\degrees, 360\degrees)$ to all degrees in the interval $(-\infty,\infty)$ that give an equivalent angle measure. What is the preimage of $361\degrees$? What is the image of $0\degrees$? 
@@ -1506,7 +1523,7 @@ Let $G$ be the relation that maps $x$ to every $y$ such that $x=y^2$. What is th
 \end{task}
 
 \begin{task}
-Interpret the definitions of superdomain, domain, image, preimage, superrange, and range in terms of arrows and their start and end points.
+Interpret the definitions of candidate domain, domain, image, preimage, candidate range, and range in terms of arrows and their start and end points.
 \end{task}
 
 At the high school level, textbooks generally do not use cloud diagrams any more, nor do they talk about arrows. Instead, discussion of relations (and functions) are in terms of assignments. The definition in high school is mathematically equivalent to the middle school version, but stated in a way that more directly allows for defining concepts like the graph of a relation or later, the behavior of a function.  (We note that as we will discuss later, a function is a kind of relation.)
@@ -1542,11 +1559,13 @@ Suppose we were to graph the parent relation. What might this graph look like? W
 In undergraduate courses such as real analysis as well as in graduate courses in analysis, we go one step farther. Rather than defining relations in terms of assignments, we define relations in terms of ordered pairs. The ordered pairs represent the assignments. 
 
 \begin{definition}[Relation: University version]\label{d: relation university}
-A relation $P:D\to R$ is a subset of the ordered pairs of $D\times R$, i.e., $P\subset D\times R$.
+A relation $P:D\to R$ is a subset of $D\times R$, i.e., $P\subset D\times R$.
 \end{definition}
 
 One way to think about this definition is that we are defining the relation as its graph in the space $D\times R$. 
 
+\begin{note}
+One question that might come up is: if the candidate domain could be anything, then why bother finding good candidate domains? Why not instead let the candidate domain be the largest set that we could think of? For instance, $\mathbb{R}\cup (\textnormal{all cars in the world}) \cup(\textnormal{all rooms in all buildings in the world})\dots $. One reason is that eventually, we want to construct and compare graphs of relations and functions. The candidate domain and candidate range of comparable relations and functions are likely to be similar to each other, and the graphs live in the space $D\times R$ where $D$ is the candidate domain and $R$ is the candidate range for these relations or functions. \end{note}
 %%%%%%% 2 INVERSE OF A RELATIONS %%%%%%%
 \subsection{Inverse relation}
 
@@ -1608,35 +1627,40 @@ We are now going to say something that may seem strange: every function as an in
 
 To finish this class, let's do an exploration: \todo{need to reword exploration task for inverses of functions, this is copying p.~203 of Mason, Burton, and Stacey's (2010) book verbatim}
 \begin{task}
-Under what conditions can you rotate the graph of a function about theorigin, and still have the resulting graph being the graph of a function? Ifthe graph of a function cannot be rotated about the origin without ceasingto be the graph of a function, might there be other points which could actas centre of rotation and preserve the property of being the graph of afunction?
+Under what conditions can you rotate the graph of a function about the
+origin, and still have the resulting graph being the graph of a function? If
+the graph of a function cannot be rotated about the origin without ceasing
+to be the graph of a function, might there be other points which could act
+as centre of rotation and preserve the property of being the graph of a
+function?
 \end{task}
 
 Next time: Define invertibility. Put intro to this in homework.  
-
-\begin{bignote}
-In the next section, the definitions we will use are:
-
-\begin{definition}[Inverse function: Middle school version]{d: inverse function middle school}
-A function is \emph{invertible} if its inverse relation is a function. 
-
-If a function is invertible, then its \emph{inverse function} is its inverse relation.
-\end{definition}
-
-\begin{definition}[Inverse function: High school version]{d: inverse function high school}
-A function $f:D\to R$ is \emph{invertible} if there exists a function $g:R\to D$ such that for all elements $x$ in the domain of $f$, we have $g\circ f(x)=x$; and for all elements $y$ in the image of $f$, we have $f\circ g(y)=y$. In this case, we say that $g$ is the \emph{inverse function} of $f$.
-\end{definition}
-
-\begin{definition}[Inverse function: University version]{d: inverse function university}
-A function $f:D\to R$ is invertible if there exists a function $g:R\to D$ such that for all elements $x$ in the domain of $f$, the composition $g\circ f$ is the identity function on $D$, and for all elements $y$ in the image of $f$, the composition $f\circ g$ is the identity function on $R$. 
-
-A function is \emph{left invertible} if there exists a function $g:R\to D$ such that for all elements $x$ in the domain of $f$, the composition $g\circ f$ is the identity function on $D$.
-
-A function is \emph{right invertible} if there exists a function $g:R\to D$ such that for all elements $y$ in the image of $f$, the composition $f\circ g$ is the identity function on $R$. 
-\end{definition}
-
-In this next section, we will introduce partial inverses as well.
-\end{bignote}
-
+%
+%\begin{bignote}
+%In the next section, the definitions we will use are:
+%
+%\begin{definition}[Inverse function: Middle school version]\label{d: inverse function middle school}
+%A function is \emph{invertible} if its inverse relation is a function. 
+%
+%If a function is invertible, then its \emph{inverse function} is its inverse relation.
+%\end{definition}
+%
+%\begin{definition}[Inverse function: High school version]\label{d: inverse function high school}
+%A function $f:D\to R$ is \emph{invertible} if there exists a function $g:R\to D$ such that for all elements $x$ in the domain of $f$, we have $g\circ f(x)=x$; and for all elements $y$ in the image of $f$, we have $f\circ g(y)=y$. In this case, we say that $g$ is the \emph{inverse function} of $f$.
+%\end{definition}
+%
+%\begin{definition}[Inverse function: University version]\label{d: inverse function university}
+%A function $f:D\to R$ is invertible if there exists a function $g:R\to D$ such that for all elements $x$ in the domain of $f$, the composition $g\circ f$ is the identity function on $D$, and for all elements $y$ in the image of $f$, the composition $f\circ g$ is the identity function on $R$. 
+%
+%A function is \emph{left invertible} if there exists a function $g:R\to D$ such that for all elements $x$ in the domain of $f$, the composition $g\circ f$ is the identity function on $D$.
+%
+%A function is \emph{right invertible} if there exists a function $g:R\to D$ such that for all elements $y$ in the image of $f$, the composition $f\circ g$ is the identity function on $R$. 
+%\end{definition}
+%
+%In this next section, we will introduce partial inverses as well.
+%\end{bignote}
+%
 %%%%%%%%%%%%%%
 % \header{Preparation for next lesson}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1650,11 +1674,157 @@ In this next section, we will introduce partial inverses as well.
 \newpage \subsection{Homework}
 Define invertibility of function somewhere in homework.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 	
+%%%%%% LESSON 3 %%%%%%%%%%%%%%%%%%%%	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\newpage 
+\section{Function Composition and Inverse Functions (Week 3) (Length: \about 2.5 hours)}  
+% Use Title Case for Title
+%%%%%%%%% # OVERVIEW  %%%%%%%%%%%%%%%%%%%%
+\subsection{Overview}
+
+Teaching practice: ``What do you notice? What do you wonder?''
+
+%%%%%%%%%%%%%%
+\header{Summary}
+% {\it Acknowledgements.}   <-- fill this in as appropriate.
+%%%%%%%%%%%%%%
+\newpage
+\begin{bignote}[Materials]
+\begin{itemize*}
+\item Handouts from In-Class Resources (can be printed double-sided)
+         % \item other things as necessary, such as colored chalk or markers; other handouts; other props
+\end{itemize*}
+\end{bignote}
+%%%%%%%% 3 CONTENT %%%%%%
+\subsection{Function composition}
+
+In this section we will work with relations whose superdomain and superrange are the same space. We will use $D$ to denote both. In some cases, we will state results only for the cases $D=\R$ and $D=\R^2$. We make this choice for two main reasons:
+	\begin{itemize*}
+	\item Most examples of composition in high school mathematics are those where the superdomain and superrange can be the same space, and this space is either $\R$ (in algebra) or $\R^2$ (in geometry).
+	\item The details of some results require more technical bookkeeping when the superdomain and superrange differ. The idea behind these results is more important for high school teaching than learning the technical bookkeeping.
+	\end{itemize*}
+
+\begin{definition}[Composition]\label{d: composition}
+Given two relations $f:D\to D $ and $g:D\to D$, the composition $g\circ f$ is defined as the set of assignments $x\to y$ where $x\in D$ and $y$ is any element of $D$ that $g$ assigns to any element that $f$ assigned to $x$. \todo{definition is sloppy, needs rewording.}
+
+\end{definition}
+
+\begin{task}
+Recall the middle school definition of relation and the parent relation $P$. Let $t:\N\to \N, x\mapsto 2x$. Using the middle school definition, how would you represent the $P\circ t$? How would you represent $t\circ P$? What are the domain and range of each composition?
+
+Let $f:\R\to\R, x \mapsto x^2$ and $g$ be defined as the relation which maps $x$ to all $y$ such that $x=y^2$.  Using the middle school definition, how would you represent $f\circ g$? How would you represent $g\circ f$? What do you notice? What do you wonder?
+\end{task}
+
+
+\todo{make tikz or pencil sketches of three cloud diagrams to represent function composition}
+\begin{solution}({\it Sketch})
+For each of the above, we can represent the compositions with concatenated cloud diagrams, such as:
+
+[insert graphic here of three clouds] 
+
+Although only the domain and range of the $P$ and $t$ compositions are asked for, we provide the domain and range for all compositions considered: 
+\begin{center}
+\begin{tabular}{lll}
+	composition & domain & range \\ 
+	\hline
+$P \circ t$ & $\{n\in \N: n \geq 2\}$ & $\{n\in \N: n\geq 2\}$\\ 
+$t\circ P$ & $\{n\in \N: n\neq 0, 1 \tn{ and $n$ is not prime}\}$ & All even natural numbers $\geq 4$ \\ 
+$g\circ f$ & $\R$ & $\R$ \\ 
+$f\circ g$ &$\R$ & $\R_{\geq 0}$ 
+\end{tabular}
+\end{center}
+
+Why is $1$ {\it not} in the domain of $P\circ t$? The relation $P$ does not assign $t(1)$ to any element. So $P(t(1))$ is undefined. 
+\end{solution}
+
+
+\smallnote{One way to discuss the domain of $t\circ P$ is to ask, ``Raise your hand if 5 was in your domain \dots 4? \dots 3? \dots 2? \dots 1? \dots 0?'' Make a note of any disagreements or wide agreements to the class orally. Then ask for students' reasoning about $5$, $1$, and $0$.}
+
+\begin{task}
+Which of the above is a function? 
+\end{task}
+\todo{use tikz or pencil to show composition via two cloud diagrams}
+\begin{solution}
+Only $g\circ f$ is a function. The other compositions are not relations because there exist elements that are assigned to multiple elements by the composition. 
+
+One way to see this is to represent the result of the compositions using two cloud diagrams, such as below.
+
+[insert graphic]
+\end{solution}
+
+\subsection{Compositions that result in functions}
+
+As we have seen, relation composition can get pretty messy! Yet occasionally they compose nicely to functions. 
+
+We can think of elements in the superdomain of a relation as being one of three types:
+	\begin{description}
+	\item [Type $0$:] Elements in the superdomain that are not mapped to any element in the superrange.
+	\item [Type $1$:] Elements in the superdomain that are mapped to exactly one element in the superrange.
+	\item [Type $2^+$:] Elements in the superdomain that are mapped to multiple elements in the superrange.
+	\end{description}
+
+We've seen examples of each of these in the parent relation; there are other examples as well.
+
+\smallnote{You might ask the class quickly, ``What are some examples in the parent relation of type 0? of type 1? of type 2+?}
+
+\begin{task}
+Here is a question that we will explore in the future but not at this moment. 
+
+\begin{task} Let $P$ and $Q$ be two relations. 
+	\begin{enumerate}[label=(\alph*)]
+	\item Suppose that we know that $P$ is a function. What would have to be true about the assignments associated to $Q$ for $Q\circ P$ to be a function?
+	\item What if $P$ were not a function? What would have to be true about the assignments associated to $Q$ for $Q\circ P$ to be a function?
+	\end{enumerate}
+\end{task}
+
+Before we dive into this task, discuss: 
+	\begin{itemize}
+	\item What are these questions asking?
+	\item What are some examples of $P$ that you would use to try to explore the question?
+	\item What are some representations of relations that we have been using? Which do you think would be helpful to consider and why?
+	\end{itemize}
+
+\end{task}
+
+\subsection{Functions whose inverse relations are functions}
+
+[Introduce definitions] 
+
+\subsection{Constructing partial inverses}
+
+[activities: construct candidate partial inverses for $f:\R\to\R, x\mapsto x^2$,  $f:\R\to\R, x\mapsto |x|$,  $f:\R\to\R, x\mapsto \sin(x)$,  $f:\R\to\R, x\mapsto \cos(x)$.]
+
+[above activity is to construct as many candidates as possible.bring up idea of having non-continuous partial inverses.  choose favorites.  talk about desirable features and conventions about canonical partial inverses. should lead to discovery of standard definition for arcsin and arccos.]
+
+ [activity: talk about candidate partial inverses and what they are in terms of different representations]
+ 
+ ``rule of 6'' using
+symbolic, cloud, tables, graphs
+
+%%%%%%%%%%%%%%
+% \header{Preparation for next lesson}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% 3 IN-CLASS RESOURCES %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage \subsection{In-Class Resources}  
+\handout{Opener}
+
+Which of the following is the graph of $y=\sin(x)$? 
+
+%%%%%%%%% 3 HOMEWORK %%%%%%%%%%%%
+\newpage \subsection{Homework}
 
 %%%%%%%%% PART 1 WRITTEN SIMULATION OF PRACTICE  %%%%%%%%%%%%
 \newpage \subsection{Simulation of Practice: Title of Simulation 1}
+
+something with vertical line test
+
 %%%%%%%%% PART 1 VIDEO SIMULATION OF PRACTICE  %%%%%%%%%%%%
 \newpage \subsection{Simulation of Practice: Title of Simulation 2}
+
+function/relation transformation maybe 
+
 
 
 
