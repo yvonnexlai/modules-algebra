@@ -1275,34 +1275,59 @@ How does this way of phrasing the conjecture match up with the original way?
 %%%%%%%%% 2 OVERVIEW  %%%%%%%%%%%%%%%%%%%%
 \subsection{Overview}
 
+\vspace*{-12pt}
 \begin{tabular}{L{6.5in}} 
 {\bf Content} \\ \hline \parskip4pt
-\emph{Cartesian product} of two sets $A$ and $C$, denoted $A\times C$, defined as the set of ordered pairs $\{ (a,c) \st a\in A, c\in C \}$.
+\emph{Cartesian product} of two sets $A$ and $B$, denoted $A\times B$, defined as the set of ordered pairs $\{ (a,b) \st a\in A, b\in B \}$.
 
-\emph{Relation} from a set $S$ to a codomain $C$, defined from three different perspectives: the ``middle school'', ``high school'', and ``university''; and their mathematically equivalence.
+\emph{Relation} from a set $D$ to set $C$, defined from three different perspectives: the ``middle school'', ``high school'', and ``university''; and their mathematically equivalence. 
+\begin{itemize*}
+\item The ``middle school'' version is described in terms of a set of arrows between an input and output space.
+\item The ``high school'' version formalizes arrows to assignments. 
+\item The ``university'' version defines a relation as a subset of the Cartesian product $D\times R$. 
+\end{itemize*}
+We call these definitions the middle school, high school, and university versions to refer to when they most likely arise. 
 
 \emph{Inverse of a relation}, defined from these three perspectives; their mathematically equivalence.
 
-\emph{Function} from a set $S$ to a codomain $C$, defined as a relation from $S$ to $C$ such that each input in $S$ is assigned to no more than one output in $C$. How this definition can be interpreted from each of the three perspectives.
-\end{tabular}
+\emph{Composition of relations} $P:D\to R$ then $Q:R\to S$, defined as the relation $Q\circ P:D\to S$ that assigns $x\in D$ to $z\in S$ whenever there is a $y \in R$ such that $P$ assigns $x\mapsto y$ and $Q$ assigns $y\mapsto z$.
+
+\emph{Function} from a set $D$ to a set $R$, defined as a relation from $D$ to $R$ such that each input in $D$ is assigned to no more than one output in $R$; how this definition can be interpreted from the three perspectives for relation.
+
+\emph{Graph of a (real) relation}, defined as the set of points $(x,y)\in \R^2$ such that the relation assigns $x$ to $y$.
+
+\emph{Graph of an (real) equation} in variables $x$ and $y$, defined as the set of points $(x,y)\in \R^2$ such that evaluating the equation at $x$ and $y$ results in a true statement.
+\end{tabular} 
 
 \begin{tabular}{L{3.2in}|L{3.2in}}
 {\bf Proof Structures} & {\bf Mathematical/Teaching Practices} \\ 
 \hline \parskip4pt
 % Proof structures
-\emph{To show that \dots } means showing that  \dots
+\emph{To show that a point $(x,y)$ is on a graph of a relation} means showing that the relation assigns $x$ to $y$.
 
-\emph{To show that \dots } means showing that  \dots
+\emph{To show that a point $(x,y)$ is on the graph of an equation} means showing that evaluating the equation at $x$ and $y$ results in a true statement.
 &
 % Mathematical/Teaching Practices
 \parskip6pt
-\emph{Fill this in \dots }, 
+\emph{Connecting mathematically equivalent definitions}, meaning to understand how different but equivalent definitions can serve different pedagogical and mathematical purposes. 
 
+\emph{Connecting different mathematical representations} of the same concept, meaning to think about different ways of drawing and describing the same mathematical idea. 
 \end{tabular}
-\todo{fill in overview proof structures and math/teaching practices}
 
 %%%%%%%%%%%%%%
 \header{Summary}
+
+One goal of this lesson is to introduce relations and functions from an advanced perspective. However, more importantly, the goal is to connect the advanced perspective to high school and middle school perspectives, so that teachers have a sense of where the math can go.
+
+Using the parent relation as an opening example, we define {\it relation} in the three (mathematically equivalent) described above. We then define {\it domain}, {\it range}, {\it image} of a point and set, and {\it preimage} of a point and set. 
+
+To highlight the universality of these concepts throughout high school and middle school mathematics, we use examples from algebra (from story problems and also graphs of relations such as $x=y^2$), trigonometry (the relation from $[0,360)$ to $\R$ defined by equivalence of angle measure in degrees), and geometry (rigid motions).
+
+We then introduce {\it inverse relations}, {\it functions}, {\it graphs of functions}, and {\it compositions of functions}.  For each concept in this lesson, we ask teachers to consider how they might explain the connection between the concept and the middle school, high school, and university conceptions of relation, as well as how they might explain how different representations denote mathematically equivalent ideas.
+
+
+
+
 % {\it Acknowledgements.}   <-- fill this in as appropriate.
 %%%%%%%%%%%%%%
 \newpage
@@ -1414,29 +1439,36 @@ $\R\times (\R\times \R)$ can be thought of as all the coordinates of 3-space.
 %%%%%%% 2 RELATIONS %%%%%%%
 \subsection{Relations}
 
-In middle school, if relations are introduced, they are often done so in the form of a cloud diagram, such as drawn in the opening task. 
+In middle school, if relations are introduced, they are often done so in the form of a cloud diagram, such as drawn in the opening task. ({\it Question:} What do the ``$\dots$'' mean in the below diagram?) 
 
 \begin{center}
 \begin{tikzpicture}[scale=0.5]
 \def\pt{circle (0.05)}
-\foreach \x in {0, 1, 2, 3, 4, 5, 6, 7}
-	{\filldraw(0,-\x) node[left]{$\x$} \pt;
-	\filldraw(5,-\x) node[right]{$\x$} \pt;
+\foreach \x in {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
+	{\filldraw[yscale=0.5](0,-\x) node[left]{\tiny{ $\x$}} \pt;
+	\filldraw[yscale=0.5](5,-\x) node[right]{\tiny{$\x$}} \pt;
 	}
 	\draw 
 		(2.5, 1) node[]{$P$}
 		(0,0.7) node[] {$\N$}
 		(5,0.7) node[] {$\N$}
-		(0, -8) node[]{$\vdots$}
-		(5, -8) node[]{$\vdots$};
-	\draw[->=stealth, yscale=-0.5] (0,6) -- (4.94, 1.9);
+		(0, -6.5) node[]{$\vdots$}
+		(5, -6.5) node[]{$\vdots$}
+		(4.5, -3.75) node[]{$\vdots$};
+	\draw[->=stealth, yscale=-0.5] (0,4) -- (4.94, 2.1);
 	\draw[->, yscale=-0.5] (0,6) -- (4.94, 2.9);
+	\draw[->, yscale=-0.5] (0,6) -- (4.94, 1.9);
+	\draw[->, yscale=-0.5] (0,8) -- (4.94, 1.85);
+	\draw[->, yscale=-0.5] (0,8) -- (4.94, 3.9);
+	\draw[->, yscale=-0.5] (0,9) -- (4.94, 2.85);
+	\draw[->, yscale=-0.5] (0,10) -- (4.94, 1.8);
+	\draw[->, yscale=-0.5] (0,10) -- (4.94, 4.9);
 	\draw[->, yscale=-0.5] (0, 12)-- (4.94, 2.1);
 	\draw[->, yscale=-0.5] (0, 12) -- (4.94, 3.1);
 	\draw[->, yscale=-0.5] (0, 12) -- (4.94, 4);
 	\draw[->, yscale=-0.5] (0, 12) -- (4.94, 6);
-\draw[xshift=-1cm] (0,0.5) arc (180:0:1) (0,-9) arc (180:360:1) (0,0.5)-- (0,-9) (2,0.5) -- (2,-9); 
-\draw[xshift=4cm] (0,0.5) arc (180:0:1) (0,-9) arc (180:360:1) (0,0.5)-- (0,-9) (2,0.5) -- (2,-9); 
+\draw[xshift=-1cm, yscale=0.75] (0,0.5) arc (180:0:1) (0,-9) arc (180:360:1) (0,0.5)-- (0,-9) (2,0.5) -- (2,-9); 
+\draw[xshift=4cm, yscale=0.75] (0,0.5) arc (180:0:1) (0,-9) arc (180:360:1) (0,0.5)-- (0,-9) (2,0.5) -- (2,-9); 
 \end{tikzpicture}
 \end{center}
 
@@ -1515,7 +1547,7 @@ Let $T$ be the relation that maps each day of the year 2030 to the its average t
 Let $A$ be the relation that maps each degree in the interval $[0\degrees, 360\degrees)$ to all degrees in the interval $(-\infty,\infty)$ that give an equivalent angle measure. What is the preimage of $361\degrees$? What is the image of $0\degrees$? 
 
 % connection to geometry
-Let $\rho$ be the relation that maps a point in the plane to its rotation about the origin by $90\degrees$. What is the image of the point $(1,0)$? What is the preimage of the point $(-2,0)$? 
+Let $\rho$ be the relation that maps a point in the plane to its rotation about the origin by $90\degrees$.  (This means $90\degrees$ {\it counter}clockwise.) What is the image of the point $(1,0)$? What is the preimage of the point $(-2,0)$? 
 
 % connection to graphing 
 Let $G$ be the relation that maps $x$ to every $y$ such that $x=y^2$. What is the image of $4$? What is the preimage of $-6$?
@@ -1567,9 +1599,7 @@ One way to think about this definition is that we are defining the relation as i
 \begin{note}
 One question that might come up is: if the candidate domain could be anything, then why bother finding good candidate domains? Why not instead let the candidate domain be the largest set that we could think of? For instance, $\mathbb{R}\cup (\textnormal{all cars in the world}) \cup(\textnormal{all rooms in all buildings in the world})\dots $. One reason is that eventually, we want to construct and compare graphs of relations and functions. The candidate domain and candidate range of comparable relations and functions are likely to be similar to each other, and the graphs live in the space $D\times R$ where $D$ is the candidate domain and $R$ is the candidate range for these relations or functions. \end{note}
 %%%%%%% 2 INVERSE OF A RELATIONS %%%%%%%
-\subsection{Inverse relation}
-
-\todo{Look at definitions of inverse relation and possibly revise them}
+\subsection{Inverse of a relation}
 
 \begin{definition}[Inverse relation: Middle school version]\label{d: inverse relation middle school}
 If $P$ is a relation from a set $D$ to $R$, then the \emph{inverse relation} of $P$ is the relation that swaps the direction of the arrows of $P$.  The arrows of the inverse relation go from elements of $R$ to elements of $D$.
@@ -1580,13 +1610,100 @@ Given a relation $P:D\to R$, the \emph{inverse relation} of $P$ is the set of as
 \end{definition}
 
 \begin{definition}[Inverse relation: University version]\label{d: inverse relation university}
-Given a relation $P:D\to R$, the \emph{inverse relation} of $P$ is defined as 
+Given a relation $P:D\to R$, the \emph{inverse relation} of $P$ is defined  
 	$$P^{-1} = \{(y, x) \st (x,y)\in P\}.$$
 \end{definition}
 
+\begin{minipage}{4in}
+As an example, let's look at the parent relation. The inverse of the parent relation could be represented like the following. ({\it Question:} What do the ``$\dots$'' mean in this representation?) 
+
 \begin{task}
-Discuss these definitions. What do they each say? How would you represent them? What makes them mathematically equivalent?
+What other arrows does the inverse of the parent relation contain? What might be a good name for this relation?
+
+What is the inverse of the car-owner relation? How about the relations $T$, $A$, $\rho$, and $G$?
 \end{task}
+\end{minipage}
+\begin{minipage}{2.4in}
+ \begin{center}
+\begin{tikzpicture}[xscale=-1, scale=0.4]
+\def\pt{circle (0.05)}
+\foreach \x in {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
+	{\filldraw[yscale=0.5](0,-\x) node[left]{\tiny{ $\x$}} \pt;
+	\filldraw[yscale=0.5](5,-\x) node[right]{\tiny{$\x$}} \pt;
+	}
+	\draw 
+		(2.5, 1) node[]{$P$}
+		(0,0.7) node[] {$\N$}
+		(5,0.7) node[] {$\N$}
+		(0, -6.5) node[]{$\vdots$}
+		(5, -6.5) node[]{$\vdots$}
+		(2.5, -5) node[]{$\vdots$};
+	\draw[<-=stealth, yscale=-0.5] (0,4) -- (4.94, 2);
+	\draw[<-, yscale=-0.5] (0,6) -- (4.94, 3);
+	\draw[<-, yscale=-0.5] (0,6) -- (4.94, 2);
+	\draw[<-, yscale=-0.5] (0,8) -- (4.94, 2);
+	\draw[<-, yscale=-0.5] (0,8) -- (4.94, 4);
+	\draw[<-, yscale=-0.5] (0,9) -- (4.94, 3);
+	\draw[<-, yscale=-0.5] (0,10) -- (4.94, 3);
+	\draw[<-, yscale=-0.5] (0,10) -- (4.94, 5);
+	\draw[<-, yscale=-0.5] (0, 12)-- (4.94, 2);
+	\draw[<-, yscale=-0.5] (0, 12) -- (4.94, 3);
+	\draw[<-, yscale=-0.5] (0, 12) -- (4.94, 4);
+	\draw[<-, yscale=-0.5] (0, 12) -- (4.94, 6);
+\draw[xshift=-1cm, yscale=0.75] (0,0.5) arc (180:0:1) (0,-9) arc (180:360:1) (0,0.5)-- (0,-9) (2,0.5) -- (2,-9); 
+\draw[xshift=4cm, yscale=0.75] (0,0.5) arc (180:0:1) (0,-9) arc (180:360:1) (0,0.5)-- (0,-9) (2,0.5) -- (2,-9); 
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+
+
+\smallnote{One reasonable name for the inverse of the parent relation might be the ``child relation'', as this relation maps natural numbers to their children. The inverse of the car-owner relation is the relation from all people in the world to all cars in the world that map a person to all the cars they own. The relation $T^{-1}$ maps possible temperatures to the days on which that temperature was the day's average temperature. The relation $A^{-1}$ maps an element of $\R$ to the element of $[0,360)$ which represents its angle measure. The relation $\rho^{-1}$ is rotation about the origin by $-90\degrees$, which is $90\degrees$ clockwise. The relation $G^{-1}$ is the relation that maps $y$ to every $x$ such that $x=y^2$.}
+
+\begin{task}
+Discuss the three versions of the definition of inverse of a relation. What do they each say? How would you represent them? What makes them mathematically equivalent?
+\end{task}
+
+%%%%%%% 2 COMPOSITION OF RELATIONS %%%%%%%%%
+\subsection{Composition of relations}
+
+\begin{definition}[composition]\label{d: relation composition}
+Given two relations $P:D\to R$ and $Q:R\to S$, we define the \emph{composition} of $P$ then $Q$ 
+as the relation that assigns $x\in D$ to $z\in S$ whenever there is a $y\in R$ such that $P$ assigns $x\mapsto y$ and $Q$ assigns $y\mapsto z$.
+\end{definition}
+
+In the remainder of this section, most of the examples that we use will be cases where $D, R, S\in \R$ or $D, R, S\in \R^2$. We make this choice for two main reasons:
+	\begin{itemize*}
+	\item Most examples of composition in high school mathematics are those where the superdomain and superrange can be the same space, and this space is either $\R$ (in algebra) or $\R^2$ (in geometry).
+	\item The details of some results require more technical bookkeeping when not working in $\R$ or $\R^2$.The idea behind these results is more important for high school teaching than learning the technical bookkeeping.
+	\end{itemize*}
+	
+Composition and relation to inverse
+
+Composition and different ways of representing
+
+%%%%%%%2 GRAPH OF A RELATION %%%%%%%%%%%%
+\subsection{Graph of a relation}
+
+In this section, we work exclusively with graphs of functions whose candidate domain and candidate range are subsets of $\R$. 
+ 
+\begin{definition}[graph of a relation]\label{d: graph of a relation}
+The graph of a relation $P:D\to R$ is defined as the set of points $(a, b)\in \R^2$ such that $P$ assigns $a\mapsto b$.
+\end{definition}
+
+\begin{definition}[graph of an equation]\label{d: graph of an equation}
+The graph of an equation in $x$ and $y$ is defined as the set of points $(a, b) \in \R^2$ such that evaluating the equation at $x=a$ and $y=b$ results in a true statement.
+\end{definition}
+
+Example with integral?
+
+{\bf Proof structure.}
+To show that a point $(a, b)$ is on a graph of a relation means showing that the relation assigns $a$ to $b$.
+
+{\bf Proof structure.}
+To show that a point (x, y) is on the graph of an equation means showing that evaluating the equation at $x=a$ and $y=b$ results in a true statement.
+
+Composition of graphs??
 
 %%%%%%% 2 FUNCTIONS %%%%%%%
 \subsection{Functions}
@@ -1619,6 +1736,8 @@ Pose these as problems.
 Discuss vertical line test. Eventually explaining this becomes one of the SoPs.
 
 Crib homework problems from combination of Bremigan, Bremigan, and Lorch and Sultan and Artzt. They have some good conceptual problems in there about relations and functions.
+
+
 
 %%%%%%% 2 INVERSE OF A FUNCTION (INTRO) %%%%%%%
 \subsection{Intro to inverse of a functions}
@@ -1678,6 +1797,9 @@ Define invertibility of function somewhere in homework.
 %%%%%% LESSON 3 %%%%%%%%%%%%%%%%%%%%	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \newpage 
+
+IGNORE EVERYTHING HERE FOR NOW: NEED TO COMBINE WITH LESSON 2.
+
 \section{Function Composition and Inverse Functions (Week 3) (Length: \about 2.5 hours)}  
 % Use Title Case for Title
 %%%%%%%%% # OVERVIEW  %%%%%%%%%%%%%%%%%%%%
@@ -1698,17 +1820,6 @@ Teaching practice: ``What do you notice? What do you wonder?''
 \end{bignote}
 %%%%%%%% 3 CONTENT %%%%%%
 \subsection{Function composition}
-
-In this section we will work with relations whose superdomain and superrange are the same space. We will use $D$ to denote both. In some cases, we will state results only for the cases $D=\R$ and $D=\R^2$. We make this choice for two main reasons:
-	\begin{itemize*}
-	\item Most examples of composition in high school mathematics are those where the superdomain and superrange can be the same space, and this space is either $\R$ (in algebra) or $\R^2$ (in geometry).
-	\item The details of some results require more technical bookkeeping when the superdomain and superrange differ. The idea behind these results is more important for high school teaching than learning the technical bookkeeping.
-	\end{itemize*}
-
-\begin{definition}[Composition]\label{d: composition}
-Given two relations $f:D\to D $ and $g:D\to D$, the composition $g\circ f$ is defined as the set of assignments $x\to y$ where $x\in D$ and $y$ is any element of $D$ that $g$ assigns to any element that $f$ assigned to $x$. \todo{definition is sloppy, needs rewording.}
-
-\end{definition}
 
 \begin{task}
 Recall the middle school definition of relation and the parent relation $P$. Let $t:\N\to \N, x\mapsto 2x$. Using the middle school definition, how would you represent the $P\circ t$? How would you represent $t\circ P$? What are the domain and range of each composition?
