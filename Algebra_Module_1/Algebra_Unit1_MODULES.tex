@@ -1275,7 +1275,7 @@ How does this way of phrasing the conjecture match up with the original way?
 %%%%%%%%% 2 OVERVIEW  %%%%%%%%%%%%%%%%%%%%
 \subsection{Overview}
 
-\vspace*{-12pt}
+
 \begin{tabular}{L{6.5in}} 
 {\bf Content} \\ \hline \parskip4pt
 \emph{Cartesian product} of two sets $A$ and $B$, denoted $A\times B$, defined as the set of ordered pairs $\{ (a,b) \st a\in A, b\in B \}$.
@@ -1290,14 +1290,16 @@ We call these definitions the middle school, high school, and university version
 
 \emph{Inverse of a relation}, defined from these three perspectives; their mathematically equivalence.
 
-\emph{Composition of relations} $P:D\to R$ then $Q:R\to S$, defined as the relation $Q\circ P:D\to S$ that assigns $x\in D$ to $z\in S$ whenever there is a $y \in R$ such that $P$ assigns $x\mapsto y$ and $Q$ assigns $y\mapsto z$.
-
-\emph{Function} from a set $D$ to a set $R$, defined as a relation from $D$ to $R$ such that each input in $D$ is assigned to no more than one output in $R$; how this definition can be interpreted from the three perspectives for relation.
+\emph{Composition of relations} $P:D\to D$ then $Q:D\to D$, defined 
+as the relation that assigns $x$ to $z$ whenever there is a $y\in D$ such that $P$ assigns $x\mapsto y$ and $Q$ assigns $y\mapsto z$. (See p.~\pageref{s: composition} for why we only consider the case $P:D\to D$ and $Q:D\to D$.)
 
 \emph{Graph of a (real) relation}, defined as the set of points $(x,y)\in \R^2$ such that the relation assigns $x$ to $y$.
 
 \emph{Graph of an (real) equation} in variables $x$ and $y$, defined as the set of points $(x,y)\in \R^2$ such that evaluating the equation at $x$ and $y$ results in a true statement.
+
+\emph{Function} from a set $D$ to a set $R$, defined as a relation from $D$ to $R$ such that each input in $D$ is assigned to no more than one output in $R$; how this definition can be interpreted from the three perspectives for relation.
 \end{tabular} 
+
 
 \begin{tabular}{L{3.2in}|L{3.2in}}
 {\bf Proof Structures} & {\bf Mathematical/Teaching Practices} \\ 
@@ -1597,7 +1599,8 @@ A relation $P:D\to R$ is a subset of $D\times R$, i.e., $P\subset D\times R$.
 One way to think about this definition is that we are defining the relation as its graph in the space $D\times R$. 
 
 \begin{note}
-One question that might come up is: if the candidate domain could be anything, then why bother finding good candidate domains? Why not instead let the candidate domain be the largest set that we could think of? For instance, $\mathbb{R}\cup (\textnormal{all cars in the world}) \cup(\textnormal{all rooms in all buildings in the world})\dots $. One reason is that eventually, we want to construct and compare graphs of relations and functions. The candidate domain and candidate range of comparable relations and functions are likely to be similar to each other, and the graphs live in the space $D\times R$ where $D$ is the candidate domain and $R$ is the candidate range for these relations or functions. \end{note}
+One question that might come up is: if the candidate domain could be anything, then why bother finding good candidate domains? Why not instead let the candidate domain be the largest set that we could think of? For instance, we might set the candidate domain to be something like this:
+$$\mathbb{R}\cup (\textnormal{all cars in the world}) \cup(\textnormal{all rooms in all buildings in the world})\cup \dots \,.$$ One reason that we would not want to do this is that eventually, we want to construct and compare graphs of relations and functions. The candidate domain and candidate range of comparable relations and functions are likely to be similar to each other, and the graphs live in the space $D\times R$ where $D$ is the candidate domain and $R$ is the candidate range for these relations or functions. \end{note}
 %%%%%%% 2 INVERSE OF A RELATIONS %%%%%%%
 \subsection{Inverse of a relation}
 
@@ -1614,9 +1617,11 @@ Given a relation $P:D\to R$, the \emph{inverse relation} of $P$ is defined
 	$$P^{-1} = \{(y, x) \st (x,y)\in P\}.$$
 \end{definition}
 
+\vspace*{-2pt}
 \begin{minipage}{4in}
 As an example, let's look at the parent relation. The inverse of the parent relation could be represented like the following. ({\it Question:} What do the ``$\dots$'' mean in this representation?) 
 
+\vspace*{-2pt}
 \begin{task}
 What other arrows does the inverse of the parent relation contain? What might be a good name for this relation?
 
@@ -1656,31 +1661,175 @@ What is the inverse of the car-owner relation? How about the relations $T$, $A$,
 \end{center}
 \end{minipage}
 
-
-
+\vspace*{-6pt}
 \smallnote{One reasonable name for the inverse of the parent relation might be the ``child relation'', as this relation maps natural numbers to their children. The inverse of the car-owner relation is the relation from all people in the world to all cars in the world that map a person to all the cars they own. The relation $T^{-1}$ maps possible temperatures to the days on which that temperature was the day's average temperature. The relation $A^{-1}$ maps an element of $\R$ to the element of $[0,360)$ which represents its angle measure. The relation $\rho^{-1}$ is rotation about the origin by $-90\degrees$, which is $90\degrees$ clockwise. The relation $G^{-1}$ is the relation that maps $y$ to every $x$ such that $x=y^2$.}
 
+\vspace*{-14pt}
 \begin{task}
 Discuss the three versions of the definition of inverse of a relation. What do they each say? How would you represent them? What makes them mathematically equivalent?
 \end{task}
 
 %%%%%%% 2 COMPOSITION OF RELATIONS %%%%%%%%%
 \subsection{Composition of relations}
+\label{s: composition}
+
+In the remainder of this chapter, we work almost exclusively with cases where  $D, R, S = \N$, $D, R, S = \R$ or $D, R, S=\R^2$, and We make this choice for two main reasons:
+	\begin{itemize*}
+	\item Most examples of composition in middle school and high school mathematics are those where the candidate domain and candidate range can be both $\N$ (in middle school algebra), both $\R$ (in algebra), or both $\R^2$ (in geometry).
+	\item When the candidate domain and candidate range do not equal each other, the details of some results require more technical bookkeeping.The idea behind these results is more important for high school teaching than learning the technical bookkeeping.
+	\end{itemize*}
+
+\begin{task}
+In high school and college, what did you learn that the notation $f\circ g(x)$ means? Circle your answer.
+\centerline{Do $f$ then $g$ \quad\quad\quad Do $g$ then $f$}
+\end{task}
+
+\begin{solution}
+It means to perform $g$ and then $f$. For example, if $g(x)=x^2$ and $f(x)=5x$, then $f\circ g(x)=f(x^2)=5x^2$, wherease $g\circ f(x)=g(5x)=(5x)^2=25x^2$.
+\end{solution}
+
+\smallnote{It may seem excessive to do this task recalling the definition of function notation. However, in our experience, it is better to spend a minute making sure that all students recall function notation correctly prior to using it and are primed to use it, rather than losing those students who may not remember. In our experience, almost all students do remember {\it if prompted}. If not prompted, we have found that there are a few students who do not remember, and then extra time is spend remediating.}
 
 \begin{definition}[composition]\label{d: relation composition}
-Given two relations $P:D\to R$ and $Q:R\to S$, we define the \emph{composition} of $P$ then $Q$ 
-as the relation that assigns $x\in D$ to $z\in S$ whenever there is a $y\in R$ such that $P$ assigns $x\mapsto y$ and $Q$ assigns $y\mapsto z$.
+Given two relations $P:D\to D$ and $Q:D\to D$, we define the \emph{composition} of $P$ then $Q$ 
+as the relation that assigns $x$ to $z$ whenever there is a $y\in D$ such that $P$ assigns $x\mapsto y$ and $Q$ assigns $y\mapsto z$.
 \end{definition}
 
-In the remainder of this section, most of the examples that we use will be cases where $D, R, S\in \R$ or $D, R, S\in \R^2$. We make this choice for two main reasons:
-	\begin{itemize*}
-	\item Most examples of composition in high school mathematics are those where the superdomain and superrange can be the same space, and this space is either $\R$ (in algebra) or $\R^2$ (in geometry).
-	\item The details of some results require more technical bookkeeping when not working in $\R$ or $\R^2$.The idea behind these results is more important for high school teaching than learning the technical bookkeeping.
-	\end{itemize*}
-	
-Composition and relation to inverse
+\vspace*{-8pt}
+\begin{task}
+Let $P$ be the parent relation and let $t:\N\to \N, x\mapsto 2x$. How would you represent $t\circ P$ using the middle school version of relation? How would you represent $P\circ t$? 
 
-Composition and different ways of representing
+For the relation $t\circ P$, what is the image of $6$? Of $12$? Of $9$?
+
+For the relation $t\circ P$, what is the preimage of $4$? Of the set $\{1, 3, 5\}$? Of the set $\{4,14\}$?
+
+What are the domain and range of the relations $t\circ P$ and $P\circ t$? 
+\end{task}
+
+\begin{solution}({\it Partial})
+We can represent compositions with concatenated cloud diagrams. 
+
+\vspace*{-8pt}
+\begin{center}
+
+\begin{tabular}{c@{\hspace*{1in}}c}
+$t\circ P$ & $P\circ t$ \\
+& \\
+\begin{tikzpicture}[scale=0.4]
+\def\pt{circle (0.05)}
+\foreach \x in {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
+	{
+	\filldraw[yscale=0.5](0,-\x) node[left]{\tiny{ $\x$}} \pt;
+	\filldraw[yscale=0.5](5,-\x) node[right]{\tiny{$\x$}} \pt;
+	\filldraw[yscale=0.5](10,-\x) node[right]{\tiny{$\x$}} \pt;
+	}
+	\draw 
+		(0,0.7) node[] {$\N$}
+		(2.5, 1) node[]{$t$}		
+		(5,0.7) node[] {$\N$}
+		(7.5, 1) node[]{$P$}
+		(10,0.7) node[] {$\N$}
+		(0, -6.5) node[]{$\vdots$}
+		(4.5, -3.75) node[]{$\vdots$}
+		(5, -6.5) node[]{$\vdots$}
+		(10, -6.5) node[]{$\vdots$}
+		(9.5, -6) node[]{$\vdots$};
+	% arrows for P
+	\draw[->=stealth, yscale=-0.5] (0,4) -- (4.94, 2.1);
+	\draw[->, yscale=-0.5] (0,6) -- (4.94, 2.9);
+	\draw[->, yscale=-0.5] (0,6) -- (4.94, 1.9);
+	\draw[->, yscale=-0.5] (0,8) -- (4.94, 1.85);
+	\draw[->, yscale=-0.5] (0,8) -- (4.94, 3.9);
+	\draw[->, yscale=-0.5] (0,9) -- (4.94, 2.85);
+	\draw[->, yscale=-0.5] (0,10) -- (4.94, 1.8);
+	\draw[->, yscale=-0.5] (0,10) -- (4.94, 4.9);
+	\draw[->, yscale=-0.5] (0, 12)-- (4.94, 2.1);
+	\draw[->, yscale=-0.5] (0, 12) -- (4.94, 3.1);
+	\draw[->, yscale=-0.5] (0, 12) -- (4.94, 4);
+	\draw[->, yscale=-0.5] (0, 12) -- (4.94, 6);
+	% arrows for t
+	\draw[->, yscale=-0.5] (5,0) -- (9.94, 0);
+	\draw[->, yscale=-0.5] (5,1) -- (9.94, 2.1);
+	\draw[->, yscale=-0.5] (5,2) -- (9.94, 4.1);
+	\draw[->, yscale=-0.5] (5,3) -- (9.94, 6.1);
+	\draw[->, yscale=-0.5] (5,4) -- (9.94, 8.1);
+	\draw[->, yscale=-0.5] (5,5) -- (9.94, 10.1);
+	\draw[->, yscale=-0.5] (5,6) -- (9.94, 12.1);
+\draw[xshift=-1cm, yscale=0.75] (0,0.5) arc (180:0:1) (0,-9) arc (180:360:1) (0,0.5)-- (0,-9) (2,0.5) -- (2,-9); 
+\draw[xshift=4cm, yscale=0.75] (0,0.5) arc (180:0:1) (0,-9) arc (180:360:1) (0,0.5)-- (0,-9) (2,0.5) -- (2,-9); 
+\draw[xshift=9cm, yscale=0.75] (0,0.5) arc (180:0:1) (0,-9) arc (180:360:1) (0,0.5)-- (0,-9) (2,0.5) -- (2,-9); 
+\end{tikzpicture}
+%
+&
+%
+\begin{tikzpicture}[scale=0.4]
+\def\pt{circle (0.05)}
+\foreach \x in {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
+	{
+	\filldraw[yscale=0.5](0,-\x) node[left]{\tiny{ $\x$}} \pt;
+	\filldraw[yscale=0.5](5,-\x) node[right]{\tiny{$\x$}} \pt;
+	\filldraw[yscale=0.5](10,-\x) node[right]{\tiny{$\x$}} \pt;
+	}
+	\draw 
+		(0,0.7) node[] {$\N$}
+		(2.5, 1) node[]{$t$}		
+		(5,0.7) node[] {$\N$}
+		(7.5, 1) node[]{$P$}
+		(10,0.7) node[] {$\N$}
+		(0, -6.5) node[]{$\vdots$}
+		(4.5, -6) node[]{$\vdots$}
+		(5, -6.5) node[]{$\vdots$}
+		(10, -6.5) node[]{$\vdots$}
+		(9.5, -3.75) node[]{$\vdots$};
+	% arrows for t
+	\draw[->=stealth, ->, yscale=-0.5] (0,0) -- (4.94, 0);
+	\draw[->=stealth, ->, yscale=-0.5] (0,1) -- (4.94, 2.1);
+	\draw[->=stealth, ->, yscale=-0.5] (0,2) -- (4.94, 4.1);
+	\draw[->, yscale=-0.5] (0,3) -- (4.94, 6.1);
+	\draw[->, yscale=-0.5] (0,4) -- (4.94, 8.1);
+	\draw[->, yscale=-0.5] (0,5) -- (4.94, 10.1);
+	\draw[->, yscale=-0.5] (0,6) -- (4.94, 12.1);
+	% arrows for P
+	\draw[->, yscale=-0.5] (5,4) -- (9.94, 2.1);
+	\draw[->, yscale=-0.5] (5,6) -- (9.94, 2.9);
+	\draw[->, yscale=-0.5] (5,6) -- (9.94, 1.9);
+	\draw[->, yscale=-0.5] (5,8) -- (9.94, 1.85);
+	\draw[->, yscale=-0.5] (5,8) -- (9.94, 3.9);
+	\draw[->, yscale=-0.5] (5,9) -- (9.94, 2.85);
+	\draw[->, yscale=-0.5] (5,10) -- (9.94, 1.8);
+	\draw[->, yscale=-0.5] (5,10) -- (9.94, 4.9);
+	\draw[->, yscale=-0.5] (5, 12)-- (9.94, 2.1);
+	\draw[->, yscale=-0.5] (5, 12) -- (9.94, 3.1);
+	\draw[->, yscale=-0.5] (5, 12) -- (9.94, 4);
+	\draw[->, yscale=-0.5] (5, 12) -- (9.94, 6);
+\draw[xshift=-1cm, yscale=0.75] (0,0.5) arc (180:0:1) (0,-9) arc (180:360:1) (0,0.5)-- (0,-9) (2,0.5) -- (2,-9); 
+\draw[xshift=4cm, yscale=0.75] (0,0.5) arc (180:0:1) (0,-9) arc (180:360:1) (0,0.5)-- (0,-9) (2,0.5) -- (2,-9); 
+\draw[xshift=9cm, yscale=0.75] (0,0.5) arc (180:0:1) (0,-9) arc (180:360:1) (0,0.5)-- (0,-9) (2,0.5) -- (2,-9); 
+\end{tikzpicture}
+\end{tabular}
+
+\begin{tabular}{lll}
+	composition & domain & range \\ 
+	\hline
+$t\circ P$ & $\{n\in \N: n\neq 0, 1 \tn{ and $n$ is not prime}\}$ & All even natural numbers $\geq 4$ \\ 
+$P \circ t$ & $\{n\in \N: n \geq 2\}$ & $\{n\in \N: n\geq 2\}$
+\end{tabular}
+\end{center}
+
+Note that $1$ is {\it not} in the domain of $P\circ t$, because $P$ does not assign $t(1)$ to any element. So $P(t(1))$ is undefined. 
+\end{solution}
+
+
+\smallnote{One way to discuss the domain of $t\circ P$ is to ask, ``Raise your hand if 5 was in your domain \dots 4? \dots 3? \dots 2? \dots 1? \dots 0?'' Make a note of any disagreements or wide agreements to the class orally. Then ask for students' reasoning about $5$, $1$, and $0$.}
+
+Now let's take on the challenge of combining two ideas that we've been working with: inverse of a relation and composition.
+\begin{task}
+Sketch a representation of $A^{-1}\circ A$. What are its domain and range? What is the image of $45\degrees$? What is the preimage of $45\degrees$?
+\end{task}
+
+\begin{task}
+We often think about inverses as ``undoing'' something. How well does this analogy work in the case of relations? What goes well with the analogy? What goes wrong with the analogy?
+\end{task}
 
 %%%%%%%2 GRAPH OF A RELATION %%%%%%%%%%%%
 \subsection{Graph of a relation}
@@ -1691,21 +1840,310 @@ In this section, we work exclusively with graphs of functions whose candidate do
 The graph of a relation $P:D\to R$ is defined as the set of points $(a, b)\in \R^2$ such that $P$ assigns $a\mapsto b$.
 \end{definition}
 
+For example, let's do the following together.
+\begin{task}
+Graph these relations: $P$, $P^{-1}$, $t\circ P$, the relation from $\R$ to $\R$ that maps $x$ to $y$ such that $x=y^2$; the relation from $\R$ to $\R$ that maps $x$ to $y$ such that $y-2^{|x|}=0$.
+\end{task}
+
+\vspace*{-12pt}
+\smallnote{It may help to do these examples with sample points. It is sometimes a surprise to students that the graphs of the relations defined by equations are actually just the graphs of those equations. The purpose of these examples is to broach this connection.}
+
+As we have just seen, {\it any equation in $x$ and $y$ defines a relation}! For example, the equation $x=y^2$ defines the relation that maps $x$ to all $y$ such that $x=y^2$.  One way to understand this is to think about the ``university version'' of the definition of relation.
+
 \begin{definition}[graph of an equation]\label{d: graph of an equation}
 The graph of an equation in $x$ and $y$ is defined as the set of points $(a, b) \in \R^2$ such that evaluating the equation at $x=a$ and $y=b$ results in a true statement.
 \end{definition}
 
-Example with integral?
-
 {\bf Proof structure.}
 To show that a point $(a, b)$ is on a graph of a relation means showing that the relation assigns $a$ to $b$.
 
+As an example of this structure, consider:
+\begin{task}
+What are all the points on the graph of $A$ with $x$-coordinate $45\degrees$? With $y$-coordinate $45\degrees$?
+\end{task}
+
+Now try: 
+\begin{task}
+What are all the points on the graph of $A^{-1}$ with $x$-coordinate $60\degrees$? With $y$-coordinate $60\degrees$?
+ 
+Is the point $(60, 400)$ on the graph of $A^{-1}$? How about $(430, 70)$? $(70, 430)$? (10, 200)? Why or why not?
+  
+What is the graph of $A^{-1}$? How do you know you have graphed all points and not graphed any extra points?
+\end{task}
+
+\smallnote{In the above, attend to the reasoning why or why not, and make sure that students are {\it explicitly} referencing the definition of the graph of a relation. It can be helpful to prompt with questions like, ``How are you using the definition of the graph of a relation?'' Something else that is helpful if there is hesitation in using the definition is to go around the room and ask each person to state the definition of graph of a relation. This may sound over the top, but when used on occasion, it can be an effective technique for both remembering key definitions and also impressing the importance of particular statements. When students are reluctant to engage in this, it is more about not having done anything like this before than a strong fundamental aversion; in our experience, students eventually take this in good humor and appreciate being given the time to commit a definition to memory in a public and verbal way.}
+
+
+Finally, let's begin work on this task:
+\begin{task}
+Show that for any relation $r:D\to D$, if $x\in D$ is in the domain of $r$, then $(x,x)$ lies on the graph of $r^{-1}\circ r$. 
+\end{task}
+
+We work with graphs of equations in a similar way to working with graphs of relations. 
+
 {\bf Proof structure.}
-To show that a point (x, y) is on the graph of an equation means showing that evaluating the equation at $x=a$ and $y=b$ results in a true statement.
+To show that a point $(x, y)$ is on the graph of an equation means showing that evaluating the equation at $x=a$ and $y=b$ results in a true statement.
 
-Composition of graphs??
+\begin{task}
+Let $f(x)=x^2$. Is the point $(1,4)$ on the graph of the equation $y=f(x)$? How about on the graph of $y=f(x-1)$? How about on the graph of $y=f(x+1)$?
+\end{task}
 
-%%%%%%% 2 FUNCTIONS %%%%%%%
+\smallnote{Again, in doing this task, attend to students' reasoning and make sure that they are {\it explicitly} referencing the definition of graph of equations, not just plugging in numbers without saying why it makes sense to plug in numbers.}
+
+With these ideas in place, we can now define two concepts which you may well teach to high school students: the $x$- and $y$-intercepts.
+
+\begin{definition}
+Given an equation in $x$ and $y$ and its graph, all points $(a,0)$ on the graph are called \emph{$x$-intercepts} of the graph. A graph may have 0, 1, or multiple $x$-intercepts.
+
+Given an equation in $x$ and $y$ and its graph, all points $(0,b)$ on the graph are called \emph{$y$-intercepts} of the graph. A graph may have 0, 1, or multiple $y$-intercepts.
+\end{definition}
+
+\begin{task}
+What are the $y$ intercepts of the graph $x=y^2-1$?
+
+What are all the $x$-intercepts of the graphs of $A$ and $A^{-1}$?
+
+What are all the $y$-intercepts of the graphs of $A$ and $A^{-1}$?
+\end{task}
+
+\smallnote{In discussing this task, make sure students are {\it explicitly} referencing the definition of $x$- and $y$-intercepts, as well as writing down the intercepts as coordinates, not numbers. Watch that they are explaining their reasoning, not just plugging in numbers without saying why it makes sense to plug in numbers.}
+
+Now let's see how this might show up in an actual classroom.  
+
+\smallnote{What follows is an approximately 6 minute clip showing how these definitions can come up in teaching, and why it is important to go back to the definition. If there is time, it is worth showing this clip to students. Otherwise, this also works as a homework assignment, especially followed up by a quick discussion the next day.}
+
+\begin{bignote}
+When introducing video clips of teaching, we have found it useful to:
+	\begin{itemize*}
+	\item Emphasize that we are {\it not} viewing videos to judge the teacher or students or their interactions. Instead, we are practicing how to observe {\it without judgment} to understand what is going on.
+	\item Provide specific viewing questions.
+	\item Emphasize that comments should be based on evidence in the video.
+	\end{itemize*}
+	
+Even in professional development with long-time teachers, it is helpful to provide the reminder about observation rather than judgment; this goes doubly (or more) with novice teachers. We have provided some sample text below for how to explain this way of viewing teaching.
+
+The reason it is helpful to have specific viewing questions is that it directs the conversation and allows you as an instructor to remind the students of the purpose of watching the video and how it fits into the mathematical or other goals of the lesson. Otherwise conversations can have a way of meandering unproductively; setting viewing questions up front provides a structure to hold a productive conversation.
+
+The reason to base discussions on evidence is that otherwise, it is too easy to project one's own experiences and interpretations and leave the video context. However, the only shared context is that of the video, so grounding the conversation in the video provides some insurance for a coherent conversation. Prompts that you may use with the prospective teachers include:
+	\begin{itemize*}
+	\item ``Can you say what part of the video you are basing your comment on?''
+	\item ``That's interesting. What interaction in the video were you thinking about?''
+	\end{itemize*}
+\end{bignote}
+
+\begin{task}
+We will watch a short video of teaching by Ms.~Barbara Shreve of San Lorenzo High School. The video shows her teaching an intervention class called Algebra Success. The students in this class have been previously unsuccessful in Algebra 1. They are working on finding intercepts of equations to get ready for working with quadratics. 
+
+As you watch the video, it may be tempting to think about what you personally think is good or not as good about the teaching, or what you might have done differently. But before getting to these kinds of judgments, it is more important to simply observe what is going on, what the students' reasoning is, and what the story line is. (This is just like when working with students, as we will see later in this class and you will learn in your methods class: before evaluating students' work, we must first observe and understand students' work without judgment.) Here, we will practice observing the interactions between teachers and 
+
+As you watch the video, think about the following questions:
+	\begin{itemize}
+	\item How does the teacher emphasize to students to explain their reasoning?
+	\item How does the teacher help students feel comfortable sharing their reasoning?
+	\item How was the definition of $x$-intercept or $y$-intercept used?
+	\end{itemize}
+	
+\hrule 
+\vspace*{2pt}
+
+Here is a link to the video:
+\url{http://www.insidemathematics.org/classroom-videos/public-lessons/9th-11th-grade-math-quadratic-functions/introduction-part-b}
+
+\vspace*{2pt}
+\hrule
+\vspace*{2pt}
+
+Again, our discussion will be about the viewing questions. We will have time for general comments later.  Let's take the viewing questions one at a time.
+
+When addressing the viewing questions, be specific about your evidence from the video to support what you are saying.
+
+\begin{itemize}
+	\item How does the teacher emphasize to students to explain their reasoning?
+	\item How does the teacher help students feel comfortable sharing their reasoning?
+	\item How was the definition of $x$-intercept or $y$-intercept used?
+	\end{itemize}
+
+\vspace*{2pt}
+\hrule
+\vspace*{2pt}
+
+Now that we have discussed the viewing questions, what other thoughts or questions come to mind?
+\end{task}
+
+To finish this chapter, let's investigate something that you may have begun noticing in the examples we have worked with.
+
+Here are some graphs that we've seen: 
+
+\begin{center}
+\begin{tabular}{cccccc}
+$P$ & $P^{-1}$ & $A$ & $A^{-1}$ & $G$ & $G^{-1}$ \\ 
+\begin{tikzpicture} [scale=0.1]
+\draw(-0.5,0) -- (20.5,0) (0,-0.5) -- (0,20.5);
+\def\pt{circle (0.09)}
+\foreach \x in {(4,2),(6,2),(6,3),(8,2),(8,4),(9,3),(10,2),(10,5), (12, 2),(12,3),(12,4),(12,6), (14,2),(14,7),(15,3),(15,5),(16,2),(16,4),(16,8),(18,2),(18,9),(20,2),(20,4),(20,5),(20,10)}
+	{	
+	\filldraw \x \pt;
+	}
+\end{tikzpicture}
+& 
+\begin{tikzpicture} [scale=0.1, rotate=45, yscale=-1, rotate=-45]
+\draw(-0.5,0) -- (20.5,0) (0,-0.5) -- (0,20.5);
+\def\pt{circle (0.09)}
+\foreach \x in {(4,2),(6,2),(6,3),(8,2),(8,4),(9,3),(10,2),(10,5), (12, 2),(12,3),(12,4),(12,6), (14,2),(14,7),(15,3),(15,5),(16,2),(16,4),(16,8),(18,2),(18,9),(20,2),(20,4),(20,5),(20,10)}
+	{	
+	\filldraw \x \pt;
+	}
+\end{tikzpicture} 
+&
+\begin{tikzpicture} [scale=0.014]
+\draw(-36*3-0.05,0) -- (36*3+.05,0) (0,-36*3-0.05) -- (0,36*3+.05);
+\foreach \x in {0, 1, -1, 2, -2}
+	{
+	\filldraw (0,0+\x*36) circle (3);
+	\draw(0,0+\x*36) -- (36,\x*36+36);
+	\filldraw [draw=black, fill=white] (36,\x*36+36) circle (3);
+	}
+\end{tikzpicture}
+&
+\begin{tikzpicture} [scale=0.014, rotate=45, yscale=-1, rotate=-45]
+\draw(-36*2.5-0.05,0) -- (36*2.5+.05,0) (0,-36*2.5-0.05) -- (0,36*2.5+.05);
+\foreach \x in {0, 1, -1, 2, -2}
+	{
+	\filldraw (0,0+\x*36) circle (3);
+	\draw(0,0+\x*36) -- (36,\x*36+36);
+	\filldraw [draw=black, fill=white] (36,\x*36+36) circle (3);
+	}
+\end{tikzpicture}
+&
+\begin{tikzpicture} [scale=0.07]
+\draw (-20, 0) -- (20,0) (0,-20)--(0,20);
+\draw[domain=-4.5:4.5,smooth,variable=\y]  plot ({\y*\y},{\y});
+\end{tikzpicture}
+&
+\begin{tikzpicture} [scale=0.07, rotate=45, yscale=-1, rotate=-45]
+\draw (-20, 0) -- (20,0) (0,-20)--(0,20);
+\draw[domain=-4.5:4.5,smooth,variable=\y]  plot ({\y*\y},{\y});
+\end{tikzpicture}
+\end{tabular}
+\end{center}
+
+And here are those graphs again, this time pairing relations and their inverse relations.
+
+\begin{center}
+\begin{tabular}{ccc}
+$P$, $P^{-1}$ & $A$, $A^{-1}$ & $G$, $G^{-1}$ \\ 
+\begin{tikzpicture} [scale=0.1]
+\draw(-0.5,0) -- (20.5,0) (0,-0.5) -- (0,20.5);
+\def\pt{circle (0.09)}
+\foreach \x in {(4,2),(6,2),(6,3),(8,2),(8,4),(9,3),(10,2),(10,5), (12, 2),(12,3),(12,4),(12,6), (14,2),(14,7),(15,3),(15,5),(16,2),(16,4),(16,8),(18,2),(18,9),(20,2),(20,4),(20,5),(20,10)}
+	{	
+	\filldraw \x \pt;
+	\filldraw[ rotate=45, yscale=-1, rotate=-45] \x \pt;
+	}
+\end{tikzpicture}
+&
+\begin{tikzpicture} [scale=0.014]
+\draw(-36*3-0.05,0) -- (36*3+.05,0) (0,-36*3-0.05) -- (0,36*3+.05);
+\foreach \x in {0, 1, -1, 2, -2}
+	{
+	\filldraw (0,0+\x*36) circle (3);
+	\draw(0,0+\x*36) -- (36,\x*36+36);
+	\filldraw [draw=black, fill=white] (36,\x*36+36) circle (3);
+	\filldraw[rotate=45, yscale=-1, rotate=-45] (0,0+\x*36) circle (3);
+	\draw[rotate=45, yscale=-1, rotate=-45](0,0+\x*36) -- (36,\x*36+36);
+	\filldraw [rotate=45, yscale=-1, rotate=-45, draw=black, fill=white] (36,\x*36+36) circle (3);
+	}
+\end{tikzpicture}
+&
+\begin{tikzpicture} [scale=0.07]
+\draw (-20, 0) -- (20,0) (0,-20)--(0,20);
+\draw[domain=-4.5:4.5,smooth,variable=\y]  plot ({\y*\y},{\y});
+\draw[domain=-4.5:4.5,smooth,variable=\y, rotate=45, yscale=-1, rotate=-45]  plot ({\y*\y},{\y});
+\end{tikzpicture}
+\end{tabular}
+\end{center}
+
+\begin{task}
+What do you notice about these graphs? How might we transform a graph into the graph of its inverse?
+
+Prove your conjecture.
+\end{task}
+
+\begin{note}
+For the purposes of this task, let's assume that we know that reflection across the line $y=x$ always sends a coordinate $(a,b)$ to the coordinate $(b,a)$. You will learn or may have learned how to prove this in geometry class, but for now, let's take this as given.
+\end{note}
+
+
+\subsection{Summary of content}
+
+This chapter had a lot going on! We defined relation in three different ways, which we called the middle school, high school, and university ways. We then talked about various properties of relations, such as its domain and range, as well as the image and preimage of points and subsets. We ended by talking about graphs of relations and equations.
+
+Throughout this discussion, we saw algebraic, graphical, and cloud diagram ways of representing relations. 
+
+We then discussed inverse relations and compositions of relations, which also can be understood in terms of these different representations. 
+ 
+ Another common thread was Cartesian products, which is how we defined ordered pairs.  This allowed us to define relations the university way, and it also allowed us to talk meaningfully about graphs of relations.  The graph of a relation from $\R$ to $\R$ lives in the space given by the Cartesian product $\R\times \R$, otherwise known as $\R^2$. 
+ 
+The two explorations we did tied together representations and the concepts we discussed:
+	\begin{itemize}
+	\item Given any relation $r$, we discovered that the graph of the relation $r^{-1}\circ r$ always contains all points of the form $(a,a)$ where $a$ is in the domain of $r$.
+	\item Given any relation $r$, we discovered that the graph of the relation $r^{-1}$ can be obtained by reflecting the graph of $r$ about the line $y=x$.
+	\end{itemize}
+ 
+This last one may seem familiar: in high school we often teach this statement with the graph of functions. But as you learned, this statement applies to relations in general! You will examine this from a teaching perspective for homework, as well as finish the proofs of these explorations.
+
+In the proofs, you will use the two proof structures we learned: 
+\begin{itemize}
+\item To show that a point (x, y) is on a graph of a relation
+means showing that the relation assigns x to y.
+\item 
+To show that a point (x, y) is on the graph of an equation means showing that evaluating the equation at x and y results in a true statement.
+\end{itemize}
+  
+\subsection{Summary of mathematical practices}
+
+Connecting mathematically equivalent definitions
+
+Connecting different mathematical representations
+
+\todo{decompose these}
+
+%%%%%%%%%%%%%%
+% \header{Preparation for next lesson}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% 1 IN-CLASS RESOURCES %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage \subsection{In-Class Resources}  
+
+% \handout{Handout Title}
+
+%%%%%%%%% 1 HOMEWORK %%%%%%%%%%%%
+\newpage \subsection{Homework}
+Define invertibility of function somewhere in homework.
+
+Allen item SoP? (wr
+
+Vertical line test SoP? 
+
+Show that for any relation $r:D\to D$, if $x\in D$ is in the domain of $r$, then $(x,x)$ lies on the graph of $r^{-1}\circ r$. 
+
+SoP: correspondence view of function and its inverse, reflection over $y=x$. 
+
+
+
+
+Composition of graphs.
+
+Graphs of relations and their inverses
+
+Recall of sine, cosine.
+Let $S(x)=\sin(x)$. Let $S^{-1}$ be the inverse relation of $\sin(x)$.
+
+Example with integral?
+
+
+
+%%%%%%% 3 FUNCTIONS %%%%%%%
 \subsection{Functions}
 
 \todo{Look at definitions of function and possibly revise them}
@@ -1739,7 +2177,8 @@ Crib homework problems from combination of Bremigan, Bremigan, and Lorch and Sul
 
 
 
-%%%%%%% 2 INVERSE OF A FUNCTION (INTRO) %%%%%%%
+
+%%%%%%% 3 INVERSE OF A FUNCTION (INTRO) %%%%%%%
 \subsection{Intro to inverse of a functions}
 
 We are now going to say something that may seem strange: every function as an inverse! The reason why this statement is true is that every function has an {\it inverse relation}. This is because functions are relations, and all relations have inverses. (What about concepts like ``inverse function'' and ``invertibiliity''? Stay tuned for the next time.)
@@ -1780,18 +2219,6 @@ Next time: Define invertibility. Put intro to this in homework.
 %In this next section, we will introduce partial inverses as well.
 %\end{bignote}
 %
-%%%%%%%%%%%%%%
-% \header{Preparation for next lesson}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%% 1 IN-CLASS RESOURCES %%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage \subsection{In-Class Resources}  
-
-% \handout{Handout Title}
-
-%%%%%%%%% 1 HOMEWORK %%%%%%%%%%%%
-\newpage \subsection{Homework}
-Define invertibility of function somewhere in homework.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 	
 %%%%%% LESSON 3 %%%%%%%%%%%%%%%%%%%%	
@@ -1912,6 +2339,12 @@ Before we dive into this task, discuss:
  
  ``rule of 6'' using
 symbolic, cloud, tables, graphs
+
+
+%\begin{note}
+%In teaching, when working with relations defined by story problems, the units need to be interpreted carefully.  In story problems, numbers in the candidate domain and candidate range often represent quantities with particular units, for instance, temperature in degrees Fahrenheit, speed in miles per hour, distance in miles, or volume in gallons.
+%\end{note}
+
 
 %%%%%%%%%%%%%%
 % \header{Preparation for next lesson}
