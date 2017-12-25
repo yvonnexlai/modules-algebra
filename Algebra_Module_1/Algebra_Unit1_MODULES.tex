@@ -386,7 +386,7 @@ Why this means $B\subsetneq A$: We showed $B\subset A$ and found elements of $A$
 {}
 [Handwritten version of this proof goes here]
 \end{mdframed}
-\todo{Create handwritten version of proof, insert in reference for section 1}
+\todo{Ch 0: Create handwritten version of proof, insert in reference for section 1}
 
 
 
@@ -399,7 +399,7 @@ Here is the same proof, with key features pointed out. These features are explai
 \begin{mdframed}{}
 [Handwritten version of this proof goes here]
 \end{mdframed}
-\todo{After creating handwritten version of this proof, label the features below by number.}
+\todo{Ch 0: After creating handwritten version of this proof, label the features below by number.}
 
 
 \begin{minipage}{5.5in}
@@ -832,10 +832,7 @@ Why the above means that $A=B$:
 \begin{bignote}[Modeling proof communication]
 
 \vspace*{2in}
-\end{bignote} \todo{write instructor note modeling proof communication, use the proof of strict subset, point out relevant handout from Section 0}
-
-
-
+\end{bignote} \todo{Ch 1: write instructor note modeling proof communication, use the proof of strict subset, point out relevant handout from Section 0}
 
 %%%%%%%%%%%%%%%%%%%%%
 \subsection{Mathematical statements and their negations}
@@ -987,7 +984,7 @@ For all $n\in \N$, $n$ has more than one pair of parents if and only if $n$ has 
 \begin{proof}
 Given $S=\{ n\in \N\st n\tn{ \it has at least three different non-trivial factors}\}$ and $T=\{ n\in \N \st n \tn{ \it has more than one pair of parents}\}$.
 \begin{enumerate}
-\item {\it Why $S\subset T$:}\todo{This part of the proof needs to be cleaned up. It is correct but really confusing.} 
+\item {\it Why $S\subset T$:}\todo{Ch 1: Clean up this proof part 1. It is correct but confusing.} 
 Let $n\in S$. Then there exist distinct $a, b, c \in \N$ such that $a\divides n$, $b\divides n$, and $c\divides n$. Either each of these are paired with another one of $a,b,c$ to be a pair of parents of $n$ or they are not. If they are not paired with any of each other, then $n$ has at least three pairs of parents, which is more than one. If one of them is paired with another, there is still a third factor that cannot be paired with the other two (because they are already paired). So it is part of a second pair of parents. Thus $n\in T$.
 
 
@@ -1248,7 +1245,7 @@ How does this way of phrasing the conjecture match up with the original way?
 
 %%%%%%%%% 1 HOMEWORK %%%%%%%%%%%%%%%%%%%%
 \newpage \subsection{Homework}  
-\todo{finalize Homework 1}
+\todo{Ch 1: write homework}
 \begin{enumerate}
 \item Proving set membership problem
 \item Proving subset, subsetneq problem
@@ -1405,7 +1402,7 @@ The second statement is also true. $0$ and $1$ have no children. All other numbe
 \subsection{Cartesian products}
 Let's discuss Cartesian products, which you first saw in your homework from last week.
 
-\begin{definition}
+\begin{definition}\label{d: cartesian product}
 Let $D$ and $R$ be sets. The \emph{Cartesian product} of $D$ and $R$ is defined as the set of ordered pairs $\{ (x,y) \st x\in D, y\in R\}$. It is denoted $D\times R$.
 \end{definition}
 
@@ -1478,14 +1475,15 @@ In our example, a relation $P$ maps numbers in $\N$ to numbers in $\N$, and the 
 
 \begin{definition}[Relation: Middle school version]\label{d: relation middle school}
 A \emph{relation} from a set $D$ to a set $R$ is a set of arrows going from elements of $D$ to elements of $R$.  
+
+
+If there is an arrow from and element $x$ to an element $y$, we say the relation \emph{maps} or \emph{assigns} $x$ to $y$.
 \end{definition}
 
-We use the notation $P:D\to R$ to mean a relation from $D$ to $R$ called $P$.
+We use the notation $r:D\to R$ to mean a relation from $D$ to $R$ called $r$.
 
 \begin{definition}[Parent relation]\label{d: parent relation}
 The parent relation $P:\N\to\N$ is the set of arrows from each element of $\N$ to its nontrivial factors.
-
-If there is an arrow from and element $x$ to an element $y$, we say the relation \emph{maps} $x$ to $y$.
 \end{definition}
 
 \begin{note}
@@ -1495,14 +1493,16 @@ An element of $R$ may have no elements of $D$ mapping to it, exactly one element
 \end{note}
 
 \begin{definition}\label{d: candidate domain etc}
-For a relation $P:D \to R$, we say that 
+For a relation $r:D \to R$, we say that 
 	\begin{itemize}
 	\item $D$ is the \emph{candidate domain};
 	\item $R$ is the \emph{candidate range} (or \emph{codomain});
-	\item the \emph{image} of an element $x\in  D$ is the set of elements of $R$ that $x$ is mapped to. Similarly, the \emph{image} of a subset of $S\subset D$ is the subset of $R$ that $x\in S$ are mapped to. It is the union of the image of all elements $x\in S$;
-	\item the \emph{domain} of $P$ is the subset $D'\subset D$ of elements that are mapped to an element of the candidate range, in other words, the subset of the candidate domain with nonempty assignments; 
-	\item the \emph{preimage} of an element of $R$ is the set of elements of $D$ that map to $R$. Simlarly, the \emph{preimage} of a subset $T\subset R$ is the subset of $D$ whose elements map to $R$; and
-	\item the \emph{range} (or \emph{image}) of the relation $P$ is the subset $R\subset D$ of elements that have elements of the domain mapped to it, in other words, the subset of the candidate range with nonempty preimage.
+	\item the \emph{image} of an element $x\in  D$ is the set of elements of $R$ that $x$ is mapped to. Similarly, the \emph{image} of a subset of $S\subset D$ is the subset of $R$ containing the images of all elements of $S$.
+	\item When a element in $D$ maps to no element in $R$, we say it has \emph{empty image}. If an element in $D$ does map to at least one element in $R$, we say it has \emph{nonempty image}.
+	\item the \emph{domain} of $r$ is the subset $D'\subset D$ of elements with nonempty image.
+	\item the \emph{preimage} of an element of $R$ is the set of elements of $D$ that map to $R$. Similarly, the \emph{preimage} of a subset $T\subset R$ is the subset of $D$ containing the preimages of all elements of $T$.
+	\item When a element in $R$ has no element in $D$ mapping to it, we say it has \emph{empty preimage}. If an element in $R$ does have an element in $D$ mapping to it, we say it has \emph{nonempty preimage}.
+	\item the \emph{range} (or \emph{image}) of the relation $r$ is the subset $R\subset D$ with nonempty preimage.
 	\end{itemize}
 \end{definition}
 
@@ -1593,7 +1593,7 @@ Suppose we were to graph the parent relation. What might this graph look like? W
 In undergraduate courses such as real analysis as well as in graduate courses in analysis, we go one step farther. Rather than defining relations in terms of assignments, we define relations in terms of ordered pairs. The ordered pairs represent the assignments. 
 
 \begin{definition}[Relation: University version]\label{d: relation university}
-A relation $P:D\to R$ is a subset of $D\times R$, i.e., $P\subset D\times R$.
+A \emph{relation} $r:D\to R$ is a subset of $D\times R$, i.e., $r\subset D\times R$.
 \end{definition}
 
 One way to think about this definition is that we are defining the relation as its graph in the space $D\times R$. 
@@ -1605,16 +1605,16 @@ $$\mathbb{R}\cup (\textnormal{all cars in the world}) \cup(\textnormal{all rooms
 \subsection{Inverse of a relation}
 
 \begin{definition}[Inverse relation: Middle school version]\label{d: inverse relation middle school}
-If $P$ is a relation from a set $D$ to $R$, then the \emph{inverse relation} of $P$ is the relation that swaps the direction of the arrows of $P$.  The arrows of the inverse relation go from elements of $R$ to elements of $D$.
+If $r$ is a relation from a set $D$ to $R$, then the \emph{inverse relation} of $P$ is the relation that swaps the direction of the arrows of $r$.  The arrows of the inverse relation go from elements of $R$ to elements of $D$.
 \end{definition}
 
 \begin{definition}[Inverse relation: High school version]\label{d: inverse relation high school}
-Given a relation $P:D\to R$, the \emph{inverse relation} of $P$ is the set of assignments $y\mapsto x$ such that $x\mapsto y$ is an assignment of $P$. The inverse relation is denoted $P^{-1}$.
+Given a relation $r:D\to R$, the \emph{inverse relation} of $r$ is the set of assignments $y\mapsto x$ such that $x\mapsto y$ is an assignment of $r$. The inverse relation is denoted $r^{-1}$.
 \end{definition}
 
 \begin{definition}[Inverse relation: University version]\label{d: inverse relation university}
-Given a relation $P:D\to R$, the \emph{inverse relation} of $P$ is defined  
-	$$P^{-1} = \{(y, x) \st (x,y)\in P\}.$$
+Given a relation $r:D\to R$, the \emph{inverse relation} of $r$ is defined  
+	$$r^{-1} = \{(y, x) \st (x,y)\in P\}.$$
 \end{definition}
 
 \vspace*{-2pt}
@@ -1697,13 +1697,17 @@ as the relation that assigns $x$ to $z$ whenever there is a $y\in D$ such that $
 
 \vspace*{-8pt}
 \begin{task}
-Let $P$ be the parent relation and let $t:\N\to \N, x\mapsto 2x$. How would you represent $t\circ P$ using the middle school version of relation? How would you represent $P\circ t$? 
+Let $P$ be the parent relation and let $t:\N\to \N, x\mapsto 2x$. How would you represent $t\circ P$ using the middle school version of relation? 
+\end{task}
 
+\begin{task}
 For the relation $t\circ P$, what is the image of $6$? Of $12$? Of $9$?
 
 For the relation $t\circ P$, what is the preimage of $4$? Of the set $\{1, 3, 5\}$? Of the set $\{4,14\}$?
 
-What are the domain and range of the relations $t\circ P$ and $P\circ t$? 
+What are the domain and range of the relations $t\circ P$?
+
+How would you represent $P\circ t$? What are its domain and range?
 \end{task}
 
 \begin{solution}({\it Partial})
@@ -1837,7 +1841,7 @@ We often think about inverses as ``undoing'' something. How well does this analo
 In this section, we work exclusively with graphs of functions whose candidate domain and candidate range are subsets of $\R$. 
  
 \begin{definition}[graph of a relation]\label{d: graph of a relation}
-The graph of a relation $P:D\to R$ is defined as the set of points $(a, b)\in \R^2$ such that $P$ assigns $a\mapsto b$.
+The \emph{graph of a relation} $r:D\to R$ is defined as the set of points $(a, b)\in \R^2$ such that $r$ assigns $a\mapsto b$.
 \end{definition}
 
 For example, let's do the following together.
@@ -1851,7 +1855,7 @@ Graph these relations: $P$, $P^{-1}$, $t\circ P$, the relation from $\R$ to $\R$
 As we have just seen, {\it any equation in $x$ and $y$ defines a relation}! For example, the equation $x=y^2$ defines the relation that maps $x$ to all $y$ such that $x=y^2$.  One way to understand this is to think about the ``university version'' of the definition of relation.
 
 \begin{definition}[graph of an equation]\label{d: graph of an equation}
-The graph of an equation in $x$ and $y$ is defined as the set of points $(a, b) \in \R^2$ such that evaluating the equation at $x=a$ and $y=b$ results in a true statement.
+The \emph{graph of an equation} in $x$ and $y$ is defined as the set of points $(a, b) \in \R^2$ such that evaluating the equation at $x=a$ and $y=b$ results in a true statement.
 \end{definition}
 
 {\bf Proof structure.}
@@ -1886,13 +1890,19 @@ To show that a point $(x, y)$ is on the graph of an equation means showing that 
 
 \begin{task}
 Let $f(x)=x^2$. Is the point $(1,4)$ on the graph of the equation $y=f(x)$? How about on the graph of $y=f(x-1)$? How about on the graph of $y=f(x+1)$?
+
+In general, how do the points of the graph of $y=f(x)$ relate to the points on the graph of $y=f(x-1)$? How do they relate to the points on the graph of $y=f(x+1)$?
 \end{task}
 
 \smallnote{Again, in doing this task, attend to students' reasoning and make sure that they are {\it explicitly} referencing the definition of graph of equations, not just plugging in numbers without saying why it makes sense to plug in numbers.}
 
+\begin{task}
+Let $f(x)=\sin(x)$. How do the points of the graph of $y=f(x)$ relate to the points on the graph of $y=f(x-1)$? How do they relate to the points on the graph of $y=f(x+1)$? Show your conjecture.
+\end{task}
+
 With these ideas in place, we can now define two concepts which you may well teach to high school students: the $x$- and $y$-intercepts.
 
-\begin{definition}
+\begin{definition}\label{d: intercepts}
 Given an equation in $x$ and $y$ and its graph, all points $(a,0)$ on the graph are called \emph{$x$-intercepts} of the graph. A graph may have 0, 1, or multiple $x$-intercepts.
 
 Given an equation in $x$ and $y$ and its graph, all points $(0,b)$ on the graph are called \emph{$y$-intercepts} of the graph. A graph may have 0, 1, or multiple $y$-intercepts.
@@ -2106,31 +2116,432 @@ Connecting mathematically equivalent definitions
 
 Connecting different mathematical representations
 
-\todo{decompose these}
+\todo{Ch 2: summarize mathematical practices}
 
 %%%%%%%%%%%%%%
 % \header{Preparation for next lesson}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%% 1 IN-CLASS RESOURCES %%%%%%%%%%%%%%%%%
+%%%%%%%%% 2 IN-CLASS RESOURCES %%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage \subsection{In-Class Resources}  
 
-% \handout{Handout Title}
+%%%%%%%%%% 2 OPENING EXAMPLE %%%%%%%%%%
+\handout{Opening Example: Parent Relation}
 
-%%%%%%%%% 1 HOMEWORK %%%%%%%%%%%%
-\newpage \subsection{Homework}
-Define invertibility of function somewhere in homework.
 
-Allen item SoP? (wr
+We learned about natural number parents and children last time.
 
-Vertical line test SoP? 
+\begin{enumerate}
+\item What is the definition of a parent of a natural number child? 
+\item 
+Let $P$ assign a natural number to each of its parents. We can represent $P$ as a set of arrows from $\N$ to $\N$.  Some arrows below have been filled in, for example $P$ assigns $6$ to $2$ and $3$, and assigns $12$ to $2, 3, 4, 6$.  Draw in more arrows.
+
+\item Consider this statement: ``Some children have no parents, some children have exactly one parent, and some children have multiple parents.''  
+
+Is this statement true or false? Why?
+
+\item How about this statement? ``Some numbers have no children, and some numbers have multiple children.'' 
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}
+\def\pt{circle (0.05)}
+\foreach \x in {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
+	{\filldraw(0,-0.5*\x) node[left]{$\x$} \pt;
+	\filldraw(5,-0.5*\x) node[right]{$\x$} \pt;
+	}
+	\draw 
+		(2.5, 1) node[]{$P$}
+		(0,0.7) node[] {$\N$}
+		(5,0.7) node[] {$\N$}
+		(0, -0.5*15) node[]{$\vdots$}
+		(5, -0.5*15) node[]{$\vdots$};
+	\draw[->=stealth, yscale=-0.5] (0,6) -- (4.94, 1.9);
+	\draw[->, yscale=-0.5] (0,6) -- (4.94, 2.9);
+	\draw[->, yscale=-0.5] (0, 12)-- (4.94, 2.1);
+	\draw[->, yscale=-0.5] (0, 12) -- (4.94, 3.1);
+	\draw[->, yscale=-0.5] (0, 12) -- (4.94, 4);
+	\draw[->, yscale=-0.5] (0, 12) -- (4.94, 6);
+\draw[xshift=-1cm] (0,0) arc (180:0:1) (0,-7) arc (180:360:1) (0,0)-- (0,-7) (2,0) -- (2,-7); 
+\draw[xshift=4cm] (0,0) arc (180:0:1) (0,-7) arc (180:360:1) (0,0)-- (0,-7) (2,0) -- (2,-7); 
+\end{tikzpicture}
+\end{center}
+
+%%%%%%%%%% 2 EXAMPLES FOR RELATION %%%%%%%%%%
+\newpage 
+
+\handout{Getting familiar with relations and associated concepts}
+
+\subsubsection*{Cartesian products}
+(We will define $A$, $B$ $C$ on the board.)
+
+\begin{enumerate}
+\item 
+	\begin{enumerate}
+	\item  List the elements of the following Cartesian products:
+	\begin{itemize}
+	\item $A\times B$ 
+	\item $A\times C$
+	\item $\Z \times C$
+	\item $C\times \Z$
+	\item $\N \times \N$.
+	\end{itemize}
+
+	\item Which of the above sets contains the element $(6, -1)$? How about $(-1, 10)$?
+
+	\item How would you describe $\R\times \R$? 
+
+	\item How about $\R\times (\R\times \R)$?
+	\end{enumerate}
+\end{enumerate}
+
+\vfill 
+\subsubsection*{Domain, range, image, preimage}
+
+Do \#2. Do not proceed to \#3 or \#4 yet.
+
+\begin{enumerate}[resume]
+\item \begin{enumerate}
+	\item What are the domain and range of the car-owner relation and the room-course relation? 
+
+	\item Suppose this table contains course assignments to rooms at 1pm. What is the image of Math Bldg Room 100? What is the preimage of Math 996, Math 405, Math 100, and Math 221 under the room-course relation? 
+
+    \begin{center}
+    \begin{tabular}{|c|c|}
+    \hline
+    Room & Course in room at 1pm \\ \hline
+    Math Bldg room 100 & Math 996 \\ 
+    Math Bldg room 104 & Math 100 \\ 
+    Engineering Bldg room 750 & Math 405 \\ 
+    not being offered this term & Math 221 \\ \hline
+    \end{tabular}
+    \end{center}
+
+\item Let $T$ be the relation that maps each day of the year 2030 to the its average temperature in $\degrees F$ that day. Describe a possible candidate domain, domain, candidate range, and range of this relation.
+
+% connection to trig
+\item Let $A$ be the relation that maps each degree in the interval $[0\degrees, 360\degrees)$ to all degrees in the interval $(-\infty,\infty)$ that give an equivalent angle measure. What is the preimage of $361\degrees$? What is the image of $0\degrees$? 
+
+% connection to geometry
+\item Let $\rho$ be the relation that maps a point in the plane to its rotation about the origin by $90\degrees$.  (This means $90\degrees$ {\it counter}clockwise.) What is the image of the point $(1,0)$? What is the preimage of the point $(-2,0)$? 
+
+% connection to graphing 
+\item Let $G$ be the relation that maps $x$ to every $y$ such that $x=y^2$. What is the image of $4$? What is the preimage of $-6$?
+\end{enumerate}
+\end{enumerate}
+
+\newpage
+\subsubsection*{Connecting different representations}
+\begin{enumerate}[resume]
+\item  Interpret the definitions of candidate domain, domain, image, preimage, candidate range, and range in terms of arrows and their start and end points.
+\item Interpret the definitions of these same concepts in terms of the graph of a relation. Use the graphs of $A$ and $P$ to illustrate what you mean.
+\end{enumerate}
+
+\newpage 
+\handout{Getting familiar with inverses of relations}
+
+\subsubsection*{Back to the opening example: Inverting the parent relation}
+\begin{minipage}{4in} \raggedright \parskip4pt
+The inverse of the parent relation could be represented like this:
+
+What other arrows does the inverse of the parent relation contain? 
+
+What might be a good name for this relation?
+\end{minipage}
+\begin{minipage}{2.4in}
+ \begin{center}
+\begin{tikzpicture}[xscale=-1, scale=0.7]
+\def\pt{circle (0.05)}
+\foreach \x in {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
+	{\filldraw[yscale=0.5](0,-\x) node[left]{\tiny{ $\x$}} \pt;
+	\filldraw[yscale=0.5](5,-\x) node[right]{\tiny{$\x$}} \pt;
+	}
+	\draw 
+		(2.5, 1) node[]{$P$}
+		(0,0.7) node[] {$\N$}
+		(5,0.7) node[] {$\N$}
+		(0, -6.5) node[]{$\vdots$}
+		(5, -6.5) node[]{$\vdots$}
+		(2.5, -5) node[]{$\vdots$};
+	\draw[<-=stealth, yscale=-0.5] (0,4) -- (4.94, 2);
+	\draw[<-, yscale=-0.5] (0,6) -- (4.94, 3);
+	\draw[<-, yscale=-0.5] (0,6) -- (4.94, 2);
+	\draw[<-, yscale=-0.5] (0,8) -- (4.94, 2);
+	\draw[<-, yscale=-0.5] (0,8) -- (4.94, 4);
+	\draw[<-, yscale=-0.5] (0,9) -- (4.94, 3);
+	\draw[<-, yscale=-0.5] (0,10) -- (4.94, 3);
+	\draw[<-, yscale=-0.5] (0,10) -- (4.94, 5);
+	\draw[<-, yscale=-0.5] (0, 12)-- (4.94, 2);
+	\draw[<-, yscale=-0.5] (0, 12) -- (4.94, 3);
+	\draw[<-, yscale=-0.5] (0, 12) -- (4.94, 4);
+	\draw[<-, yscale=-0.5] (0, 12) -- (4.94, 6);
+\draw[xshift=-1cm, yscale=0.75] (0,0.5) arc (180:0:1) (0,-9) arc (180:360:1) (0,0.5)-- (0,-9) (2,0.5) -- (2,-9); 
+\draw[xshift=4cm, yscale=0.75] (0,0.5) arc (180:0:1) (0,-9) arc (180:360:1) (0,0.5)-- (0,-9) (2,0.5) -- (2,-9); 
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+
+\vfill
+
+\subsubsection*{Connecting different but mathematically equivalent definitions}
+Discuss the three versions of the definition of inverse of a relation. What do they each say? How would you represent them? What makes them mathematically equivalent?
+
+\vfill 
+
+\newpage
+\subsubsection*{Working with compositions algebraically}
+Let $P$ be the parent relation and let $t:\N\to \N, x\mapsto 2x$. 
+
+\begin{enumerate}
+\item \begin{enumerate}
+	\item For the relation $t\circ P$, what is the image of $6$? Of $12$? Of $9$?
+
+	\item For the relation $t\circ P$, what is the preimage of $4$? Of the set $\{1, 3, 5\}$? Of the set $\{4,14\}$?
+	
+	\item What are the domain and range of the relations $t\circ P$?
+
+	\end{enumerate}
+	\bigskip
+	\item How would you represent $P\circ t$? What are its domain and range?
+\end{enumerate}
+
+\vfill 
+
+\begin{enumerate}[resume]
+\item  \begin{enumerate}
+	\item Sketch a representation of $A^{-1}\circ A$. 
+	\item What are its domain and range? 
+	\item What is the image of $45\degrees$? 
+	\item What is the preimage of $45\degrees$? 
+	\end{enumerate}
+\end{enumerate}	
+
+
+\vfill 
+
+We often think about inverses as ``undoing'' something. How well does this analogy work in the case of relations? What goes well with the analogy? What goes wrong with the analogy?
+
+\vfill 
+\newpage
+\handout{Graphs of relations}
+
+\begin{mdframed}
+{\bf Proof structures:}
+
+To show that a point $(a, b)$ is on a graph of a relation means showing that the relation assigns $a$ to $b$.
+
+To show that a point $(x, y)$ is on the graph of an equation means showing that evaluating the equation at $x=a$ and $y=b$ results in a true statement.
+\end{mdframed}
 
 Show that for any relation $r:D\to D$, if $x\in D$ is in the domain of $r$, then $(x,x)$ lies on the graph of $r^{-1}\circ r$. 
 
-SoP: correspondence view of function and its inverse, reflection over $y=x$. 
+\vfill
+
+Let $f(x)=\sin(x)$. How do the points of the graph of $y=f(x)$ relate to the points on the graph of $y=f(x-1)$? How do they relate to the points on the graph of $y=f(x+1)$? Show your conjecture.
+\vfill 
+
+\newpage
+\handout{Closing inquiry}
+
+To finish this chapter, let's investigate something that you may have begun noticing.
+
+Here are some graphs that we've seen: 
+
+\begin{center}
+\begin{tabular}{cccccc}
+$P$ & $P^{-1}$ & $A$ & $A^{-1}$ & $G$ & $G^{-1}$ \\ 
+\begin{tikzpicture} [scale=0.1]
+\draw(-0.5,0) -- (20.5,0) (0,-0.5) -- (0,20.5);
+\def\pt{circle (0.09)}
+\foreach \x in {(4,2),(6,2),(6,3),(8,2),(8,4),(9,3),(10,2),(10,5), (12, 2),(12,3),(12,4),(12,6), (14,2),(14,7),(15,3),(15,5),(16,2),(16,4),(16,8),(18,2),(18,9),(20,2),(20,4),(20,5),(20,10)}
+	{	
+	\filldraw \x \pt;
+	}
+\end{tikzpicture}
+& 
+\begin{tikzpicture} [scale=0.1, rotate=45, yscale=-1, rotate=-45]
+\draw(-0.5,0) -- (20.5,0) (0,-0.5) -- (0,20.5);
+\def\pt{circle (0.09)}
+\foreach \x in {(4,2),(6,2),(6,3),(8,2),(8,4),(9,3),(10,2),(10,5), (12, 2),(12,3),(12,4),(12,6), (14,2),(14,7),(15,3),(15,5),(16,2),(16,4),(16,8),(18,2),(18,9),(20,2),(20,4),(20,5),(20,10)}
+	{	
+	\filldraw \x \pt;
+	}
+\end{tikzpicture} 
+&
+\begin{tikzpicture} [scale=0.014]
+\draw(-36*3-0.05,0) -- (36*3+.05,0) (0,-36*3-0.05) -- (0,36*3+.05);
+\foreach \x in {0, 1, -1, 2, -2}
+	{
+	\filldraw (0,0+\x*36) circle (3);
+	\draw(0,0+\x*36) -- (36,\x*36+36);
+	\filldraw [draw=black, fill=white] (36,\x*36+36) circle (3);
+	}
+\end{tikzpicture}
+&
+\begin{tikzpicture} [scale=0.014, rotate=45, yscale=-1, rotate=-45]
+\draw(-36*3-0.05,0) -- (36*3+.05,0) (0,-36*3-0.05) -- (0,36*3+.05);
+\foreach \x in {0, 1, -1, 2, -2}
+	{
+	\filldraw (0,0+\x*36) circle (3);
+	\draw(0,0+\x*36) -- (36,\x*36+36);
+	\filldraw [draw=black, fill=white] (36,\x*36+36) circle (3);
+	}
+\end{tikzpicture}
+&
+\begin{tikzpicture} [scale=0.07]
+\draw (-20, 0) -- (20,0) (0,-20)--(0,20);
+\draw[domain=-4.5:4.5,smooth,variable=\y]  plot ({\y*\y},{\y});
+\end{tikzpicture}
+&
+\begin{tikzpicture} [scale=0.07, rotate=45, yscale=-1, rotate=-45]
+\draw (-20, 0) -- (20,0) (0,-20)--(0,20);
+\draw[domain=-4.5:4.5,smooth,variable=\y]  plot ({\y*\y},{\y});
+\end{tikzpicture}
+\end{tabular}
+\end{center}
+
+And here are those graphs again, this time pairing relations and their inverse relations.
+
+\begin{center}
+\begin{tabular}{ccc}
+$P$, $P^{-1}$ & $A$, $A^{-1}$ & $G$, $G^{-1}$ \\ 
+\begin{tikzpicture} [scale=0.1]
+\draw(-0.5,0) -- (20.5,0) (0,-0.5) -- (0,20.5);
+\def\pt{circle (0.09)}
+\foreach \x in {(4,2),(6,2),(6,3),(8,2),(8,4),(9,3),(10,2),(10,5), (12, 2),(12,3),(12,4),(12,6), (14,2),(14,7),(15,3),(15,5),(16,2),(16,4),(16,8),(18,2),(18,9),(20,2),(20,4),(20,5),(20,10)}
+	{	
+	\filldraw \x \pt;
+	\filldraw[ rotate=45, yscale=-1, rotate=-45] \x \pt;
+	}
+\end{tikzpicture}
+&
+\begin{tikzpicture} [scale=0.014]
+\draw(-36*3-0.05,0) -- (36*3+.05,0) (0,-36*3-0.05) -- (0,36*3+.05);
+\foreach \x in {0, 1, -1, 2, -2}
+	{
+	\filldraw (0,0+\x*36) circle (3);
+	\draw(0,0+\x*36) -- (36,\x*36+36);
+	\filldraw [draw=black, fill=white] (36,\x*36+36) circle (3);
+	\filldraw[rotate=45, yscale=-1, rotate=-45] (0,0+\x*36) circle (3);
+	\draw[rotate=45, yscale=-1, rotate=-45](0,0+\x*36) -- (36,\x*36+36);
+	\filldraw [rotate=45, yscale=-1, rotate=-45, draw=black, fill=white] (36,\x*36+36) circle (3);
+	}
+\end{tikzpicture}
+&
+\begin{tikzpicture} [scale=0.07]
+\draw (-20, 0) -- (20,0) (0,-20)--(0,20);
+\draw[domain=-4.5:4.5,smooth,variable=\y]  plot ({\y*\y},{\y});
+\draw[domain=-4.5:4.5,smooth,variable=\y, rotate=45, yscale=-1, rotate=-45]  plot ({\y*\y},{\y});
+\end{tikzpicture}
+\end{tabular}
+\end{center}
+
+\begin{task}
+What do you notice about these graphs? How might we transform a graph into the graph of its inverse?
+
+Prove your conjecture.
+\end{task}
+
+%%%%%%%%%% 2 DEFINITIONS RELATED TO RELATION %%%%%%%%%%
+\newpage 
+\handout{Reference: Relations}
+
+{\bf Definition \ref{d: cartesian product}.}
+Let $D$ and $R$ be sets. The \emph{Cartesian product} of $D$ and $R$ is defined as the set of ordered pairs $\{ (x,y) \st x\in D, y\in R\}$. It is denoted $D\times R$.
+
+\vfill 
+{\bf Definitions \ref{d: relation middle school}, \ref{d: relation high school}, \ref{d: relation university}:} \\ 
+\begin{tabular}{L{1.25in}|L{5in}}
+\hline 
+Middle school version  & A \emph{relation} from a set $D$ to a set $R$ is a set of arrows going from elements of $D$ to elements of $R$.   \\  \hline
+High school version & A \emph{relation} $P$ from a set $D$ to a set $R$ a set of assignments from elements of $D$, called inputs, to elements of $R$, called outputs. \\  \hline
+University version & A relation $r:D\to R$ is a subset of $D\times R$, i.e., $r\subset D\times R$. \\  \hline
+\end{tabular}
+
+{\bf Notation:} $r:D\to R$ refers to a relation from $D$ to $R$; and $x\mapsto y$ refers to an assignment from $x\in D$ to $y\in R$
+
+A relation may map an element of $D$ to no elements of $R$, exactly one element of $R$, or multiple elements of $R$.  An element of $R$ may have no elements of $D$ mapping to it, exactly one element of $D$ mapping to it, or multiple elements of $D$ mapping to it.
+
+\vfill 
+{\bf Definition \ref{d: candidate domain etc}.} 
+For a relation $r:D \to R$, we say that 
+\begin{itemize}
+	\item $D$ is the \emph{candidate domain};
+	\item $R$ is the \emph{candidate range} (or \emph{codomain});
+	\item the \emph{image} of an element $x\in  D$ is the set of elements of $R$ that $x$ is mapped to. Similarly, the \emph{image} of a subset of $S\subset D$ is the subset of $R$ containing the images of all elements of $S$.
+	\item When a element in $D$ maps to no element in $R$, we say it has \emph{empty image}. Otherwise it has \emph{nonempty image}.
+	\item the \emph{domain} of $r$ is the subset $D'\subset D$ of elements with nonempty image.
+	\item the \emph{preimage} of an element of $R$ is the set of elements of $D$ that map to $R$. Similarly, the \emph{preimage} of a subset $T\subset R$ is the subset of $D$ containing the preimages of all elements of $T$.
+	\item When a element in $R$ has no element in $D$ mapping to it, we say it has \emph{empty preimage}. Otherwise it has \emph{nonempty preimage}.
+	\item the \emph{range} (or \emph{image}) of the relation $r$ is the subset $R\subset D$ with nonempty preimage.
+	\end{itemize}
+
+\vfill 
+
+{\bf Definitions \ref{d: inverse relation middle school}, \ref{d: inverse relation high school}, \ref{d: inverse relation university}:}  \\ 
+\begin{tabular}{L{1.25in}|L{5in}}
+\hline 
+Middle school version & 
+If $r$ is a relation from a set $D$ to $R$, then the \emph{inverse relation} of $r$ is the relation that swaps the direction of the arrows of $r$.  The arrows of the inverse relation go from elements of $R$ to elements of $D$. \\ \hline 
+High school version & 
+Given a relation $r:D\to R$, the \emph{inverse relation} of $r$ is the set of assignments $y\mapsto x$ such that $x\mapsto y$ is an assignment of $r$. \\ \hline  
+High school version & 
+Given a relation $r:D\to R$, the \emph{inverse relation} of $r$ is defined as the following subset of $R\times D$
+	$\{(y, x) \subset R\times D \st (x,y)\in r\}.$\\ \hline
+\end{tabular}
+{\bf Notation: $r^{-1}$.}
 
 
+\vfill 
 
+{\bf Definition \ref{d: relation composition}.}
+Given two relations $P:D\to D$ and $Q:D\to D$, we define the \emph{composition} of $P$ then $Q$ 
+as the relation that assigns $x$ to $z$ whenever there is a $y\in D$ such that $P$ assigns $x\mapsto y$ and $Q$ assigns $y\mapsto z$.
+
+\vfill
+{\bf Definition \ref{d: graph of a relation}.}
+The \emph{graph of a relation} $r:D\to R$ is defined as the set of points $(a, b)\in \R^2$ such that $r$ assigns $a\mapsto b$.
+
+{\bf Definition \ref{d: graph of an equation}.}
+The \emph{graph of an equation} in $x$ and $y$ is defined as the set of points $(a, b) \in \R^2$ such that evaluating the equation at $x=a$ and $y=b$ results in a true statement.
+
+\vfill
+
+{\bf Definition \ref{d: intercepts}.}
+Given an equation in $x$ and $y$ and its graph, all points $(a,0)$ on the graph are called \emph{$x$-intercepts} of the graph. All points $(0,b)$ on the graph are called \emph{$y$-intercepts} of the graph. A graph may have 0, 1, or multiple $x$-intercepts and $y$-intercepts.
+
+\vfill
+
+{\bf Proof structures:}
+\begin{itemize}
+\item To show that a point $(a, b)$ is on a graph of a relation means showing that the relation assigns $a$ to $b$.
+
+\item To show that a point $(x, y)$ is on the graph of an equation means showing that evaluating the equation at $x=a$ and $y=b$ results in a true statement.
+\end{itemize}
+
+\vfill 
+
+%%%%%%%%% 2 HOMEWORK %%%%%%%%%%%%
+\newpage \subsection{Homework}
+
+\todo{Ch 2: write homework}
+
+\todo{Ch 2: write video SoP involving intercepts}
+
+Define invertibility of function somewhere in homework? Define function in homework?
+
+Allen item SoP? (wait until Chapter 4 on covariational perspective)
+
+Vertical line test SoP?  (wait until next time)
+
+
+Show that for any relation $r:D\to D$, if $x\in D$ is in the domain of $r$, then $(x,x)$ lies on the graph of $r^{-1}\circ r$. 
+
+SoP? correspondence view of function and its inverse, reflection over $y=x$. 
+
+
+SoP? Something with intercepts?
 
 Composition of graphs.
 
@@ -2142,7 +2553,28 @@ Let $S(x)=\sin(x)$. Let $S^{-1}$ be the inverse relation of $\sin(x)$.
 Example with integral?
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 	
+%%%%%% LESSON 3 %%%%%%%%%%%%%%%%%%%%	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\newpage
+\section{Functions: Introduction to Correspondence and Covariational Views (Week 3) (Length: \about 2.5 hours)}  
 
+%%%%%%%%% 3 OVERVIEW  %%%%%%%%%%%%%%%%%%%%
+\subsection{Overview}
+
+
+%%%%%%%%%%%%%%
+\header{Summary}
+% {\it Acknowledgements.}   <-- fill this in as appropriate.
+%%%%%%%%%%%%%%
+\newpage
+\begin{bignote}[Materials]
+\begin{itemize*}
+\item Handouts from In-Class Resources (can be printed double-sided)
+         % \item other things as necessary, such as colored chalk or markers; other handouts; other props
+\end{itemize*}
+\end{bignote}
+%%%%%%%% 3 CONTENT %%%%%%
 %%%%%%% 3 FUNCTIONS %%%%%%%
 \subsection{Functions}
 
@@ -2174,9 +2606,6 @@ Pose these as problems.
 Discuss vertical line test. Eventually explaining this becomes one of the SoPs.
 
 Crib homework problems from combination of Bremigan, Bremigan, and Lorch and Sultan and Artzt. They have some good conceptual problems in there about relations and functions.
-
-
-
 
 %%%%%%% 3 INVERSE OF A FUNCTION (INTRO) %%%%%%%
 \subsection{Intro to inverse of a functions}
@@ -2220,32 +2649,11 @@ Next time: Define invertibility. Put intro to this in homework.
 %\end{bignote}
 %
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 	
-%%%%%% LESSON 3 %%%%%%%%%%%%%%%%%%%%	
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \newpage 
 
 IGNORE EVERYTHING HERE FOR NOW: NEED TO COMBINE WITH LESSON 2.
 
-\section{Function Composition and Inverse Functions (Week 3) (Length: \about 2.5 hours)}  
-% Use Title Case for Title
-%%%%%%%%% # OVERVIEW  %%%%%%%%%%%%%%%%%%%%
-\subsection{Overview}
 
-Teaching practice: ``What do you notice? What do you wonder?''
-
-%%%%%%%%%%%%%%
-\header{Summary}
-% {\it Acknowledgements.}   <-- fill this in as appropriate.
-%%%%%%%%%%%%%%
-\newpage
-\begin{bignote}[Materials]
-\begin{itemize*}
-\item Handouts from In-Class Resources (can be printed double-sided)
-         % \item other things as necessary, such as colored chalk or markers; other handouts; other props
-\end{itemize*}
-\end{bignote}
-%%%%%%%% 3 CONTENT %%%%%%
 \subsection{Function composition}
 
 \begin{task}
