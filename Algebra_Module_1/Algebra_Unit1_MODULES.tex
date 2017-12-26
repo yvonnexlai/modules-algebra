@@ -1257,17 +1257,21 @@ How does this way of phrasing the conjecture match up with the original way?
 
 \smallnote{For homework, you may want to make sure to assign at least one problem on parent relation and the problem with Cartesian product. These are used in the next lesson, in Section \ref{s: relations}, and beyond.}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 	
+%%%%%% PART II %%%%%%%%%%%%%%%%%%%%%	%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 	
-%%%%%% PART # %%%%%%%%%%%%%%%%%%%%%	
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 	
 \newpage \part{Relations and Functions} 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 	
 %%%%%% LESSON 2 %%%%%%%%%%%%%%%%%%%%	
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
 \section{Relations (Week 2) (Length: \about 2.5 hours)}\label{s: relations}  % 
 %%%%%%%%% 2 OVERVIEW  %%%%%%%%%%%%%%%%%%%%
 \subsection{Overview}
@@ -1324,9 +1328,6 @@ To highlight the universality of these concepts throughout high school and middl
 
 We then introduce {\it inverse relations}, {\it functions}, {\it graphs of functions}, and {\it compositions of functions}.  For each concept in this lesson, we ask teachers to consider how they might explain the connection between the concept and the middle school, high school, and university conceptions of relation, as well as how they might explain how different representations denote mathematically equivalent ideas.
 
-
-
-
 % {\it Acknowledgements.}   <-- fill this in as appropriate.
 %%%%%%%%%%%%%%
 \newpage
@@ -1336,7 +1337,13 @@ We then introduce {\it inverse relations}, {\it functions}, {\it graphs of funct
          % \item other things as necessary, such as colored chalk or markers; other handouts; other props
 \end{itemize*}
 \end{bignote}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% 2 CONTENT %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %%%%%% 2 OPENER %%%%%%
+
 \subsection{Opening example: Parent relation}
 
 \begin{task}
@@ -2120,9 +2127,11 @@ Connecting different mathematical representations
 
 %%%%%%%%%%%%%%
 % \header{Preparation for next lesson}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%% 2 IN-CLASS RESOURCES %%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newpage \subsection{In-Class Resources}  
 
 %%%%%%%%%% 2 OPENING EXAMPLE %%%%%%%%%%
@@ -2323,6 +2332,7 @@ Let $P$ be the parent relation and let $t:\N\to \N, x\mapsto 2x$.
 We often think about inverses as ``undoing'' something. How well does this analogy work in the case of relations? What goes well with the analogy? What goes wrong with the analogy?
 
 \vfill 
+%%%%%%%%%2 GRAPHS OF RELATIONS %%%%%%%%%%%%
 \newpage
 \handout{Graphs of relations}
 
@@ -2527,34 +2537,26 @@ Given an equation in $x$ and $y$ and its graph, all points $(a,0)$ on the graph 
 
 \todo{Ch 2: write homework}
 
-\todo{Ch 2: write video SoP involving intercepts}
+\begin{enumerate}
+\item \label{h: key graphs} Graphs of relations and their inverses. Use examples that will be used in Lesson 3: sine, cosine, absolute value, square, cube.  In each, label any maxima and minima, then label these corresponding points in their inverse relations. Part (f). Draw images and preimages of intervals in both the graphs of the relations as well as their inverses.
+\item Something with intercepts: maybe responding to students' explanations? Using various representations.
+\item Proof structure practice: Show that for any relation $r:D\to D$, if $x\in D$ is in the domain of $r$, then $(x,x)$ lies on the graph of $r^{-1}\circ r$. 
+\item (Mini SoP?) Proof structure practice: To get from graph of relation to graph of its inverse, reflect over $y=x$. Do this with particular example, explain to class why this is true. Set up a discussion about it. Connect different definitions.
+\item \label{h: composition correspondence} 
+Composition of graphs (from the canadian textbook; also draw compositions of graphs and their inverses) (probably need to scaffold this more. think about relationship between linear function and linear function, also think about where points go, not sure what else needs to go here. Will probably need to re-assign in Lesson 3) (Maybe instead of doing entire graph, do something like a series of questions -- what is $f(g(f(g(1)))), g(f(g(1)))$, etc. Do this for a bunch of points, especially for the combination $g(f(x))$ (or whichever composition is easier to do.). Then assign the actual composition in Hwk 3 after discussing correspondence and covariational views and ask students to analyze where they used each viewpoint. In Hwk 3 also assign composition of linear and quadratic, analyze which parts are constant, linear non-constant, quadratic, none of the above.)
 
-Define invertibility of function somewhere in homework? Define function in homework?
+need to introduce definition of function and its notation here, otherwise can't really use this notation.
 
-Allen item SoP? (wait until Chapter 4 on covariational perspective)
+Also add a part (b) with $g$ and $h$ where $h$ is relation, and asking to find the image of $1$ under $h\circ g$. make $h$ so that $h\circ g$ has multiple values.
 
-Vertical line test SoP?  (wait until next time)
+\item Something with integral? (Definite integral; evaluating at particular point; relates to definition of graph of an equation)
+\item Something with practicing domain and range? Maybe something about teaching them with example $1/x$ or asymptotes or something that is discontinuous?
+\end{enumerate}
 
-
-Show that for any relation $r:D\to D$, if $x\in D$ is in the domain of $r$, then $(x,x)$ lies on the graph of $r^{-1}\circ r$. 
-
-SoP? correspondence view of function and its inverse, reflection over $y=x$. 
-
-
-SoP? Something with intercepts?
-
-Composition of graphs.
-
-Graphs of relations and their inverses
-
-Recall of sine, cosine.
-Let $S(x)=\sin(x)$. Let $S^{-1}$ be the inverse relation of $\sin(x)$.
-
-Example with integral?
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 	
 %%%%%% LESSON 3 %%%%%%%%%%%%%%%%%%%%	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \newpage
 \section{Functions: Introduction to Correspondence and Covariational Views (Week 3) (Length: \about 2.5 hours)}  
@@ -2562,10 +2564,52 @@ Example with integral?
 %%%%%%%%% 3 OVERVIEW  %%%%%%%%%%%%%%%%%%%%
 \subsection{Overview}
 
+\vspace*{-12pt}
+\begin{tabular}{L{6.5in}} 
+{\bf Content} \\ \hline \parskip4pt
+\emph{Functions}, defined as \dots 
+
+\emph{Partial inverses}, defined as \dots 
+
+\emph{Invertibility of a function}, defined as \dots 
+
+Additionally, we revisit \emph{composition} and \emph{inverse} so that we can use them to compare and contrast correspondence and covariation views. By these terms, we mean:
+	\begin{itemize*}
+	\item % correspondence 
+	(Correspondence) Conceiving of functions and their behavior primarily in terms of maps from individual elements of the domain to individual elements of the range. 
+	\item % covariation
+	(Covariation) Conceiving of functions and their behavior primarily in terms of coordinating how changes in the value of one variable impact the value of the other variable.
+	\end{itemize*} 
+\end{tabular} 
+
+\vspace*{-12pt}
+\begin{tabular}{L{3.2in}|L{3.2in}}
+{\bf Constructions} & {\bf Mathematical/Teaching Practices} \\ 
+\hline \parskip4pt
+% Proof structures
+\emph{Constructing viable partial inverses of functions}, meaning \dots 
+&
+% Mathematical/Teaching Practices
+\emph{Explaining a mathematical ``test'' of a property}, meaning \dots
+
+\emph{Recognizing and explaining correspondence and} \emph{covariation views}, meaning \dots 
+\end{tabular}
 
 %%%%%%%%%%%%%%
 \header{Summary}
-% {\it Acknowledgements.}   <-- fill this in as appropriate.
+
+This lesson comes in three parts: reviewing key examples from Homework 2, working with functions from a correspondence point of view, and working with functions from a covariation point of view.
+
+{\bf Review of Homework 2.} We review how graphs can be used to represent relations (and hence functions) using Homework 2 Problem \ref{h: composition correspondence}. These set up the discussion of how definitions for working with relations specialize to the case when the relation is a function. We also review the functions used in Homework 2 Problem \ref{h: key graphs} so that the discussion of partial inverses can focus on how to construct partial inverses as opposed to details about the functions themselves, particularly sine and cosine graphs.
+
+{\bf Functions and the correspondence view.} After defining {\it functions}, we discuss how some definitions encountered in the previous chapter, such as composition and graph, specialize to the case of function. We then introduce the teaching practice of {\it explaining a mathematical ``test'' of a property} using the example of the {\it vertical line test}.   We then define {\it partial inverses of functions} and discuss {\it how to construct viable partial inverses of functions}, and then define {\it invertible function}. We continue practicing how to explain a mathematical test of a property by looking at the {\it horizontal line test}.  We conclude this part of the lesson by revealing that thus far we have been viewing relations and functions from a {\it correspondence view} of the equation $y=f(x)$, meaning only thinking about functions in terms of maps from elements of the domain to elements of the range. 
+
+{\bf Covariational view.} We use the Morgan Minicase to introduce the difference between correspondence and covariational views. By covariational view, we mean understanding how changing the value of one variable impacts the value of the other variable, and learning to coordinate changes in one variable with changes in the other. This minicase introduces the teaching practice of {\it recognizing and explaining correspondence and covariation views}. We revisit composition and inverse to compare and contrast these views and provide an opportunity engage in this teaching practice. 
+
+{\it Acknowledgements.} The Morgan Minicase activities are based on materials in progress for the Content Knowledge for Teaching Minicases project of the Educational Testing Service and is used with permission. The Morgan Minicase is one of a suite of items developed by the Measures of Effective Teaching project and examined through a collaborative grant between the Educational Testing Service and University of Nebraska-Lincoln (NSF \#DGE-1445551/1445630).
+
+% Morgan item; acknowledge ETS
+
 %%%%%%%%%%%%%%
 \newpage
 \begin{bignote}[Materials]
@@ -2574,11 +2618,39 @@ Example with integral?
          % \item other things as necessary, such as colored chalk or markers; other handouts; other props
 \end{itemize*}
 \end{bignote}
-%%%%%%%% 3 CONTENT %%%%%%
-%%%%%%% 3 FUNCTIONS %%%%%%%
-\subsection{Functions}
 
-\todo{Look at definitions of function and possibly revise them}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%% 3 CONTENT %%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%% 3 REVIEW OF KEY EXAMPLES  %%%%%%%
+\subsection{Review of key examples}
+
+%{ \bf Review of Homework 2.} We review how graphs can be used to represent relations (and hence functions) using Homework 2 Problem \ref{h: composition correspondence}. These set up the discussion of how definitions for working with relations specialize to the case when the relation is a function. We also review the functions used in Homework 2 Problem \ref{h: key graphs} so that the discussion of partial inverses can focus on how to construct partial inverses as opposed to details about the functions themselves, particularly sine and cosine graphs.
+
+%Review:
+% Finding points in composition of graph.
+% Sine, cosine, absolute value, square, cube graphs
+
+In the previous homework, you were given the graphs of two functions $f$ and $g$ and asked to find values such as $f(g(1))$ or $g(g(f(2)))$.  Let us now consider how graphs can be used to find these values, and how the reasoning relies on the definition of graph of a relation.
+
+\begin{task}
+Compare your responses to Homework 2 Problem \ref{h: composition correspondence}. How did you use the definition of graph in your reasoning? Use $g\circ f$ as an example to illustrate your use of these definitions. Then illustrate your reasoning using $h\circ g$.
+\end{task} 
+
+\begin{solution}({\it Partial.})
+By definition of a graph of an equation, $(a, b)$ is on the graph of $y=f(x)$ if and only if $b=f(a)$. There is only one coordinate on the graph of $f$ with the $x$-value 1, so that coordinate's $y$-value must be $f(1)$.
+
+For finding where $h\circ g$ maps $1$, we first seek where $g$ maps $1$. Just as for $f$, there is only one coordinate on the graph of $g$ with the $x$-value 1$, so that coordinate's $y$-value must be $g(1)$.
+There are multiple possible values for where $h\circ g$ maps $1$, because the graph of $h$ contains multiple coordinate points whose $x$-value is $g(1)$.
+\end{solution}
+
+
+%%%%%%% 3 FUNCTIONS AND THE CORRESPONDENCE VIEW  %%%%%%%
+% {\bf Functions and the correspondence view.} After defining {\it functions}, we discuss how some definitions encountered in the previous chapter, such as composition and graph, specialize to the case of function. We then introduce the teaching practice of {\it explaining a mathematical ``test'' of a property} using the example of the {\it vertical line test}.   We then define {\it partial inverses of functions} and discuss {\it how to construct viable partial inverses of functions}, and then define {\it invertible function}. We continue practicing how to explain a mathematical test of a property by looking at the {\it horizontal line test}.  We conclude this part of the lesson by revealing that thus far we have been viewing relations and functions from a {\it correspondence view} of the equation $y=f(x)$, meaning only thinking about functions in terms of maps from elements of the domain to elements of the range. 
+
+% Part 1 of this lesson:
+% Define functions
 
 \begin{definition}[Function: Middle and High school version]\label{d: function middle high school}
 A \emph{function} $f$ from $D$ to $R$ is a relation from $D$ to $R$ where each input in $D$ is assigned to no more than one output in $C$.
@@ -2607,6 +2679,30 @@ Discuss vertical line test. Eventually explaining this becomes one of the SoPs.
 
 Crib homework problems from combination of Bremigan, Bremigan, and Lorch and Sultan and Artzt. They have some good conceptual problems in there about relations and functions.
 
+
+
+% Discuss how some definitions for relations specialize to the case of function, such as composition and graph.  Vertical line test.
+% (Teaching practice: explaining a mathematical ``test'' of a property.)
+% Define partial inverses of functions
+% (Construction: viable partial inverses of functions.)
+% Define invertible functions
+% Interpret definition in terms of graph; horizontal line test.
+% (Continue practicing explaining a mathematical ``test'' of a property.)
+% So far we have been looking at things from a ``correspondence perspective''
+
+
+
+%%%%%%% 3 COVARIATIONAL VIEW  %%%%%%%
+% {\bf Covariational view.} We use the Morgan Minicase to introduce the difference between correspondence and covariational views. By covariational view, we mean understanding how changing the value of one variable impacts the value of the other variable, and learning to coordinate changes in one variable with changes in the other. This minicase introduces the teaching practice of {\it recognizing and explaining correspondence and covariation views}. We revisit composition and inver
+
+
+%Part 2 of this lesson:
+%Morgan item
+%Introduce correspondence and covariational views.
+%(Teaching practice: Using and detecting correspondence or covariational viewpoints)
+%Composition: Correspondence and covariational views
+%Inverse: Correspondence and covariational views.
+%Revisit composition of graphs.
 %%%%%%% 3 INVERSE OF A FUNCTION (INTRO) %%%%%%%
 \subsection{Intro to inverse of a functions}
 
@@ -2767,6 +2863,11 @@ Which of the following is the graph of $y=\sin(x)$?
 %%%%%%%%% 3 HOMEWORK %%%%%%%%%%%%
 \newpage \subsection{Homework}
 
+Note to self about homework followup from Homework 2: 
+Composition of graphs (from the canadian textbook; also draw compositions of graphs and their inverses) (probably need to scaffold this more. think about relationship between linear function and linear function, also think about where points go, not sure what else needs to go here. Will probably need to re-assign in Lesson 3) (Maybe instead of doing entire graph, do something like a series of questions -- what is $f(g(f(g(1)))), g(f(g(1)))$, etc. Do this for a bunch of points, especially for the combination $g(f(x))$ (or whichever composition is easier to do.). Then assign the actual composition in Hwk 3 after discussing correspondence and covariational views and ask students to analyze where they used each viewpoint. In Hwk 3 also assign composition of linear and quadratic, analyze which parts are constant, linear non-constant, quadratic, none of the above.)
+
+
+
 %%%%%%%%% PART 1 WRITTEN SIMULATION OF PRACTICE  %%%%%%%%%%%%
 \newpage \subsection{Simulation of Practice: Title of Simulation 1}
 
@@ -2779,8 +2880,13 @@ function/relation transformation maybe
 
 
 
+Allen item SoP? (wait until Chapter 4 on covariational perspective)
+
+Vertical line test SoP?  (wait until next time)
 
 
+
+ Composition of graphs, again. Correspondence view.  Repeat from HOmework 2. 
 
 \end{document} 
 
@@ -2797,6 +2903,24 @@ Cut and paste the below for a new part and/or lesson:
 \newpage \section{Lesson Title (Length: \about ## minutes)}  % Use Title Case for Title
 %%%%%%%%% # OVERVIEW  %%%%%%%%%%%%%%%%%%%%
 \subsection{Overview}
+\subsection{Overview}
+
+\begin{tabular}{L{6.5in}} 
+{\bf Content} \\ \hline \parskip4pt
+\emph{Thing 1}, defined as \dots 
+
+\emph{Thing 2}, defined as \dots 
+\end{tabular} 
+
+\begin{tabular}{L{3.2in}|L{3.2in}}
+{\bf Proof Structures} & {\bf Mathematical/Teaching Practices} \\ 
+\hline \parskip4pt
+% Proof structures
+\emph{To show \dots} means \dots 
+&
+% Mathematical/Teaching Practices
+\emph{Practice name}, meaning \dots
+\end{tabular}
 %%%%%%%%%%%%%%
 \header{Summary}
 % {\it Acknowledgements.}   <-- fill this in as appropriate.
