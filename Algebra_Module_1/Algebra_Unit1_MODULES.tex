@@ -181,6 +181,17 @@ The Mathematics Of Doing, Understand, Learning, and Educating Secondary Schools 
 \tableofcontents
 \newpage \pagenumbering{arabic}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 	
+%%%%%% PART 1 %%%%%%%%%%%%%%%%%%%%%	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 	
+\newpage 
+\part{How We Talk and Explore Math} 
+
+
+
 \setcounter{section}{-1}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -427,19 +438,11 @@ Features of communicating proof well:
 \end{mdframed}
 \end{minipage}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 	
-%%%%%% PART 1 %%%%%%%%%%%%%%%%%%%%%	
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 	
-\newpage 
-\part{How We Talk and Explore Math} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 	
 %%%%%% LESSON 1 %%%%%%%%%%%%%%%%%%%%	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \section{Sets, Claims, Negations (Week 1) (Length: 2.5 hours)}  % Use Title Case for Title
-
+\label{s: sets}
 %%%%%%%%% 1 OVERVIEW  %%%%%%%%%%%%%%%%%%%%
 \subsection{Overview}
  
@@ -1406,7 +1409,8 @@ The second statement is also true. $0$ and $1$ have no children. All other numbe
 
 %%%%%%% 2 CARTESIAN PRODUCT %%%%%%%%% 
 
-\subsection{Cartesian products}
+\subsection{Defining relations}
+\subsubsection{Cartesian products}
 Let's discuss Cartesian products, which you first saw in your homework from last week.
 
 \begin{definition}\label{d: cartesian product}
@@ -1443,10 +1447,11 @@ $\R\times (\R\times \R)$ can be thought of as all the coordinates of 3-space.
 \end{solution}
 
 %%%%%%% 2 RELATIONS %%%%%%%
-\subsection{Relations}
+\subsubsection{Relations}
 
 In middle school, if relations are introduced, they are often done so in the form of a cloud diagram, such as drawn in the opening task. ({\it Question:} What do the ``$\dots$'' mean in the below diagram?) 
 
+\vspace*{-12pt} 
 \begin{center}
 \begin{tikzpicture}[scale=0.5]
 \def\pt{circle (0.05)}
@@ -1478,6 +1483,7 @@ In middle school, if relations are introduced, they are often done so in the for
 \end{tikzpicture}
 \end{center}
 
+\vspace*{-12pt} 
 In our example, a relation $P$ maps numbers in $\N$ to numbers in $\N$, and the map is represented by arrows connecting input numbers to output numbers. 
 
 \begin{definition}[Relation: Middle school version]\label{d: relation middle school}
@@ -1567,6 +1573,14 @@ Let $G$ be the relation that maps $x$ to every $y$ such that $x=y^2$. What is th
 Interpret the definitions of candidate domain, domain, image, preimage, candidate range, and range in terms of arrows and their start and end points.
 \end{task}
 
+We can think of the definition as a verbal representation of these concepts and the cloud diagrams as another. When connecting different representations, it is often helpful to keep these elements in mind:
+
+\begin{itemize}
+\item Explain how representations appear different and how they appear the same.
+\item Identify how the representations can be used highlight different features. 
+\item Go back and forth between the representations: where are the features of one representation located in the other representation?
+\end{itemize}
+
 At the high school level, textbooks generally do not use cloud diagrams any more, nor do they talk about arrows. Instead, discussion of relations (and functions) are in terms of assignments. The definition in high school is mathematically equivalent to the middle school version, but stated in a way that more directly allows for defining concepts like the graph of a relation or later, the behavior of a function.  (We note that as we will discuss later, a function is a kind of relation.)
 
 \begin{definition}[Relation: High school version]\label{d: relation high school}
@@ -1608,20 +1622,32 @@ One way to think about this definition is that we are defining the relation as i
 \begin{note}
 One question that might come up is: if the candidate domain could be anything, then why bother finding good candidate domains? Why not instead let the candidate domain be the largest set that we could think of? For instance, we might set the candidate domain to be something like this:
 $$\mathbb{R}\cup (\textnormal{all cars in the world}) \cup(\textnormal{all rooms in all buildings in the world})\cup \dots \,.$$ One reason that we would not want to do this is that eventually, we want to construct and compare graphs of relations and functions. The candidate domain and candidate range of comparable relations and functions are likely to be similar to each other, and the graphs live in the space $D\times R$ where $D$ is the candidate domain and $R$ is the candidate range for these relations or functions. \end{note}
-%%%%%%% 2 INVERSE OF A RELATIONS %%%%%%%
-\subsection{Inverse of a relation}
+
+%%%%%%% 2 BUILDING RELATIONS %%%%%%%
+\subsection{Building relations from existing relations}
+
+There are two main ways to build relations from existing relations: inverses and composition. We will see these again, in more depth, when we discuss functions.
+
+%%%%%%% 2 INVERSE OF A RELATION %%%%%%%
+\subsubsection{Inverse of a relation}
 
 \begin{definition}[Inverse relation: Middle school version]\label{d: inverse relation middle school}
-If $r$ is a relation from a set $D$ to $R$, then the \emph{inverse relation} of $P$ is the relation that swaps the direction of the arrows of $r$.  The arrows of the inverse relation go from elements of $R$ to elements of $D$.
+If $r$ is a relation from a set $D$ to $R$, then the \emph{inverse relation} of $r$ is the relation that swaps the direction of the arrows of $r$.  The arrows of the inverse relation go from elements of $R$ to elements of $D$.
+
+In other words, there is an arrow from $x$ to $y$ in $r$ if and only if there is an arrow from $y$ to $x$ in $r^{-1}$.
 \end{definition}
 
 \begin{definition}[Inverse relation: High school version]\label{d: inverse relation high school}
-Given a relation $r:D\to R$, the \emph{inverse relation} of $r$ is the set of assignments $y\mapsto x$ such that $x\mapsto y$ is an assignment of $r$. The inverse relation is denoted $r^{-1}$.
+Given a relation $r:D\to R$, the \emph{inverse relation} of $r$ is the set of assignments $y\mapsto x$ such that $x\mapsto y$ is an assignment of $r$. The inverse relation is denoted $r^{-1}$. 
+
+In other words, $x\mapsto y$ is an assignment of a relation $r$ if and only if $y\mapsto x$ is an assignment of $r^{-1}$. 
 \end{definition}
 
 \begin{definition}[Inverse relation: University version]\label{d: inverse relation university}
 Given a relation $r:D\to R$, the \emph{inverse relation} of $r$ is defined  
 	$$r^{-1} = \{(y, x) \st (x,y)\in P\}.$$
+	
+In other words,	$(x,y)\in  r$ if and only if $(y,x)\in r^{-1}$.
 \end{definition}
 
 \vspace*{-2pt}
@@ -1671,13 +1697,43 @@ What is the inverse of the car-owner relation? How about the relations $T$, $A$,
 \vspace*{-6pt}
 \smallnote{One reasonable name for the inverse of the parent relation might be the ``child relation'', as this relation maps natural numbers to their children. The inverse of the car-owner relation is the relation from all people in the world to all cars in the world that map a person to all the cars they own. The relation $T^{-1}$ maps possible temperatures to the days on which that temperature was the day's average temperature. The relation $A^{-1}$ maps an element of $\R$ to the element of $[0,360)$ which represents its angle measure. The relation $\rho^{-1}$ is rotation about the origin by $-90\degrees$, which is $90\degrees$ clockwise. The relation $G^{-1}$ is the relation that maps $y$ to every $x$ such that $x=y^2$.}
 
-\vspace*{-14pt}
+\vspace*{-8pt}
 \begin{task}
 Discuss the three versions of the definition of inverse of a relation. What do they each say? How would you represent them? What makes them mathematically equivalent?
 \end{task}
 
+Here are some elements to keep in mind when connecting mathematically equivalent definitions; how did they each come up in your discussion?
+
+\begin{itemize}
+\item Explain how they appear different and how they appear the same.
+\item Explain why they are mathematically equivalent. 
+\item Analyze the mathematical and pedagogical purposes of each definition and why they may be appropriate for different levels of mathematical study, or why one version makes more sense after having worked with another version.
+\end{itemize}
+
+
+\vspace*{-4pt}
+\begin{task}
+Let $(P^{-1})^{-1}$ be the inverse of the relation $P^{-1}$. What is this relation? How do you know?
+Let $(G^{-1})^{-1}$ be the inverse of the relation $G^{-1}$. What is this relation? How do you know?
+
+In general, given a relation $r$, what is $(r^{-1})^{-1}$?  Explain how you know.
+\end{task}
+
+To show that two relations are the ``same'', we can go back to two definitions: that of relation, and that of set equality (Definition \ref{definition: set equality}). A relation is defined as a set of assignments (or, in the language of middle school, arrows; or, in the language of university, ordered pairs). Two sets are equal if they are both subsets of each other.  Hence, to show that two relations are equal to each other, we show that their assignments are both subsets of each other.
+
+\begin{proposition}\label{p: inverse of an inverse}
+The inverse of the inverse of a relation is the original relation. 
+\end{proposition}
+
+\begin{proof}[Proof (using high school version)]
+The definition of inverse of a relation states that $x\mapsto y$ is an assignment of a relation $r$ if and only if $y\mapsto x$ is an assignment of $r^{-1}$.  We can also use the definition to say that $y\mapsto x$ is an assignment of $r^{-1}$ if and only if $x\mapsto y$ is an assignment of $(r^{-1})^{-1}$.  Hence, combining these if and only if statements, we have that  $x\mapsto y$ is an assignment of a relation $r$ if and only if it is also an assignment of $(r^{-1})^{-1}$. The set of assignments of $r$ are equal to the set of assignments of $(r^{-1})^{-1}$, and so $r=(r^{-1})^{-1}$.
+\end{proof}
+
+
+We can interpret this proof in terms of sets. Let $A$ be the set of assignments in $r$, and $B$ be the set of assignments in $(r^{-1})^{-1}$. We have $x\mapsto y$ is an element of $A$ if and only if it is an element of $B$. The ``if'' part of this statement means that $B\subset A$; the ``only if'' part of this statement means $A\subset B$. Hence $A=B$, so the set of assignments of $r$ are equal to the set of assignments of $(r^{-1})^{-1}$, and so $r=(r^{-1})^{-1}$.
+
 %%%%%%% 2 COMPOSITION OF RELATIONS %%%%%%%%%
-\subsection{Composition of relations}
+\subsubsection{Composition of relations}
 \label{s: composition}
 
 In the remainder of this chapter, we work almost exclusively with cases where  $D, R, S = \N$, $D, R, S = \R$ or $D, R, S=\R^2$, and We make this choice for two main reasons:
@@ -1843,7 +1899,7 @@ We often think about inverses as ``undoing'' something. How well does this analo
 \end{task}
 
 %%%%%%%2 GRAPH OF A RELATION %%%%%%%%%%%%
-\subsection{Graph of a relation}
+\subsection{Working with graphs of relations}
 
 In this section, we work exclusively with graphs of functions whose candidate domain and candidate range are subsets of $\R$. 
  
@@ -1851,13 +1907,13 @@ In this section, we work exclusively with graphs of functions whose candidate do
 The \emph{graph of a relation} $r:D\to R$ is defined as the set of points $(a, b)\in \R^2$ such that $r$ assigns $a\mapsto b$.
 \end{definition}
 
-For example, let's do the following together.
+\vspace*{-8pt}
 \begin{task}
 Graph these relations: $P$, $P^{-1}$, $t\circ P$, the relation from $\R$ to $\R$ that maps $x$ to $y$ such that $x=y^2$; the relation from $\R$ to $\R$ that maps $x$ to $y$ such that $y-2^{|x|}=0$.
 \end{task}
 
 \vspace*{-12pt}
-\smallnote{It may help to do these examples with sample points. It is sometimes a surprise to students that the graphs of the relations defined by equations are actually just the graphs of those equations. The purpose of these examples is to broach this connection.}
+\smallnote{It may help to do these examples with sample points. It may be helpful to ask the pre-service teachers to explain why the graph of a relation defined by an equation is the graph of that equation.}
 
 As we have just seen, {\it any equation in $x$ and $y$ defines a relation}! For example, the equation $x=y^2$ defines the relation that maps $x$ to all $y$ such that $x=y^2$.  One way to understand this is to think about the ``university version'' of the definition of relation.
 
@@ -1873,7 +1929,9 @@ As an example of this structure, consider:
 What are all the points on the graph of $A$ with $x$-coordinate $45\degrees$? With $y$-coordinate $45\degrees$?
 \end{task}
 
-Now try: 
+Now try:
+
+\vspace*{-4pt}
 \begin{task}
 What are all the points on the graph of $A^{-1}$ with $x$-coordinate $60\degrees$? With $y$-coordinate $60\degrees$?
  
@@ -1882,10 +1940,10 @@ Is the point $(60, 400)$ on the graph of $A^{-1}$? How about $(430, 70)$? $(70, 
 What is the graph of $A^{-1}$? How do you know you have graphed all points and not graphed any extra points?
 \end{task}
 
-\smallnote{In the above, attend to the reasoning why or why not, and make sure that students are {\it explicitly} referencing the definition of the graph of a relation. It can be helpful to prompt with questions like, ``How are you using the definition of the graph of a relation?'' Something else that is helpful if there is hesitation in using the definition is to go around the room and ask each person to state the definition of graph of a relation. This may sound over the top, but when used on occasion, it can be an effective technique for both remembering key definitions and also impressing the importance of particular statements. When students are reluctant to engage in this, it is more about not having done anything like this before than a strong fundamental aversion; in our experience, students eventually take this in good humor and appreciate being given the time to commit a definition to memory in a public and verbal way.}
+\vspace*{-10pt}
+\smallnote{In the above, attend to the reasoning why or why not, and make sure that students are {\it explicitly} referencing the definition of the graph of a relation. It can be helpful to prompt with questions like, ``How are you using the definition of the graph of a relation?'' Something else that is helpful if there is hesitation in using the definition is to go around the room and ask each person to state the definition of graph of a relation. This may sound over the top, but when used on occasion, it can be an effective technique for both remembering key definitions and also impressing the importance of particular statements. When students are reluctant to engage in this, it is more about not having done anything like this before than a fundamental aversion; in our experience, students eventually take this in good humor and appreciate being given the time to commit a definition to memory in a public and verbal way.}
 
 
-Finally, let's begin work on this task:
 \begin{task}
 Show that for any relation $r:D\to D$, if $x\in D$ is in the domain of $r$, then $(x,x)$ lies on the graph of $r^{-1}\circ r$. 
 \end{task}
@@ -1896,18 +1954,20 @@ We work with graphs of equations in a similar way to working with graphs of rela
 To show that a point $(x, y)$ is on the graph of an equation means showing that evaluating the equation at $x=a$ and $y=b$ results in a true statement.
 
 \begin{task}
-Let $f(x)=x^2$. Is the point $(1,4)$ on the graph of the equation $y=f(x)$? How about on the graph of $y=f(x-1)$? How about on the graph of $y=f(x+1)$?
+Is the point $(1,2)$ on the graph of $x^2+\frac{y^2}{4}=1$?  How about the point $(\frac{1}{2},\frac{2}{3})$? 
 
-In general, how do the points of the graph of $y=f(x)$ relate to the points on the graph of $y=f(x-1)$? How do they relate to the points on the graph of $y=f(x+1)$?
+Find a point that is on the graph of $y=x^2+1$ and the graph of $y=6x-4$. Is that the only point? Are there more points? How do you know?
+
+Describe the graph of the equation $x=0$. Describe the graph of the equation $y=0$. How do you know that these graphs look this way?
+
+Where does $x^2+\frac{y^2}{4}=1$ intersect the $x$-axis? Where does $x^2+\frac{y^2}{4}=1$ intersect the $y$-axis?
+
+What is a point that is on the graph of $y=x^2+1$ and the graph of $y=5$. Then solve for $x$ when in $y=x^2+1$ when $y$ is $5$. Explain the numerical coincidence.
 \end{task}
 
-\smallnote{Again, in doing this task, attend to students' reasoning and make sure that they are {\it explicitly} referencing the definition of graph of equations, not just plugging in numbers without saying why it makes sense to plug in numbers.}
+\smallnote{Again, in doing this task, attend to pre-teachers' reasoning and make sure that they are {\it explicitly} referencing the definition of graph of equations, not just plugging in numbers without saying why it makes sense to plug in numbers. It is also important for pre-service teachers to explicitly use the fact that the $x$-axis ($y$-axis) consists of all points whose $y$-coordinate ($x$-coordinate) is 0.}
 
-\begin{task}
-Let $f(x)=\sin(x)$. How do the points of the graph of $y=f(x)$ relate to the points on the graph of $y=f(x-1)$? How do they relate to the points on the graph of $y=f(x+1)$? Show your conjecture.
-\end{task}
-
-With these ideas in place, we can now define two concepts which you may well teach to high school students: the $x$- and $y$-intercepts.
+In this task, we were using these ideas:
 
 \begin{definition}\label{d: intercepts}
 Given an equation in $x$ and $y$ and its graph, all points $(a,0)$ on the graph are called \emph{$x$-intercepts} of the graph. A graph may have 0, 1, or multiple $x$-intercepts.
@@ -1915,15 +1975,28 @@ Given an equation in $x$ and $y$ and its graph, all points $(a,0)$ on the graph 
 Given an equation in $x$ and $y$ and its graph, all points $(0,b)$ on the graph are called \emph{$y$-intercepts} of the graph. A graph may have 0, 1, or multiple $y$-intercepts.
 \end{definition}
 
-\begin{task}
-What are the $y$ intercepts of the graph $x=y^2-1$?
+\begin{definition}\label{d: intersection}
+We say that two graphs \emph{intersect} each other at a point $(a,b)$ when $(a,b)$ is contained in both graphs.  
 
+Graphs may intersect at zero points, one point, multiple points, and sometimes even infinitely many points.
+\end{definition}
+
+\begin{task}
 What are all the $x$-intercepts of the graphs of $A$ and $A^{-1}$?
 
 What are all the $y$-intercepts of the graphs of $A$ and $A^{-1}$?
+
+What is the intersection of the graphs $A$ and $A^{-1}$?
 \end{task}
 
 \smallnote{In discussing this task, make sure students are {\it explicitly} referencing the definition of $x$- and $y$-intercepts, as well as writing down the intercepts as coordinates, not numbers. Watch that they are explaining their reasoning, not just plugging in numbers without saying why it makes sense to plug in numbers.}
+
+One takeaway from these examples is that when we attending to and explicitly referring to the definition of graph of a relation or graph of an equation, we are in a better position to help students understand concepts such as:
+	\begin{itemize*}
+	\item $x$-intercepts and $y$-intercepts
+	\item intersections of graphs
+	\item solving for particular values of an equation
+	\end{itemize*}
 
 Now let's see how this might show up in an actual classroom.  
 
@@ -1954,11 +2027,11 @@ We will watch a short video of teaching by Ms.~Barbara Shreve of San Lorenzo Hig
 As you watch the video, it may be tempting to think about what you personally think is good or not as good about the teaching, or what you might have done differently. But before getting to these kinds of judgments, it is more important to simply observe what is going on, what the students' reasoning is, and what the story line is. (This is just like when working with students, as we will see later in this class and you will learn in your methods class: before evaluating students' work, we must first observe and understand students' work without judgment.) Here, we will practice observing the interactions between teachers and 
 
 As you watch the video, think about the following questions:
-	\begin{itemize}
+	\begin{itemize*}
 	\item How does the teacher emphasize to students to explain their reasoning?
 	\item How does the teacher help students feel comfortable sharing their reasoning?
 	\item How was the definition of $x$-intercept or $y$-intercept used?
-	\end{itemize}
+	\end{itemize*}
 	
 \hrule 
 \vspace*{2pt}
@@ -1974,12 +2047,6 @@ Again, our discussion will be about the viewing questions. We will have time for
 
 When addressing the viewing questions, be specific about your evidence from the video to support what you are saying.
 
-\begin{itemize}
-	\item How does the teacher emphasize to students to explain their reasoning?
-	\item How does the teacher help students feel comfortable sharing their reasoning?
-	\item How was the definition of $x$-intercept or $y$-intercept used?
-	\end{itemize}
-
 \vspace*{2pt}
 \hrule
 \vspace*{2pt}
@@ -1987,7 +2054,8 @@ When addressing the viewing questions, be specific about your evidence from the 
 Now that we have discussed the viewing questions, what other thoughts or questions come to mind?
 \end{task}
 
-To finish this chapter, let's investigate something that you may have begun noticing in the examples we have worked with.
+\subsection{Putting it all together: Investigating graphs of inverses}
+To finish this chapter, let's investigate the examples we have worked with and try to generalize.
 
 Here are some graphs that we've seen: 
 
@@ -2081,18 +2149,28 @@ $P$, $P^{-1}$ & $A$, $A^{-1}$ & $G$, $G^{-1}$ \\
 \end{center}
 
 \begin{task}
-What do you notice about these graphs? How might we transform a graph into the graph of its inverse?
-
-Prove your conjecture.
+What do you notice about these graphs? Find a way to fold this page so that when you hold up the folded page to the light, the graphs of $P$ and $P^{-1}$ are lined up with each other. Find a way to fold the paper in this way for $A$ and $A^{-1}$, and then $G$ and $G^{-1}$. 
 \end{task}
 
-\begin{note}
-For the purposes of this task, let's assume that we know that reflection across the line $y=x$ always sends a coordinate $(a,b)$ to the coordinate $(b,a)$. You will learn or may have learned how to prove this in geometry class, but for now, let's take this as given.
-\end{note}
+\begin{task}
+When you fold the coordinate plane in this way, where does $(1,2)$ go? Where goes $(-4, 3)$ go? Where goes $(-100, -100001)$ go?
 
+In general, when you fold the coordinate plane in this way, where does the point $(a,b)$ go? Why does this make sense?
+\end{task}
 
-\subsection{Summary of content}
+\begin{task}
+Explain why it makes sense that folding the plane this way should always bring a graph of a relation to the graph of its inverse. Do this in two ways:
+	\begin{itemize*}
+	\item First, explain this discovery and why it makes sense using $P$ and $P^{-1}$, including some specific examples. Make sure to use specific examples and also explain why no other fold will work.
+	\item Then, explain this discovery and why it makes sense in general. Your explanation here should rely only on the definition of relation and its graph, and not depend on any particular examples. 
+	\end{itemize*}
+\end{task}
 
+In teaching, it is often useful to be able to provide these two kinds of explanation: specific and general. Specific explanations have to do with a particular example and may help the students be able to keep an image in mind. General explanations help students understand why the reasoning for a specific example applies to a larger class of objects.
+
+\subsection{Summary}
+
+\subsubsection*{Content}
 This chapter had a lot going on! We defined relation in three different ways, which we called the middle school, high school, and university ways. We then talked about various properties of relations, such as its domain and range, as well as the image and preimage of points and subsets. We ended by talking about graphs of relations and equations.
 
 Throughout this discussion, we saw algebraic, graphical, and cloud diagram ways of representing relations. 
@@ -2104,27 +2182,39 @@ We then discussed inverse relations and compositions of relations, which also ca
 The two explorations we did tied together representations and the concepts we discussed:
 	\begin{itemize}
 	\item Given any relation $r$, we discovered that the graph of the relation $r^{-1}\circ r$ always contains all points of the form $(a,a)$ where $a$ is in the domain of $r$.
-	\item Given any relation $r$, we discovered that the graph of the relation $r^{-1}$ can be obtained by reflecting the graph of $r$ about the line $y=x$.
+	\item Given any relation $r$, we discovered that the graph of the relation $r^{-1}$ can be obtained by reflecting (folding) the graph of $r$ about the line $y=x$.
 	\end{itemize}
  
 This last one may seem familiar: in high school we often teach this statement with the graph of functions. But as you learned, this statement applies to relations in general! You will examine this from a teaching perspective for homework, as well as finish the proofs of these explorations.
 
 In the proofs, you will use the two proof structures we learned: 
 \begin{itemize}
-\item To show that a point (x, y) is on a graph of a relation
-means showing that the relation assigns x to y.
+\item To show that a point $(x, y)$ is on a graph of a relation
+means showing that the relation assigns $x$ to $y$.
 \item 
-To show that a point (x, y) is on the graph of an equation means showing that evaluating the equation at x and y results in a true statement.
+To show that a point $(x, y)$ is on the graph of an equation means showing that evaluating the equation at $x$ and $y$ results in a true statement.
 \end{itemize}
   
-\subsection{Summary of mathematical practices}
+\subsubsection*{Connecting mathematically equivalent definitions}
 
-Connecting mathematically equivalent definitions
+\begin{itemize}
+\item Explain how they appear different and how they appear the same.
+\item Explain why they are mathematically equivalent. 
+\item Analyze the mathematical and pedagogical purposes of each definition and why they may be appropriate for different levels of mathematical study, or why one version makes more sense after having worked with another version.
+\end{itemize}
 
-Connecting different mathematical representations
+\subsubsection*{Connecting different mathematical representations}
 
-\todo{Ch 2: summarize mathematical practices}
+\begin{itemize}
+\item Explain how representations appear different and how they appear the same.
+\item Identify how the representations can be used highlight different features. 
+\item Go back and forth between the representations: where are the features of one representation located in the other representation?
+\end{itemize}
 
+For both of these teaching practices, it is helpful to be able to provide both specific and general explanations. 	\begin{itemize}
+	\item Specific explanations have to do with a particular example and may help the students be able to keep an image in mind. 
+	\item General explanations help students understand why the reasoning for a specific example applies to a larger class of objects.
+	\end{itemize}
 %%%%%%%%%%%%%%
 % \header{Preparation for next lesson}
 
@@ -2246,6 +2336,15 @@ Do \#2. Do not proceed to \#3 or \#4 yet.
 \item Interpret the definitions of these same concepts in terms of the graph of a relation. Use the graphs of $A$ and $P$ to illustrate what you mean.
 \end{enumerate}
 
+
+\vfill
+{\it Mathematical/teaching practice: Connecting different representations}
+\begin{itemize*}
+\item Explain how representations appear different and how they appear the same.
+\item Identify how the representations can be used highlight different features. 
+\item Go back and forth between the representations: where are the features of one representation located in the other representation?
+\end{itemize*}
+
 \newpage 
 \handout{Getting familiar with inverses of relations}
 
@@ -2291,12 +2390,17 @@ What might be a good name for this relation?
 \end{minipage}
 
 
-\vfill
 
 \subsubsection*{Connecting different but mathematically equivalent definitions}
 Discuss the three versions of the definition of inverse of a relation. What do they each say? How would you represent them? What makes them mathematically equivalent?
 
 \vfill 
+{\it Mathematical/teaching practice: Connecting different but mathematically equivalent definitions}
+\begin{itemize}
+\item Explain how they appear different and how they appear the same.
+\item Explain why they are mathematically equivalent. 
+\item Analyze the mathematical and pedagogical purposes of each definition and why they may be appropriate for different levels of mathematical study, or why one version makes more sense after having worked with another version.
+\end{itemize}
 
 \newpage
 \subsubsection*{Working with compositions algebraically}
@@ -2344,74 +2448,45 @@ To show that a point $(a, b)$ is on a graph of a relation means showing that the
 To show that a point $(x, y)$ is on the graph of an equation means showing that evaluating the equation at $x=a$ and $y=b$ results in a true statement.
 \end{mdframed}
 
-Show that for any relation $r:D\to D$, if $x\in D$ is in the domain of $r$, then $(x,x)$ lies on the graph of $r^{-1}\circ r$. 
+\vfill 
+\begin{enumerate}
+\item What are all the points on the graph of $A$ with $x$-coordinate $45\degrees$? With $y$-coordinate $45\degrees$?
+
+\vfill 
+\item What are all the points on the graph of $A^{-1}$ with $x$-coordinate $60\degrees$? With $y$-coordinate $60\degrees$?
+ 
+Is the point $(60, 400)$ on the graph of $A^{-1}$? How about $(430, 70)$? $(70, 430)$? (10, 200)? Why or why not?
+  
+What is the graph of $A^{-1}$? How do you know you have graphed all points and not graphed any extra points?
+
+\vfill
+\item Show that for any relation $r:D\to D$, if $x\in D$ is in the domain of $r$, then $(x,x)$ lies on the graph of $r^{-1}\circ r$. 
 
 \vfill
 
-Let $f(x)=\sin(x)$. How do the points of the graph of $y=f(x)$ relate to the points on the graph of $y=f(x-1)$? How do they relate to the points on the graph of $y=f(x+1)$? Show your conjecture.
+\item Is the point $(1,2)$ on the graph of $x^2+\frac{y^2}{4}=1$?  How about the point $(\frac{1}{2},\frac{2}{3})$? 
+
+Find a point that is on the graph of $y=x^2+1$ and the graph of $y=6x-4$. Is that the only point? Are there more points? How do you know?
+
+Describe the graph of the equation $x=0$. Describe the graph of the equation $y=0$. How do you know that these graphs look this way?
+
+Where does $x^2+\frac{y^2}{4}=1$ intersect the $x$-axis? Where does $x^2+\frac{y^2}{4}=1$ intersect the $y$-axis?
+
+What is a point that is on the graph of $y=x^2+1$ and the graph of $y=5$. Then solve for $x$ when in $y=x^2+1$ when $y$ is $5$. Explain the numerical coincidence.
 \vfill 
+
+\item What are all the $x$-intercepts of the graphs of $A$ and $A^{-1}$?
+
+What are all the $y$-intercepts of the graphs of $A$ and $A^{-1}$?
+
+What is the intersection of the graphs $A$ and $A^{-1}$?
+\end{enumerate}
+\vfill
 
 \newpage
 \handout{Closing inquiry}
 
-To finish this chapter, let's investigate something that you may have begun noticing.
-
-Here are some graphs that we've seen: 
-
-\begin{center}
-\begin{tabular}{cccccc}
-$P$ & $P^{-1}$ & $A$ & $A^{-1}$ & $G$ & $G^{-1}$ \\ 
-\begin{tikzpicture} [scale=0.1]
-\draw(-0.5,0) -- (20.5,0) (0,-0.5) -- (0,20.5);
-\def\pt{circle (0.09)}
-\foreach \x in {(4,2),(6,2),(6,3),(8,2),(8,4),(9,3),(10,2),(10,5), (12, 2),(12,3),(12,4),(12,6), (14,2),(14,7),(15,3),(15,5),(16,2),(16,4),(16,8),(18,2),(18,9),(20,2),(20,4),(20,5),(20,10)}
-	{	
-	\filldraw \x \pt;
-	}
-\end{tikzpicture}
-& 
-\begin{tikzpicture} [scale=0.1, rotate=45, yscale=-1, rotate=-45]
-\draw(-0.5,0) -- (20.5,0) (0,-0.5) -- (0,20.5);
-\def\pt{circle (0.09)}
-\foreach \x in {(4,2),(6,2),(6,3),(8,2),(8,4),(9,3),(10,2),(10,5), (12, 2),(12,3),(12,4),(12,6), (14,2),(14,7),(15,3),(15,5),(16,2),(16,4),(16,8),(18,2),(18,9),(20,2),(20,4),(20,5),(20,10)}
-	{	
-	\filldraw \x \pt;
-	}
-\end{tikzpicture} 
-&
-\begin{tikzpicture} [scale=0.014]
-\draw(-36*3-0.05,0) -- (36*3+.05,0) (0,-36*3-0.05) -- (0,36*3+.05);
-\foreach \x in {0, 1, -1, 2, -2}
-	{
-	\filldraw (0,0+\x*36) circle (3);
-	\draw(0,0+\x*36) -- (36,\x*36+36);
-	\filldraw [draw=black, fill=white] (36,\x*36+36) circle (3);
-	}
-\end{tikzpicture}
-&
-\begin{tikzpicture} [scale=0.014, rotate=45, yscale=-1, rotate=-45]
-\draw(-36*3-0.05,0) -- (36*3+.05,0) (0,-36*3-0.05) -- (0,36*3+.05);
-\foreach \x in {0, 1, -1, 2, -2}
-	{
-	\filldraw (0,0+\x*36) circle (3);
-	\draw(0,0+\x*36) -- (36,\x*36+36);
-	\filldraw [draw=black, fill=white] (36,\x*36+36) circle (3);
-	}
-\end{tikzpicture}
-&
-\begin{tikzpicture} [scale=0.07]
-\draw (-20, 0) -- (20,0) (0,-20)--(0,20);
-\draw[domain=-4.5:4.5,smooth,variable=\y]  plot ({\y*\y},{\y});
-\end{tikzpicture}
-&
-\begin{tikzpicture} [scale=0.07, rotate=45, yscale=-1, rotate=-45]
-\draw (-20, 0) -- (20,0) (0,-20)--(0,20);
-\draw[domain=-4.5:4.5,smooth,variable=\y]  plot ({\y*\y},{\y});
-\end{tikzpicture}
-\end{tabular}
-\end{center}
-
-And here are those graphs again, this time pairing relations and their inverse relations.
+To finish this chapter, let's investigate the examples of relations and their inverses.  Here are some graphs that we've seen: 
 
 \begin{center}
 \begin{tabular}{ccc}
@@ -2447,11 +2522,20 @@ $P$, $P^{-1}$ & $A$, $A^{-1}$ & $G$, $G^{-1}$ \\
 \end{tabular}
 \end{center}
 
-\begin{task}
-What do you notice about these graphs? How might we transform a graph into the graph of its inverse?
+What do you notice about these graphs? Find a way to fold this page so that when you hold up the folded page to the light, the graphs of $P$ and $P^{-1}$ are lined up with each other. Find a way to fold the paper in this way for $A$ and $A^{-1}$, and then $G$ and $G^{-1}$. 
 
-Prove your conjecture.
-\end{task}
+\vfill 
+When you fold the coordinate plane in this way, where does $(1,2)$ go? Where goes $(-4, 3)$ go? Where goes $(-100, -100001)$ go?
+
+In general, when you fold the coordinate plane in this way, where does the point $(a,b)$ go? Why does this make sense?
+
+\vfill
+Explain why it makes sense that folding the plane this way should always bring a graph of a relation to the graph of its inverse. Do this in two ways:
+	\begin{itemize*}
+	\item First, explain this discovery and why it makes sense using $P$ and $P^{-1}$, including some specific examples. Make sure to use specific examples and also explain why no other fold will work.
+	\item Then, explain this discovery and why it makes sense in general. Your explanation here should rely only on the definition of relation and its graph, and not depend on any particular examples. 
+	\end{itemize*}
+\vfill 
 
 %%%%%%%%%% 2 DEFINITIONS RELATED TO RELATION %%%%%%%%%%
 \newpage 
@@ -2468,14 +2552,14 @@ Middle school version  & A \emph{relation} from a set $D$ to a set $R$ is a set 
 High school version & A \emph{relation} $P$ from a set $D$ to a set $R$ a set of assignments from elements of $D$, called inputs, to elements of $R$, called outputs. \\  \hline
 University version & A relation $r:D\to R$ is a subset of $D\times R$, i.e., $r\subset D\times R$. \\  \hline
 \end{tabular}
-
 {\bf Notation:} $r:D\to R$ refers to a relation from $D$ to $R$; and $x\mapsto y$ refers to an assignment from $x\in D$ to $y\in R$
 
-A relation may map an element of $D$ to no elements of $R$, exactly one element of $R$, or multiple elements of $R$.  An element of $R$ may have no elements of $D$ mapping to it, exactly one element of $D$ mapping to it, or multiple elements of $D$ mapping to it.
+A relation may map an element of $D$ to 0, exactly 1, or multiple elements of $R$.  An element of $R$ may have 0, exactly 1, or multiple elements of $D$ mapping to it.
 
 \vfill 
 {\bf Definition \ref{d: candidate domain etc}.} 
 For a relation $r:D \to R$, we say that 
+\vspace*{-4pt}
 \begin{itemize}
 	\item $D$ is the \emph{candidate domain};
 	\item $R$ is the \emph{candidate range} (or \emph{codomain});
@@ -2493,11 +2577,11 @@ For a relation $r:D \to R$, we say that
 \begin{tabular}{L{1.25in}|L{5in}}
 \hline 
 Middle school version & 
-If $r$ is a relation from a set $D$ to $R$, then the \emph{inverse relation} of $r$ is the relation that swaps the direction of the arrows of $r$.  The arrows of the inverse relation go from elements of $R$ to elements of $D$. \\ \hline 
+If $r$ is a relation from a set $D$ to $R$, then the \emph{inverse relation} of $r$ is the relation that swaps the direction of the arrows of $r$.  The arrows of the inverse go from elements of $R$ to elements of $D$. \\ \hline 
 High school version & 
 Given a relation $r:D\to R$, the \emph{inverse relation} of $r$ is the set of assignments $y\mapsto x$ such that $x\mapsto y$ is an assignment of $r$. \\ \hline  
 High school version & 
-Given a relation $r:D\to R$, the \emph{inverse relation} of $r$ is defined as the following subset of $R\times D$
+Given a relation $r:D\to R$, the \emph{inverse relation} of $r$ is defined as the subset 
 	$\{(y, x) \subset R\times D \st (x,y)\in r\}.$\\ \hline
 \end{tabular}
 {\bf Notation: $r^{-1}$.}
@@ -2522,7 +2606,10 @@ The \emph{graph of an equation} in $x$ and $y$ is defined as the set of points $
 Given an equation in $x$ and $y$ and its graph, all points $(a,0)$ on the graph are called \emph{$x$-intercepts} of the graph. All points $(0,b)$ on the graph are called \emph{$y$-intercepts} of the graph. A graph may have 0, 1, or multiple $x$-intercepts and $y$-intercepts.
 
 \vfill
+{\bf Definition \ref{d: intersection}.}
+Two graphs \emph{intersect} each other at $(a,b)$ when $(a,b)$ is contained in both graphs.  Graphs may intersect at zero points, one point, multiple points, and sometimes even infinitely many points.
 
+\vfill
 {\bf Proof structures:}
 \begin{itemize}
 \item To show that a point $(a, b)$ is on a graph of a relation means showing that the relation assigns $a$ to $b$.
@@ -2537,11 +2624,24 @@ Given an equation in $x$ and $y$ and its graph, all points $(a,0)$ on the graph 
 
 \todo{Ch 2: write homework}
 
+
 \begin{enumerate}
+\setcounter{enumi}{-1}
+\item Read the following definition. 
+
+A \emph{function} $f$ from $D$ to $R$ is a relation from $D$ to $R$ where each input in $D$ is assigned to no more than one output in $C$.
+
+Which of the following represents a function?
+
+[insert cloud diagram 1 - not a function] [insert cloud diagram 2 - is a function] [insert cloud diagram 3 - inverse is a function but it is not itself a function]
+
 \item \label{h: key graphs} Graphs of relations and their inverses. Use examples that will be used in Lesson 3: sine, cosine, absolute value, square, cube.  In each, label any maxima and minima, then label these corresponding points in their inverse relations. Part (f). Draw images and preimages of intervals in both the graphs of the relations as well as their inverses.
 \item Something with intercepts: maybe responding to students' explanations? Using various representations.
 \item Proof structure practice: Show that for any relation $r:D\to D$, if $x\in D$ is in the domain of $r$, then $(x,x)$ lies on the graph of $r^{-1}\circ r$. 
-\item (Mini SoP?) Proof structure practice: To get from graph of relation to graph of its inverse, reflect over $y=x$. Do this with particular example, explain to class why this is true. Set up a discussion about it. Connect different definitions.
+\item (Mini SoP?) Proof structure practice: To get from graph of relation to graph of its inverse, reflect over $y=x$. Do this with particular example, explain to class why this is true. Set up a discussion about it. Connect different definitions. Begin by explaining why $(a,b)$ is on the graph of $r$ if and only if $(b,a)$ is on the graph of $r^{-1}$.
+
+Given a relation $r:D\to D$. Explain why $(a,b)$ is a point on the graph of $r$ if and only if $(b,a)$ is on the graph of $r^{-1}$. (Remember that ``if and only if'' requires two directions of reasoning! What are these two directions?)
+
 \item \label{h: composition correspondence} 
 Composition of graphs (from the canadian textbook; also draw compositions of graphs and their inverses) (probably need to scaffold this more. think about relationship between linear function and linear function, also think about where points go, not sure what else needs to go here. Will probably need to re-assign in Lesson 3) (Maybe instead of doing entire graph, do something like a series of questions -- what is $f(g(f(g(1)))), g(f(g(1)))$, etc. Do this for a bunch of points, especially for the combination $g(f(x))$ (or whichever composition is easier to do.). Then assign the actual composition in Hwk 3 after discussing correspondence and covariational views and ask students to analyze where they used each viewpoint. In Hwk 3 also assign composition of linear and quadratic, analyze which parts are constant, linear non-constant, quadratic, none of the above.)
 
@@ -2559,11 +2659,12 @@ Also add a part (b) with $g$ and $h$ where $h$ is relation, and asking to find t
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \newpage
-\section{Functions: Introduction to Correspondence and Covariational Views (Week 3) (Length: \about 2.5 hours)}  
+\section{Functions: Introduction to Correspondence and Covariational Views (Weeks 3-4) (Length: \about 5 hours)}  
 
 %%%%%%%%% 3 OVERVIEW  %%%%%%%%%%%%%%%%%%%%
 \subsection{Overview}
 
+\todo{Ch 3: Write overview}
 \vspace*{-12pt}
 \begin{tabular}{L{6.5in}} 
 {\bf Content} \\ \hline \parskip4pt
@@ -2590,7 +2691,11 @@ Additionally, we revisit \emph{composition} and \emph{inverse} so that we can us
 \emph{Constructing viable partial inverses of functions}, meaning \dots 
 &
 % Mathematical/Teaching Practices
+\emph{Introducing a definition}, meaning \dots 
+
 \emph{Explaining a mathematical ``test'' of a property}, meaning \dots
+
+\emph{Attending to student thinking}, meaning \dots 
 
 \emph{Recognizing and explaining correspondence and} \emph{covariation views}, meaning \dots 
 \end{tabular}
@@ -2602,7 +2707,7 @@ This lesson comes in three parts: reviewing key examples from Homework 2, workin
 
 {\bf Review of Homework 2.} We review how graphs can be used to represent relations (and hence functions) using Homework 2 Problem \ref{h: composition correspondence}. These set up the discussion of how definitions for working with relations specialize to the case when the relation is a function. We also review the functions used in Homework 2 Problem \ref{h: key graphs} so that the discussion of partial inverses can focus on how to construct partial inverses as opposed to details about the functions themselves, particularly sine and cosine graphs.
 
-{\bf Functions and the correspondence view.} After defining {\it functions}, we discuss how some definitions encountered in the previous chapter, such as composition and graph, specialize to the case of function. We then introduce the teaching practice of {\it explaining a mathematical ``test'' of a property} using the example of the {\it vertical line test}.   We then define {\it partial inverses of functions} and discuss {\it how to construct viable partial inverses of functions}, and then define {\it invertible function}. We continue practicing how to explain a mathematical test of a property by looking at the {\it horizontal line test}.  We conclude this part of the lesson by revealing that thus far we have been viewing relations and functions from a {\it correspondence view} of the equation $y=f(x)$, meaning only thinking about functions in terms of maps from elements of the domain to elements of the range. 
+{\bf Functions and the correspondence view.} After defining {\it functions}, we introduce the teaching practices of {\it introducing a definition} and {\it explaining a mathematical ``test'' of a property}. The latter uses the example of the {\it vertical line test}.   We then define {\it partial inverses of functions} and discuss {\it how to construct viable partial inverses of functions}, and then define {\it invertible function}. We continue practicing how to explain a mathematical test of a property by looking at the {\it horizontal line test}.  We conclude this part of the lesson by revealing that thus far we have been viewing relations and functions from a {\it correspondence view} of the equation $y=f(x)$, meaning only thinking about functions in terms of maps from elements of the domain to elements of the range. 
 
 {\bf Covariational view.} We use the Morgan Minicase to introduce the difference between correspondence and covariational views. By covariational view, we mean understanding how changing the value of one variable impacts the value of the other variable, and learning to coordinate changes in one variable with changes in the other. This minicase introduces the teaching practice of {\it recognizing and explaining correspondence and covariation views}. We revisit composition and inverse to compare and contrast these views and provide an opportunity engage in this teaching practice. 
 
@@ -2632,8 +2737,10 @@ This lesson comes in three parts: reviewing key examples from Homework 2, workin
 % Finding points in composition of graph.
 % Sine, cosine, absolute value, square, cube graphs
 
+\subsubsection{Using the definition of graph of a relation}
 In the previous homework, you were given the graphs of two functions $f$ and $g$ and asked to find values such as $f(g(1))$ or $g(g(f(2)))$.  Let us now consider how graphs can be used to find these values, and how the reasoning relies on the definition of graph of a relation.
 
+\todo{Ch 3: insert graphic from Homework 2 of composition of functions}
 \begin{task}
 Compare your responses to Homework 2 Problem \ref{h: composition correspondence}. How did you use the definition of graph in your reasoning? Use $g\circ f$ as an example to illustrate your use of these definitions. Then illustrate your reasoning using $h\circ g$.
 \end{task} 
@@ -2641,16 +2748,62 @@ Compare your responses to Homework 2 Problem \ref{h: composition correspondence}
 \begin{solution}({\it Partial.})
 By definition of a graph of an equation, $(a, b)$ is on the graph of $y=f(x)$ if and only if $b=f(a)$. There is only one coordinate on the graph of $f$ with the $x$-value 1, so that coordinate's $y$-value must be $f(1)$.
 
-For finding where $h\circ g$ maps $1$, we first seek where $g$ maps $1$. Just as for $f$, there is only one coordinate on the graph of $g$ with the $x$-value 1$, so that coordinate's $y$-value must be $g(1)$.
+For finding where $h\circ g$ maps $1$, we first seek where $g$ maps $1$. Just as for $f$, there is only one coordinate on the graph of $g$ with the $x$-value 1, so that coordinate's $y$-value must be $g(1)$.
 There are multiple possible values for where $h\circ g$ maps $1$, because the graph of $h$ contains multiple coordinate points whose $x$-value is $g(1)$.
 \end{solution}
 
+\subsubsection{Some functions and relations we will examine further today}
+
+In the homework, you worked with the graphs of $y=\sin(x)$, $y=\cos(x)$, $y=|x|$, $y=x^2$, and $y=x^3$ and their inverse relations. We also learned last time that a point $(a,b)$ is on the graph of a relation $r$ if and only if $(b,a)$ is on the graph of its inverse relation $r^{-1}$. 
+
+You may have obtained graphs that looked like this:
+
+\begin{tabular}{C{1.1in}C{1.1in}C{1.1in}C{1.1in}C{1.1in}}
+$\sin$ and its inverse relation & $\cos$ and its inverse relation & $\tn{Abs}$ and its inverse relation
+ & $\tn{Sq}$ and its inverse relation &   $\tn{Cu}$ and its inverse relation \\ 
+\begin{tikzpicture} [scale=0.14]
+\draw (-10, 0) -- (10,0) (0,-10)--(0,10);
+\draw[domain=-9.7:9.7,smooth,variable=\x]    plot (\x,{sin(\x r)});
+\draw[domain=-9.7:9.7,smooth,variable=\y] plot ({sin(\y r)},\y);
+\end{tikzpicture}
+&
+\begin{tikzpicture} [scale=0.14]
+\draw (-10, 0) -- (10,0) (0,-10)--(0,10);
+\draw[domain=-9.7:9.7,smooth,variable=\x]    plot (\x,{cos(\x r)});
+\draw[domain=-9.7:9.7,smooth,variable=\y] plot ({cos(\y r)},\y);
+\end{tikzpicture}
+& 
+\begin{tikzpicture} [scale=0.14]
+\draw (-10, 0) -- (10,0) (0,-10)--(0,10);
+\draw[domain=-9.5:9.5,smooth,variable=\x]    plot (\x, {abs(\x)});
+\draw[domain=-9.5:9.5,smooth,variable=\y] plot ({abs(\y)},\y);
+\end{tikzpicture}
+&
+\begin{tikzpicture} [scale=0.14]
+\draw (-10, 0) -- (10,0) (0,-10)--(0,10);
+\draw[domain=-3.2:3.2,smooth,variable=\x]  plot ({\x},{\x*\x});
+\draw[domain=-3.2:3.2,smooth,variable=\y] plot ({\y*\y},{\y});
+\end{tikzpicture}
+&
+\begin{tikzpicture} [scale=0.14]
+\draw (-10, 0) -- (10,0) (0,-10)--(0,10);
+\draw[domain=-2.2:2.2,smooth,variable=\x]  plot ({\x},{\x*\x*\x});
+\draw[domain=-2.2:2.2,smooth,variable=\y] plot ({\y*\y*\y},{\y});
+\end{tikzpicture} 
+\end{tabular}
+
+\smallnote{Together with the class, label some maxima and minima of these graphs, as well as a few $x$-intercepts and $y$-intercepts. Emphasize again that $(x,y)$ is on the graph of a relation if and only if $(y,x)$ is on the graph of its inverse.}
+
+\newpage
 
 %%%%%%% 3 FUNCTIONS AND THE CORRESPONDENCE VIEW  %%%%%%%
+\subsection{Functions and the correspondence view}
 % {\bf Functions and the correspondence view.} After defining {\it functions}, we discuss how some definitions encountered in the previous chapter, such as composition and graph, specialize to the case of function. We then introduce the teaching practice of {\it explaining a mathematical ``test'' of a property} using the example of the {\it vertical line test}.   We then define {\it partial inverses of functions} and discuss {\it how to construct viable partial inverses of functions}, and then define {\it invertible function}. We continue practicing how to explain a mathematical test of a property by looking at the {\it horizontal line test}.  We conclude this part of the lesson by revealing that thus far we have been viewing relations and functions from a {\it correspondence view} of the equation $y=f(x)$, meaning only thinking about functions in terms of maps from elements of the domain to elements of the range. 
 
 % Part 1 of this lesson:
 % Define functions
+
+A function is a special kind of relation, where every element of the domain is assigned to exactly one element of the range. Here are two ways to think about functions:
 
 \begin{definition}[Function: Middle and High school version]\label{d: function middle high school}
 A \emph{function} $f$ from $D$ to $R$ is a relation from $D$ to $R$ where each input in $D$ is assigned to no more than one output in $C$.
@@ -2660,195 +2813,561 @@ A \emph{function} $f$ from $D$ to $R$ is a relation from $D$ to $R$ where each i
 A \emph{function} is a relation $f: D \to R$, such that if $(x,y), (x, y')\in f$, then $y=y'$.
 \end{definition}
 
+With relations in general, we can't say exactly where an input is mapped to, because it may be mapped to multiple outputs such as in the parent function. However, with functions, an input determines the output uniquely in the sense that it is either undefined or it is exactly one value. It is because of this property that we have function notation. The notation $f(x)$ means ``the at most one value that $f$ maps $x$ to''.
+
+\smallnote{
+We have not typically gone through the following table and definitions in class. This is provided more as a reference than as something to address explicitly in class. 
+}
+
+Here is a table summarizing how we can use this notation to interpret concepts associated to relations:
+
+\begin{tabular}{L{1in}L{2.5in}|L{2.5in}}
+	& Relations in general & When the relation is a function \\ \hline
+Domain &  All elements $a\in D$ with nonempty image 
+	& All elements $a\in D$ such that $f(a)$ is defined \\
+Range & All element $b \in R$ with nonempty preimage
+	 & All elements $b\in R$ such that $b=f(x)$ has a solution in $x$ \\
+Composition $g\circ f$ & The relation contains all assignments $x\to z$ such that there is a $y$ where $f$ maps $x$ to $y$ and $g$ maps $y$ to $z$  
+	& This relation maps $x$ to $f(g(x))$. It is also a function. \\ 
+Graph of $f$ & The point $(a,b)$ is on the graph of $f$ if and only if $f$ maps $a$ to $b$
+	& The point $(a,b)$ is on the graph of $f$ if and only if $b=f(a)$. 
+	{\it Or}: The point $(a,b)$ is on the graph of $f$ if and only if $a$ is a solution to $b=f(x)$. \\
+\end{tabular}
+
+The above table uses the following definitions:
+
+\begin{definition}
+Given a function $f:D\to R$, we say that $f(x)$ is \emph{defined} if $x$ has nonempty image. Otherwise, if $x$ has empty image, we say $f(x)$ is \emph{undefined}.
+
+Given $b\in R$, We say that the equation $b=f(x)$ \emph{has a solution in $x$} if there is an $a\in D$ such that $b=f(a)$ is a true statement. Otherwise, if there is no $a\in D$ such that $b=f(a)$ is true, then we say the equation \emph{has no solution}.
+\end{definition}
+
+
+\vspace*{-12pt}
+\subsubsection{Teaching functions as a case of teaching definitions}
+\label{s: teaching definitions}
+
+Functions and relations are fundamental concepts in middle and high school. When you are teaching the function and relation, you will mostly likely find it useful to discuss their definitions in the context of different representations, such as cloud diagrams, T-charts (table of input and output values) and graphs.  As we have been experiencing, teaching definitions often contains these components:
+
+\begin{mdframed}
+\begin{center}
+{\bf Teaching definitions}
+\end{center}
+\vspace*{-4pt}
+	\begin{itemize*}
+	\item Introductory examples and/or non-examples of the definition
+	\item Precise statement of the definition
+	\item Interpreting the precise statement, especially any new terminology or key rules, in terms of the introductory example and/or non-example
+	\item Interpreting the terminology and rules in terms of the introductory examples, often using different \\ representations that students will continue to encounter.
+	\end{itemize*}
+\end{mdframed}
+
+If you were teaching the definition of function, you might use examples such as the ones we have used today, or other ones that build on or review what your students are familiar with.
+
 \begin{task}
-Discuss these definitions. What do they each say? How would you represent them? What makes them mathematically equivalent?
+Review the definition of the graph of a relation. We can use this definition for functions, too, because all functions are relations.
+
+Graph the relations $f(x)=\frac{1}{x}$, $g(x)=\sqrt{x}$ and $\tn{Abs}^{-1}$ on separate graphs. For each, how could you use the graph to understand the definition of function?
+
+Suppose your students are seeing graphs of functions for the very first time. How would you explain the definition of a function using a graph, in general terms? (meaning, not relying on any particular example; an explanation whose wording would apply to all possible cases)
 \end{task}
 
-Example: 1/x, sqrt, other examples 
+Remember that your students haven't seen anything called a ``vertical line test'', so they don't know this. However, the above might be a good way of getting to the idea of the ``vertical line test.''
 
-Things high school students should be thinking about:
-\begin{itemize*}
-\item codomain
-\item range (image)
-\item domain
-\end{itemize*}
+\begin{bignote}
+When asking pre-service teachers to explain their thinking, many often fall back on phrases like ``vertical line test''. If this happens, then press on what such phrases mean in terms of the definition of function. It may be the case that they are using this phrase to mean a procedure that they do not understand the meaning of; this is useful background information for you as an instructor, because the ``vertical line test'' and how to teach this procedure with meaning is addressed next. However, whatever the discussion, there must be some sort of complete explanation that uses at least one definition of function explicitly.
+\end{bignote}
 
-Pose these as problems. 
+\subsubsection{Teaching the vertical line test as a case of explaining a mathematical ``test'' of a property}
+\label{s: mathematical test of a property}
 
-Discuss vertical line test. Eventually explaining this becomes one of the SoPs.
-
-Crib homework problems from combination of Bremigan, Bremigan, and Lorch and Sultan and Artzt. They have some good conceptual problems in there about relations and functions.
+A common part of high school lessons on graphs is discussing the ``vertical line test''. This is a ``test'' in the sense that it will ``test'' a mathematical thing (a graph of a relation) for a particular property (whether the relation is a function). There are many ``tests'' like this in high school mathematics; for instance, you may remember ``convergence tests'' from calculus. In general, here are some elements that may be useful to keep in mind when explaining a mathematical ``test'' of a property, using the vertical line test as a way to illustrate a way to teach mathematical ``tests'' of properties. 
 
 
+\begin{mdframed}
+\begin{center}
+{\bf Explaining a Mathematical ``Test'' of a Property}
+\end{center}
+\begin{tabular}{|L{2.2in}|L{3.7in}|}
+\hline
+	& {\it Example}: \\ 
+Introduce {\it what}:	
+	\begin{itemize*}
+	\item Name the test.
+	\item What is the test supposed to tell us? (Be precise!) 
+	\item What are you testing? (Be precise!) 
+	\end{itemize*} \vspace*{-12pt}$\;$
+	& 
+	The Vertical Line Test
+	\begin{itemize*}
+	\item	Today we will learn something called the \emph{Vertical Line Test}. 	
+	\item This test is a way of telling \emph{whether a relation is a function}.
+	\item We will test the \emph{graph of a relation} to tell this.
+	\end{itemize*}
+	\\ \hline 
+Describe {\it how}:
+	\begin{itemize*}
+	\item How do you do the test?
+	\item How do you tell whether the thing passes or fails the test?
+	\end{itemize*}
+	& 
+	Here is how we do the Vertical Line Test: 
+	\begin{itemize*}
+	\item Graph the relation.
+	\item Think about all vertical lines in the plane. 
+	
+		 Look at whether the vertical lines intersect the graph of the relation.
+	\end{itemize*}
+	
+	Here is how to pass or fail:
+	\begin{itemize*}
+	\item If all of the vertical lines cross the graph zero or one times and no more, then the graph passes. 
+		Otherwise the graph fails.
+	\end{itemize*} \vspace*{-12pt}$\;$
+	\\ \hline 
+Deliver the {\it punchline}: What happens when the thing ``passes'' the test? What happens when the thing ``fails'' the test?
+	& 
+	If the graph of a relation passes, then the relation is a function. If the graph of a relation fails, then the relation is not a function. 
+	 \\ \hline 
+Explain {\it why} the test ``works'': 
+	& 
+	[This explanation is for your homework] \\ \hline 
+\end{tabular}
+\end{mdframed}
 
-% Discuss how some definitions for relations specialize to the case of function, such as composition and graph.  Vertical line test.
-% (Teaching practice: explaining a mathematical ``test'' of a property.)
-% Define partial inverses of functions
-% (Construction: viable partial inverses of functions.)
+
+To warm up to understand this table, we first discussed the following:
+
+\vspace*{-4pt}
+\begin{task}
+What does the ``vertical line test'' do? How do you perform this ``test''? How does a graph of a relation to pass or fail the ``vertical line test''? What does it mean about the relation if its graph passes or fails? Why is this conclusion true?
+\end{task}
+
+As we discussed these issues, we talked about the elements of the table.
+
+
+\smallnote{The class is unlikely to have time to fill in the next table completely. You might direct them to focus primarily on the first three rows, and then go over them. For the last row, you might instruct them to write down the claim, in the form of an ``if-then'' statement, that they are to explain.}
+
+\begin{task}
+Based on the discussion we have had, how would you do the following?
+
+\begin{center}
+{\bf Explaining a Mathematical ``Test'' of a Property: The Vertical Line Test}
+\end{center}
+\begin{tabular}{|L{2.2in}|L{3.7in}|}
+\hline 
+Introduce {\it what}:	
+	\begin{itemize*}
+	\item Name the test.
+	\item What is the test supposed to tell us? (Be precise!) 
+	\item What are you testing? (Be precise!) 
+	\end{itemize*} \vspace*{-12pt}$\;$
+	& 
+
+	\\ \hline 
+Describe {\it how}:
+	\begin{itemize*}
+	\item How do you do the test?
+	\item How do you tell whether the thing passes or fails the test?
+	\end{itemize*}
+	& 
+
+	\\ \hline 
+Deliver the {\it punchline}: What happens when the thing ``passes'' the test? What happens when the thing ``fails'' the test?
+	& 
+
+	 \\ \hline 
+Explain {\it why} the test ``works'': 
+	& 
+	\\ \hline 
+\end{tabular}
+\end{task}
+
+
+
+\begin{task}
+What do you think of these elements? What might the purpose of each element be as far as teaching and high school students go?
+\end{task}
+
+
+\subsubsection{Invertible functions and the horizontal line test}
 % Define invertible functions
 % Interpret definition in terms of graph; horizontal line test.
 % (Continue practicing explaining a mathematical ``test'' of a property.)
-% So far we have been looking at things from a ``correspondence perspective''
 
+
+As we learned in the previous chapter, all functions have inverse {\it relations}.
+
+This is because all relations have inverse relations, and functions are relations.
+
+Only some functions have inverse {\it functions}, meaning inverse relations that happen to be functions.
+
+\begin{definition}\label{d: invertible function}
+ A function $f:D\to R$ is \emph{invertible function} if its inverse relation $f^{-1}:R\to D$ is a function.
+
+A function $f:D\to R$ is \emph{non-invertible function} if its inverse relation $f^{-1}:R\to D$ is a not a function.
+\end{definition}
+
+\begin{task}
+Examples of functions we have seen include sine, cosine, Abs, Sq, Cu, $x\mapsto \frac{1}{x}$, and $x\mapsto \sqrt{x}$. 
+
+How would you use these examples as a way to teach the definitions of {\it invertible function} and {\it non-invertible function}? As you think about this, focus on this element of explaining definitions: {\bf interpreting the terminology and rules in terms of the introductory examples}, using representations that students will continue to encounter.
+\end{task}
+
+When you are teaching invertible functions to students who are seeing it for the first time, they may not have heard of anything called a ``horizontal line test.''  It is good practice to try to base explanations of invertibility as much as possible on the definitions of function and invertible/non-invertible functions as a way to help students understand the ideas conceptually. This provides a more solid foundation for ultimately understanding the horizontal line test.
+
+\begin{bignote}
+Just as in the discussion about functions in the previous section, it is important to press teachers on how their reasoning explicitly draws on the definitions of function and invertible/non-invertible function. 
+\end{bignote}
+
+\begin{task}
+What is the ``horizontal line test''? Explain this test of a mathematical property.  
+
+\begin{center}
+{\bf Explaining  \underline{\hspace*{2in}}}
+\end{center}
+\begin{tabular}{|L{2.2in}|L{3.7in}|}
+\hline 
+Introduce {\it what}:	
+	\begin{itemize*}
+	\item Name the test.
+	\item What is the test supposed to tell us? (Be precise!) 
+	\item What are you testing? (Be precise!) 
+	\end{itemize*} \vspace*{-12pt}$\;$
+	& 
+
+	\\ \hline 
+Describe {\it how}:
+	\begin{itemize*}
+	\item How do you do the test?
+	\item How do you tell whether the thing passes or fails the test?
+	\end{itemize*}
+	& 
+
+	\\ \hline 
+Deliver the {\it punchline}: What happens when the thing ``passes'' the test? What happens when the thing ``fails'' the test?
+	& 
+
+	 \\ \hline 
+Explain {\it why} the test ``works'': 
+	& 
+	\\ \hline 
+\end{tabular}
+\end{task}
+
+We have discussed previously that inverse often means ``undoing''. In the case of invertible functions, the ``undoing'' metaphor works well.
+\begin{theorem}[Non-invertible may not undo, invertible always undos]
+Let $f:D\to R$ be a function and $f^{-1}$ be its inverse relation.
+	\begin{itemize}
+	\item When $f$ is non-invertible, $f^{-1}\circ f$ may map an element $x$ to an element other than $x$.
+	\item When $f$ is invertible, we have $f^{-1}\circ f(x)=x$ for all $x$ in the domain of $f$.
+	\end{itemize}
+\end{theorem}
+We can see this in our examples of non-invertible functions, such as $\tn{Sq}$, $\sin$, or $\cos$. The proof below summarizes the general phenomenon.
+
+\begin{proof}
+Given $f:D\to R$ is a function and $f^{-1}$ is its inverse relation. Let $a$ be an element of the domain of $f$, and suppose $f(a)=b$. When $f$ is non-invertible, $f^{-1}$ may map $a$ to multiple elements, so $f^{-1}\circ f$ may then map $a$ to multiple elements. When $f$ is invertible, $f^{-1}(b)=a$, so $f^{-1}\circ f(a)=a$. 
+\end{proof}
+
+\smallnote{The above theorem is phrased in a non-standard way, discussing both the cases of non-invertible as well as invertible, as opposed to only invertible functions. The reason for this is that we have found that undergraduate mathematics students in general can ignore the conditions of a theorem to hold (e.g., whether a function is invertible), especially when the conclusion is a very nice and seemingly intuitive one (e.g., $f^{-1}\circ f(x)=x$ for all $x$ in the domain of $f$). Our solution to this is to phrase theorems to account for the nice and not-so-nice conditions. While not a panacea, we have found it generally helpful in that students are more likely to remember how different conditions may lead to different conclusions.}
+
+This brings us to the definition of the inverse of an invertible function seen most often in high school.
+
+\begin{definition}[Inverse of a function: High school version] \label{d: inverse of a function}
+If $f:D\to R$ is not an invertible function, then it does not have an inverse function.
+
+If $f:D\to R$ is an invertible function, then the {\bf inverse function} of $f$ is the function $f^{-1}$ such that for all $x$ in the domain of $f$, we have
+	$$f^{-1}\circ f(x)=x.$$
+\end{definition}
+
+\subsubsection{Constructing partial inverses of functions (aka ``fake inverses'')}
+% Define partial inverses of functions
+% (Construction: viable partial inverses of functions.)
+
+What if a function is non-invertible but we would like to be able to create some sort of inverse anyway? 
+
+\begin{task}
+The function $\tn{Sq}:\R\to\R, x\mapsto x^2$ does not have an inverse function. However, suppose you wanted to construct an function that is like an inverse, given that we know we can't have a true inverse.
+
+Rank these from best to worst as candidates for an ``inverse'' for $\tn{Sq}$:
+
+(Remember that $\sqrt{x}$ is defined as the zero or positive root of $x$, when a real root exists.)
+
+\begin{itemize}[label=$\circ$]
+\item $\tn{Rt}_1(x)=-\sqrt{x}$ 
+\item $\tn{Rt}_2(x)=\sqrt{x}$
+\item $\tn{Rt}_3(x)$ is defined to be $-\sqrt{x}$ when $x\in[0,1)$ and $\sqrt{x}$ when $x\in [1,\infty)$.
+\item $\tn{Rt}_4(x)$ is defined to be $-\sqrt{-x}$ when $x\leq 0$ and $\sqrt{x}$ when $x\geq 0$.
+\end{itemize}
+\end{task}
+
+Each of the functions $\tn{Rt}_1, \tn{Rt}_2, \tn{Rt}_3, \tn{Rt}_4$ are called ``partial inverses''. They are like inverse functions, except that they don't work everywhere; they only work some of the time. So they are ``fake'' in the sense that they don't work on the entire domain, but they are still an ``inverse'' in the sense that they will be an inverse in a restricted subset of the domain.
+
+\smallnote{In our experience, pre-service teachers find the nickname ``fake inverse'' memorable and helpful for understanding partial inverses. It seems prudent to mention that we coined this nickname well before 2017. In 2017, we tried using the nickname ``good enough inverse'' to avoid reference to current event usage of the term ``fake'', but the nickname ``good enough inverse'' did not have the same effect and pre-service teachers forgot both the terms ``partial inverse'' and ``good enough inverse''. There is also something to be said here about why we might have nicknames for things that already have perfectly good names. Part of it is as an aid to memory. The concept of ``partial inverse'' is important to high school mathematics, especially trigonometry. However, if teachers never remember the idea of ``partial inverse'', then the fact that arcsine or arccosine are not true inverses will not be passed along. Although coming up with nicknames (like ``fake inverse'' as opposed to ``true inverse'') can seem little cheesy, we have found it to be more beneficial than detrimental.}
+
+\smallnote{We recommend doing this next activity quickly, as a class, with numerical examples.}
+\begin{task}
+What is the domain of $\tn{Sq}$? 
+
+On what subset of the domain of $\tn{Sq}$ do each of  $\tn{Rt}_1, \tn{Rt}_2, \tn{Rt}_3, \tn{Rt}_4$ serve as a true inverse?  (They satisfy the equation in Definition \ref{d: inverse of a function}.)
+
+On what subset of the domain of $\tn{Sq}$ are the functions $\tn{Rt}_1, \tn{Rt}_2, \tn{Rt}_3, \tn{Rt}_4$ serve as a fake inverse? (They do not satisfy the equation in Definition \ref{d: inverse of a function}.). 
+\end{task}
+
+Finally, let's apply the ideas of partial inverse to a trigonometric function:
+ 
+\begin{task}
+Construct at least three candidates for partial inverses (``fake inverses'') for $f(x)=\sin(x)$. 
+
+Rank the candidates you have constructed from best to worst ``inverse'' for the sine function.
+
+On what subset of the domain of sine do each of your candidates serve as a true inverse? On what subset of the domain of sine do your candidates serve as a fake inverse? 
+
+\vspace*{2pt} \hrule \vspace*{2pt}
+Construct at least three candidates for partial inverses (``fake inverses'') for $f(x)=\cos(x)$. 
+
+Rank the candidates you have constructed from best to worst ``inverse'' for the cosine function.
+
+On what subset of the domain of cosine do each of your candidates serve as a true inverse? On what subset of the domain of cosine do your candidates serve as a fake inverse? 
+\end{task}
+
+\smallnote{The following describes what usually happens with rankings of candidates for inverse of sine.}
+
+You may have concluded that the ``best'' inverse is the candidate whose domain of being a true inverse is $[\frac{\pi}{2}, \frac{\pi}{2}]$. This is in fact how the function that you may have seen before, with the (unfortunate) notation $\sin^{-1}$, is defined. (An alternative notation is $\arcsin$.) In general, when working with functions for which we would like to have an inverse but the functions are not actually invertible, we can define partial inverses (``fake inverses'') for them which we take to be standard. Examples of this include $x\mapsto \sqrt{x}$ for Sq, arcsin for sine, and arccosine for cosine. They usually are the candidate where if you looked at the alternatives, you would agree that there's something about that candidate that seems to work better: they are continuous, the subset of the domain on which they are a ``true'' inverse is close to zero or symmetric around zero, etc.
 
 
 %%%%%%% 3 COVARIATIONAL VIEW  %%%%%%%
-% {\bf Covariational view.} We use the Morgan Minicase to introduce the difference between correspondence and covariational views. By covariational view, we mean understanding how changing the value of one variable impacts the value of the other variable, and learning to coordinate changes in one variable with changes in the other. This minicase introduces the teaching practice of {\it recognizing and explaining correspondence and covariation views}. We revisit composition and inver
+\vspace*{-12pt}\subsection{Covariational view of functions}
 
+So far we have been looking at things from a {\it correspondence view}, meaning that we primarily think of functions in terms of individual inputs and the images to which they are assigned. In other words, we focus on how inputs and outputs correspond. This perspective can be very useful for defining things like domain, range, composition, or inverse. However, this perspective can be at a distinct disadvantage when it comes to looking at the behavior of a function or of understanding how changes in the input and output variables influence each other. 
 
-%Part 2 of this lesson:
+By {\it covariational view}, we mean understanding how changing the value of one variable impacts the value of the other variable, and learning to coordinate changes in one variable with changes in the other. We use the Morgan Minicase\footnote{(c) 2013, Educational Testing Service, used with permission} to introduce the difference between correspondence and covariational views. This minicase also introduces the teaching practice of {\it recognizing and explaining correspondence and covariation views}.
+
 %Morgan item
-%Introduce correspondence and covariational views.
-%(Teaching practice: Using and detecting correspondence or covariational viewpoints)
+
+\begin{mdframed}
+\begin{center} {\bf Ms.~Morgan's class} \end{center}
+\begin{minipage}{5in}\raggedright \parskip4pt
+During a lesson on writing equations of linear functions represented in tables, Ms. Morganasked her students to write the equation of the linear function represented in the table below,and to explain how they found their answers.
+
+Students found the correct equation, but they gave different explanations of how they foundtheir answers:
+\end{minipage}
+\begin{minipage}{1in}
+\vspace*{-20pt}
+\begin{center}\begin{tabular}{c|c}
+$x$ & $y$ \\ \hline1 & 6  \\ 2 & 11 \\ 3 & 16 \\4 & 21 
+\end{tabular}
+\end{center}
+\end{minipage}
+
+\begin{tabular}{L{0.75in}L{5in}}
+\hline
+Student A: & Each time the value of $x$ goes up by 1, the value of $y$ goes up by 5, so theslope is 5. And if $x$ goes down by 1, then $y$ will have to go down by 5, sothe $y$-intercept is 1. That means the equation is $y = 5x + 1$.
+\\ \hline
+Student B: &  I just looked at the value of $y$ and saw that it kept increasing by 5, so $m =5$. Then I subtracted that number from the first valueof y in the table, so $b = 1$. You always put m times x and add the b, so theequation is $y = 5x + 1$.
+\\ \hline
+Student C: & For this function, I saw that you can always multiply the value of $x$ by 5and then add 1 to get the value of $y$, so the equation is $y = 5x + 1.$
+\\ \hline
+\end{tabular}
+\end{mdframed}
+
+\begin{task}
+Read through the student responses in Ms.~Morgan's class.
+\begin{itemize}
+\item {\bf Observe}: What is the student thinking? How might they have arrived at each step of their solution?\item {\bf Interpret}: What are you sure that each student understands? What are you sure that each studentdoes not understand? What are you unsure that each student understands?  Based on what evidence?
+
+Here are some concepts to consider analyzing for students' understanding:
+
+	\vspace*{-2pt}
+	\begin{itemize*}
+	\item $y$-intercept
+	\item Constant rate of change
+	\item Form of a linear equation 
+	\item How changes in one variable impact changes in the other variable 
+	\item Definition of graph of a function
+	\end{itemize*}
+	\item {\bf Interpret, continued:} Are the explanations mathematically complete? Why or why not?
+	
+\end{itemize}
+
+\vspace*{2pt}
+\hrule
+\vspace*{2pt}
+
+{\bf Observe}: What may Student A/B/C be thinking?
+
+{\bf Interpret}: 
+
+\begin{tabular}{C{1.75in}|C{1.75in}|C{1.75in}}
+I am sure that Student A/B/C understands \dots  & I am sure that Student A/B/Cdoes NOT understand \dots & I am unsure whetherStudent A/B/C understands \dots  \\ \hline
+& & \\
+\end{tabular}
+
+What is complete or incomplete about Student A/B/C's explanation?
+%\vspace*{2pt}
+%\hrule
+%\vspace*{2pt}
+%
+%{\bf Observe}: What may Student B be thinking?
+%
+%{\bf Interpret}: \begin{tabular}{C{1.5in}|C{1.5in}|C{1.5in}}
+%I am sure that Student B understands \dots  & I am sure that Student B%does NOT understand \dots & I am unsure whether%Student B understands \dots  \\ \hline
+%& & \\
+%\end{tabular}
+%
+%What is complete or incomplete about Student B's explanation?
+%\vspace*{2pt}
+%\hrule
+%\vspace*{2pt}
+%
+%{\bf Observe}: What may Student C be thinking?
+%
+%{\bf Interpret}: \begin{tabular}{C{1.5in}|C{1.5in}|C{1.5in}}
+%I am sure that Student C understands \dots  & I am sure that Student C%does NOT understand \dots & I am unsure whether%Student C understands \dots  \\ \hline
+%& & \\
+%\end{tabular}
+%
+%What is complete or incomplete about Student C's explanation?
+\end{task}
+
+\begin{task}
+There are two useful views on functions: covariation and correspondence. Use this space to take notes on what these mean.
+
+Correspondence: 
+
+Covariation: 
+
+Then discuss: How do covariation and correspondence views come up in the students' thinking?
+\end{task}
+
+
+\begin{solution}({\it Partial})
+
+Ways that the covariation and correspondence views arise in the Morgan Minicase include the following:
+
+\vspace*{-8pt}
+\begin{itemize*}
+\item How changes in one variable impact changes in the other variable: Covariation view; and 
+\item Definition of graph of a function: Correspondence view.
+\end{itemize*}
+
+\vspace*{-4pt}
+Student A (does provide a mathematically complete explanation)
+
+\vspace*{-8pt}\begin{itemize*}
+\item understands concept of constant rate of change, $y$-intercept, form of linear function\item may not understand correspondence view of function
+\end{itemize*}
+
+\vspace*{-4pt}Student B (does {\it not} provide a mathematically complete explanation)
+
+\vspace*{-8pt}
+\begin{itemize*}\item does know that linear functions have the form $y=mx+b$, where $m, b\in \R$\item does not understand constant rate of change\item may not understand $y$-intercept\item does not necessarily understand correspondence view of function
+\end{itemize*}
+
+\vspace*{-4pt}Student C (does provide a mathematically complete explanation)
+
+\vspace*{-8pt}
+\begin{itemize*}\item does know that linear functions have the form $y=mx+b$, where $m, b\in \R$\item does understand correspondence view of function\item may not understand constant rate of change, $y$-intercept.
+\end{itemize*} 
+\end{solution}
+
+\subsubsection{Noticing student thinking and recognizing and explaining correspondence and covariation views}
+In any teaching, it is important to attend to student work so that you can notice the student thinking. Some things to keep in mind for this are:
+
+\begin{mdframed}\raggedright
+\begin{center} {\bf Noticing student thinking} \end{center}
+	\begin{itemize}
+	\item First \emph{observe} what the student's thinking is, \emph{without judgment} as to what they understand or do not understand. 
+	\item Then, \emph{interpret} what they understand, may not understand, or what you are unsure of whether they understand. Always base this interpretation on the evidence of the student thinking you have, and be sure that you know what evidence you are drawing upon.
+		
+	Only after this, you might interpret the completeness or correctness of the student's thinking. 
+	\item From here, you might \emph{respond} to the student based on what you have observed and interpreted. 
+	\end{itemize}
+\end{mdframed}
+
+The reason to split up observing without judgement, interpreting, and responding is that it interpretations tend to be more accurate after we have taken a step back to observe what the student may be thinking, without judgment.
+
+In the case of teaching functions, it is helpful to be able to {\it recognize and explain correspondence and covariation viewpoints}. The Morgan Minicase gave us an opportunity to see how both can show up in response to the same problem as well as how differently they can appear. Throughout this minicase, we kept in mind the following.
+
+\begin{mdframed}\raggedright
+\begin{center} {\bf Recognizing and explaining correspondence and covariation viewpoints} \end{center}
+
+Correspondence and covariation views can be thought of as the following:
+\begin{itemize}
+	\item (Correspondence) Conceiving of functions and their behavior primarily in terms of maps from individual elements of the domain to individual elements of the range. 
+	\item (Covariation) Conceiving of functions and their behavior primarily in terms of coordinating how changes in the value of one variable impact the value of the other variable.
+\end{itemize}
+
+When introducing ideas in class, coming up with examples, or giving explanations, it is helpful to think about whether you are working with a correspondence or covariation view, and then to see what an explanation in the other view might look like. 
+
+When noticing student thinking, it can be helpful to interpret whether they are taking a correspondence or covariation view.
+\end{mdframed}
+
+We now revisit our ways of building functions to see how the covariation view can come into play.
+
+\subsubsection{Building functions: Inverses and compositions}
+
+Let's begin by looking at compositions of functions that high school students are likely to encounter: linear functions and quadratic functions. 
+
+\begin{bignote}
+% Good questions project note
+One way to use the following tasks may be the following:
+	\begin{enumerate*}
+	\item Pose the first question as a quick vote. 
+	\item Ask pre-service teachers to talk to a neighbor about the answer.
+	\item Go over the answer and the reasoning.
+	\item Ask pre-service teachers to discuss the reasoning and ask questions about the reasoning.
+	\end{enumerate*}
+Then assign the follow-up questions and go over the reasoning as a whole class after giving students individual and/or group time to work on them.
+
+This protocol is based on the Good Questions Project led by Maria Terrell at the Cornell University department of mathematics. She and colleagues observed that instructors who followed this protocol tended to have students who understood pre-calculus and calculus concepts better than instructors who only did 1 and 2, or who did only 3 or 4, or some other strict subset of these steps.  In fact, the students in their observations who fared worst on average were those whose instructors only did 3 and 4. 
+
+One way to make sense of these findings is that students who vote and discuss their reasoning have created a personal stake in the mathematics, so they are more primed to listen to reasoning about the question, as well as to compare and contrast their reasoning with someone else's proposed reasoning. They may also be more likely to take the question seriously if they know that they initially got the wrong answer, because they understand what the challenge of the question is. When students only see the answer and the reasoning, even if it makes sense, they may also not appreciate the concepts that the question is getting at. So they are less likely to remember or take the concept seriously. 
+\end{bignote}
+
+
+\begin{task} 
+Suppose that $f$ is a linear function whose constant rate of change is 5 vertical units per horizontal unit; $g$ is a linear function whose constant rate of change is $-3$ vertical units per horizontal units; and $h$ is a linear function whose constant rate of change is $0$ vertical units per horizontal unit.
+
+What is the rate of change of $g\circ f$? Circle your response.
+
+	$$2 \quad\quad -2 \quad\quad 15 \quad\quad -15 \quad\quad 8 \quad\quad -8\quad\quad \tn{it is not constant} \quad\quad \tn{none of the above}$$
+
+What about for $f\circ g$? What is your reasoning? 
+
+What about for $h\circ f$?  $f\circ h$? What is your reasoning?
+\end{task}
+
+\begin{task}
+Suppose that $L$ is a linear function, and $Q$ is a quadratic function.  What is $Q\circ L$? Circle your response.
+
+\begin{center}
+linear \quad\quad quadratic \quad\quad cubic \quad\quad something else
+\end{center}
+
+What is your reasoning?
+
+How would you explain this from a covariation view?
+
+Let $\sin$ be the sine function. What is $L\circ \sin$? Circle your response.
+
+\begin{center}
+linear \quad\quad sinusoidal \quad\quad something else
+\end{center}
+
+(We can think of sinusoidal as behaving like sine or cosine: it moves ``up'' and ``down'' in a period fashion, always to the same maximum and minimum value.)
+
+What is your reasoning?
+
+How would you explain this from a covariation view?
+
+\end{task}
+
+\subsection{Revisiting a key example}
+
 %Composition: Correspondence and covariational views
 %Inverse: Correspondence and covariational views.
 %Revisit composition of graphs.
-%%%%%%% 3 INVERSE OF A FUNCTION (INTRO) %%%%%%%
-\subsection{Intro to inverse of a functions}
-
-We are now going to say something that may seem strange: every function as an inverse! The reason why this statement is true is that every function has an {\it inverse relation}. This is because functions are relations, and all relations have inverses. (What about concepts like ``inverse function'' and ``invertibiliity''? Stay tuned for the next time.)
-
-To finish this class, let's do an exploration: \todo{need to reword exploration task for inverses of functions, this is copying p.~203 of Mason, Burton, and Stacey's (2010) book verbatim}
-\begin{task}
-Under what conditions can you rotate the graph of a function about the
-origin, and still have the resulting graph being the graph of a function? If
-the graph of a function cannot be rotated about the origin without ceasing
-to be the graph of a function, might there be other points which could act
-as centre of rotation and preserve the property of being the graph of a
-function?
-\end{task}
-
-Next time: Define invertibility. Put intro to this in homework.  
-%
-%\begin{bignote}
-%In the next section, the definitions we will use are:
-%
-%\begin{definition}[Inverse function: Middle school version]\label{d: inverse function middle school}
-%A function is \emph{invertible} if its inverse relation is a function. 
-%
-%If a function is invertible, then its \emph{inverse function} is its inverse relation.
-%\end{definition}
-%
-%\begin{definition}[Inverse function: High school version]\label{d: inverse function high school}
-%A function $f:D\to R$ is \emph{invertible} if there exists a function $g:R\to D$ such that for all elements $x$ in the domain of $f$, we have $g\circ f(x)=x$; and for all elements $y$ in the image of $f$, we have $f\circ g(y)=y$. In this case, we say that $g$ is the \emph{inverse function} of $f$.
-%\end{definition}
-%
-%\begin{definition}[Inverse function: University version]\label{d: inverse function university}
-%A function $f:D\to R$ is invertible if there exists a function $g:R\to D$ such that for all elements $x$ in the domain of $f$, the composition $g\circ f$ is the identity function on $D$, and for all elements $y$ in the image of $f$, the composition $f\circ g$ is the identity function on $R$. 
-%
-%A function is \emph{left invertible} if there exists a function $g:R\to D$ such that for all elements $x$ in the domain of $f$, the composition $g\circ f$ is the identity function on $D$.
-%
-%A function is \emph{right invertible} if there exists a function $g:R\to D$ such that for all elements $y$ in the image of $f$, the composition $f\circ g$ is the identity function on $R$. 
-%\end{definition}
-%
-%In this next section, we will introduce partial inverses as well.
-%\end{bignote}
-%
-
-\newpage 
-
-IGNORE EVERYTHING HERE FOR NOW: NEED TO COMBINE WITH LESSON 2.
-
-
-\subsection{Function composition}
-
-\begin{task}
-Recall the middle school definition of relation and the parent relation $P$. Let $t:\N\to \N, x\mapsto 2x$. Using the middle school definition, how would you represent the $P\circ t$? How would you represent $t\circ P$? What are the domain and range of each composition?
-
-Let $f:\R\to\R, x \mapsto x^2$ and $g$ be defined as the relation which maps $x$ to all $y$ such that $x=y^2$.  Using the middle school definition, how would you represent $f\circ g$? How would you represent $g\circ f$? What do you notice? What do you wonder?
-\end{task}
-
-
-\todo{make tikz or pencil sketches of three cloud diagrams to represent function composition}
-\begin{solution}({\it Sketch})
-For each of the above, we can represent the compositions with concatenated cloud diagrams, such as:
-
-[insert graphic here of three clouds] 
-
-Although only the domain and range of the $P$ and $t$ compositions are asked for, we provide the domain and range for all compositions considered: 
-\begin{center}
-\begin{tabular}{lll}
-	composition & domain & range \\ 
-	\hline
-$P \circ t$ & $\{n\in \N: n \geq 2\}$ & $\{n\in \N: n\geq 2\}$\\ 
-$t\circ P$ & $\{n\in \N: n\neq 0, 1 \tn{ and $n$ is not prime}\}$ & All even natural numbers $\geq 4$ \\ 
-$g\circ f$ & $\R$ & $\R$ \\ 
-$f\circ g$ &$\R$ & $\R_{\geq 0}$ 
-\end{tabular}
-\end{center}
-
-Why is $1$ {\it not} in the domain of $P\circ t$? The relation $P$ does not assign $t(1)$ to any element. So $P(t(1))$ is undefined. 
-\end{solution}
-
-
-\smallnote{One way to discuss the domain of $t\circ P$ is to ask, ``Raise your hand if 5 was in your domain \dots 4? \dots 3? \dots 2? \dots 1? \dots 0?'' Make a note of any disagreements or wide agreements to the class orally. Then ask for students' reasoning about $5$, $1$, and $0$.}
-
-\begin{task}
-Which of the above is a function? 
-\end{task}
-\todo{use tikz or pencil to show composition via two cloud diagrams}
-\begin{solution}
-Only $g\circ f$ is a function. The other compositions are not relations because there exist elements that are assigned to multiple elements by the composition. 
-
-One way to see this is to represent the result of the compositions using two cloud diagrams, such as below.
-
-[insert graphic]
-\end{solution}
-
-\subsection{Compositions that result in functions}
-
-As we have seen, relation composition can get pretty messy! Yet occasionally they compose nicely to functions. 
-
-We can think of elements in the superdomain of a relation as being one of three types:
-	\begin{description}
-	\item [Type $0$:] Elements in the superdomain that are not mapped to any element in the superrange.
-	\item [Type $1$:] Elements in the superdomain that are mapped to exactly one element in the superrange.
-	\item [Type $2^+$:] Elements in the superdomain that are mapped to multiple elements in the superrange.
-	\end{description}
-
-We've seen examples of each of these in the parent relation; there are other examples as well.
-
-\smallnote{You might ask the class quickly, ``What are some examples in the parent relation of type 0? of type 1? of type 2+?}
-
-\begin{task}
-Here is a question that we will explore in the future but not at this moment. 
-
-\begin{task} Let $P$ and $Q$ be two relations. 
-	\begin{enumerate}[label=(\alph*)]
-	\item Suppose that we know that $P$ is a function. What would have to be true about the assignments associated to $Q$ for $Q\circ P$ to be a function?
-	\item What if $P$ were not a function? What would have to be true about the assignments associated to $Q$ for $Q\circ P$ to be a function?
-	\end{enumerate}
-\end{task}
-
-Before we dive into this task, discuss: 
-	\begin{itemize}
-	\item What are these questions asking?
-	\item What are some examples of $P$ that you would use to try to explore the question?
-	\item What are some representations of relations that we have been using? Which do you think would be helpful to consider and why?
-	\end{itemize}
-
-\end{task}
-
-\subsection{Functions whose inverse relations are functions}
-
-[Introduce definitions] 
-
-\subsection{Constructing partial inverses}
-
-[activities: construct candidate partial inverses for $f:\R\to\R, x\mapsto x^2$,  $f:\R\to\R, x\mapsto |x|$,  $f:\R\to\R, x\mapsto \sin(x)$,  $f:\R\to\R, x\mapsto \cos(x)$.]
-
-[above activity is to construct as many candidates as possible.bring up idea of having non-continuous partial inverses.  choose favorites.  talk about desirable features and conventions about canonical partial inverses. should lead to discovery of standard definition for arcsin and arccos.]
-
- [activity: talk about candidate partial inverses and what they are in terms of different representations]
- 
- ``rule of 6'' using
-symbolic, cloud, tables, graphs
-
-
-%\begin{note}
-%In teaching, when working with relations defined by story problems, the units need to be interpreted carefully.  In story problems, numbers in the candidate domain and candidate range often represent quantities with particular units, for instance, temperature in degrees Fahrenheit, speed in miles per hour, distance in miles, or volume in gallons.
-%\end{note}
-
 
 %%%%%%%%%%%%%%
 % \header{Preparation for next lesson}
@@ -2858,14 +3377,17 @@ symbolic, cloud, tables, graphs
 \newpage \subsection{In-Class Resources}  
 \handout{Opener}
 
-Which of the following is the graph of $y=\sin(x)$? 
-
 %%%%%%%%% 3 HOMEWORK %%%%%%%%%%%%
 \newpage \subsection{Homework}
 
 Note to self about homework followup from Homework 2: 
 Composition of graphs (from the canadian textbook; also draw compositions of graphs and their inverses) (probably need to scaffold this more. think about relationship between linear function and linear function, also think about where points go, not sure what else needs to go here. Will probably need to re-assign in Lesson 3) (Maybe instead of doing entire graph, do something like a series of questions -- what is $f(g(f(g(1)))), g(f(g(1)))$, etc. Do this for a bunch of points, especially for the combination $g(f(x))$ (or whichever composition is easier to do.). Then assign the actual composition in Hwk 3 after discussing correspondence and covariational views and ask students to analyze where they used each viewpoint. In Hwk 3 also assign composition of linear and quadratic, analyze which parts are constant, linear non-constant, quadratic, none of the above.)
 
+
+Crib homework problems from combination of Bremigan, Bremigan, and Lorch and Sultan and Artzt. They have some good conceptual problems in there about relations and functions.
+
+
+Under what conditions can you rotate the graph of a function about the origin, and still have the resulting graph being the graph of a function? If the graph of a function cannot be rotated about the origin without ceasing to be the graph of a function, might there be other points which could act as centre of rotation and preserve the property of being the graph of a function?
 
 
 %%%%%%%%% PART 1 WRITTEN SIMULATION OF PRACTICE  %%%%%%%%%%%%
@@ -2878,15 +3400,11 @@ something with vertical line test
 
 function/relation transformation maybe 
 
-
-
 Allen item SoP? (wait until Chapter 4 on covariational perspective)
 
 Vertical line test SoP?  (wait until next time)
 
-
-
- Composition of graphs, again. Correspondence view.  Repeat from HOmework 2. 
+ Composition of graphs, again. Correspondence view.  Repeat from Homework 2. 
 
 \end{document} 
 
