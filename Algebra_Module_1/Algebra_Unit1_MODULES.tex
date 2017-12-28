@@ -197,9 +197,8 @@ The Mathematics Of Doing, Understand, Learning, and Educating Secondary Schools 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%% 0 COMMUNICATING MATHEMATICS IN THIS COURSE AND BEYOND %%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Communicating Mathematics in this Course and Beyond}\label{section: communicating mathematics}
+\newpage \section{Communicating Mathematics in this Course and Beyond}\label{section: communicating mathematics}
 
-	
 %%%%%%%% 0 REFERENCE: SET & LOGICAL NOTATION %%%%%%%%%%%
 \subsection{Set and Logical Notation}
 
@@ -1275,7 +1274,7 @@ How does this way of phrasing the conjecture match up with the original way?
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
-\section{Relations (Week 2) (Length: \about 2.5 hours)}\label{s: relations}  % 
+\section{Relations (Week 2) (Length: \about 3 hours)}\label{s: relations}  % 
 %%%%%%%%% 2 OVERVIEW  %%%%%%%%%%%%%%%%%%%%
 \subsection{Overview}
 
@@ -2649,30 +2648,62 @@ need to introduce definition of function and its notation here, otherwise can't 
 
 Also add a part (b) with $g$ and $h$ where $h$ is relation, and asking to find the image of $1$ under $h\circ g$. make $h$ so that $h\circ g$ has multiple values.
 
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+\draw (0,-2.5) -- (0, 3.5) node[above]{$y$};
+\draw (-6.25,0) -- (8.25,0) node [right]{$x$};
+\foreach \x in {-6,-5,-4,...,8}
+	\draw (\x,-0.1) -- (\x, 0.1);
+\foreach \x in {-2,-1, ..., 3}
+	\draw (-0.1,\x) -- (0.1,\x);
+\draw[xshift=1cm, ultra thick, red] (-2,-2) -- (2,2);
+\draw[ultra thick, red] (3,2) -- (5,2) node[above]{$f$} -- (8,2);
+\draw[ultra thick, red] (-1,-2) -- (-6,-2);
+\draw[yshift=1cm, ultra thick, dashed, blue] (-2,2) -- (2,-2);
+\draw[ultra thick, dashed, blue] (2,-1) -- (5,-1)node[above]{$g$}-- (7.5,-1);
+\draw[ultra thick, dashed, blue] (-2,3) -- (-5.5,3); 
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+\draw (0,-2.5) -- (0, 3.5) node[above]{$y$};
+\draw (-6.25,0) -- (8.25,0) node [right]{$x$};
+\foreach \x in {-6,-5,-4,...,8}
+	\draw (\x,-0.1) -- (\x, 0.1);
+\foreach \x in {-2,-1, ..., 3}
+	\draw (-0.1,\x) -- (0.1,\x);
+\draw[ultra thick, green] (-6,-2) -- (6,2) node[above]{$h$}  (-6,2) -- (6,-2) ;
+\end{tikzpicture}
+\end{center}
+
 \item Something with integral? (Definite integral; evaluating at particular point; relates to definition of graph of an equation)
 \item Something with practicing domain and range? Maybe something about teaching them with example $1/x$ or asymptotes or something that is discontinuous?
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 	
-%%%%%% LESSON 3 %%%%%%%%%%%%%%%%%%%%	
+%%%%%% LESSONS 3-4 %%%%%%%%%%%%%%%%%%%%	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \newpage
-\section{Functions: Introduction to Correspondence and Covariational Views (Weeks 3-4) (Length: \about 5 hours)}  
+\section{Functions: Introduction to Correspondence and Covariational Views (Weeks 3-4) (Length: \about 6 hours)}  
 
-%%%%%%%%% 3 OVERVIEW  %%%%%%%%%%%%%%%%%%%%
-\subsection{Overview}
+%%%%%%%%% 3-4 OVERVIEW  %%%%%%%%%%%%%%%%%%%%
 
-\todo{Ch 3: Write overview}
-\vspace*{-12pt}
+\vspace*{-8pt}\subsection{Overview}
+
+\vspace*{-8pt}
+This lesson focuses on honing mathematical/teaching practices in the following content.
+
+\vspace*{-4pt}
 \begin{tabular}{L{6.5in}} 
 {\bf Content} \\ \hline \parskip4pt
-\emph{Functions}, defined as \dots 
+\emph{Functions}, defined as a relation from $D$ to $R$ where each input in $D$ is assigned to no more than one output in $R$.
 
-\emph{Partial inverses}, defined as \dots 
+\emph{Invertible function}, defined as a function whose inverse relation is a function; \emph{non-invertible function}, defined as a function whose inverse relation is not a function.
 
-\emph{Invertibility of a function}, defined as \dots 
+\emph{Partial inverse} of a function $f$, defined implicitly as a function $g$ that is an inverse of $f$ on a restricted domain of $f$, and where the domain of $g$ equals the range of $f$.
 
 Additionally, we revisit \emph{composition} and \emph{inverse} so that we can use them to compare and contrast correspondence and covariation views. By these terms, we mean:
 	\begin{itemize*}
@@ -2683,21 +2714,17 @@ Additionally, we revisit \emph{composition} and \emph{inverse} so that we can us
 	\end{itemize*} 
 \end{tabular} 
 
+
 \vspace*{-12pt}
-\begin{tabular}{L{3.2in}|L{3.2in}}
-{\bf Constructions} & {\bf Mathematical/Teaching Practices} \\ 
-\hline \parskip4pt
-% Proof structures
-\emph{Constructing viable partial inverses of functions}, meaning \dots 
-&
-% Mathematical/Teaching Practices
-\emph{Introducing a definition}, meaning \dots 
+\begin{tabular}{L{6.5in}} 
+{\bf Mathematical/Teaching Practices} \\ \hline \parskip4pt
+\emph{Introducing a definition}, involving introductory examples and non-examples, a precise statement of the definition, and interpreting the definition and its terminology using examples, non-examples, and various representations. 
 
-\emph{Explaining a mathematical ``test'' of a property}, meaning \dots
+\emph{Explaining a mathematical ``test'' of a property}, meaning to introduce what the test does, how it works, how to pass or fail the test, and why the test works.
 
-\emph{Attending to student thinking}, meaning \dots 
+\emph{Noticing student thinking}, meaning to observe what the student may be thinking, interpreting what the student may understand or not, as well as what you are not sure whether they understand, and responding.
 
-\emph{Recognizing and explaining correspondence and} \emph{covariation views}, meaning \dots 
+\emph{Recognizing and explaining correspondence and} \emph{covariation views}, meaning to attend to which view or combination of views is being used, and constructing explanations from both views. 
 \end{tabular}
 
 %%%%%%%%%%%%%%
@@ -2705,9 +2732,9 @@ Additionally, we revisit \emph{composition} and \emph{inverse} so that we can us
 
 This lesson comes in three parts: reviewing key examples from Homework 2, working with functions from a correspondence point of view, and working with functions from a covariation point of view.
 
-{\bf Review of Homework 2.} We review how graphs can be used to represent relations (and hence functions) using Homework 2 Problem \ref{h: composition correspondence}. These set up the discussion of how definitions for working with relations specialize to the case when the relation is a function. We also review the functions used in Homework 2 Problem \ref{h: key graphs} so that the discussion of partial inverses can focus on how to construct partial inverses as opposed to details about the functions themselves, particularly sine and cosine graphs.
+{\bf Review of Homework 2.} We review how graphs can be used to represent relations (and hence functions) using Homework 2 Problem \ref{h: composition correspondence}. We also review the functions used in Homework 2 Problem \ref{h: key graphs} so that the discussion of partial inverses can focus on how to construct partial inverses as opposed to details about the functions themselves, particularly sine and cosine graphs.
 
-{\bf Functions and the correspondence view.} After defining {\it functions}, we introduce the teaching practices of {\it introducing a definition} and {\it explaining a mathematical ``test'' of a property}. The latter uses the example of the {\it vertical line test}.   We then define {\it partial inverses of functions} and discuss {\it how to construct viable partial inverses of functions}, and then define {\it invertible function}. We continue practicing how to explain a mathematical test of a property by looking at the {\it horizontal line test}.  We conclude this part of the lesson by revealing that thus far we have been viewing relations and functions from a {\it correspondence view} of the equation $y=f(x)$, meaning only thinking about functions in terms of maps from elements of the domain to elements of the range. 
+{\bf Functions and the correspondence view.} After defining {\it functions}, we introduce the teaching practices of {\it introducing a definition} and {\it explaining a mathematical ``test'' of a property}. The latter uses the example of the {\it vertical line test}.   We then define {\it invertible function}. We continue practicing how to explain a mathematical test of a property by looking at the {\it horizontal line test}. We then define {\it partial inverses of functions} and discuss {\it how to construct viable partial inverses of functions}. We construct partial inverses for sine and cosine functions.
 
 {\bf Covariational view.} We use the Morgan Minicase to introduce the difference between correspondence and covariational views. By covariational view, we mean understanding how changing the value of one variable impacts the value of the other variable, and learning to coordinate changes in one variable with changes in the other. This minicase introduces the teaching practice of {\it recognizing and explaining correspondence and covariation views}. We revisit composition and inverse to compare and contrast these views and provide an opportunity engage in this teaching practice. 
 
@@ -2725,10 +2752,11 @@ This lesson comes in three parts: reviewing key examples from Homework 2, workin
 \end{bignote}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%% 3 CONTENT %%%%%%%%%%%%%
+%%%%%%%% 3-4 CONTENT %%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%% 3 REVIEW OF KEY EXAMPLES  %%%%%%%
+% 3-4
+%%%%%%% 3-4 REVIEW OF KEY EXAMPLES  %%%%%%%
+\vspace*{-12pt}
 \subsection{Review of key examples}
 
 %{ \bf Review of Homework 2.} We review how graphs can be used to represent relations (and hence functions) using Homework 2 Problem \ref{h: composition correspondence}. These set up the discussion of how definitions for working with relations specialize to the case when the relation is a function. We also review the functions used in Homework 2 Problem \ref{h: key graphs} so that the discussion of partial inverses can focus on how to construct partial inverses as opposed to details about the functions themselves, particularly sine and cosine graphs.
@@ -2737,12 +2765,42 @@ This lesson comes in three parts: reviewing key examples from Homework 2, workin
 % Finding points in composition of graph.
 % Sine, cosine, absolute value, square, cube graphs
 
+\vspace*{-4pt}
 \subsubsection{Using the definition of graph of a relation}
-In the previous homework, you were given the graphs of two functions $f$ and $g$ and asked to find values such as $f(g(1))$ or $g(g(f(2)))$.  Let us now consider how graphs can be used to find these values, and how the reasoning relies on the definition of graph of a relation.
+In the previous homework, you were given the graphs of two functions $f$ and $g$ and asked to find values such as $g(f(1))$ or $g(g(f(2)))$.  Let us now consider how graphs can be used to find these values, and how the reasoning relies on the definition of graph of a relation.
 
-\todo{Ch 3: insert graphic from Homework 2 of composition of functions}
+\todo{Ch 3: write more details for opening task after writing Hwk 2}
 \begin{task}
-Compare your responses to Homework 2 Problem \ref{h: composition correspondence}. How did you use the definition of graph in your reasoning? Use $g\circ f$ as an example to illustrate your use of these definitions. Then illustrate your reasoning using $h\circ g$.
+Compare your responses to Homework 2 Problem \ref{h: composition correspondence}. How did you use the definition of graph in your reasoning? Use $g\circ f$ as an example to illustrate your use of these definitions. Then illustrate your reasoning using $h\circ g$. 
+
+\vspace*{-12pt}
+\begin{center}
+\begin{tikzpicture}[scale=0.3]
+\draw (0,-2.5) -- (0, 3.5) node[above]{$y$};
+\draw (-6.25,0) -- (8.25,0) node [right]{$x$};
+\foreach \x in {-6,-5,-4,...,8}
+	\draw (\x,-0.1) -- (\x, 0.1);
+\foreach \x in {-2,-1, ..., 3}
+	\draw (-0.1,\x) -- (0.1,\x);
+\draw[xshift=1cm, ultra thick, red] (-2,-2) -- (2,2);
+\draw[ultra thick, red] (3,2) -- (5,2) node[above]{$f$} -- (8,2);
+\draw[ultra thick, red] (-1,-2) -- (-6,-2);
+\draw[yshift=1cm, ultra thick, dashed, blue] (-2,2) -- (2,-2);
+\draw[ultra thick, dashed, blue] (2,-1) -- (5,-1)node[below]{$g$}-- (7.5,-1);
+\draw[ultra thick, dashed, blue] (-2,3) -- (-5.5,3); 
+\end{tikzpicture}
+%
+\begin{tikzpicture}[scale=0.3]
+\draw (0,-2.5) -- (0, 3.5) node[above]{$y$};
+\draw (-6.25,0) -- (8.25,0) node [right]{$x$};
+\foreach \x in {-6,-5,-4,...,8}
+	\draw (\x,-0.1) -- (\x, 0.1);
+\foreach \x in {-2,-1, ..., 3}
+	\draw (-0.1,\x) -- (0.1,\x);
+\draw[ultra thick, green] (-6,-2) -- (6,2) node[above]{$h$}  (-6,2) -- (6,-2) ;
+\end{tikzpicture}
+\end{center}
+
 \end{task} 
 
 \begin{solution}({\it Partial.})
@@ -2752,6 +2810,7 @@ For finding where $h\circ g$ maps $1$, we first seek where $g$ maps $1$. Just as
 There are multiple possible values for where $h\circ g$ maps $1$, because the graph of $h$ contains multiple coordinate points whose $x$-value is $g(1)$.
 \end{solution}
 
+\vspace*{-4pt}
 \subsubsection{Some functions and relations we will examine further today}
 
 In the homework, you worked with the graphs of $y=\sin(x)$, $y=\cos(x)$, $y=|x|$, $y=x^2$, and $y=x^3$ and their inverse relations. We also learned last time that a point $(a,b)$ is on the graph of a relation $r$ if and only if $(b,a)$ is on the graph of its inverse relation $r^{-1}$. 
@@ -2796,7 +2855,7 @@ $\sin$ and its inverse relation & $\cos$ and its inverse relation & $\tn{Abs}$ a
 
 \newpage
 
-%%%%%%% 3 FUNCTIONS AND THE CORRESPONDENCE VIEW  %%%%%%%
+%%%%%%% 3-4 FUNCTIONS AND THE CORRESPONDENCE VIEW  %%%%%%%
 \subsection{Functions and the correspondence view}
 % {\bf Functions and the correspondence view.} After defining {\it functions}, we discuss how some definitions encountered in the previous chapter, such as composition and graph, specialize to the case of function. We then introduce the teaching practice of {\it explaining a mathematical ``test'' of a property} using the example of the {\it vertical line test}.   We then define {\it partial inverses of functions} and discuss {\it how to construct viable partial inverses of functions}, and then define {\it invertible function}. We continue practicing how to explain a mathematical test of a property by looking at the {\it horizontal line test}.  We conclude this part of the lesson by revealing that thus far we have been viewing relations and functions from a {\it correspondence view} of the equation $y=f(x)$, meaning only thinking about functions in terms of maps from elements of the domain to elements of the range. 
 
@@ -2806,7 +2865,7 @@ $\sin$ and its inverse relation & $\cos$ and its inverse relation & $\tn{Abs}$ a
 A function is a special kind of relation, where every element of the domain is assigned to exactly one element of the range. Here are two ways to think about functions:
 
 \begin{definition}[Function: Middle and High school version]\label{d: function middle high school}
-A \emph{function} $f$ from $D$ to $R$ is a relation from $D$ to $R$ where each input in $D$ is assigned to no more than one output in $C$.
+A \emph{function} $f$ from $D$ to $R$ is a relation from $D$ to $R$ where each input in $D$ is assigned to no more than one output in $R$.
 \end{definition} 
  
 \begin{definition}[Function: University version]\label{d: function university} 
@@ -2844,7 +2903,7 @@ Given $b\in R$, We say that the equation $b=f(x)$ \emph{has a solution in $x$} i
 
 
 \vspace*{-12pt}
-\subsubsection{Teaching functions as a case of teaching definitions}
+\subsubsection{Teaching graphs of functions as a case of teaching definitions}
 \label{s: teaching definitions}
 
 Functions and relations are fundamental concepts in middle and high school. When you are teaching the function and relation, you will mostly likely find it useful to discuss their definitions in the context of different representations, such as cloud diagrams, T-charts (table of input and output values) and graphs.  As we have been experiencing, teaching definitions often contains these components:
@@ -2953,8 +3012,8 @@ Based on the discussion we have had, how would you do the following?
 
 \begin{center}
 {\bf Explaining a Mathematical ``Test'' of a Property: The Vertical Line Test}
-\end{center}
-\begin{tabular}{|L{2.2in}|L{3.7in}|}
+
+\begin{tabular}{|L{4in}|L{1.5in}|}
 \hline 
 Introduce {\it what}:	
 	\begin{itemize*}
@@ -2969,7 +3028,7 @@ Describe {\it how}:
 	\begin{itemize*}
 	\item How do you do the test?
 	\item How do you tell whether the thing passes or fails the test?
-	\end{itemize*}
+	\end{itemize*} \vspace*{-12pt}$\;$
 	& 
 
 	\\ \hline 
@@ -2978,9 +3037,10 @@ Deliver the {\it punchline}: What happens when the thing ``passes'' the test? Wh
 
 	 \\ \hline 
 Explain {\it why} the test ``works'': 
-	& 
+	& \\ & 
 	\\ \hline 
 \end{tabular}
+\end{center}
 \end{task}
 
 
@@ -3084,6 +3144,24 @@ If $f:D\to R$ is an invertible function, then the {\bf inverse function} of $f$ 
 % Define partial inverses of functions
 % (Construction: viable partial inverses of functions.)
 
+
+There are two procedures that are often discussed in high school related to inverse of a function:
+	\begin{itemize}
+	\item To find the graph of the inverse of a function, reflect the graph of the function over the line $y=x$
+	\item To find the formula for the inverse of a function, switch the $y$'s and $x$'s then solve for $y$.
+	\end{itemize}
+We previously discussed why the first procedure makes sense. It is because reflecting over the line $y=x$ always sends the coordinate $(a,b)$ to the coordinate $(b,a)$. The coordinates represent assignments, and inverses switch input with output. We can use similar reasoning to explain why the second procedure makes sense. 
+
+\begin{task}
+Explain why the following procedure works:
+
+To find the formula for the inverse of a function, switch the $y$'s and $x$'s then solve for $y$.
+
+Your explanation should consist of two parts: specific and general. For the specific version, you might use an example such as $f(x)=x^3+1$. The general version should not rely on any example and instead apply to all functions.
+\end{task}
+
+\begin{solution} [Homework.] \end{solution}
+
 What if a function is non-invertible but we would like to be able to create some sort of inverse anyway? 
 
 \begin{task}
@@ -3103,7 +3181,7 @@ Rank these from best to worst as candidates for an ``inverse'' for $\tn{Sq}$:
 
 Each of the functions $\tn{Rt}_1, \tn{Rt}_2, \tn{Rt}_3, \tn{Rt}_4$ are called ``partial inverses''. They are like inverse functions, except that they don't work everywhere; they only work some of the time. So they are ``fake'' in the sense that they don't work on the entire domain, but they are still an ``inverse'' in the sense that they will be an inverse in a restricted subset of the domain.
 
-\smallnote{In our experience, pre-service teachers find the nickname ``fake inverse'' memorable and helpful for understanding partial inverses. It seems prudent to mention that we coined this nickname well before 2017. In 2017, we tried using the nickname ``good enough inverse'' to avoid reference to current event usage of the term ``fake'', but the nickname ``good enough inverse'' did not have the same effect and pre-service teachers forgot both the terms ``partial inverse'' and ``good enough inverse''. There is also something to be said here about why we might have nicknames for things that already have perfectly good names. Part of it is as an aid to memory. The concept of ``partial inverse'' is important to high school mathematics, especially trigonometry. However, if teachers never remember the idea of ``partial inverse'', then the fact that arcsine or arccosine are not true inverses will not be passed along. Although coming up with nicknames (like ``fake inverse'' as opposed to ``true inverse'') can seem little cheesy, we have found it to be more beneficial than detrimental.}
+\smallnote{In our experience, pre-service teachers find the nickname ``fake inverse'' memorable and helpful for understanding partial inverses. We coined this nickname well before 2017. In 2017, we tried using the nickname ``good enough inverse'' to avoid reference to current event usage of the term ``fake'', but this did not have the same effect and pre-service teachers forgot both the terms and meanings of ``partial inverse'' and ``good enough inverse''.  Why do we nickname things that already have perfectly good names? As a memory aid. The concept of ``partial inverse'' is important to high school mathematics, especially trigonometry. However, if teachers never remember the idea of ``partial inverse'', then the fact that arcsine or arccosine are not true inverses will not be passed along. Although coming up with nicknames can seem little cheesy, we have found it on the whole more beneficial than detrimental.}
 
 \smallnote{We recommend doing this next activity quickly, as a class, with numerical examples.}
 \begin{task}
@@ -3136,8 +3214,9 @@ On what subset of the domain of cosine do each of your candidates serve as a tru
 You may have concluded that the ``best'' inverse is the candidate whose domain of being a true inverse is $[\frac{\pi}{2}, \frac{\pi}{2}]$. This is in fact how the function that you may have seen before, with the (unfortunate) notation $\sin^{-1}$, is defined. (An alternative notation is $\arcsin$.) In general, when working with functions for which we would like to have an inverse but the functions are not actually invertible, we can define partial inverses (``fake inverses'') for them which we take to be standard. Examples of this include $x\mapsto \sqrt{x}$ for Sq, arcsin for sine, and arccosine for cosine. They usually are the candidate where if you looked at the alternatives, you would agree that there's something about that candidate that seems to work better: they are continuous, the subset of the domain on which they are a ``true'' inverse is close to zero or symmetric around zero, etc.
 
 
-%%%%%%% 3 COVARIATIONAL VIEW  %%%%%%%
-\vspace*{-12pt}\subsection{Covariational view of functions}
+%%%%%%% 3-4 COVARIATIONAL VIEW  %%%%%%%
+\newpage 
+\section{Comparing Correspondence and Covariational Views of Functions}
 
 So far we have been looking at things from a {\it correspondence view}, meaning that we primarily think of functions in terms of individual inputs and the images to which they are assigned. In other words, we focus on how inputs and outputs correspond. This perspective can be very useful for defining things like domain, range, composition, or inverse. However, this perspective can be at a distinct disadvantage when it comes to looking at the behavior of a function or of understanding how changes in the input and output variables influence each other. 
 
@@ -3271,7 +3350,7 @@ Student A (does provide a mathematically complete explanation)
 \end{itemize*} 
 \end{solution}
 
-\subsubsection{Noticing student thinking and recognizing and explaining correspondence and covariation views}
+\subsubsection{Noticing student thinking and recognizing correspondence and covariation views}
 In any teaching, it is important to attend to student work so that you can notice the student thinking. Some things to keep in mind for this are:
 
 \begin{mdframed}\raggedright
@@ -3287,7 +3366,7 @@ In any teaching, it is important to attend to student work so that you can notic
 
 The reason to split up observing without judgement, interpreting, and responding is that it interpretations tend to be more accurate after we have taken a step back to observe what the student may be thinking, without judgment.
 
-In the case of teaching functions, it is helpful to be able to {\it recognize and explain correspondence and covariation viewpoints}. The Morgan Minicase gave us an opportunity to see how both can show up in response to the same problem as well as how differently they can appear. Throughout this minicase, we kept in mind the following.
+In the case of teaching functions, it is helpful to be able to {\it recognize and explain correspondence and covariation viewpoints}. The Morgan Minicase gave us an opportunity to recognize how both can show up in response to the same problem as well as how differently they can appear. In the next part of this lesson, we will practice explanations from a covariation view. Throughout this minicase and in the next section, we keep in mind the following. 
 
 \begin{mdframed}\raggedright
 \begin{center} {\bf Recognizing and explaining correspondence and covariation viewpoints} \end{center}
@@ -3303,9 +3382,10 @@ When introducing ideas in class, coming up with examples, or giving explanations
 When noticing student thinking, it can be helpful to interpret whether they are taking a correspondence or covariation view.
 \end{mdframed}
 
-We now revisit our ways of building functions to see how the covariation view can come into play.
+\subsubsection{Explaining from correspondence and covariation views: Building functions}
 
-\subsubsection{Building functions: Inverses and compositions}
+
+We now revisit our ways of building functions to see how the covariation view can come into play.
 
 Let's begin by looking at compositions of functions that high school students are likely to encounter: linear functions and quadratic functions. 
 
@@ -3327,7 +3407,7 @@ One way to make sense of these findings is that students who vote and discuss th
 
 
 \begin{task} 
-Suppose that $f$ is a linear function whose constant rate of change is 5 vertical units per horizontal unit; $g$ is a linear function whose constant rate of change is $-3$ vertical units per horizontal units; and $h$ is a linear function whose constant rate of change is $0$ vertical units per horizontal unit.
+Suppose that $f$ is a linear function whose constant rate of change is 5 output units per input unit; $g$ is a linear function whose constant rate of change is $-3$ output units per input unit; and $h$ is a linear function whose constant rate of change is $0$ output units per input unit.
 
 What is the rate of change of $g\circ f$? Circle your response.
 
@@ -3338,18 +3418,563 @@ What about for $f\circ g$? What is your reasoning?
 What about for $h\circ f$?  $f\circ h$? What is your reasoning?
 \end{task}
 
+{\it Correspondence view.} There are many ways to address this problem; for instance, we might find the answer using algebra, saying that if $f(x)=5x+b$ and $g=-3x+c$ then $g\circ f(x)=-15x+d$, where $d$ is a constant. This kind of explanation would be more from a correspondence viewpoint than a covariation one, because it looks at how inputs are assigned to outputs of each function and performs the composition for an individual element. It is not an explanation from a covariation view because it does not take into account how changes in one variable (input or output) of $g\circ f$ would impact the value of the other variable.  
+Through similar reasoning, we can find that $f\circ g$ must have slope $-15$, and that $h\circ f$ and $f\circ h$ will both have slope $0$. (Try this yourself to make sure that you see why.)
+
+{\it Covariation view.} Each time the value of $x$ changes by $+1$ unit, the value of $f(x)$ changes by $+5$ units, and the value of $g(x)$ changes by $-3$ units. Now let us look at what changing the value of $x$ by $+1$ unit does to the output of $g(f(x))$. So if we change $x$ by $+1$, then $f(x)$ changes by $+5$ units, which means $g(f(x))$ changes by $-3\cdot 5$ units. This is true for all $x$, so the rate of change for $g\circ f$ is $-15$ output units per input unit. 
+We can use similar reasoning to solve the other cases. (Try this yourself.)
+
+\smallnote{The covariation view may seem messier. Indeed, it often takes more words to say. However, there is good reason to learn a covariation view, one of which is that students seem to understand concepts of algebra, calculus, and statistics more deeply and intuitively when they can see from the covariation view.}
+
 \begin{task}
 Suppose that $L$ is a linear function, and $Q$ is a quadratic function.  What is $Q\circ L$? Circle your response.
 
+\vspace*{-12pt}
 \begin{center}
 linear \quad\quad quadratic \quad\quad cubic \quad\quad something else
 \end{center}
 
+\vspace*{-12pt}
+What is your reasoning? How would you explain this from a covariation view?
+
+Let $\sin$ be the sine function. What is $\sin\circ L$? Circle your response.
+
+\vspace*{-12pt}
+\begin{center}
+linear \quad\quad sinusoidal \quad\quad something else
+\end{center}
+\vspace*{-12pt}
+
+(We can think of sinusoidal as behaving like sine or cosine: it moves ``up'' and ``down'' in a period fashion, always to the same maximum and minimum value.)
+
+What is your reasoning? How would you explain this from a covariation view?
+
+\end{task}
+
+{\it Correspondence view.} The function $Q$ can be expressed as $Q(x)=ax^2+bx+c$, and $L$ can be expressed $L=mx+d$. Then $Q\circ L(x) = a(mx+d)^2+b(mx+d)+c$, which is still quadratic.  
+
+{\it Covariation view.} We can think of a quadratic function as one whose rate of change of rate of change is constant. If we change the input variable to $Q$ linearly, as we would for $Q\circ L$, then the rate of change of the rate of change would multiply by the linear rate of change. It would still be constant. So the composition is still quadratic.
+
+{\it Combining points of view.}
+The function $\sin \circ L$ can be expressed as $x\mapsto \sin(mx+d)$. It still has a regular period (though the periods are now $1/m$ of the length they were before since the inputs are moving $m$ times as fast through $\sin$) and the maxima and minima stay the same. So $\sin\circ L$ is still sinusoidal.
+
+We have so far looked at examples of composition. Now we examine inverses.
+
+\begin{task}
+Review: What is the high school definition of inverse of an invertible function? (Look this up to check whether you remembered correctly.)
+\end{task}
+
+\begin{task}
+Suppose that $f$ is a linear function with constant rate of change 5 output units per input unit. 
+
+What is $f^{-1}$? Circle your response. 
+	\begin{center}
+	a linear function with constant rate of change $-5$   
+		
+	a linear function with constant rate of change $5$  
+	
+	a linear function with constant rate of change $\frac{1}{5}$ 
+	
+	a linear function with constant rate of change $-\frac{1}{5}$ 
+		
+	none of the above
+	\end{center}
 What is your reasoning?
 
-How would you explain this from a covariation view?
+How does this make sense in terms of the high school definition of inverse of an invertible function?
 
-Let $\sin$ be the sine function. What is $L\circ \sin$? Circle your response.
+How would you explain this from a covariation view? 
+\end{task}
+
+{\it Correspondence view.}  If $f(x)=5x+b$, the inverse function of $f$ maps $x$ to $y$ where $x=5y+b$. Solving for $y$, we obtain $y=\frac{x-b}{5}$, which is a linear function with constant rate of change $\frac{1}{5}$.
+
+{\it Covariation view.} If $f$ is changing at a rate of 5 output units to 1 input unit, and we want to compose this with something that will get us back to 1 output unit per input unit (to satisfy the equation $f^{-1}\circ f(x)=x$), then we need $f^{-1}$ to slow the input $f(x)$ down by $\frac{1}{5}$ output units per input unit. So $f^{-1}$ is a linear function with with constant rate of change $\frac{1}{5}$.
+
+\subsection{Revisiting a key example}
+
+Let us look back at a key example from the beginning of class. 
+
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+\draw (0,-2.5) -- (0, 3.5) node[above]{$y$};
+\draw (-6.25,0) -- (8.25,0) node [right]{$x$};
+\foreach \x in {-6,-5,-4,...,8}
+	\draw (\x,-0.1) -- (\x, 0.1);
+\foreach \x in {-2,-1, ..., 3}
+	\draw (-0.1,\x) -- (0.1,\x);
+\draw[xshift=1cm, ultra thick, red] (-2,-2) -- (2,2);
+\draw[ultra thick, red] (3,2) -- (5,2) node[above]{$f$} -- (8,2);
+\draw[ultra thick, red] (-1,-2) -- (-6,-2);
+\draw[yshift=1cm, ultra thick, dashed, blue] (-2,2) -- (2,-2);
+\draw[ultra thick, dashed, blue] (2,-1) -- (5,-1)node[below]{$g$}-- (7.5,-1);
+\draw[ultra thick, dashed, blue] (-2,3) -- (-5.5,3); 
+\end{tikzpicture}
+\end{center}
+
+In the below, we ask about ``sections'' of a function. We are using this word informally and here use it to refer to  places where the rate of change is constant.
+
+\begin{task}
+What is the rate of change of each section of $f$? What is the domain of each section?
+ What is the image of each section?
+
+What is the rate of change of each section of $g$? What is the domain of each section?  What is the image of each section?
+
+How many sections are there of $g\circ f$? What are they? What is the rate of change of each section?
+
+How would you use the above information to graph $g\circ f$?
+
+How did you use correspondence and covariation views in your reasoning?
+\end{task}
+
+\begin{solution} ({\it Partial.})
+Sections of $f$:  \\
+\begin{tabular}{L{1.75in}L{1.75in}L{1.75in}}
+section (domain) & rate of change & image \\ \hline
+$(-\infty, -1)$ & 0 & $\{-2\}$ \\
+$(-1,3)$ & 1 & $(-2,2)$ \\
+$(3,\infty)$ & 0 & $\{2\}$
+\end{tabular}
+
+Sections of $g$:  \\
+\begin{tabular}{L{1.75in}L{1.75in}L{1.75in}}
+section (domain) & rate of change & image \\ \hline
+$(-\infty, -2)$ & 0 & $\{3\}$ \\
+$(-2,2)$ & -1 & $(3,-1)$ \\
+$(2,\infty)$ & 0 & $\{-1\}$
+\end{tabular}
+
+There are three sections of $g\circ f$, corresponding to the sections of $f$. These sections go nicely into the sections of $g$. The rate of change of each section is $0$, $1\cdot-1$, $0$. 
+\end{solution}
+
+\newpage
+
+\subsection{Summary of mathematical/teaching practices}
+
+\subsubsection*{Teaching definitions}
+	\begin{itemize}
+	\item Introductory examples and/or non-examples of the definition
+	\item Precise statement of the definition
+	\item Interpreting the precise statement, especially any new terminology or key rules, in terms of the introductory example and/or non-example
+	\item Interpreting the terminology and rules in terms of the introductory examples, often using different \\ representations that students will continue to encounter.
+	\end{itemize}
+	
+\subsubsection*{Explaining a Mathematical ``Test'' of a Property}
+
+\begin{itemize}
+\item Introduce {\it what}:	
+	\begin{itemize*}
+	\item Name the test.
+	\item What is the test supposed to tell us? (Be precise!) 
+	\item What are you testing? (Be precise!) 
+	\end{itemize*} \vspace*{-12pt}$\;$
+
+\item Describe {\it how}:
+	\begin{itemize*}
+	\item How do you do the test?
+	\item How do you tell whether the thing passes or fails the test?
+	\end{itemize*}
+
+\item Deliver the {\it punchline}: What happens when the thing ``passes'' the test? What happens when the thing ``fails'' the test?
+\item Explain {\it why} the test ``works'': 
+\end{itemize}
+
+\subsubsection*{Noticing student thinking}
+\begin{itemize}
+\item {\bf Observe}: What is the student thinking? How might they have arrived at each step of their solution?\item {\bf Interpret}: What are you sure that each student understands? What are you sure that each studentdoes not understand? What are you unsure that each student understands?  Based on what evidence?	\item {\bf Interpret, continued:} Are the explanations mathematically complete? Why or why not?
+\item {\bf Respond}: Based on the above, determine how to respond.
+\end{itemize}
+
+
+\subsubsection*{Recognizing and explaining correspondence and covariation views}
+
+Correspondence and covariation views can be thought of as the following:
+\begin{itemize}
+	\item (Correspondence) Conceiving of functions and their behavior primarily in terms of maps from individual elements of the domain to individual elements of the range. 
+	\item (Covariation) Conceiving of functions and their behavior primarily in terms of coordinating how changes in the value of one variable impact the value of the other variable.
+\end{itemize}
+
+When introducing ideas in class, coming up with examples, or giving explanations, it is helpful to think about whether you are working with a correspondence or covariation view, and then to see what an explanation in the other view might look like. 
+
+When noticing student thinking, it can be helpful to interpret whether they are taking a correspondence or covariation view.
+
+%%%%%%%%%%%%%%
+% \header{Preparation for next lesson}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% 3-4 IN-CLASS RESOURCES %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage \subsection{In-Class Resources}  
+\handout{Opener: Review of key examples}
+
+\todo{Ch 3: write more details for opening task after writing Hwk 2}
+\begin{task}
+Compare your responses to Homework 2 Problem \ref{h: composition correspondence}. How did you use the definition of graph in your reasoning? Use $g\circ f$ as an example to illustrate your use of these definitions. Then illustrate your reasoning using $h\circ g$. 
+
+\vspace*{-12pt}
+\begin{center}
+\begin{tikzpicture}[scale=0.3]
+\draw (0,-2.5) -- (0, 3.5) node[above]{$y$};
+\draw (-6.25,0) -- (8.25,0) node [right]{$x$};
+\foreach \x in {-6,-5,-4,...,8}
+	\draw (\x,-0.1) -- (\x, 0.1);
+\foreach \x in {-2,-1, ..., 3}
+	\draw (-0.1,\x) -- (0.1,\x);
+\draw[xshift=1cm, ultra thick, red] (-2,-2) -- (2,2);
+\draw[ultra thick, red] (3,2) -- (5,2) node[above]{$f$} -- (8,2);
+\draw[ultra thick, red] (-1,-2) -- (-6,-2);
+\draw[yshift=1cm, ultra thick, dashed, blue] (-2,2) -- (2,-2);
+\draw[ultra thick, dashed, blue] (2,-1) -- (5,-1)node[below]{$g$}-- (7.5,-1);
+\draw[ultra thick, dashed, blue] (-2,3) -- (-5.5,3); 
+\end{tikzpicture}
+%
+\begin{tikzpicture}[scale=0.3]
+\draw (0,-2.5) -- (0, 3.5) node[above]{$y$};
+\draw (-6.25,0) -- (8.25,0) node [right]{$x$};
+\foreach \x in {-6,-5,-4,...,8}
+	\draw (\x,-0.1) -- (\x, 0.1);
+\foreach \x in {-2,-1, ..., 3}
+	\draw (-0.1,\x) -- (0.1,\x);
+\draw[ultra thick, green] (-6,-2) -- (6,2) node[above]{$h$}  (-6,2) -- (6,-2) ;
+\end{tikzpicture}
+\end{center}
+
+\end{task} 
+
+\vfill 
+
+
+In the homework, you worked with the graphs of $y=\sin(x)$, $y=\cos(x)$, $y=|x|$, $y=x^2$, and $y=x^3$ and their inverse relations. We also learned last time that a point $(a,b)$ is on the graph of a relation $r$ if and only if $(b,a)$ is on the graph of its inverse relation $r^{-1}$. 
+
+You may have obtained graphs that looked like this:
+
+\begin{tabular}{C{1.1in}C{1.1in}C{1.1in}C{1.1in}C{1.1in}}
+$\sin$ and its inverse relation & $\cos$ and its inverse relation & $\tn{Abs}$ and its inverse relation
+ & $\tn{Sq}$ and its inverse relation &   $\tn{Cu}$ and its inverse relation \\ 
+\begin{tikzpicture} [scale=0.14]
+\draw (-10, 0) -- (10,0) (0,-10)--(0,10);
+\draw[domain=-9.7:9.7,smooth,variable=\x]    plot (\x,{sin(\x r)});
+\draw[domain=-9.7:9.7,smooth,variable=\y] plot ({sin(\y r)},\y);
+\end{tikzpicture}
+&
+\begin{tikzpicture} [scale=0.14]
+\draw (-10, 0) -- (10,0) (0,-10)--(0,10);
+\draw[domain=-9.7:9.7,smooth,variable=\x]    plot (\x,{cos(\x r)});
+\draw[domain=-9.7:9.7,smooth,variable=\y] plot ({cos(\y r)},\y);
+\end{tikzpicture}
+& 
+\begin{tikzpicture} [scale=0.14]
+\draw (-10, 0) -- (10,0) (0,-10)--(0,10);
+\draw[domain=-9.5:9.5,smooth,variable=\x]    plot (\x, {abs(\x)});
+\draw[domain=-9.5:9.5,smooth,variable=\y] plot ({abs(\y)},\y);
+\end{tikzpicture}
+&
+\begin{tikzpicture} [scale=0.14]
+\draw (-10, 0) -- (10,0) (0,-10)--(0,10);
+\draw[domain=-3.2:3.2,smooth,variable=\x]  plot ({\x},{\x*\x});
+\draw[domain=-3.2:3.2,smooth,variable=\y] plot ({\y*\y},{\y});
+\end{tikzpicture}
+&
+\begin{tikzpicture} [scale=0.14]
+\draw (-10, 0) -- (10,0) (0,-10)--(0,10);
+\draw[domain=-2.2:2.2,smooth,variable=\x]  plot ({\x},{\x*\x*\x});
+\draw[domain=-2.2:2.2,smooth,variable=\y] plot ({\y*\y*\y},{\y});
+\end{tikzpicture} 
+\end{tabular}
+
+What comments or questions do you have about these graphs?
+
+\newpage
+%%%%%%%%% 3-4 TEACHING DEFINITIONS: GRAPH OF FUNCTIONS %%%% 
+
+\handout{Teaching definitions: Graphs of functions}
+
+\begin{mdframed}
+\begin{center}
+{\bf Teaching definitions}
+\end{center}
+\vspace*{-4pt}
+	\begin{itemize*}
+	\item Introductory examples and/or non-examples of the definition
+	\item Precise statement of the definition
+	\item Interpreting the precise statement, especially any new terminology or key rules, in terms of the introductory example and/or non-example
+	\item Interpreting the terminology and rules in terms of the introductory examples, often using different \\ representations that students will continue to encounter.
+	\end{itemize*}
+\end{mdframed}
+
+
+Review the definition of the graph of a relation. (We can use this definition for functions, too, because all functions are relations.)
+
+Graph the relations $f(x)=\frac{1}{x}$, $g(x)=\sqrt{x}$ and $\tn{Abs}^{-1}$ on separate graphs. For each, how could you use the graph to understand the definition of function?
+
+Suppose your students are seeing graphs of functions for the very first time. How would you explain the definition of a function using a graph, in general terms? (meaning, not relying on any particular example; an explanation whose wording would apply to all possible cases)
+
+
+\newpage
+%%%%%%%%%% 3-4 VLT %%%%%%%%%
+\handout{Explaining a mathematical ``test'' of a property: The Vertical Line Test}
+
+
+What does the ``vertical line test'' do? How do you perform this ``test''? How does a graph of a relation to pass or fail the ``vertical line test''? What does it mean about the relation if its graph passes or fails? Why is this conclusion true?
+
+\vfill 
+
+Based on discussion of the above questions, how would you do the following?
+
+\begin{center}
+{\bf Explaining a Mathematical ``Test'' of a Property: The Vertical Line Test}
+
+\begin{tabular}{|L{2.5in}|L{4in}|}
+\hline 
+Introduce {\it what}:	
+	\begin{itemize*}
+	\item Name the test.
+	\item What is the test supposed to tell us? (Be precise!) 
+	\item What are you testing? (Be precise!) 
+	\end{itemize*} \vspace*{-12pt}$\;$
+	& 
+
+	\\ \hline 
+Describe {\it how}:
+	\begin{itemize*}
+	\item How do you do the test?
+	\item How do you tell whether the thing passes or fails the test?
+	\end{itemize*} \vspace*{-12pt}$\;$
+	& 
+
+	\\ \hline 
+Deliver the {\it punchline}: What happens when the thing ``passes'' the test? What happens when the thing ``fails'' the test?
+	& 
+
+	 \\ \hline 
+Explain {\it why} the test ``works'': 
+	& \vspace*{2in}\\ 
+	\hline 
+\end{tabular}
+\end{center}
+
+%%%%%%%%% 3-4 INVERTIBLE 
+\newpage \handout{Teaching definitions: Invertible function}
+
+\begin{mdframed}\raggedright
+{\bf Definition \ref{d: invertible function}}.
+ A function $f:D\to R$ is \emph{invertible function} if its inverse relation $f^{-1}:R\to D$ is a function.
+
+A function $f:D\to R$ is \emph{non-invertible function} if its inverse relation $f^{-1}:R\to D$ is a not a function.
+\end{mdframed}
+
+Examples of functions we have seen include sine, cosine, Abs, Sq, Cu, $x\mapsto \frac{1}{x}$, and $x\mapsto \sqrt{x}$. 
+
+How would you use these examples as a way to teach the definitions of {\it invertible function} and {\it non-invertible function}? As you think about this, focus on interpreting the terminology and rules in terms of the introductory examples.
+
+\newpage 
+%%%%%%%% 3-4 HLT 
+\handout{Explaining a mathematical ``test'' of a property: The Horizontal Line Test}
+
+What is the ``horizontal line test''? Explain this test of a mathematical property.  
+
+\begin{center}
+{\bf Explaining  \underline{\hspace*{2in}}}
+\end{center}
+\begin{tabular}{|L{2.2in}|L{3.7in}|}
+\hline 
+Introduce {\it what}:	
+	\begin{itemize*}
+	\item Name the test.
+	\item What is the test supposed to tell us? (Be precise!) 
+	\item What are you testing? (Be precise!) 
+	\end{itemize*} \vspace*{-12pt}$\;$
+	& 
+
+	\\ \hline 
+Describe {\it how}:
+	\begin{itemize*}
+	\item How do you do the test?
+	\item How do you tell whether the thing passes or fails the test?
+	\end{itemize*}
+	& 
+
+	\\ \hline 
+Deliver the {\it punchline}: What happens when the thing ``passes'' the test? What happens when the thing ``fails'' the test?
+	& 
+
+	 \\ \hline 
+Explain {\it why} the test ``works'': 
+	& \vspace*{2in}
+	\\ \hline 
+\end{tabular}
+
+%%%%%%%%%%
+\newpage
+\handout{Inverses and partial inverses}
+
+Explain why the following procedure works:
+
+\begin{quote}
+To find the formula for the inverse of a function, switch the $y$'s and $x$'s then solve for $y$.
+\end{quote}
+
+Your explanation should consist of two parts: specific and general. For the specific version, you might use an example such as $f(x)=x^3+1$. The general version should not rely on any example and instead apply to all functions.
+
+\vfill 
+
+\vspace*{2pt}\hrule\vspace*{2pt}
+What if a function is non-invertible but we would like to be able to create some sort of inverse anyway? 
+The function $\tn{Sq}:\R\to\R, x\mapsto x^2$ does not have an inverse function. However, suppose you wanted to construct an function that is like an inverse, given that we know we can't have a true inverse.
+
+Rank these from best to worst as candidates for an ``inverse'' for $\tn{Sq}$:
+
+(Remember that $\sqrt{x}$ is defined as the zero or positive root of $x$, when a real root exists.)
+
+\begin{itemize}[label=$\circ$]
+\item $\tn{Rt}_1(x)=-\sqrt{x}$ 
+\item $\tn{Rt}_2(x)=\sqrt{x}$
+\item $\tn{Rt}_3(x)$ is defined to be $-\sqrt{x}$ when $x\in[0,1)$ and $\sqrt{x}$ when $x\in [1,\infty)$.
+\item $\tn{Rt}_4(x)$ is defined to be $-\sqrt{-x}$ when $x\leq 0$ and $\sqrt{x}$ when $x\geq 0$.
+\end{itemize}
+
+\vfill
+\newpage
+\subsubsection*{Partial inverses, continued}
+
+Construct at least three candidates for partial inverses (``fake inverses'') for $f(x)=\sin(x)$. 
+
+Rank the candidates you have constructed from best to worst ``inverse'' for the sine function.
+
+On what subset of the domain of sine do each of your candidates serve as a true inverse? On what subset of the domain of sine do your candidates serve as a fake inverse? 
+
+\vspace*{2pt} \hrule \vspace*{2pt}
+Construct at least three candidates for partial inverses (``fake inverses'') for $f(x)=\cos(x)$. 
+
+Rank the candidates you have constructed from best to worst ``inverse'' for the cosine function.
+
+On what subset of the domain of cosine do each of your candidates serve as a true inverse? On what subset of the domain of cosine do your candidates serve as a fake inverse? 
+
+\newpage
+%%%%%% 3-4 MORGAN MINICASE
+\handout{Morgan Minicase}
+
+\begin{mdframed}
+\begin{center} {\bf Ms.~Morgan's class} \end{center}
+\begin{minipage}{5in}\raggedright \parskip4pt
+During a lesson on writing equations of linear functions represented in tables, Ms. Morganasked her students to write the equation of the linear function represented in the table below,and to explain how they found their answers.
+
+Students found the correct equation, but they gave different explanations of how they foundtheir answers:
+\end{minipage}
+\begin{minipage}{1in}
+\vspace*{-20pt}
+\begin{center}\begin{tabular}{c|c}
+$x$ & $y$ \\ \hline1 & 6  \\ 2 & 11 \\ 3 & 16 \\4 & 21 
+\end{tabular}
+\end{center}
+\end{minipage}
+
+\begin{tabular}{L{0.75in}L{5in}}
+\hline
+Student A: & Each time the value of $x$ goes up by 1, the value of $y$ goes up by 5, so theslope is 5. And if $x$ goes down by 1, then $y$ will have to go down by 5, sothe $y$-intercept is 1. That means the equation is $y = 5x + 1$.
+\\ \hline
+Student B: &  I just looked at the value of $y$ and saw that it kept increasing by 5, so $m =5$. Then I subtracted that number from the first valueof y in the table, so $b = 1$. You always put m times x and add the b, so theequation is $y = 5x + 1$.
+\\ \hline
+Student C: & For this function, I saw that you can always multiply the value of $x$ by 5and then add 1 to get the value of $y$, so the equation is $y = 5x + 1.$
+\\ \hline
+\end{tabular}
+\end{mdframed}
+
+Read through the student responses in Ms.~Morgan's class.
+\begin{itemize}
+\item {\bf Observe}: What is the student thinking? How might they have arrived at each step of their solution?\item {\bf Interpret}: What are you sure that each student understands? What are you sure that each studentdoes not understand? What are you unsure that each student understands?  Based on what evidence?
+
+Here are some concepts to consider analyzing for students' understanding:
+
+	\vspace*{-2pt}
+	\begin{itemize*}
+	\item $y$-intercept
+	\item Constant rate of change
+	\item Form of a linear equation 
+	\item How changes in one variable impact changes in the other variable 
+	\item Definition of graph of a function
+	\end{itemize*}
+	\item {\bf Interpret, continued:} Are the explanations mathematically complete? Why or why not?
+	
+\end{itemize}
+
+Record your thinking on the next page.
+
+\newpage
+
+{\bf Observe}: What may Student A be thinking?
+
+{\bf Interpret}: 
+
+\begin{tabular}{C{1.75in}|C{1.75in}|C{1.75in}}
+I am sure that Student A understands \dots  & I am sure that Student A
+does NOT understand \dots & I am unsure whetherStudent A understands \dots  \\ \hline
+& & \vspace*{1.75in}\\
+\end{tabular}
+\vspace*{2pt}
+\hrule
+\vspace*{2pt}
+
+{\bf Observe}: What may Student B be thinking?
+
+{\bf Interpret}: 
+
+\begin{tabular}{C{1.75in}|C{1.75in}|C{1.75in}}
+I am sure that Student B understands \dots  & I am sure that Student B
+does NOT understand \dots & I am unsure whetherStudent B understands \dots  \\ \hline
+& & \vspace*{1.75in}\\
+\end{tabular}
+
+\vspace*{2pt}
+\hrule
+\vspace*{2pt}
+
+{\bf Observe}: What may Student C be thinking?
+
+{\bf Interpret}: 
+
+\begin{tabular}{C{1.75in}|C{1.75in}|C{1.75in}}
+I am sure that Student C understands \dots  & I am sure that Student C
+does NOT understand \dots & I am unsure whetherStudent C understands \dots  \\ \hline
+& & \vspace*{1.75in}\\
+\end{tabular}
+
+%%%%%%%%%%%% 3-4 PRACTICING CORR AND COVAR VIEWS 
+\newpage
+\handout{Practicing Correspondence and Covariational Explanations}
+
+There are two useful views on functions: covariation and correspondence. Use this space to take notes on what these mean.
+
+Correspondence: 
+
+Covariation: 
+
+Then discuss: How do covariation and correspondence views come up in the students' thinking in Ms.~Morgan's class?
+
+\newpage
+
+\begin{enumerate}
+\item 
+Suppose that $f$ is a linear function whose constant rate of change is 5 output units per input unit; $g$ is a linear function whose constant rate of change is $-3$ output units per input unit; and $h$ is a linear function whose constant rate of change is $0$ output units per input unit.
+
+What is the rate of change of $g\circ f$? Circle your response.
+
+	$$2 \quad\quad -2 \quad\quad 15 \quad\quad -15 \quad\quad 8 \quad\quad -8\quad\quad \tn{it is not constant} \quad\quad \tn{none of the above}$$
+
+What about for $f\circ g$? What is your reasoning? 
+
+What about for $h\circ f$?  $f\circ h$? What is your reasoning?
+
+\vfill 
+
+\item Suppose that $L$ is a linear function, and $Q$ is a quadratic function.  What is $Q\circ L$? Circle your response.
+
+\vspace*{-12pt}
+\begin{center}
+linear \quad\quad quadratic \quad\quad cubic \quad\quad something else
+\end{center}
+
+What is your reasoning? How would you explain this from a covariation view?
+
+Let $\sin$ be the sine function. What is $\sin\circ L$? Circle your response.
 
 \begin{center}
 linear \quad\quad sinusoidal \quad\quad something else
@@ -3357,28 +3982,76 @@ linear \quad\quad sinusoidal \quad\quad something else
 
 (We can think of sinusoidal as behaving like sine or cosine: it moves ``up'' and ``down'' in a period fashion, always to the same maximum and minimum value.)
 
+What is your reasoning? How would you explain this from a covariation view?
+
+\vfill 
+
+\item Review: What is the high school definition of inverse of an invertible function? (Look this up to check whether you remembered correctly.)
+
+\vfill 
+\item Suppose that $f$ is a linear function with constant rate of change 5 output units per input unit. 
+
+What is $f^{-1}$? Circle your response. 
+	\begin{center}
+	a linear function with constant rate of change $-5$   
+		
+	a linear function with constant rate of change $5$  
+	
+	a linear function with constant rate of change $\frac{1}{5}$ 
+	
+	a linear function with constant rate of change $-\frac{1}{5}$ 
+		
+	none of the above
+	\end{center}
 What is your reasoning?
 
-How would you explain this from a covariation view?
+How does this make sense in terms of the high school definition of inverse of an invertible function?
 
-\end{task}
+How would you explain this from a covariation view? 
 
-\subsection{Revisiting a key example}
+\end{enumerate}
 
-%Composition: Correspondence and covariational views
-%Inverse: Correspondence and covariational views.
-%Revisit composition of graphs.
+%%%%%%%%%%%%%% 3-4 REVISIT KEY EXAMPLE
+\newpage
+\handout{Revisiting a key example}
 
-%%%%%%%%%%%%%%
-% \header{Preparation for next lesson}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%% 3 IN-CLASS RESOURCES %%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage \subsection{In-Class Resources}  
-\handout{Opener}
 
-%%%%%%%%% 3 HOMEWORK %%%%%%%%%%%%
+Let us look back at a key example from the beginning of class. 
+
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+\draw (0,-2.5) -- (0, 3.5) node[above]{$y$};
+\draw (-6.25,0) -- (8.25,0) node [right]{$x$};
+\foreach \x in {-6,-5,-4,...,8}
+	\draw (\x,-0.1) -- (\x, 0.1);
+\foreach \x in {-2,-1, ..., 3}
+	\draw (-0.1,\x) -- (0.1,\x);
+\draw[xshift=1cm, ultra thick, red] (-2,-2) -- (2,2);
+\draw[ultra thick, red] (3,2) -- (5,2) node[above]{$f$} -- (8,2);
+\draw[ultra thick, red] (-1,-2) -- (-6,-2);
+\draw[yshift=1cm, ultra thick, dashed, blue] (-2,2) -- (2,-2);
+\draw[ultra thick, dashed, blue] (2,-1) -- (5,-1)node[below]{$g$}-- (7.5,-1);
+\draw[ultra thick, dashed, blue] (-2,3) -- (-5.5,3); 
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}
+\item What is the rate of change of each section of $f$? What is the domain of each section?
+ What is the image of each section?
+
+\item What is the rate of change of each section of $g$? What is the domain of each section?  What is the image of each section?
+
+\item How many sections are there of $g\circ f$? What are they? What is the rate of change of each section?
+
+\item How would you use the above information to graph $g\circ f$?
+
+\item How did you use correspondence and covariation views in your reasoning?
+\end{enumerate}
+
+%%%%%%%%% 3-4 HOMEWORK %%%%%%%%%%%%
 \newpage \subsection{Homework}
+
+\todo{Ch 3: write homework. Write SoP for Vertical Line Test? SoP for why procedures for finding inverses work?}
 
 Note to self about homework followup from Homework 2: 
 Composition of graphs (from the canadian textbook; also draw compositions of graphs and their inverses) (probably need to scaffold this more. think about relationship between linear function and linear function, also think about where points go, not sure what else needs to go here. Will probably need to re-assign in Lesson 3) (Maybe instead of doing entire graph, do something like a series of questions -- what is $f(g(f(g(1)))), g(f(g(1)))$, etc. Do this for a bunch of points, especially for the combination $g(f(x))$ (or whichever composition is easier to do.). Then assign the actual composition in Hwk 3 after discussing correspondence and covariational views and ask students to analyze where they used each viewpoint. In Hwk 3 also assign composition of linear and quadratic, analyze which parts are constant, linear non-constant, quadratic, none of the above.)
@@ -3389,6 +4062,11 @@ Crib homework problems from combination of Bremigan, Bremigan, and Lorch and Sul
 
 Under what conditions can you rotate the graph of a function about the origin, and still have the resulting graph being the graph of a function? If the graph of a function cannot be rotated about the origin without ceasing to be the graph of a function, might there be other points which could act as centre of rotation and preserve the property of being the graph of a function?
 
+Explain why the following procedure works:
+
+To find the formula for the inverse of a function, switch the $y$'s and $x$'s then solve for $y$.
+
+Your explanation should consist of two parts: specific and general. For the specific version, you might use an example such as $f(x)=x^3+1$. The general version should not rely on any example and instead apply to all functions.
 
 %%%%%%%%% PART 1 WRITTEN SIMULATION OF PRACTICE  %%%%%%%%%%%%
 \newpage \subsection{Simulation of Practice: Title of Simulation 1}
@@ -3405,6 +4083,622 @@ Allen item SoP? (wait until Chapter 4 on covariational perspective)
 Vertical line test SoP?  (wait until next time)
 
  Composition of graphs, again. Correspondence view.  Repeat from Homework 2. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 	
+%%%%%% PART III %%%%%%%%%%%%%%%%%%%%%	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 	
+\newpage 
+\part{Transformations of Functions} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 	
+%%%%%% LESSON 5-6 %%%%%%%%%%%%%%%%%%%%	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+ \section{Defining transformations (Weeks 5-6) (Length: \about 6 hours)}  % Use Title Case for Title
+%%%%%%%%% 5-6 OVERVIEW  %%%%%%%%%%%%%%%%%%%%
+\subsection{Overview}
+
+\begin{tabular}{L{6.5in}} 
+{\bf Content} \\ \hline \parskip4pt
+\emph{Thing 1}, defined as \dots 
+
+\emph{Thing 2}, defined as \dots 
+\end{tabular} 
+
+\begin{tabular}{L{3.2in}|L{3.2in}}
+{\bf Proof Structures} & {\bf Mathematical/Teaching Practices} \\ 
+\hline \parskip4pt
+% Proof structures
+\emph{To show \dots} means \dots 
+&
+% Mathematical/Teaching Practices
+\emph{Practice name}, meaning \dots
+\end{tabular}
+%%%%%%%%%%%%%%
+\header{Summary}
+% {\it Acknowledgements.}   <-- fill this in as appropriate.
+%%%%%%%%%%%%%%
+\begin{bignote}[Materials]
+\begin{itemize*}
+\item Handouts from In-Class Resources (can be printed double-sided)
+         % \item other things as necessary, such as colored chalk or markers; other handouts; other props
+\end{itemize*}
+\end{bignote}
+\todo{Ch 5: Write overview}
+
+Prep for next lesson:
+Make sure to assign mini lesson for homework between 5 and 6. 
+
+This set of lessons is shorter so that you can have time to conduct a review session and/or have a buffer for the lessons 1-4 taking longer than expected.
+
+%%%%%%%% 5-6 CONTENT %%%%%%
+\newpage
+\subsection{Many ways to compose to the same function}
+
+\todo{Ch 5: Read over and add narrative}
+\begin{task}
+Define:
+$$A:\R\to \R, x\to 3x$$
+$$B:\R\to \R, x\to x+4$$
+$$E:\R\to\R, x\to x+12.$$
+Write $x\mapsto 3x+12$ as a composition of $A, B, E$ in two different ways. (You do not have to use all of them in either of the ways.)
+\end{task} 
+
+\begin{solution}
+$3x+12$ can be obtained by multiplying by $3$ first, then adding $12$; or adding $4$ first, then multiplying by $3$. 
+\end{solution}
+
+Observations based on problem:
+
+\begin{itemize}
+\item To make more complicated functions, we can sometimes compose simpler functions.
+\item One of the more common patterns is decomposing expressions like $3x+12$ into multiplication/division then addition/subtraction, or addition/subtraction then multiplication/division.
+
+
+	$$x \stackrel{\times 3}{\rightsquigarrow\!\!\rightsquigarrow} 3x \stackrel{+12}{\rightsquigarrow\!\!\rightsquigarrow}  (3x)+12 \tn{\quad or\quad} x \stackrel{+4}{\rightsquigarrow\!\!\rightsquigarrow}  x+4 \stackrel{\times 3}{\rightsquigarrow\!\!\rightsquigarrow} 3(x+4)$$  
+\end{itemize}
+
+\vspace*{-3pt}
+\begin{task}
+
+\begin{enumerate}
+\item Find four different ways to start from $x$ and obtain the expression $2\sin(\frac{1}{3}x+12)-10$ through compositions.
+\item Let
+	$A:\R\to\R, x\mapsto 3x$, \quad $B:\R\to \R, x\mapsto x+4$, \quad $C:\R\to \R,x\mapsto 2x$, \quad$D:\R\to \R,x\mapsto x+5$. Write the map $f:\R\to\R, x\mapsto 2\sin(3x+12)+10$ in terms of $A, B, C, D$ and $\sin$. 
+\end{enumerate}
+\end{task}
+
+
+\begin{solution}
+\begin{enumerate}
+\item Use different types of multiplication/division and addition/subtraction combinations on the inside and outside of the sin function.
+\item $f(x)= C(D(\sin(A(B(x)))))$
+\end{enumerate} \vspace*{-8pt}$\;$
+\vspace*{-10pt}
+\end{solution}
+
+
+Observations based on problem:
+\begin{itemize}
+\item We can express the above multiplication/division and addition/subtraction combinations as function compositions. 
+\item This leads into the idea of input transformations.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%
+\subsection{Input transformations}
+
+\begin{definition}\label{d: input transformation}
+Given a function $f$, a function that can be expressed in the form $$f\circ T$$ is said to be an \emph{input transformation} of $f$. (The assignment rule is $f(T(x))$ instead of $f(x)$).
+\end{definition}
+
+\begin{task}
+On January 1, 2101, Wall-E the robot wakes up at 9am, and at noon, he begins shelving away a large pile of metal toy blocks, one by one. He decides to put away 1 block every 6 minutes in the the first hour as he is figuring out his system for these blocks. Then, in the second hour, he puts away 1 block every 4 minutes. From there on, he puts away 1 block every minute. When will he have put away 144 blocks?
+\end{task}
+
+\begin{task}
+Now let's represent some different scenarios with graphs. In each of the graphs:
+	\vspace*{-4pt}\begin{itemize}
+	\item Put a green dot at the point in the graph representing when Wall-E begins his work. 
+	\item Put a red dot at the point in the graph representing when Wall-E has put away 144 blocks. 
+ 	\end{itemize}
+ Let $W$ be the function of Wall-E's total blocks put away versus time. 
+\begin{enumerate}
+\item On the same set of axes, graph each of the following functions of Wall-E's total blocks put away versus time. 
+	\begin{itemize}
+	\item $W$, the function of Wall-E's total blocks put away versus time. 
+	\item The function if Wall-E had started at 11:30am instead of noon. 
+	\item The function if Wall-E had started at 10:30am instead of noon.
+	\item  The function if Wall-E had started at 2pm instead of noon.
+	\end{itemize}
+\item On the same set of axes, graph each of the following functions of Wall-E's total blocks put away versus time.
+	\begin{itemize}
+	\item The function in the original situation.
+	\item The function if Wall-E's internal clock is running 2 times slower (so what he thinks is an hour is actually 2 hours).
+	\item The function is Wall-E's internal clock is running 1.5 times fast (so what he thinks is an hour is actually 40 minutes.)
+	\end{itemize}
+\end{enumerate}
+\end{task}
+
+
+{\it Example.} Let $W$ be the Wall-E function in the opening problem. What is $T$ for:
+	\begin{enumerate}[label=(\alph*)]
+	\item The scenario where Wall-E begins at 11:30am? 10:30am? 2pm?
+	\item The scenario where Wall-E moves 2 times slower? 1.5 times faster?
+	\item What if Wall-E began at 10:30am and moves 1.5 times faster?
+	\item What would be a scenario that is represented by $W(3x+1)$? How about $W(3(x+1))$? (Here assume the unit of time are in hours).
+	\end{enumerate}
+	
+
+{\bf Principles:} 
+	\begin{itemize}
+	\item If you transform the input to move faster per time, the graph of the function will appear to move faster per time. The graph will look as though you took the original graph and you squished the input coordinates of the coordinate plane, because you are moving faster through time. 
+	\item If you transform the input to have a head start, the graph will look as though you pushed the origin forward, because you are effectively starting before the zero mark.
+	\item If you transform the input to move slower per time, \dots [homework].
+	\item If you transform the input to start later, \dots [homework].
+	\end{itemize}
+
+%%%%%%%%%%%%%%%
+\subsection{Illustrating principles through word problems}
+\label{section: transformation principles}
+
+Common types of word problem contexts in high school and middle include:
+	\begin{itemize}
+	\item Races (on foot, by car, by bike, etc.). Input is typically time, output is typically distance. 
+	\item Candle burning. Input is typically time, output is typically height of the candle. 
+	\item Cell phone plan costs (solo plan, family plan, other incentives). Input is typically total duration of calls, output is typically cost.
+	\item Mileage (of a motorcycle, car, truck, etc.). Input is typically distance, output is typically cost of gas or volume of gas used.
+	\item Ferris wheel. Input is typically time, output is typically height from the ground.
+	\end{itemize}
+
+Each of these word problems can be used to illustrate the principles of input transformations. The strategy is typically to compare and contrast a function (which represents an situation) and a transformation of the function (which represents a competitor or alternate possibility).  
+
+\bigskip
+
+\begin{mdframed}
+\begin{center} {\bf Characteristics of using a word problem to represent a transformation principle}\end{center}
+	\begin{itemize}
+	\item Use realistic input and output units.
+	\item Use realistic input and output quantities.
+	\item Clear problem statement.
+	\item Ideal solution to the problem, in which you define the original function and its transformation with different variables.
+	\item Commentary about the solution where you graph the function and its transformation and then discuss why the differences in the graph make sense in terms of the problem context and its solution. This part should lead sensibly to a statement of the principle(s) you are illustrating.
+	\item State the principle(s) you are illustrating.
+	\end{itemize}
+\end{mdframed}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage \section{Output transformations and explaining definitions}
+
+Today our agenda is:
+
+\begin{itemize}
+\item Mini lesson
+\item Output transformations
+\item Explanations with definition of graph
+\end{itemize}
+
+
+\subsection*{Mini lesson}
+
+As you view the demo mini lesson, give feedback on:
+
+
+\hspace*{-0.25in}\begin{tabular}{L{2.3in}|L{4.5in}}
+\hline 
+Are units and quantities realistic? 
+	& 
+	Input units and quantities realistic/not realistic
+	
+	Output units and quantities realistic/not realistic
+\\ 
+\hline
+How clear is the problem statement?
+	& 
+	Clear / sort-of clear / unclear 
+\\ 
+\hline
+How accurate is the solution to the problem? How clear is the solution to the problem?
+	& 
+	Accurate / sort-of accurate / not accurate  
+	
+	Clear / sort-of clear / unclear 
+\\ 
+\hline
+Is the explanation of the graph strictly procedural (e.g., ``you move the graph by 1 unit to the right'') or does it combine the procedure with explanations both in terms of the definition of graph (in terms of input and output) and the problem context? (``Combine'' means ``connection is not implied, it is explicit'')
+	&
+	Strictly procedural / not strictly procedural 
+	
+	Connects explicitly with definition of graph / does not do so 
+	
+	Connects explicitly with problem context  / does not do so \\
+\hline
+How accurate are the statement of the principles? How clear are they? 
+	& Accurate / sort-of accurate / not accurate  
+	
+	Clear / sort-of clear / unclear  \\ 
+\hline
+\end{tabular}
+
+\subsection{Output transformations}
+
+\begin{definition}
+Given a function $f$, a function that can be expressed in the form $T\circ f$ is said to be an \emph{output transformation} of $f$. ($T$ takes as input the outputs of $f$.)
+\end{definition}
+
+{\it Example.} Wall-E encounters another stack of metal toy blocks to put away. This time, the toy boxes are glued in pairs, so in each move, he is actually moving 2 blocks rather than one block.  He otherwise makes the same moves as he did before. 
+\begin{enumerate}[label=(\alph*)]
+\item When does he put away 144 blocks?
+\item What does the graph of blocks put away versus time looks like?
+\item Express this function of blocks versus time in this scenario as a transformation of $W$.
+\end{enumerate}
+
+{\it Example.} Wall-E has already put away 144 blocks, and he is on to his next pile of metal blocks. .  He makes the same moves as he did before. 
+\begin{enumerate}[label=(\alph*)]
+\item What does the graph of total blocks put away versus time look like, including the 144 blocks in the count?
+\item Express this function of blocks versus time in this scenario as a transformation of $W$.
+\end{enumerate}
+
+{\bf Principles:} 
+	\begin{itemize}
+	\item If you transform the output by a factor, the graph will be stretched by that factor. 
+	\item If you transform the output by a constant up or down, graph will be moved up and down by that factor.
+	\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Explaining transformation principles in terms of the definition of graph}
+
+Recall that graph of an equation $y=f(x)$ contains the point $(a,b)$ if and only if when you evaluate the equation $y=f(x)$ at $(a, b)$, you obtain a true statement. I.e., The point $(a,b)$ is on the graph if and only if ``$b=f(a)$'' is a true statement. 
+
+\begin{task}
+Suppose the point $(x,y)$ is on the graph $y=C(x)$, where $C$ represents candies made per hour at a candy factory. 
+
+\begin{enumerate}[label=(\alph*)]
+\item Let $T(x)=2x$. Does $C(T(x))$ represent more candies made or fewer candies made, per hour? 
+\item If $(6,600)$ is on the graph of $y=C(x)$, what is a coordinate on the graph of $y=C(T(x))$?
+\item Now let $T(x)=\frac{1}{3}x$. Write two scenarios, one described by $T(C(x))$, and the other described by $C(T(x))$.
+\item If $(6,600)$ is on the graph of $y=C(x)$, what is a coordinate on the graph of $y=T(C(x))$? What is a coordinate on the graph of $y=C(T(x))$?
+\end{enumerate}
+\end{task}
+
+\begin{task}
+Use this task to explain input and output principles, incorporating the feedback that we discussed in the mini lesson. We will have some of you present so we can practice giving and receiving further feedback.
+\end{task}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% 5-6 IN-CLASS RESOURCES %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage \subsection{In-Class Resources}  
+\handout{Many ways to compose to the same function}
+
+
+Define:
+$$A:\R\to \R, x\to 3x$$
+$$B:\R\to \R, x\to x+4$$
+$$C:\R\to \R,x\mapsto 2x$$
+$$D:\R\to \R,x\mapsto x+5$$
+$$E:\R\to\R, x\to x+12.$$
+
+
+
+\begin{enumerate}
+\item Write $x\mapsto 3x+12$ as a composition of $A, B, E$ in two different ways. (You do not have to use all of them in either of the ways.)
+\end{enumerate}
+
+
+\vfill
+
+\begin{enumerate}[resume] 
+\item \begin{enumerate}
+\item Find four different ways to start from $x$ and obtain the expression $2\sin(\frac{1}{3}x+12)-10$ through compositions.
+\item Write the map $f:\R\to\R, x\mapsto 2\sin(3x+12)+10$ in terms of $A, B, C, D$ and $\sin$. 
+\end{enumerate}
+\end{enumerate}
+
+\vfill 
+
+Takeaways:
+\vfill
+
+
+Solve the following problem:
+
+\begin{mdframed}
+On January 1, 2101, Wall-E the robot wakes up at 9am. At noon, Wall-E begins shelving away a large pile of metal toy blocks, one by one. He decides to put away 1 block every 6 minutes in the the first hour as he is figuring out his system for these blocks. Then, in the second hour, he puts away 1 block every 4 minutes. From there on, he puts away 1 block every minute. When will he have put away 144 blocks?
+\end{mdframed}
+
+\vfill
+
+%%%%%%%%%% 5-6 INPUT 
+\newpage \handout{Input Transformations}
+
+Now let's represent some different scenarios with graphs. In each of the graphs:
+	\begin{itemize}
+	\item Put a green dot at the point in the graph representing when Wall-E begins his work. 
+	\item Put a red dot at the point in the graph representing when Wall-E has put away 144 blocks. 
+ 	\end{itemize}
+ Let $W$ be the function of Wall-E's total blocks put away versus time. 
+
+\begin{enumerate}
+\item On one pair of axes, graph each of the following functions of Wall-E's total blocks put away versus time. 
+	\begin{itemize}
+	\item $W$, the function of Wall-E's total blocks put away versus time.
+	\item The function if Wall-E had started at 11:30am instead of noon. 
+	\item The function if Wall-E had started at 10:30am instead of noon.
+	\item  The function if Wall-E had started at 2pm instead of noon.
+	\end{itemize}
+	
+\vfill 
+
+\item On one pair of axes, graph each of following functions of Wall-E's total blocks put away versus time.
+	\begin{itemize}
+	\item The function in the original situation.
+	\item The function if Wall-E's internal clock is running 2 times slower (so what he thinks is an hour is actually 2 hours).
+	\item The function is Wall-E's internal clock is running 1.5 times fast (so what he thinks is an hour is actually 40 minutes.)
+	\end{itemize}
+\end{enumerate}
+
+
+\vfill 
+\newpage
+
+\begin{enumerate}[resume]
+\item Let $W$ be the function of Wall-E's total blocks put away versus time, as defined previously.
+	\begin{enumerate}
+	\item Describe a modification to the scenario in which the function of total blocks put away versus time would be $W(3x+1)$. 
+	\item  Describe a modification to the scenario in which the function of total blocks put away versus time would be $W(3(x+1))$. 
+	\item In each of the above scenarios you wrote, highlight in pink where the "3" comes in, and highlight in green where the "+1" comes in. 
+	\item On the same pair of axes, graph $y=W(3x+1)$ and $y=W(3(x+1))$. Explain the differences you see in terms of the scenario.
+	\end{enumerate} 
+\end{enumerate}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\handout{Mini lesson feedback}
+
+Your name: 
+
+Presenters' names:
+
+Feedback:
+\begin{tabular}{L{2.3in}|L{4.5in}}
+\hline 
+Are units and quantities realistic? \vspace*{0.5in}
+	& 
+	Input units and quantities realistic/not realistic
+	
+	Output units and quantities realistic/not realistic
+\\ 
+\hline
+How clear is the problem statement?\vspace*{0.5in}
+	& 
+	Clear / sort-of clear / unclear 
+\\ 
+\hline
+How accurate is the solution to the problem? How clear is the solution to the problem? \vspace*{0.5in}
+	& 
+	Accurate / sort-of accurate / not accurate  
+	
+	Clear / sort-of clear / unclear 
+\\ 
+\hline
+Is the explanation of the graph strictly procedural (e.g., ``you move the graph by 1 unit to the right'') or does it combine the procedure with explanations both in terms of the definition of graph (in terms of input and output) and the problem context? (``Combine'' means ``connection is not implied, it is explicit'') \vspace*{1in}
+	&
+	Strictly procedural / not strictly procedural
+	
+	Connects explicitly with definition of graph /  does not 
+	
+	Connects explicitly with problem context / does not \\
+\hline
+How accurate are the statement of the principles? How clear are they?  \vspace*{1in}
+	& Accurate / sort-of accurate / not accurate  
+	
+	Clear / sort-of clear / unclear  \\ 
+\hline
+\end{tabular}
+
+Other comments:
+
+
+\newpage \handout{Output transformations}
+
+{\bf Defintion.}
+Given a function $f$, a function that can be expressed in the form $T\circ f$ is said to be an \emph{output transformation} of $f$. ($T$ takes as input the outputs of $f$.)
+
+\begin{enumerate} \item Wall-E encounters another stack of metal toy blocks to put away. This time, the toy boxes are glued in pairs, so in each move, he is actually moving 2 blocks rather than one block.  He otherwise makes the same moves as he did before. 
+\begin{enumerate} 
+\item When does he put away 144 blocks?
+\item What does the graph of blocks put away versus time looks like?
+\item Express this function of blocks versus time in this scenario as a transformation of $W$.
+\end{enumerate}
+\end{enumerate}
+
+\vfill
+
+\begin{enumerate}[resume]
+ \item  Wall-E has already put away 144 blocks, and he is one to his next pile of metal blocks.  He makes the same moves as he did before. 
+\begin{enumerate}
+\item What does the graph of total blocks put away versus time look like, including the 144 blocks in the count?
+\item Express this function of blocks versus time in this scenario as a transformation of $W$.
+\end{enumerate}
+\end{enumerate}
+
+\vfill
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\handout{Explaining transformation principles in terms of the definition of graph}
+
+Recall that graph of an equation $y=f(x)$ contains the point $(x_0,y_0)$ if and only if when you evaluate the equation $y=f(x)$ at $(x_0, y_0)$, you obtain a true statement. I.e., the point $(x_0,y_0)$ is on the graph if and only if ``$y_0=f(x_0)$'' is a true statement. 
+
+
+\begin{enumerate}
+\item Suppose the point $(x,y)$ is on the graph $y=C(x)$, where $C$ represents candies made per hour at a candy factory. 
+
+\begin{enumerate}
+\item Let $T(x)=2x$. Does $C(T(x))$ represent more candies made or fewer candies made, per hour? 
+\item If $(6,600)$ is on the graph of $y=C(x)$, what is a coordinate on the graph of $y=C(T(x))$?
+\item Now let $T(x)=\frac{1}{3}x$. Write two scenarios:
+
+	\centerline{one described by $T(C(x))$} 
+	
+	\centerline{and the other described by $C(T(x))$.}
+
+\item If $(6,600)$ is on the graph of $y=C(x)$, what is a coordinate on the graph of $y=T(C(x))$? What is a coordinate on the graph of $y=C(T(x))$?
+\end{enumerate}
+\end{enumerate}
+
+\vfill
+
+\begin{enumerate}[resume]
+\item Given a function $f$.
+	\begin{enumerate}
+	\item State {\it how} the graphs of $y=f(ax)$, and $y=f(-ax)$ can be obtained as transformations of the graph of $y=f(x)$
+	\item Prove {\it why} your answer to (a) works. 	Your proof should use the definition of graph. 		
+	\end{enumerate}
+\end{enumerate}
+\vfill
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\handout{Explaining with definition of graph: Feedback}
+
+Your name: 
+
+Presenters' names:
+
+Feedback:
+\begin{tabular}{L{2.3in}|L{4.5in}}
+\hline 
+Are units and quantities realistic? \vspace*{0.5in}
+	& 
+	Input units and quantities realistic/not realistic
+	
+	Output units and quantities realistic/not realistic
+\\ 
+\hline
+How clear is the problem statement?\vspace*{0.5in}
+	& 
+	Clear / sort-of clear / unclear 
+\\ 
+\hline
+How accurate is the solution to the problem? How clear is the solution to the problem? \vspace*{0.5in}
+	& 
+	Accurate / sort-of accurate / not accurate  
+	
+	Clear / sort-of clear / unclear 
+\\ 
+\hline
+Is the explanation of the graph strictly procedural (e.g., ``you move the graph by 1 unit to the right'') or does it combine the procedure with explanations both in terms of the definition of graph (in terms of input and output) and the problem context? (``Combine'' means ``connection is not implied, it is explicit'') \vspace*{1in}
+	&
+	Strictly procedural / not strictly procedural
+	
+	Connects explicitly with definition of graph /  does not 
+	
+	Connects explicitly with problem context / does not \\
+\hline
+How accurate are the statement of the principles? How clear are they?  \vspace*{1in}
+	& Accurate / sort-of accurate / not accurate  
+	
+	Clear / sort-of clear / unclear  \\ 
+\hline
+\end{tabular}
+
+Other comments:
+
+
+%%%%%%%%% 5-6 HOMEWORK %%%%%%%%%%%%
+\newpage \subsection{Homework}
+
+\todo{Ch 5-6: write homework}
+
+\begin{enumerate}
+\item Let $W$ be the function of Wall-E's total blocks put away versus time, as defined in the Lesson 5 Explorations. {\it Hint: It may be helpful for this homework problem to put the origin at 9am instead of at noon.}
+	\begin{enumerate}
+	\item Describe a modification to the scenario in which the function of total blocks put away versus time would be $W(3x+1)$. 
+	\item  Describe a modification to the scenario in which the function of total blocks put away versus time would be $W(3(x+1))$. 
+	\item In each of the above scenarios you wrote, highlight in pink where the "3" comes in, and highlight in green where the "+1" comes in. 
+	\item On the same pair of axes, graph $y=W(3x+1)$ and $y=W(3(x+1))$. Explain the differences you see in terms of the scenario.
+	\end{enumerate} 
+\end{enumerate}
+
+\begin{enumerate}[resume]
+\item Complete the following:
+	\begin{mdframed}
+{\bf Principles of graph transformation} 
+	\begin{itemize}
+	\item If you transform the input to move faster per time, the graph of the function will appear to move faster per time. The graph will look as though you took the original graph and you squished the input coordinates of the coordinate plane, because you are moving faster through time. 
+	\item If you transform the input to have a head start, the graph will look as though you pushed the origin forward, because you are effectively starting before the zero mark.
+	\item If you transform the input to move slower per time:
+	
+	\bigskip
+	
+	\item If you transform the input to start later:
+	
+	\bigskip\bigskip
+	
+	\end{itemize}
+	\end{mdframed}
+	
+\item Read over Section \ref{section: transformation principles} on illustrating principles of transformations. 
+
+\begin{itemize} 
+\item Prepare a 7-minute lesson in which you explain the solution to a problem that combines a faster/slower per time transformation with a head start/delayed start transformation. 
+
+\item Assume that you had assigned the problem for homework, and most students have done the problem correctly. You are now reviewing the problem so as to reinforce the principles.
+
+\item The problem should use one of the common contexts listed in Section \ref{section: transformation principles}.
+
+\item Your explanation should adhere to the characteristics of a good explanation listed in that section. 
+
+\item Your lesson should include some comprehension questions about the graphs that tie directly into the statement of the principles.
+
+\end{itemize}
+\end{enumerate} 
+
+Here is the feedback chart that will be used for the lesson:
+
+\hspace*{-0.25in}\begin{tabular}{L{2.3in}|L{4.5in}}
+\hline 
+Are units and quantities realistic? 
+	& 
+	Input units and quantities realistic/not realistic
+	
+	Output units and quantities realistic/not realistic
+\\ 
+\hline
+How clear is the problem statement?
+	& 
+	Clear / sort-of clear / unclear 
+\\ 
+\hline
+How accurate is the solution to the problem? How clear is the solution to the problem?
+	& 
+	Accurate / sort-of accurate / not accurate  
+	
+	Clear / sort-of clear / unclear 
+\\ 
+\hline
+Is the explanation of the graph strictly procedural (e.g., ``you move the graph by 1 unit to the right'') or does it combine the procedure with explanations both in terms of the definition of graph (in terms of input and output) and the problem context? (``Combine'' means ``connection is not implied, it is explicit'')
+	&
+	Strictly procedural / not strictly procedural 
+	
+	Connects explicitly with definition of graph / does not do so 
+	
+	Connects explicitly with problem context  / does not do so \\
+\hline
+How accurate are the statement of the principles? How clear are they? 
+	& Accurate / sort-of accurate / not accurate  
+	
+	Clear / sort-of clear / unclear  \\ 
+\hline
+\end{tabular}
 
 \end{document} 
 
