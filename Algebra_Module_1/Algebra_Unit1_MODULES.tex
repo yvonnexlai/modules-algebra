@@ -182,6 +182,8 @@ The Mathematics Of Doing, Understand, Learning, and Educating Secondary Schools 
 \newpage \pagenumbering{arabic}
 
 
+\todo{all chapters: respond to Jeremy's comments}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 	
 %%%%%% PART 1 %%%%%%%%%%%%%%%%%%%%%	
@@ -189,8 +191,6 @@ The Mathematics Of Doing, Understand, Learning, and Educating Secondary Schools 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 	
 \newpage 
 \part{How We Talk and Explore Math} 
-
-
 
 \setcounter{section}{-1}
 
@@ -201,6 +201,7 @@ The Mathematics Of Doing, Understand, Learning, and Educating Secondary Schools 
 
 %%%%%%%% 0 REFERENCE: SET & LOGICAL NOTATION %%%%%%%%%%%
 \subsection{Set and Logical Notation}
+
 
 
 {\bf Set Notation}
@@ -711,8 +712,8 @@ Is $A$ a subset of $B$ or vice versa? Complete this table with ``yes'' or ``no''
 		$A= \tn{multiples of 6}$, 
 		$B= \tn{multiples of 9}$ 
 			 & & & & & & & \\  \hline
-		$A=\{ n^2 | n\in \N, n>0 \}$, 
-		$B=\{1+3+\dots +(2n+1) | n\in \N\}$ 
+		$A=\{ n^2 \st n\in \N, n>0 \}$, 
+		$B=\{1+3+\dots +(2n+1) \st n\in \N\}$ 
 			& & & & & & & \\ \hline	
 		$A=\tn{functions of the form $x\mapsto 16^{ax}$}$, 
 		$B=\tn{functions of the form $x\mapsto 2^{ax}$}$
@@ -919,7 +920,7 @@ One way of saying ``factors of a number that are not itself or 1'' is to say ``n
 
 {\bf Applying set notation.} Using set notation, we can interpret the conjecture as saying:
 
-\begin{conjecture}[Number parent conjecture, take 1]
+\begin{conjecture}[Number parent conjecture, take 1]\label{c: number parent 1}
 Let \begin{eqnarray*}
 	S&=&\{ n\in \N\st n\tn{ has at least three different non-trivial factors}\} \\ 
 	T&=&\{ n\in \N \st n \tn{ has more than one pair of parents}\} 
@@ -947,7 +948,7 @@ $T\subset S$ means that ``there are no other numbers with more than one pair of 
 \bigskip
 {\bf Applying logical notation.} There is another mathematically equivalent way of saying the conjecture using the logical notation we developed. 
 
-\begin{conjecture}[Number parent conjecture, take 2]
+\begin{conjecture}[Number parent conjecture, take 2]\label{c: number parent 2}
 $\forall n\in \N$, $n$ has more than one pair of parents $\iff$ $n$ has at least three nontrivial factors.
 \end{conjecture}
 
@@ -975,7 +976,7 @@ $P\implies Q$ being true implies that ``there are no other numbers with more tha
 
 
 (The following is stated in two equivalent ways) 
-\begin{proposition}[Number parent proposition]
+\begin{proposition}[Number parent proposition]\label{p: number parent}
 \hspace*{-6pt}\begin{tabular}{L{3.5in}|L{2.8in}}
 If $S=\{ n\in \N\st n\tn{ \it has at least three different non-trivial factors}\}$ and $T=\{ n\in \N \st n \tn{ \it has more than one pair of parents}\}$, then $S=T$.
 & 
@@ -1247,17 +1248,186 @@ How does this way of phrasing the conjecture match up with the original way?
 
 %%%%%%%%% 1 HOMEWORK %%%%%%%%%%%%%%%%%%%%
 \newpage \subsection{Homework}  
-\todo{Ch 1: write homework}
+
+
+\begin{bignote}
+For homework, you may want to make sure to assign \ref{p: parent relation intro} and \ref{p: cart prod}. These are used in Section \ref{s: relations} and beyond. 
+
+For the remaining problems, it is not recommended to assign every piece of all problems; the intent is for you to pick and choose one or two per problem as you see fit based on what you know or want to know about your students and the intended purpose of the problems.
+
+The purpose of the problems is as follows:
+	\begin{enumerate}
+	\setcounter{enumi}{-1}
+	\item Making sure that students get into the habit of reading the notes. (You may want to assign this as a google form or online form so that you can read student responses before the next time you see students. Then you can address questions immediately.)
+	\item Problems about proving set membership or set non-membership.
+	\item Problems about establishing a set as a subset or as a strict subset or another set; establishing set equality.
+	\item Proof comprehension: Helping students dive into the practices of understanding a proof. This is based on the framework for proof comprehension proposed by Mejia-Ramos, Fuller, Weber, Rhoads, and Samkoff (2012)\footnote{\footnotesize{Mejia-Ramos, J.P., Fuller, E., Weber, K., Rhoads, K., \& Samkoff, A.~(2012). An assessment model for proof comprehension in undergraduate mathematics. {\it Educational Studies in Mathematics, 79}: 3-18. doi: 10.1007/s10649-011-9349-7.}}: 	
+		\begin{itemize}
+		\item assessing local comprehension of proof: meanings of terms and statements; meaning of individual statements;
+		\item logical status of statements and proof framework;
+		\item chaining statements of proof together; and 
+		\item holistic understanding of proof.
+		\end{itemize}
+	\item Introducing the parent relation and one representation of relations.
+	\item Introducing Cartesian product in a way that is consistent with how relations are first defined in the next chapter.
+	\end{enumerate}
+\end{bignote}
+
 \begin{enumerate}
-\item Proving set membership problem
-\item Proving subset, subsetneq problem
-\item Proving set equality problem (possibly assign even number, consecutive odd numbers); can also assign exponential function problem
-\item Proof comprehension question about parent relation proof
-\item Something about assigning parents to children, to introduce the idea of a relation as a set of assignments. Possibly the opener to Lesson 2. 
-\item Something to introduce Cartesian product $D\times R$. (Note that it's also called cross product, but it's not the linear algebra thing.)
+\setcounter{enumi}{-1}
+\item % Locating relevant parts of the text
+\label{p: set ideas}
+	In this chapter, we learned about:
+		\begin{itemize}
+		\item Showing that an element is or is not a member of a particular set
+		\item Showing that a set is a subset or strict subset of another set
+		\item The definition of set equality and how to show that two sets are equal
+		\item Number parents and children, in particular, that if $S=\{n\in\N \st n \tn{ has at least three different non-trivial factors}\}$ and $T=\{n\in \N\st n \tn{ has more than one pair of parents}\}$, then $S=T$.
+		\end{itemize}
+	For each of these ideas:
+		\begin{enumerate}
+		\item Where in the text are these ideas located?
+		\item Review this section of the text.	What definitions are most relevant? How do the examples use these definitions?	
+		\item What questions or comments do you have about the ideas in this section?
+		\end{enumerate}
+\item % Problems about proving set membership or set non-membership
+Let $S=\{x\in \Q\st x \tn{ can be written as a fraction with denominator 2 and } |x|<2\}$.
+
+Let $B = \{1+3+\dots + (2n+1) \st n\in \N\}$.
+
+Let $C$ be the set of functions of the form $x \mapsto 27^{ax}$. 
+
+Let $D$ be the set of numbers with more than 5 parents.
+
+	\begin{enumerate}
+	\item Is ``$0.25\in S$'' a true statement? 
+	\item Is ``$1\in S$'' a true statement?
+	\item Is 25 an element of $B$? 
+	\item Is 24 an element of $B$? 
+	\item When $a\in \Z$, is $x\mapsto 3^{5x}$ contained in $C$?
+	\item When $a\in \Q$, is $x\mapsto 3^{5x}$ contained in $C$?
+	\item Find a number that is a member of both $B$ and $D$.
+	\end{enumerate}
+
+After reading this problem, think about: What mathematical idea(s) listed in Problem \ref{p: set ideas} does this problem provide opportunities to understand?  This is something helpful to think about for all the problems.
+
+In your responses, articulate clearly:
+	\begin{itemize}
+	\item Whether you are showing that the element is or is not contained in the set;  
+	\item How you used the definition of set membership to determine ``yes'' or ``no''; and
+	\item Any definitions or ideas that you need in your reasoning.
+	\end{itemize}
+	
+\item %Problems about establishing as a subset or as a strict subset
+	% Problems about establishing set equality 
+
+\begin{enumerate}
+	\item Complete this table with ``True'' or ``False''.
+
+		\hspace*{-24pt} \begin{tabular}{C{2.1in}||C{0.37in}|C{0.37in}|C{0.37in}|C{0.37in}|C{0.37in}|C{0.4in}|C{0.5in}}
+			& $A\subset B$ & $A\subsetneq B$ & $A\supset B$ & $A\supsetneq B$ & $A = B$& $A\neq B$ 
+			& \tiny{Neither is subset of the other} \\ \hline	
+		$A= \tn{integer multiples of 14}$, 
+		$B= \tn{integer multiples of 21}$ 
+			 & & & & & & & \\  \hline
+		$A=\{ n^2 \st n\in \N, n>0 \}$, 
+		$B=\{1+3+\dots +(2n+1) \st n\in \N\}$ 
+			& & & & & & & \\ \hline	
+		$A=\tn{functions of the form $x\mapsto 27^{ax}$}$ 
+		$B=\tn{functions of the form $x\mapsto 3^{ax}$}$, $a\in \Z$
+			& & & & & & & \\  \hline
+		$A=\tn{functions of the form $x\mapsto 27^{ax}$}$ 
+		$B=\tn{functions of the form $x\mapsto 3^{ax}$}$, $a\in \Q$
+			& & & & & & & \\  \hline
+		\end{tabular}
+	\item Prove your ``true'' responses to Row 1. 
+	\item Prove your ``true'' responses to Row 2. 
+	\item Prove your ``true'' responses to Row 3. 
+	\item Prove your ``true'' responses to Row 4. 
+	\end{enumerate}
+
+\item % Proof comprehension question about parent relation proof
+
+Read over the section containing Conjectures \ref{c: number parent 1} and \ref{c: number parent 2} and Proposition \ref{p: number parent}.  
+	\begin{enumerate}
+	% assessing local comprehension of proof
+	% meanings of terms and statements; meaning of individual statements
+	\item 	
+		Write the following statements in your own words: Conjecture \ref{c: number parent 1} and Conjecture \ref{c: number parent 2}. Then explain why they are mathematically equivalent.
+	\item \label{p: n a b} In the proof of Proposition \ref{p: number parent}, in the section on showing $T\subset S$, the proof states, ``Let $n\in T.$ Then there exist at least two pairs $a,a'\in \N$ and $b, b'\in \N$ such that $\{a,a'\}\neq \{b, b'\}$.'' Why is the implication (``there exist at least two pairs \dots'') true? 
+	\item  In this section, the proof states, 
+	
+	``If $a\neq a'$ and $b\neq b'$, then $n$ has at least four factors, so $n\in S$. 
+	
+	It may be true that $a=a'$ or $b=b'$. If $a=a'$, though, then $n$ is a perfect square and $b\neq b'$, since there is only one positive square root possible for every $n$. Similarly, if $b=b'$, then $a\neq a'$. In either case, $n$ has at least three factors (either $a, b, b'$ or $a, a', b$), so $n\in S$.''
+	
+		\begin{enumerate}
+		\item What is the negation of the statement ``$a=a'$ or $b=b'$''?
+		\item \label{p: n a b true} Give an example of $n$ such that ``$a=a'$ or $b=b'$'' is true. 
+		\item \label{p: n a b false} Give an example of $n$ such that ``$a=a'$ or $b=b'$'' is false. 
+		\item Explain the meaning of the quoted passage using the examples you gave in (\ref{p: n a b true}) and (\ref{p: n a b false}).
+		\end{enumerate}
+	% Logical status of statements and proof framework
+	\item What is the logical reason for needing to show both that  $S\subset T$ and $T\subset S$ to establish Proposition \ref{p: number parent}?
+	% Chaining statements of proof together
+	\item Why does the truth of the passage in \ref{p: n a b} mean that that every $n\in T$ is also a member of $S$? 
+	% Assessing holistic comprehension of proof
+	\item Walk through the steps of the entire proof of Proposition \ref{p: number parent} using the example of $n=12$.
+	\item Why does the first line of each part of the proof (why $S\subset T$ and why $T\subset S$) not apply to the case $n=6$?
+	\end{enumerate}
+
+\item \label{p: parent relation intro}
+% introduces parent relation
+The diagram below shows $P$, a collection of arrows from a natural number to its parents.   Some arrows below have been filled in, for example $P$ assigns $6$ to $2$ and $3$, and assigns $12$ to $2, 3, 4, 6$.  Draw in three more arrows from a natural number to its parents.
+
+\begin{center}
+\begin{tikzpicture}
+\def\pt{circle (0.05)}
+\foreach \x in {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
+	{\filldraw(0,-0.5*\x) node[left]{$\x$} \pt;
+	\filldraw(5,-0.5*\x) node[right]{$\x$} \pt;
+	}
+	\draw 
+		(2.5, 1) node[]{$P$}
+		(0,0.7) node[] {$\N$}
+		(5,0.7) node[] {$\N$}
+		(0, -0.5*15) node[]{$\vdots$}
+		(5, -0.5*15) node[]{$\vdots$};
+	\draw[->=stealth, yscale=-0.5] (0,6) -- (4.94, 1.9);
+	\draw[->, yscale=-0.5] (0,6) -- (4.94, 2.9);
+	\draw[->, yscale=-0.5] (0, 12)-- (4.94, 2.1);
+	\draw[->, yscale=-0.5] (0, 12) -- (4.94, 3.1);
+	\draw[->, yscale=-0.5] (0, 12) -- (4.94, 4);
+	\draw[->, yscale=-0.5] (0, 12) -- (4.94, 6);
+\draw[xshift=-1cm] (0,0) arc (180:0:1) (0,-7) arc (180:360:1) (0,0)-- (0,-7) (2,0) -- (2,-7); 
+\draw[xshift=4cm] (0,0) arc (180:0:1) (0,-7) arc (180:360:1) (0,0)-- (0,-7) (2,0) -- (2,-7); 
+\end{tikzpicture}
+\end{center}
+
+
+\item  % Introduce Cartesian product $D\times R$. 
+\label{p: cart prod}
+Let $D$ and $R$ be sets. The \emph{Cartesian product} of $D$ and $R$, which we will work with more next time, is defined as the set of ordered pairs $\{(x,y) \st x\in D, y\in R\}$. For example, if $D=\{1, 2, 3\}$ and $R=\{4, 5\}$, then $D\times R$ is the set $\{(1, 4),(1,5), (1, 6), (2, 4), (2, 5), (2, 6)\}$. One way to think about it is that it is all the pairs you can get by drawing all possible arrows from elements of $D$ to elements of $R$ when you draw the elements lined up in parallel to each other:
+
+	\begin{center}
+	\begin{tikzpicture}
+	\def\pt{circle (0.05)}
+	\foreach \x in {1, 2, 3}
+	{\filldraw(0,-0.5*\x) node[left]{$\x$} \pt;
+	\draw[->] (0,-0.5*\x) -- (4.94, -0.5-0.03*\x+0.03);
+	\draw[->] (0,-0.5*\x) -- (4.94, -1.5-0.03*\x+0.03);
+	}
+	\foreach \y in {4, 5}
+	{\filldraw(5,3.5-\y) node[right]{$\y$} \pt;}
+	\end{tikzpicture}
+	\end{center}
+	
+Each arrow represents an ordered pair, with the starting point of the arrow being the first coordinate of the ordered pair and the ending point of the arrow being the second coordinate of the ordered pair.
+
+Let $A=\{5, 6, 10\}$ and $B=\{-1, -2, -3\}$. Draw an arrow representation of the Cartesian product $A\times B$ and list its elements as ordered pairs.
 \end{enumerate}
 
-\smallnote{For homework, you may want to make sure to assign at least one problem on parent relation and the problem with Cartesian product. These are used in the next lesson, in Section \ref{s: relations}, and beyond.}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -1444,6 +1614,12 @@ $\R\times \R$ is the coordinate plane.
 
 $\R\times (\R\times \R)$ can be thought of as all the coordinates of 3-space.
 \end{solution}
+
+\begin{note}
+The Cartesian product is sometimes referred to as the ``cross'' or ``cross product'' 
+or ``direct product'' of two sets.  The term ``cross product of two vectors'' also shows up in linear algebra, but this meaning is independent of the Cartesian product. It's an unfortunate coincidence that the same term is used.
+\end{note}
+
 
 %%%%%%% 2 RELATIONS %%%%%%%
 \subsubsection{Relations}
@@ -2626,6 +2802,27 @@ Two graphs \emph{intersect} each other at $(a,b)$ when $(a,b)$ is contained in b
 
 \begin{enumerate}
 \setcounter{enumi}{-1}
+\item In this chapter, we learned about:
+ 	\begin{itemize}
+	\item Defining a relation, in three equivalent ways
+	\item Defining inverse relation
+	\item Defining composition of relations
+	\item The concept of graph of a (real) relation
+	\item The concept of function
+	\item Showing that a point $(x,y)$ is on the graph of a relation
+	\item Showing that a point $(x,y)$ is on the graph of an equation
+	\item Connecting mathematically equivalent definitions
+	\item Connecting different mathematical representations
+	\end{itemize}
+
+For each of these ideas: 
+	\begin{enumerate}
+	\item Where in the text are these ideas located?
+	\item Review this section of the text. What definitions and results were important? How do examples use these definitions and results?
+	\item What questions or comments do you have about the ideas in this section?
+	\end{enumerate}
+
+	
 \item Read the following definition. 
 
 A \emph{function} $f$ from $D$ to $R$ is a relation from $D$ to $R$ where each input in $D$ is assigned to no more than one output in $C$.
@@ -3227,33 +3424,49 @@ By {\it covariational view}, we mean understanding how changing the value of one
 \begin{mdframed}
 \begin{center} {\bf Ms.~Morgan's class} \end{center}
 \begin{minipage}{5in}\raggedright \parskip4pt
-During a lesson on writing equations of linear functions represented in tables, Ms. Morganasked her students to write the equation of the linear function represented in the table below,and to explain how they found their answers.
+During a lesson on writing equations of linear functions represented in tables, Ms. Morgan
+asked her students to write the equation of the linear function represented in the table below,
+and to explain how they found their answers.
 
-Students found the correct equation, but they gave different explanations of how they foundtheir answers:
+Students found the correct equation, but they gave different explanations of how they found
+their answers:
 \end{minipage}
 \begin{minipage}{1in}
 \vspace*{-20pt}
 \begin{center}\begin{tabular}{c|c}
-$x$ & $y$ \\ \hline1 & 6  \\ 2 & 11 \\ 3 & 16 \\4 & 21 
+$x$ & $y$ \\ \hline
+1 & 6  \\ 
+2 & 11 \\ 
+3 & 16 \\
+4 & 21 
 \end{tabular}
 \end{center}
 \end{minipage}
 
 \begin{tabular}{L{0.75in}L{5in}}
 \hline
-Student A: & Each time the value of $x$ goes up by 1, the value of $y$ goes up by 5, so theslope is 5. And if $x$ goes down by 1, then $y$ will have to go down by 5, sothe $y$-intercept is 1. That means the equation is $y = 5x + 1$.
+Student A: & Each time the value of $x$ goes up by 1, the value of $y$ goes up by 5, so the
+slope is 5. And if $x$ goes down by 1, then $y$ will have to go down by 5, so
+the $y$-intercept is 1. That means the equation is $y = 5x + 1$.
 \\ \hline
-Student B: &  I just looked at the value of $y$ and saw that it kept increasing by 5, so $m =5$. Then I subtracted that number from the first valueof y in the table, so $b = 1$. You always put m times x and add the b, so theequation is $y = 5x + 1$.
+Student B: &  I just looked at the value of $y$ and saw that it kept increasing by 5, so $m =
+5$. Then I subtracted that number from the first value
+of y in the table, so $b = 1$. You always put m times x and add the b, so the
+equation is $y = 5x + 1$.
 \\ \hline
-Student C: & For this function, I saw that you can always multiply the value of $x$ by 5and then add 1 to get the value of $y$, so the equation is $y = 5x + 1.$
+Student C: & For this function, I saw that you can always multiply the value of $x$ by 5
+and then add 1 to get the value of $y$, so the equation is $y = 5x + 1.$
 \\ \hline
 \end{tabular}
 \end{mdframed}
 
 \begin{task}
 Read through the student responses in Ms.~Morgan's class.
-\begin{itemize}
-\item {\bf Observe}: What is the student thinking? How might they have arrived at each step of their solution?\item {\bf Interpret}: What are you sure that each student understands? What are you sure that each studentdoes not understand? What are you unsure that each student understands?  Based on what evidence?
+
+\begin{itemize}
+\item {\bf Observe}: What is the student thinking? How might they have arrived at each step of their solution?
+\item {\bf Interpret}: What are you sure that each student understands? What are you sure that each student
+does not understand? What are you unsure that each student understands?  Based on what evidence?
 
 Here are some concepts to consider analyzing for students' understanding:
 
@@ -3265,7 +3478,8 @@ Here are some concepts to consider analyzing for students' understanding:
 	\item How changes in one variable impact changes in the other variable 
 	\item Definition of graph of a function
 	\end{itemize*}
-	\item {\bf Interpret, continued:} Are the explanations mathematically complete? Why or why not?
+	
+\item {\bf Interpret, continued:} Are the explanations mathematically complete? Why or why not?
 	
 \end{itemize}
 
@@ -3278,7 +3492,9 @@ Here are some concepts to consider analyzing for students' understanding:
 {\bf Interpret}: 
 
 \begin{tabular}{C{1.75in}|C{1.75in}|C{1.75in}}
-I am sure that Student A/B/C understands \dots  & I am sure that Student A/B/Cdoes NOT understand \dots & I am unsure whetherStudent A/B/C understands \dots  \\ \hline
+I am sure that Student A/B/C understands \dots  & I am sure that Student A/B/C
+does NOT understand \dots & I am unsure whether
+Student A/B/C understands \dots  \\ \hline
 & & \\
 \end{tabular}
 
@@ -3290,7 +3506,9 @@ What is complete or incomplete about Student A/B/C's explanation?
 %{\bf Observe}: What may Student B be thinking?
 %
 %{\bf Interpret}: \begin{tabular}{C{1.5in}|C{1.5in}|C{1.5in}}
-%I am sure that Student B understands \dots  & I am sure that Student B%does NOT understand \dots & I am unsure whether%Student B understands \dots  \\ \hline
+%I am sure that Student B understands \dots  & I am sure that Student B
+%does NOT understand \dots & I am unsure whether
+%Student B understands \dots  \\ \hline
 %& & \\
 %\end{tabular}
 %
@@ -3302,7 +3520,9 @@ What is complete or incomplete about Student A/B/C's explanation?
 %{\bf Observe}: What may Student C be thinking?
 %
 %{\bf Interpret}: \begin{tabular}{C{1.5in}|C{1.5in}|C{1.5in}}
-%I am sure that Student C understands \dots  & I am sure that Student C%does NOT understand \dots & I am unsure whether%Student C understands \dots  \\ \hline
+%I am sure that Student C understands \dots  & I am sure that Student C
+%does NOT understand \dots & I am unsure whether
+%Student C understands \dots  \\ \hline
 %& & \\
 %\end{tabular}
 %
@@ -3333,20 +3553,31 @@ Ways that the covariation and correspondence views arise in the Morgan Minicase 
 \vspace*{-4pt}
 Student A (does provide a mathematically complete explanation)
 
-\vspace*{-8pt}\begin{itemize*}
-\item understands concept of constant rate of change, $y$-intercept, form of linear function\item may not understand correspondence view of function
+\vspace*{-8pt}
+\begin{itemize*}
+\item understands concept of constant rate of change, $y$-intercept, form of linear function
+\item may not understand correspondence view of function
 \end{itemize*}
 
-\vspace*{-4pt}Student B (does {\it not} provide a mathematically complete explanation)
+\vspace*{-4pt}
+Student B (does {\it not} provide a mathematically complete explanation)
 
 \vspace*{-8pt}
-\begin{itemize*}\item does know that linear functions have the form $y=mx+b$, where $m, b\in \R$\item does not understand constant rate of change\item may not understand $y$-intercept\item does not necessarily understand correspondence view of function
+\begin{itemize*}
+\item does know that linear functions have the form $y=mx+b$, where $m, b\in \R$
+\item does not understand constant rate of change
+\item may not understand $y$-intercept
+\item does not necessarily understand correspondence view of function
 \end{itemize*}
 
-\vspace*{-4pt}Student C (does provide a mathematically complete explanation)
+\vspace*{-4pt}
+Student C (does provide a mathematically complete explanation)
 
 \vspace*{-8pt}
-\begin{itemize*}\item does know that linear functions have the form $y=mx+b$, where $m, b\in \R$\item does understand correspondence view of function\item may not understand constant rate of change, $y$-intercept.
+\begin{itemize*}
+\item does know that linear functions have the form $y=mx+b$, where $m, b\in \R$
+\item does understand correspondence view of function
+\item may not understand constant rate of change, $y$-intercept.
 \end{itemize*} 
 \end{solution}
 
@@ -3580,7 +3811,10 @@ There are three sections of $g\circ f$, corresponding to the sections of $f$. Th
 
 \subsubsection*{Noticing student thinking}
 \begin{itemize}
-\item {\bf Observe}: What is the student thinking? How might they have arrived at each step of their solution?\item {\bf Interpret}: What are you sure that each student understands? What are you sure that each studentdoes not understand? What are you unsure that each student understands?  Based on what evidence?	\item {\bf Interpret, continued:} Are the explanations mathematically complete? Why or why not?
+\item {\bf Observe}: What is the student thinking? How might they have arrived at each step of their solution?
+\item {\bf Interpret}: What are you sure that each student understands? What are you sure that each student
+does not understand? What are you unsure that each student understands?  Based on what evidence?	
+\item {\bf Interpret, continued:} Are the explanations mathematically complete? Why or why not?
 \item {\bf Respond}: Based on the above, determine how to respond.
 \end{itemize}
 
@@ -3855,32 +4089,48 @@ On what subset of the domain of cosine do each of your candidates serve as a tru
 \begin{mdframed}
 \begin{center} {\bf Ms.~Morgan's class} \end{center}
 \begin{minipage}{5in}\raggedright \parskip4pt
-During a lesson on writing equations of linear functions represented in tables, Ms. Morganasked her students to write the equation of the linear function represented in the table below,and to explain how they found their answers.
+During a lesson on writing equations of linear functions represented in tables, Ms. Morgan
+asked her students to write the equation of the linear function represented in the table below,
+and to explain how they found their answers.
 
-Students found the correct equation, but they gave different explanations of how they foundtheir answers:
+Students found the correct equation, but they gave different explanations of how they found
+their answers:
 \end{minipage}
 \begin{minipage}{1in}
 \vspace*{-20pt}
 \begin{center}\begin{tabular}{c|c}
-$x$ & $y$ \\ \hline1 & 6  \\ 2 & 11 \\ 3 & 16 \\4 & 21 
+$x$ & $y$ \\ \hline
+1 & 6  \\ 
+2 & 11 \\ 
+3 & 16 \\
+4 & 21 
 \end{tabular}
 \end{center}
 \end{minipage}
 
 \begin{tabular}{L{0.75in}L{5in}}
 \hline
-Student A: & Each time the value of $x$ goes up by 1, the value of $y$ goes up by 5, so theslope is 5. And if $x$ goes down by 1, then $y$ will have to go down by 5, sothe $y$-intercept is 1. That means the equation is $y = 5x + 1$.
+Student A: & Each time the value of $x$ goes up by 1, the value of $y$ goes up by 5, so the
+slope is 5. And if $x$ goes down by 1, then $y$ will have to go down by 5, so
+the $y$-intercept is 1. That means the equation is $y = 5x + 1$.
 \\ \hline
-Student B: &  I just looked at the value of $y$ and saw that it kept increasing by 5, so $m =5$. Then I subtracted that number from the first valueof y in the table, so $b = 1$. You always put m times x and add the b, so theequation is $y = 5x + 1$.
+Student B: &  I just looked at the value of $y$ and saw that it kept increasing by 5, so $m =
+5$. Then I subtracted that number from the first value
+of y in the table, so $b = 1$. You always put m times x and add the b, so the
+equation is $y = 5x + 1$.
 \\ \hline
-Student C: & For this function, I saw that you can always multiply the value of $x$ by 5and then add 1 to get the value of $y$, so the equation is $y = 5x + 1.$
+Student C: & For this function, I saw that you can always multiply the value of $x$ by 5
+and then add 1 to get the value of $y$, so the equation is $y = 5x + 1.$
 \\ \hline
 \end{tabular}
 \end{mdframed}
 
 Read through the student responses in Ms.~Morgan's class.
-\begin{itemize}
-\item {\bf Observe}: What is the student thinking? How might they have arrived at each step of their solution?\item {\bf Interpret}: What are you sure that each student understands? What are you sure that each studentdoes not understand? What are you unsure that each student understands?  Based on what evidence?
+
+\begin{itemize}
+\item {\bf Observe}: What is the student thinking? How might they have arrived at each step of their solution?
+\item {\bf Interpret}: What are you sure that each student understands? What are you sure that each student
+does not understand? What are you unsure that each student understands?  Based on what evidence?
 
 Here are some concepts to consider analyzing for students' understanding:
 
@@ -3892,7 +4142,8 @@ Here are some concepts to consider analyzing for students' understanding:
 	\item How changes in one variable impact changes in the other variable 
 	\item Definition of graph of a function
 	\end{itemize*}
-	\item {\bf Interpret, continued:} Are the explanations mathematically complete? Why or why not?
+	
+\item {\bf Interpret, continued:} Are the explanations mathematically complete? Why or why not?
 	
 \end{itemize}
 
@@ -3906,7 +4157,8 @@ Record your thinking on the next page.
 
 \begin{tabular}{C{1.75in}|C{1.75in}|C{1.75in}}
 I am sure that Student A understands \dots  & I am sure that Student A
-does NOT understand \dots & I am unsure whetherStudent A understands \dots  \\ \hline
+does NOT understand \dots & I am unsure whether
+Student A understands \dots  \\ \hline
 & & \vspace*{1.75in}\\
 \end{tabular}
 \vspace*{2pt}
@@ -3919,7 +4171,8 @@ does NOT understand \dots & I am unsure whetherStudent A understands \dots  \\ 
 
 \begin{tabular}{C{1.75in}|C{1.75in}|C{1.75in}}
 I am sure that Student B understands \dots  & I am sure that Student B
-does NOT understand \dots & I am unsure whetherStudent B understands \dots  \\ \hline
+does NOT understand \dots & I am unsure whether
+Student B understands \dots  \\ \hline
 & & \vspace*{1.75in}\\
 \end{tabular}
 
@@ -3933,7 +4186,8 @@ does NOT understand \dots & I am unsure whetherStudent B understands \dots  \\ 
 
 \begin{tabular}{C{1.75in}|C{1.75in}|C{1.75in}}
 I am sure that Student C understands \dots  & I am sure that Student C
-does NOT understand \dots & I am unsure whetherStudent C understands \dots  \\ \hline
+does NOT understand \dots & I am unsure whether
+Student C understands \dots  \\ \hline
 & & \vspace*{1.75in}\\
 \end{tabular}
 
