@@ -120,7 +120,7 @@
 
 % divisibility
 \newcommand\divides{\;|\;}
-\newcommand\notdivides{\;|\hspace{-2pt}\backslash\hspace{2pt}\;}
+\newcommand\notdivides{\hspace*{-2pt}\not |\;}
 
 % trig and geometry
 \newcommand\degrees{^\circ}
@@ -182,7 +182,43 @@ The Mathematics Of Doing, Understand, Learning, and Educating Secondary Schools 
 \newpage \pagenumbering{arabic}
 
 
-\todo{all chapters: respond to Jeremy's comments}
+\todo{all chapters: respond to Jeremy's and Gary's comments}
+
+Jeremy:
+
+p.23, should inverse of a relation line end in *mathematical* equivalence
+
+p.24 should last line say arrows ending *at* a number or not.
+
+On p.24, should the preimage definition say "... of D that map to ***the element of R***
+
+In Def. 2.4, should it say R' /subset R rather than R /subset D (pages 26 and 43) 
+
+What is the set  S on the top of page 30? Superdomain (Candidate Domain)?
+
+People will likely need reminding that the relation A on the top of page 31 is the relation involving angle measures defined at the top of page 28
+
+It is unclear what "both of these teaching practices" is at the bottom of page 35... There are 3 bullet points.
+
+On p. 81, the scenario is unclear. What is the input quantity, x? Does (6,600) mean that after 6 hours, the factory was making 600 candies per hour? Or... Do you mean that C is a function that outputs the number of candies made per hour, or is C the name of a function that outputs the total number of candies made after making candies for x hours?
+
+Gary:
+
+(1) If possible, when finished, could you please provide the final LaTex files with all supporting files, style files, and packages? Dr. Huang will send you a log file showing the errors he is getting when he tries to compile the file.
+
+(2) We can then either compile the homework in a separate file to hand out or else if you can make a separate page for the homework without the instructor notes.
+
+(3) Definition of set membership on p. 2: Note that the ?rule? for set membership may be given in many ways, not just an algebraic rule. For example, graphical, table, list, description.
+
+Suggestion: x satisfies set membership rules for A, which may be given as a formula, a graphical representation, a table/list, or a verbal description.
+
+(4) p. 3, symbol for not divides is not common: b |\ a ?  rather than the slash going through the vertical line, as in: ?? we weren?t sure if that was intended.
+
+(5) p. 4 ? these properties are also true for C and Q. Is it worth discussing to what groups of numbers these apply to?
+
+(6) Sample proof. Second claim is incorrect, A and B are reversed and also in the final conclusion.
+
+(7) Please add a page break before each section to make it easier for printouts.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 	
@@ -368,6 +404,7 @@ An integer $n$ is \underline{\it composite} if $n\neq 0, \pm 1$, and it is not p
 
 \newpage
 \subsection{Sample handwritten proof}
+\label{s: sample handwritten proof}
 
 Let's use one of the proofs we did in class as an example.  We begin with the typed up version and then show one way that this same proof might be handwritten.
 
@@ -379,9 +416,19 @@ If $A=\{ 3n \st n \in \Z\}$ and $B=\{ 6n \st n\in \Z\}$, then $B\subsetneq A$.
 Given $A=\{ 3n \st n \in \Z\}$ and $B=\{ 6n \st n\in \Z\}$. 
 
 \begin{enumerate}
-\item {\it Why $A\subset B$}: This was done in the claim we just showed. \qedpart{1}
+\item {\it Why $B\subset A$}: This means showing: if $x\in B$, then $x\in A$.
 
-\item {\it Why there is an element of $B$ that is not in $A$.}
+Given $x\in B$. Then:
+	\begin{eqnarray*}
+	x &=&6k, k\in \Z, \tn{ by definition of $B$} \\ 
+	   &=& 3\cdot 2k \\ 
+	   &=& 3n, n\in \Z, \tn{ because $2\in \Z, k\in \Z$, and $\Z$ is closed under multiplication}
+	\end{eqnarray*}
+Therefore $x$ satisfies set membership rules of $A$, implying $x\in A$. 
+
+We have shown that if $x\in B$, then $x\in A$. Thus $B\subset A$, by definition of subset. \qedpart{1}
+
+\item {\it Why there is an element of $A$ that is not in $B$.} We find an element of $A$ that is not in $B$.
 If $x\in B$, then $x$ is an even number because if $x=6k$ for some $k\in\Z$, then $x$ as $x=2\cdot (3k)$. Closure of multiplication in $\Z$ implies $3k\in \Z$, so $x$ satisfies the definition of even number. 
 
 However, some members of $A$ are odd numbers: $3, 9, 15, \dots $. 
@@ -389,28 +436,29 @@ However, some members of $A$ are odd numbers: $3, 9, 15, \dots $.
 Hence there are elements of $A$ that are not in $B$. \qedpart{2}
 
 \end{enumerate}
-Why this means $B\subsetneq A$: We showed $B\subset A$ and found elements of $A$ not in $B$. By definition of $\subseteq$, we have $A\subsetneq B$.
+Why this means $B\subsetneq A$: (1) and (2) show that $B$ and $A$ satisfy the definition of strict subset, and we have $B\subsetneq A$.
 \end{proof}
 \end{mdframed}
 
-\begin{mdframed}
-{}
-[Handwritten version of this proof goes here]
+\begin{mdframed}\begin{center}
+\includegraphics[width=3in]{0_SampleProof.pdf}
+\end{center}
 \end{mdframed}
-\todo{Ch 0: Create handwritten version of proof, insert in reference for section 1}
 
 
 
 %%%%%%%% 0 REFERENCE: GOOD PROOF COMMUNICATION %%%%%%%%%%%
 \newpage
 \subsection{Good proof communication}
+\label{s: good proof communication}
 
 Here is the same proof, with key features pointed out. These features are explained at the bottom. In general, you want to incorporate most if not all of these features into any proof you write. Even though it might seem strange at first, you may find eventually that you learn math better when you develop the habits of incorporating these features into your own writing and being aware of these features in proofs you encounter.
 
-\begin{mdframed}{}
-[Handwritten version of this proof goes here]
+\begin{mdframed}
+\begin{center}
+\includegraphics[width=3in]{0_SampleProof_Annotated.pdf}
+\end{center}
 \end{mdframed}
-\todo{Ch 0: After creating handwritten version of this proof, label the features below by number.}
 
 
 \begin{minipage}{5.5in}
@@ -424,7 +472,7 @@ Features of communicating proof well:
 \item {\bf State the claim precisely.}
 \item {\bf Label the proof beginning.}
 \item Begin a proof by reminding yourself and readers of the starting point:\\ the conditions of the claim.
-\item End the proof with where you need to go: the conclusions of the claim.
+\item {\bf End the proof with where you need to go: the conclusions of the claim.}
 \item Summarize your approach to the reader. 
 \item {\bf Label the proof end.} A traditional way is to use a box.
 \item {\bf Write up parts within a proof properly}. {\bf Label when they begin and end.}
@@ -441,6 +489,7 @@ Features of communicating proof well:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 	
 %%%%%% LESSON 1 %%%%%%%%%%%%%%%%%%%%	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\newpage
 \section{Sets, Claims, Negations (Week 1) (Length: 2.5 hours)}  % Use Title Case for Title
 \label{s: sets}
 %%%%%%%%% 1 OVERVIEW  %%%%%%%%%%%%%%%%%%%%
@@ -800,9 +849,19 @@ If $A=\{ 3n \st n \in \Z\}$ and $B=\{ 6n \st n\in \Z\}$, then $B\subsetneq A$.
 Given $A=\{ 3n \st n \in \Z\}$ and $B=\{ 6n \st n\in \Z\}$. 
 
 \begin{enumerate}
-\item {\it Why $A\subset B$}: This was done in the claim we just showed. \qedpart{1}
+\item {\it Why $B\subset A$}: This means showing: if $x\in B$, then $x\in A$.
 
-\item {\it Why there is an element of $B$ that is not in $A$.}
+Given $x\in B$. Then:
+	\begin{eqnarray*}
+	x &=&6k, k\in \Z, \tn{ by definition of $B$} \\ 
+	   &=& 3\cdot 2k \\ 
+	   &=& 3n, n\in \Z, \tn{ because $2\in \Z, k\in \Z$, and $\Z$ is closed under multiplication}
+	\end{eqnarray*}
+Therefore $x$ satisfies set membership rules of $A$, implying $x\in A$. 
+
+We have shown that if $x\in B$, then $x\in A$. Thus $B\subset A$, by definition of subset. \qedpart{1}
+
+\item {\it Why there is an element of $A$ that is not in $B$.} We find an element of $A$ that is not in $B$.
 If $x\in B$, then $x$ is an even number because if $x=6k$ for some $k\in\Z$, then $x$ as $x=2\cdot (3k)$. Closure of multiplication in $\Z$ implies $3k\in \Z$, so $x$ satisfies the definition of even number. 
 
 However, some members of $A$ are odd numbers: $3, 9, 15, \dots $. 
@@ -810,9 +869,8 @@ However, some members of $A$ are odd numbers: $3, 9, 15, \dots $.
 Hence there are elements of $A$ that are not in $B$. \qedpart{2}
 
 \end{enumerate}
-Why this means $B\subsetneq A$: We showed $B\subset A$ and found elements of $A$ not in $B$. By definition of $\subseteq$, we have $A\subsetneq B$.
+Why this means $B\subsetneq A$: (1) and (2) show that $B$ and $A$ satisfy the definition of strict subset, and we have $B\subsetneq A$.
 \end{proof}
-
 
 \begin{claim*}
 If $A=\{f:\R\to \R, x\mapsto 16^{ax} \st a\in \Q\}$ and $B=\{f:\R\to \R, x\mapsto 2^{ax} \st a\in \Q\}$, then $A=B$.
@@ -833,9 +891,16 @@ Why the above means that $A=B$:
 \end{proof}
 
 \begin{bignote}[Modeling proof communication]
+One way that we have found helpful for modeling proof communication is to write on the board a sample proof, that appears like what would want students to turn in the proof as homework. 
 
-\vspace*{2in}
-\end{bignote} \todo{Ch 1: write instructor note modeling proof communication, use the proof of strict subset, point out relevant handout from Section 0}
+For instance, in writing up the proof that $B\subsetneq A$, you might write it on the board as shown in the sample handwritten version on p.~\pageref{s: sample handwritten proof}.  
+
+To model proof structure/logic, you might start by writing the claim, followed by ``Proof'', ``given \dots'' and ``$\implies B\subsetneq A$'' (at the bottom of the board or wherever you expect the proof to end), and then remind the students that proving this claim means beginning with the givens and deducing the conclusion. We have found that doing this consistently for all proofs throughout the semester helps students understand the concept of proving a claim.
+
+Then after completing the inside of the proof, you might annotate it with colored chalk as shown on p.~\pageref{s: good proof communication}, talking about the reasoning behind why these features are helpful.
+
+You could then distribute the contents of pp.~\pageref{s: sample handwritten proof}-\pageref{s: good proof communication} and ask the students for comments or questions about communicating proof.
+\end{bignote}
 
 %%%%%%%%%%%%%%%%%%%%%
 \subsection{Mathematical statements and their negations}
@@ -4003,11 +4068,13 @@ On what subset of the domain of cosine do each of your candidates serve as a tru
 \section{Comparing Correspondence and Covariation Views of Functions}
 \label{s: function covariation}
 
+\smallnote{Begin the class by reviewing Homework 3 Problems \ref{h: covariation intro morgan} and \ref{h: covariation linear relationship nonlinear variables}.}
+
 \subsection{Introducing covariation}
 
 So far we have been looking at things from a {\it correspondence view}, meaning that we primarily think of functions in terms of individual inputs and the images to which they are assigned. In other words, we focus on how inputs and outputs correspond. This perspective can be very useful for defining things like domain, range, composition, or inverse. However, this perspective can be at a distinct disadvantage when it comes to looking at the behavior of a function or of understanding how changes in the input and output variables influence each other. 
 
-By {\it covariational view}, we mean understanding how changing the value of one variable impacts the value of the other variable, and learning to coordinate changes in one variable with changes in the other. We use the Morgan Minicase\footnote{(c) 2013, Educational Testing Service, used with permission} to introduce the difference between correspondence and covariational views. This minicase also introduces the teaching practice of {\it recognizing and explaining correspondence and covariation views}.
+By {\it covariational view}, we mean understanding how changing the value of one variable impacts the value of the other variable, and learning to coordinate changes in one variable with changes in the other. We saw this already in Homework 3 Problems \ref{h: covariation intro morgan} and \ref{h: covariation linear relationship nonlinear variables}. We use the Morgan Minicase\footnote{(c) 2013, Educational Testing Service, used with permission} to dig deeper into the difference between correspondence and covariational views. This minicase also introduces the teaching practice of {\it recognizing and explaining correspondence and covariation views}. 
 
 %Morgan item
 
@@ -4311,6 +4378,23 @@ How would you explain this from a covariation view?
 
 {\it Covariation view.} If $f$ is changing at a rate of 5 output units to 1 input unit, and we want to compose this with something that will get us back to 1 output unit per input unit (to satisfy the equation $f^{-1}\circ f(x)=x$), then we need $f^{-1}$ to slow the input $f(x)$ down by $\frac{1}{5}$ output units per input unit. So $f^{-1}$ is a linear function with with constant rate of change $\frac{1}{5}$.
 
+\subsection{Bottle Problem}
+
+\smallnote{This is a fun problem to do, time permitting. It builds off the idea of the Pot Problems from Homework 3 and is a nice example of covariational reasoning.}
+
+\begin{task}
+\begin{minipage}{5in} \raggedright \parskip4pt
+Sketch a graph of the volume of water in the bottle as a function of the height, as the bottle is being filled up with water. 
+
+Then sketch volume as a function of height. 
+\end{minipage}
+\begin{minipage}{1.1in}
+\begin{center}
+    \includegraphics[width=0.6in]{4_Bottle}
+\end{center}
+\end{minipage}
+\end{task}
+
 \subsection{Revisiting a key example}
 
 Let us look back at a key example from the beginning of class. 
@@ -4462,7 +4546,7 @@ the $y$-intercept is 1. That means the equation is $y = 5x + 1$.
 \\ \hline
 Student B: &  I just looked at the value of $y$ and saw that it kept increasing by 5, so $m =
 5$. Then I subtracted that number from the first value
-of y in the table, so $b = 1$. You always put m times x and add the b, so the
+of y in the table, so $b = 1$. You always put $m$ times $x$ and add the $b$, so the
 equation is $y = 5x + 1$.
 \\ \hline
 Student C: & For this function, I saw that you can always multiply the value of $x$ by 5
@@ -4653,28 +4737,32 @@ Let us look back at a key example from the beginning of class.
 
 
 \begin{bignote}
-We recommend assigning one or two parts of each of a subset of the questions, depending on your perception of what your students would most benefit from. If you assign part of question 0, you might use google forms or another online submission so that you can read over responses prior to the next time you see your class. 
+Chapter 3 Homework Problems \ref{h: covariation intro morgan} and \ref{h: covariation linear relationship nonlinear variables} are used to set up Chapter 4 material. If Problem \ref{h: covariation linear relationship nonlinear variables} seems too long, it would work to assign only (a) and (c).
+
+Chapter 4 Homework Problems \ref{h: horizontal shift intro} and \ref{h: horizontal scale intro} are used to set up Chapter 5 material.
+
+From remaining problems of these chapters, we recommend assigning one or two parts of each of a subset of the questions, depending on your perception of how your students would most benefit. If you assign part of question 0, you might use google forms or another online submission so that you can read over responses prior to the next time you see your class. 
 
 When grading the proof questions, we have often awarded full credit only to proofs that are both correct and that follow the proof communication guidelines established in Chapters 0 and 1. 
 
-The purpose of the problems here are as follows:
+The purpose of these problems are as follows:
 	\begin{enumerate}
 	\item  Invertible functions; inverse of an invertible functions and non-invertible functions; correspondence view.
-	\item Invertible functions; correspondence view; exploratory. If you assign this question, you may want to warn your students that you do not expect a complete response, but you do expect them to try their best.
+	\item Invertible functions; correspondence view; exploratory. If this question is assigned, it may be worth saying to students that you only expect as complete of a response as their best effort.
 	\item Invertible function; correspondence view.
 	\item Partial inverse of a function and how to construct them; correspondence view
-	\item Introducing a definition
-	\item Explaining a mathematical ``test'' of a property
-	\end{enumerate}
-	
-	\begin{enumerate}[resume]
+	\item Explaining a mathematical ``test'' of a property; note that the last three may go somewhat beyond the scope of your course, depending on your students' background
+	\item (Sets up Chapter 4) Introducing covariation; Morgan Minicase embedded problem
+	\item (Sets up Chapter 4) Introducing covariation; linear relationship between two nonlinear relationships. I
 	\item Invertible function; recognizing and explaining correspondence and covariation views
-	\item Correspondence and covariation views for inverse and composition; follow up from Homework 2 Problem \ref{h: composition correspondence} (p.~\pageref{h: composition correspondence})
+	\item Correspondence and covariation views for composition; follow-up to Chapter 2 Problem \ref{h: composition correspondence} (p.~\pageref{h: composition correspondence})
+	\item (Sets up Chapter 5) Introducing horizontal shifts; covariation view.
+	\item (Sets up Chapter 5) Introducing horizontal scaling; covariation view.
 	\end{enumerate}
 	
 Additionally, we include two Simulations of Practice (SoP), whose titles and purposes are:
 	\begin{itemize}
-	\item (Written) Concept of Function: Noticing student thinking; Using definition of graph of an equation; covariation view.
+	\item (Written) Concept of Inverse: Introducing a definition; definition of invertible function and its inverse; using definition of graph of an equation; covariation view.
 	\item (Video) Concepts of Linear Equations and Graphs: Noticing student thinking; Comparing covariation and correspondence views.
 	\end{itemize}
 	
@@ -4685,7 +4773,7 @@ Throughout the \MODULES materials, written SoPs engage prospective teachers in p
 \begin{enumerate}
 \setcounter{enumi}{-1}
 \item In these chapters, we learned about:
- 	\begin{itemize}
+ 	\begin{itemize*}
 	\item Functions and invertible functions
 	\item Partial inverse of a function and how to construct them
 	\item Correspondence and covariation views for inverse and composition
@@ -4696,7 +4784,7 @@ Throughout the \MODULES materials, written SoPs engage prospective teachers in p
 		\item Noticing student thinking
 		\item Recognizing and explaining correspondence and covariation views.
 		\end{itemize*}
-	\end{itemize}
+	\end{itemize*}
 	For each of these ideas: 
 	\begin{enumerate}
 	\item Where in the text are these ideas located?
@@ -4746,22 +4834,6 @@ Then:
 	\item On what subset of the domain of cosine do each of your candidates serve as a true inverse? On what subset of the domain of cosine do your candidates serve as only a partial inverse?
 	\end{enumerate}
 	
-\item % Introducing a definition
-Plan an introduction to the definitions of 
-	\begin{enumerate}
-	\item invertible function and non-invertible function
-	\item inverse of an invertible function
-	\end{enumerate}
-Break down your plan into the following sections. In communicating this plan, place these sections separately from each other and label them.
-	\begin{itemize}
-	\item An activity that introduces examples and non-examples of the definition. State the activity in exactly the way that you would provide it to students on a worksheet or presentation.
-	\item Why this activity is appropriate for motivating the definition. 
-	\item Precise statement of the definition.
-	\item Interpreting the statement of the definition in terms of the examples/non-examples.
-	\item An activity that you would use to help students work with the definition in terms of two different representations of the same idea. (These representations may include: algebraic, tabular, graphical, verbal.)
-	\item An ideal response to the question: ``How do these representations show the same mathematical idea?'' 
-	\end{itemize}
-
 % Explaining a mathematical ``test'' of a property
 \item  Explain the following tests of a mathematical property using the structure 
 discussed in Section \ref{s: mathematical test of a property} (beginning p.~\pageref{s: mathematical test of a property}). In communicating your explanation, place the different sections of the structure separately from each other and label them.
@@ -4773,12 +4845,55 @@ discussed in Section \ref{s: mathematical test of a property} (beginning p.~\pag
 	\begin{enumerate}[resume]
 	\item Testing points on a graph of a linear inequality to see which side to shade (e.g., \url{http://www.wtamu.edu/academic/anns/mps/math/mathlab/beg_algebra/beg_alg_tut24_ineq.htm}).
 	
-	{\it Note:} The definition of graph of an inequality in $x$ and $y$ is similar to that of graph of an equation: It is the set of points $(a, b)$ that if you evaluate the inequality at $x=a$ and $y=b$, you get a true statement.
+	{\it Note:} The definition of graph of an inequality in $x$ and $y$ is similar to that of graph of an equation: It is the set of points $(a, b)$ that if you evaluate the inequality at $x=a$ and $y=b$, you get a true statement. The property being tested here is of a half-plane, and whether the points in that half-plane satisfy a given inequality.
 	
 	\item Direct comparison test (for convergence of a series).
 	\item Ratio test (for convergence of a series).
 	\end{enumerate}
-\end{enumerate}	
+
+\item \label{h: covariation intro morgan}
+Examine the table to the right. Based on the given information, discuss how change in $x$ appears to impact change in $y$. 
+
+\begin{minipage}{5in}\raggedright
+	\begin{enumerate}
+	\item If $x$ changes by $\pm 1$ units, how does $y$ appear to change?
+	\item If $x$ changes by $\pm h$ units, how does $y$ appear to change, in terms of $h$?
+	\item Based on how change in $x$ impacts change in $y$, and using the given data, describe how you would find a plausible value of $y$ when $x$ is $0$. 
+	\end{enumerate}
+\end{minipage}
+\begin{minipage}{1in}
+\vspace*{-12pt}
+\begin{center}
+\begin{tabular}{c|c}
+$x$ & $y$ \\ \hline
+3 & 16 \\
+5 & 26 \\
+6 & 31 \\
+9 & 46 \\
+\end{tabular}
+\end{center}
+\end{minipage}
+
+\item \label{h: covariation linear relationship nonlinear variables}
+Pot A and Pot B have the radial cross section shown below. (This means that to get the shapes of Pot A and Pot B, you can rotate this cross section around a central axis.) The sides of Pot A are vertical. Both pots have a 1 gallon capacity.
+
+\begin{enumerate}
+\item Water is being poured into Pot A at an unsteady pace. Draw a graph that represents the relationship between volume of water and height of the water, with volume as input variable, height as output variable.
+\item Draw a graph that represents the same relationship for Pot A, but this time with height as an input variable and volume as output variable.
+\item Water is being poured into Pot B at an unsteady pace. Draw a graph that represents the relationship between volume of water and height of the water, with volume as input variable, height as output variable.
+\item Draw a graph that represents the same relationship for Pot B, but this time with height as an input variable and volume as output variable.
+\end{enumerate}
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}[thick, scale=0.5]
+\draw (-0.2, 5) -- (0,5) -- (0,0) node[below right]{Pot A}-- (3,0)-- (3, 5) -- (3.2, 5);  
+\draw[xshift=10cm] (-1-0.2, 5) -- (-1,5) -- (0,0) node[below right]{Pot B}-- (2,0)-- (3, 5) -- (3.2, 5);  
+\end{tikzpicture}
+\end{center}
+
+	
+\newpage
 
 \subsubsection*{Chapter \ref{s: function covariation}}
 \begin{enumerate}[resume]
@@ -4809,7 +4924,7 @@ Below are graphs of the relations $f$ and $g$. The pieces of these graphs are li
 
 
 \begin{center}
-\begin{tikzpicture}[scale=0.6]
+\begin{tikzpicture}[scale=0.4]
 \draw (0,-2.5) -- (0, 3.5) node[above]{$y$};
 \draw (-6.25,0) -- (8.25,0) node [right]{$x$};
 \foreach \x in {-6,-5,-4,...,8}
@@ -4824,14 +4939,52 @@ Below are graphs of the relations $f$ and $g$. The pieces of these graphs are li
 \draw[ultra thick, dashed, blue] (-2,3) -- (-5.5,3); 
 \end{tikzpicture}
 \end{center}
-
-% noticing student thinking: SoP 1 and SoP 2
 \end{enumerate}
 
-%%%%%%%%% PART II WRITTEN SIMULATION OF PRACTICE  %%%%%%%%%%%%
-\newpage \subsection{Simulation of Practice: Concept of Function}
+Problems \ref{h: horizontal shift intro} and  \ref{h: horizontal scale intro} use the diagram below. Pot B has the radial cross section shown and has a 1 gallon capacity.
 
-% SoP goals: Noticing student thinking; Using definition of graph of an equation; covariation view.
+
+\begin{center}
+\begin{tikzpicture}[thick, scale=0.5]
+\draw[xshift=0cm] (-1-0.2, 5) -- (-1,5) -- (0,0) node[below right]{Pot B}-- (2,0)-- (3, 5) -- (3.2, 5);  
+% \draw[xshift=10cm,xscale=2] (-1-0.1, 5) -- (-1,5) -- (0,0) node[below right]{Pot D}-- (2,0)-- (3, 5) -- (3.1, 5);  
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[resume]
+\item \label{h: horizontal shift intro}
+Let $B$ be the function that maps volume of water in Pot B to height of water, when Pot B starts empty.
+
+Let $C$ be the function that maps volume of water in Pot B to height of water, when Pot B starts with 4 cups of water already in it. (Look up how many cups are in a gallon.)
+
+Let $v$ represent volume and $h$ represent height.
+	\begin{enumerate}
+		\item Graph $h=B(v)$ and $h=C(v)$ on the same set of $v$-$h$ axes.
+		\item How do the graphs of $B$ and $C$ relate? Why does this make sense?
+	\end{enumerate}
+
+\item \label{h: horizontal scale intro}
+Pot D fills up at twice the rate as Pot B, meaning that the rate of change of height with respect to volume for Pot D is twice that of Pot B. 
+	\begin{enumerate}
+	\item If Pot D and Pot B are equally tall, how much volume does Pot D hold?
+	\item Let $D$ be the function that maps volume of water in Pot D to height of water, when Pot D starts empty. Graph $h=B(v)$ and $h=D(v)$ on the same set of $v$-$h$ axes.
+	\item Which of the following best captures the relationship between $B(v)$ and $D(v)$?
+	
+		
+		$$B(v)=2D(v) \quad\quad \quad
+		B(v)=D(2v) \quad\quad \quad
+		B(v)=\frac{1}{2}D(v) \quad\quad\quad 
+		B(v)=D(\frac{1}{2}v) $$
+		
+	\end{enumerate}
+\end{enumerate}
+
+
+
+%%%%%%%%% PART II WRITTEN SIMULATION OF PRACTICE  %%%%%%%%%%%%
+\newpage \subsection{Simulation of Practice: Concept of Inverse}
+
+% SoP goals: Noticing student thinking; Using definition of invertible function and inverse of an invertible function
 
 % Written SoPs might have the structure:
 %Providing an example of a task or context that high school students would encounter (for geometry and algebra or statistics, this might be a task that could be found in curricular materials; for modeling and also statistics, this might be a real world context that high school students would work with)
@@ -4841,7 +4994,72 @@ Below are graphs of the relations $f$ and $g$. The pieces of these graphs are li
 %Ask pre-service teachers to write a summary sentence or two they would use to conclude the discussion to get at the mathematical point of the discussion.
 %Ask pre-service teachers to write a follow-up task or context that they might assign after this discussion concludes.
 
-Something with Hillyard item question
+Suppose that you are teaching high school pre-calculus and you are introducing the concept of inverse of an invertible function. The students have already learned the definition of invertible function.  
+
+Here is a task that you plan to use:
+
+	\begin{mdframed}
+	 A pot has straight vertical sides, stands 6 inches tall, and has 2 gallon capacity.  Water is being poured into this pot. 
+		\begin{enumerate}[label=(\alph*)]
+		\item Draw a picture of this pot.
+		\item Find the relationship between $v$, for a volume of water poured into the pot, and $h$, the height of water in the pot at that volume. Graph this relationship.
+		\item If there is $\frac{3}{4}$ gallon of water in the pot, how high is the water level?
+		\item If the water level in the pot is $3$ inches high, how much water is in the pot?
+		\item If the water level is $3.5$ inches high, how much water is in the pot?
+		\end{enumerate}
+	\end{mdframed}
+	
+You would like your class to understand both of the following definitions, and how these definitions can be interpreted using different representations, especially algebraic, graphical, and verbal.
+
+	\begin{mdframed}
+	{\bf Definition 1.}  Given an invertible function $f$, the inverse of $f$ is the function that maps $y\mapsto x$ whenever $x \mapsto y$ is an assignment of $f$. The inverse function is denoted $f^{-1}$.
+	
+	{\bf Definition 2.} Given an invertible function $f$, the inverse of $f$ is the function such that for all $x$ in the domain of $f$, we have $f^{-1}\circ f(x)=x$.
+	\end{mdframed}
+
+Break down your plan into the following sections. In communicating this plan, place these sections separately from each other and label them. The page limit for this plan is 2 pages (meaning 1 page double-sided or 2 pages single-sided.)
+
+	\begin{itemize}
+	\item {\bf Goals for the lesson}. Write this to be consistent with the scenario described above as well as the sections below. You may need to revise/reword this part as you work through the rest of the planning. (This is a very normal thing to happen when planning a lesson.)
+	\item {\bf Solution to the task}. Include at least least three different solutions to (e). 
+	\item {\bf Motivating example.}  Write down what you would say after the class has completed the activity to introduce the concept of inverse of a function. In this description, work in the notation you would use to refer the function being inverted, and how you would define this function and its inverse.
+	\item {\bf Key terminology.} State the order that you would bring in each of Definitions 1 and 2. Then list the phrases or terminology in these definitions that you think students would benefit from discussion to understand.
+	\item {\bf Illustrating concept with multiple representations.} Describe how you would use the problem context, algebraic notation, and graph to help students make sense of these phrases or terminology, and then the definition.
+		\begin{itemize}
+		\item What are 2-3 questions you would ask to lead a discussion on this?
+		\item For each question, what would you anticipate students to respond?
+		\item For each question, what would an ideal response be?
+		\end{itemize}
+	\item {\bf Mathematical equivalence of definitions.} Suppose you ask the class the question: ``Why are these two definitions saying the same thing?'' 
+		\begin{itemize}
+		\item What would you anticipate students to respond to this question?
+		\item Describe two ideal responses to this question, one using the example, and one that is a general explanation.
+		\end{itemize}
+	\item {\bf Summary.} Write down a summary sentence or two that you would use to conclude the discussion. This sentences should be short enough to be easy to say, and drive home the main mathematical point of the lesson.
+	\item {\bf Follow up.} Write a task you would assign for homework to launch a discussion on how to understand the following statement: if $f$ is an invertible function and $y=f(x)$, then $y=f^{-1}(x)$.
+	\end{itemize}
+	
+\newpage
+
+\subsubsection*{Feedback chart}
+
+\begin{center}
+\begin{tabular}{|L{2in}|L{2in}|L{2in}|}
+\hline
+{\bf Descriptor} & {\bf Meets Expectations} & {\bf Does Not Meet Expectations} \\ \hlineAre anticipated solutions realistic?	
+& Both correct and incorrect solutions are generated using a variety of methods.	
+& Solutions are not reasonable and/or do not include a variety of method and/or no correct solution is provided. \\ \hlineIs the whole class discussion plan reasonable? &	Discussion questions are included that follow a logical path and will move student thinking forward.&	Discussion questions are not logically sequenced and/or not appropriate to move thinking forward. 
+\\ \hlineAre anticipated student responses for the whole class discussion reasonable?	& Anticipated student responses are reasonable. &	Anticipated student responses are unreasonable or not included.
+\\ \hlineWill the task posed move thinking toward understanding the statement, {\it if $f$ is an invertible function and $y=f(x)$, then $y=f^{-1}(x)$}? &	Task provided will move students toward understanding statement.	
+& Task provided does not logically follow from previous and/or will not move toward understanding the statement. 
+\\ \hline
+\end{tabular}
+\end{center}
+
+\subsubsection*{Reflection Prompt (to be completed after receiving feedback)}
+\begin{enumerate}
+\item What are some take-aways for you about using student thinking in moving toward a learning goal?\item When you teach this concept in the future, what will you change?  What will you keep?  For what reasons? \end{enumerate}
+
 
 %%%%%%%%% PART II VIDEO SIMULATION OF PRACTICE  %%%%%%%%%%%%
 \newpage \subsection{Simulation of Practice: Concepts of Linear Equations and Graphs}
@@ -4858,9 +5076,75 @@ Something with Hillyard item question
 %Give feedback to student that they would be able to use in their future work in mathematics
 %
 
+{\it (This simulation of practice is an adaptation of the Allen Minicase, part of the Content Knowledge for Teaching Minicases project of the Educational Testing Service.)}
 
-Allen item SoP
-specify that Jing's solution is not correct
+Suppose that you are working with your students to review for an end of year Algebra I exam. You include the following problem on a worksheet of practice problems that they completed for homework.
+
+\begin{center}
+\begin{minipage}{0.85\textwidth}
+While visiting New York City, John kept track of the amount of money he spent on transportation by recording the distance he traveled by taxi and the cost of the ride.
+
+\begin{center}
+\begin{tabular}{C{1.2in}|C{1in}}
+Distance, $d$, in miles & Cost, $C$, in dollars \\ 
+\hline
+3 & 8.25 \\
+5 & 12.75 \\
+11 & 26.25 \\
+\end{tabular}
+\end{center}
+
+Show that the data can be represented by the linear function $C=2.25d+1.5$.
+\end{minipage}
+\end{center}
+
+Your students used different methods to solve the problem; two solutions that you would like to go over with the class are that of Jing's and Matt's. You notice that one of these solutions is correct, and the other one has a mathematical error.
+ 
+ \begin{tabular}{C{0.45\textwidth}|C{0.4\textwidth}}
+ Jing & Matt  \\ 
+ \hline 
+$$  \frac{12.75 - 8.25 }{5-3}=\frac{4.50}{2}=2.25  $$
+ \begin{eqnarray*} 
+ C-26.25&=&2.25 (d-11) \\ 
+C - 26.25 &=& 2.25d - 24.75\\
+C &=& 2.25d + 1.5
+ \end{eqnarray*}
+  & 
+   \begin{eqnarray*} 
+  2.25 (3) + 1.5 &=& 8.25\\
+2.25 (5) + 1.5& = &12.75 \\
+  2.25 (11) + 1.5 &=& 26.25
+   \end{eqnarray*}
+ \end{tabular}
+
+You are planning what you might say to the class in response to these methods. 
+
+{\bf Record a video of yourself providing a response to students with these solution methods}
+
+\begin{enumerate}
+\item Summarize what Jing and Matt may be thinking.
+\item Say what is worthwhile about Jing's thinking and Matt's thinking.
+\item Help the students complete their thinking (if there are gaps in the thinking), prompt the students to investigate an error, or help the students move forward in their thinking.
+\item Give specific feedback to students that they would be able to use in their future work in mathematics.
+\end{enumerate}
+
+
+\newpage
+
+\subsubsection*{Feedback chart}
+
+\begin{center}
+\begin{tabular}{|L{2in}|L{2in}|L{2in}|}
+\hline
+{\bf Descriptor} & {\bf Meets Expectations} & {\bf Does Not Meet Expectations} \\ \hline
+Is the summary of studentthinking reasonable?& Summary points to reasonableexplanation of studentresponses.& Summary does not attend towhat students might have beenthinking. \\ \hlineIs the response to student 1reasonable?& Response to student 1appropriately helps the studentcomplete their thinking,prompts the student toinvestigate an error, or helpsthe student move forward intheir thinking.& Response to student 1 doesnot accurately assess studentunderstanding and move thestudent in a reasonabledirection. \\ \hlineIs the response to student 2reasonable?& Response to student 2appropriately helps the studentcomplete their thinking,prompts the student toinvestigate an error, or helpsthe student move forward intheir thinking.& Response to student 2 doesnot accurately assess studentunderstanding and move thestudent in a reasonabledirection. \\ \hlineIs the mathematical languageused appropriate?& Oral description ofmathematical ideas usesaccurate mathematicallanguage.& Oral description ofmathematical ideas does notuse accurate mathematicallanguage.\\ \hline
+\end{tabular}
+\end{center}
+
+
+\subsubsection*{Reflection Prompt (to be completed after receiving feedback)}
+\begin{enumerate}
+\item What are some take-aways for you about using student thinking in moving toward a learninggoal?\item In light of this experience, what are the mathematical points you will make sure to highlightwhen you teach this in the future? What will you deemphasize? For what reasons?\end{enumerate}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -4914,6 +5198,8 @@ This set of lessons is shorter so that you can have time to conduct a review ses
 %%%%%%%% 5-6 CONTENT %%%%%%
 \newpage
 \subsection{Many ways to compose to the same function}
+
+\todo{Ch 5: Go over the problems that were assigned in Homework 4}
 
 \todo{Ch 5: Read over and add narrative}
 \begin{task}
