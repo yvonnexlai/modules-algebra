@@ -180,46 +180,6 @@ The Mathematics Of Doing, Understand, Learning, and Educating Secondary Schools 
 \listoftodos
 \tableofcontents
 \newpage \pagenumbering{arabic}
-
-
-\todo{all chapters: respond to Jeremy's and Gary's comments}
-
-Jeremy:
-
-p.23, should inverse of a relation line end in *mathematical* equivalence
-
-p.24 should last line say arrows ending *at* a number or not.
-
-On p.24, should the preimage definition say "... of D that map to ***the element of R***
-
-In Def. 2.4, should it say R' /subset R rather than R /subset D (pages 26 and 43) 
-
-What is the set  S on the top of page 30? Superdomain (Candidate Domain)?
-
-People will likely need reminding that the relation A on the top of page 31 is the relation involving angle measures defined at the top of page 28
-
-It is unclear what "both of these teaching practices" is at the bottom of page 35... There are 3 bullet points.
-
-On p. 81, the scenario is unclear. What is the input quantity, x? Does (6,600) mean that after 6 hours, the factory was making 600 candies per hour? Or... Do you mean that C is a function that outputs the number of candies made per hour, or is C the name of a function that outputs the total number of candies made after making candies for x hours?
-
-Gary:
-
-(1) If possible, when finished, could you please provide the final LaTex files with all supporting files, style files, and packages? Dr. Huang will send you a log file showing the errors he is getting when he tries to compile the file.
-
-(2) We can then either compile the homework in a separate file to hand out or else if you can make a separate page for the homework without the instructor notes.
-
-(3) Definition of set membership on p. 2: Note that the ?rule? for set membership may be given in many ways, not just an algebraic rule. For example, graphical, table, list, description.
-
-Suggestion: x satisfies set membership rules for A, which may be given as a formula, a graphical representation, a table/list, or a verbal description.
-
-(4) p. 3, symbol for not divides is not common: b |\ a ?  rather than the slash going through the vertical line, as in: ?? we weren?t sure if that was intended.
-
-(5) p. 4 ? these properties are also true for C and Q. Is it worth discussing to what groups of numbers these apply to?
-
-(6) Sample proof. Second claim is incorrect, A and B are reversed and also in the final conclusion.
-
-(7) Please add a page break before each section to make it easier for printouts.
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 	
 %%%%%% PART 1 %%%%%%%%%%%%%%%%%%%%%	
@@ -253,7 +213,9 @@ $P(x)$ & A proposition about the variable $x$; may be true or false depending on
 
 $\{x \in D\st P(x)\}$ 
 
-$\{x\in D \hspace*{2.5pt}|\hspace*{2.5pt} P(x)\hspace*{.25pt}\}$ & The set of all elements of $D$ for which $P(x)$ is true (a subset of $D$)\\ 
+$\{x\in D \hspace*{2.5pt}|\hspace*{2.5pt} P(x)\hspace*{.25pt}\}$ & The set of all elements of $D$ for which $P(x)$ is true (a subset of $D$). 
+
+Note that the ``rule'' for set membership may be given in many ways, not just an algebraic rule. For example, graphical, table, list, description.\\ 
 
 $A \subseteq B$ & ``$A$ is a subset of $B$"  (a proposition about sets $A$ and $B$)\\
 
@@ -324,19 +286,19 @@ $\C$ & The set of {\em complex numbers} (all numbers of the form $a+bi$, where $
 
 %%%%%%%% 0 REFERENCE: PROPERTIES OF R and Z%%%%%%%%%%%
 \newpage
-\subsection{Properties of $\R$ and $\Z$} \label{s: properties of R and Z}
+\subsection{Properties of $\Z$, $\Q$, $\R$ and $\C$} \label{s: properties of R and Z}
 
 {\bf Operations are well-defined}
 \vspace*{-4pt}
 \begin{itemize}
 \item[] Well-defined: There is an answer, and there isn't more than one answer.
 
-\item[] Operations $+, -, \times$ on $\R$ are well-defined: This means that when we add two numbers, we get exactly one answer (we don't expect there two be two answers to ``What is $a+b$?'' and we expect that there is an answer); similarly, when we subtract one number from another, or multiply two numbers, we get exactly one answer.
+\item[] Operations $+, -, \times$ on $\R$ and $\C$ are well-defined: This means that when we add two numbers, we get exactly one answer (we don't expect there two be two answers to ``What is $a+b$?'' and we expect that there is an answer); similarly, when we subtract one number from another, or multiply two numbers, we get exactly one answer.
 
 \item[] Division by nonzero numbers is well-defined. (There is no good numerical answer to ``What is $a/0$?'')
 \end{itemize}
 
-{\bf Arithmetic Properties of $\Z$ and $\R$}
+{\bf Arithmetic Properties of $\Z$, $\Q$, $\R$ and $\C$}
 
 We state them below for $\Z$. They also hold for $\R$.
 
@@ -1526,7 +1488,7 @@ Let $A=\{5, 6, 10\}$ and $B=\{-1, -2, -3\}$. Draw an arrow representation of the
 \end{itemize*}
 We call these definitions the middle school, high school, and university versions to refer to when they most likely arise. 
 
-\emph{Inverse of a relation}, defined from these three perspectives; their mathematically equivalence.
+\emph{Inverse of a relation}, defined from these three perspectives; their mathematical equivalence.
 
 \emph{Composition of relations} $P:D\to D$ then $Q:D\to D$, defined 
 as the relation that assigns $x$ to $z$ whenever there is a $y\in D$ such that $P$ assigns $x\mapsto y$ and $Q$ assigns $y\mapsto z$. (See p.~\pageref{s: composition} for why we only consider the case $P:D\to D$ and $Q:D\to D$.)
@@ -1638,7 +1600,7 @@ The first statement is true:
 \vspace*{-8pt}
 These are represented by no arrows starting at a number, exactly one arrow starting at a number, and multiple arrows starting at a number.
 
-The second statement is also true. $0$ and $1$ have no children. All other numbers have multiple children (infinitely many, in fact). These are represented by arrows ending a number or not.
+The second statement is also true. $0$ and $1$ have no children. All other numbers have multiple children (infinitely many, in fact). These are represented by arrows ending at a number or not.
 \end{solution}
 
 %%%%%%% 2 CARTESIAN PRODUCT %%%%%%%%% 
@@ -1753,9 +1715,9 @@ For a relation $r:D \to R$, we say that
 	\item the \emph{image} of an element $x\in  D$ is the set of elements of $R$ that $x$ is mapped to. Similarly, the \emph{image} of a subset of $S\subset D$ is the subset of $R$ containing the images of all elements of $S$.
 	\item When a element in $D$ maps to no element in $R$, we say it has \emph{empty image}. If an element in $D$ does map to at least one element in $R$, we say it has \emph{nonempty image}.
 	\item the \emph{domain} of $r$ is the subset $D'\subset D$ of elements with nonempty image.
-	\item the \emph{preimage} of an element of $R$ is the set of elements of $D$ that map to $R$. Similarly, the \emph{preimage} of a subset $T\subset R$ is the subset of $D$ containing the preimages of all elements of $T$.
+	\item the \emph{preimage} of an element of $R$ is the set of elements of $D$ that map to that element of $R$. Similarly, the \emph{preimage} of a subset $T\subset R$ is the subset of $D$ containing the preimages of all elements of $T$.
 	\item When a element in $R$ has no element in $D$ mapping to it, we say it has \emph{empty preimage}. If an element in $R$ does have an element in $D$ mapping to it, we say it has \emph{nonempty preimage}.
-	\item the \emph{range} (or \emph{image}) of the relation $r$ is the subset $R\subset D$ with nonempty preimage.
+	\item the \emph{range} (or \emph{image}) of the relation $r$ is the subset $R'\subset R$ with nonempty preimage.
 	\end{itemize}
 \end{definition}
 
@@ -2002,7 +1964,7 @@ We can interpret this proof in terms of sets. Let $A$ be the set of assignments 
 \subsubsection{Composition of relations}
 \label{s: composition}
 
-In the remainder of this chapter, we work almost exclusively with cases where  $D, R, S = \N$, $D, R, S = \R$ or $D, R, S=\R^2$, and We make this choice for two main reasons:
+In the remainder of this chapter, we work almost exclusively with cases where  $D$ and $R$ are $\N$, $\R$, or $\R^2$. We make this choice for two main reasons:
 	\begin{itemize*}
 	\item Most examples of composition in middle school and high school mathematics are those where the candidate domain and candidate range can be both $\N$ (in middle school algebra), both $\R$ (in algebra), or both $\R^2$ (in geometry).
 	\item When the candidate domain and candidate range do not equal each other, the details of some results require more technical bookkeeping.The idea behind these results is more important for high school teaching than learning the technical bookkeeping.
@@ -2434,6 +2396,7 @@ Explain why it makes sense that folding the plane this way should always bring a
 
 In teaching, it is often useful to be able to provide these two kinds of explanation: specific and general. Specific explanations have to do with a particular example and may help the students be able to keep an image in mind. General explanations help students understand why the reasoning for a specific example applies to a larger class of objects.
 
+\newpage
 \subsection{Summary}
 
 \subsubsection*{Content}
@@ -2477,7 +2440,7 @@ To show that a point $(x, y)$ is on the graph of an equation means showing that 
 \item Go back and forth between the representations: where are the features of one representation located in the other representation?
 \end{itemize}
 
-For both of these teaching practices, it is helpful to be able to provide both specific and general explanations. 	\begin{itemize}
+For the teaching practices of connecting mathematically equivalent definitions and connecting different mathematical representations, it is helpful to be able to provide both specific and general explanations. 	\begin{itemize}
 	\item Specific explanations have to do with a particular example and may help the students be able to keep an image in mind. 
 	\item General explanations help students understand why the reasoning for a specific example applies to a larger class of objects.
 	\end{itemize}
@@ -4695,6 +4658,22 @@ How would you explain this from a covariation view?
 
 \end{enumerate}
 
+
+%%%%%%%%%%%%%% 3-4 BOTTLE PROBLEM
+\newpage
+\handout{Bottle Problem}
+
+\begin{minipage}{5in} \raggedright \parskip4pt
+Sketch a graph of the volume of water in the bottle as a function of the height, as the bottle is being filled up with water. 
+
+Then sketch volume as a function of height. 
+\end{minipage}
+\begin{minipage}{1.1in}
+\begin{center}
+    \includegraphics[width=0.6in]{4_Bottle}
+\end{center}
+\end{minipage}
+
 %%%%%%%%%%%%%% 3-4 REVISIT KEY EXAMPLE
 \newpage
 \handout{Revisiting a key example}
@@ -5198,6 +5177,17 @@ This set of lessons is shorter so that you can have time to conduct a review ses
 %%%%%%%% 5-6 CONTENT %%%%%%
 \newpage
 \subsection{Many ways to compose to the same function}
+
+\begin{verbatim} 
+Jeremy:
+> On p. 81, the scenario is unclear. What is the input quantity, x? Does (6,600) mean that after 6 hours, 
+> the factory was making 600 candies per hour? Or... Do you mean that C is a function that outputs the 
+> number of candies made per hour, or is C the name of a function that outputs the total number of candies 
+> made after making candies for x hours?
+I haven't looked at this yet but will put it into the notes for that Chapter to finalize later.
+\end{verbatim}
+
+\todo{Ch 5: respond to Jeremy's comment (shown here).}
 
 \todo{Ch 5: Go over the problems that were assigned in Homework 4}
 
