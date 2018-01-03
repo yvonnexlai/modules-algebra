@@ -2837,8 +2837,9 @@ The purpose of the problems here are as follows:
 	\item composition and graph; used in next chapter.
 	\item (watching and responding to video of an experienced high school teacher's instruction) intercept; connecting different representations (graphical and algebraic).
 	\item intercept; connecting different representations (graphical and algebraic); followup to previous problem.
-	\item  intersection of graphs
+	\item intersection of graphs
 	\item showing that a point $(x,y)$ is on the graph of a relation
+	\item showing that a point $(x,y)$ is on the graph of an equation
 	\item showing that a point $(x,y)$ is on the graph of a relation; showing that a point $(x,y)$ is on the graph of an equation. (Variations on this question can be created by substituting in the example function with another invertible function, and making sure that the examples of points provided lie on the graph of that example function.)
 	\item showing that a point $(x,y)$ is on the graph of an equation; connection to calculus. 
 	\item definition of function; connecting different representations; used in next chapter.
@@ -2850,19 +2851,19 @@ The purpose of the problems here are as follows:
 \item In this chapter, we learned about:
  	\begin{itemize}
 	\item Defining:
-		\begin{itemize} 
-		\item Relation, in three equivalent ways; candidate domain, domain, candidate range, range, preimage, image
+		\begin{itemize*} 
+		\item Relation, in three equivalent ways; candidate domain, domain, candidate range, range, preimage of a point and of a subset, image of a point and of a subset
 		\item Inverse relation
 		\item Composition of relations
 		\item Graph of a (real) relation; $x$- and $y$-intercepts; intersection of graphs
-		\end{itemize}
+		\end{itemize*}
 	\item Showing that a point $(x,y)$ is on the graph of a relation
 	\item Showing that a point $(x,y)$ is on the graph of an equation
 	\item The mathematical/teaching practices of:
-		\begin{itemize}	
+		\begin{itemize*}	
 		\item Connecting mathematically equivalent definitions
 		\item Connecting different mathematical representations
-		\end{itemize}
+		\end{itemize*}
 	\end{itemize}
 
 For each of these ideas: 
@@ -3035,6 +3036,18 @@ Another step in planning is to figure out how you might explain how key ideas ar
 Show that for any relation $r:D\to D$, if $x\in D$ is in the domain of $r$, then $(x,x)$ lies on the graph of $r^{-1}\circ r$. 
 
 \item 
+% showing that a point $(x,y)$ is on the graph of an equation
+(Based on Chazan (1993)\footnote{Chazan, D. (1993). F(x)=G(x)?: An approach to modeling with algebra. {\it For the Learning of Mathematics, 13}, 22-26.}). Suppose you are teaching algebra and a student asks, ``
+Why do we call `$x$' a variable in equations like $6x+5 = 10$ when it stands for just onenumber?'' 
+
+	\begin{enumerate}
+	\item What is the student thinking? How might they have arrived at this question?
+	\item What are you sure that the student understands? What are you unsure that the student understands?
+	\item What is the mathematical issue here?
+	\item How do you respond?
+	\end{enumerate}
+	
+\item 
 % showing that a point $(x,y)$ is on the graph of a relation
 % showing that a point $(x,y)$ is on the graph of an equation
 % note that variations on this question can be created by substituting in the example function with another invertible function, and making sure that the examples of points provided lie on the graph of that example function.
@@ -3137,8 +3150,11 @@ $r$ & $s$ & $t$ \\
 %%%%%% LESSONS 3-4 %%%%%%%%%%%%%%%%%%%%	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newpage
-\section{Functions: Introduction to Correspondence and Covariational Views (Weeks 3-4) (Length: \about 6 hours)}  
+\section{Functions: Correspondence View (Week 3) and Covariation View (Week 4) (Length: \about 6 hours)}   \label{s: function correspondence}
 
 %%%%%%%%% 3-4 OVERVIEW  %%%%%%%%%%%%%%%%%%%%
 
@@ -3175,17 +3191,17 @@ Additionally, we revisit \emph{composition} and \emph{inverse} so that we can us
 
 \emph{Noticing student thinking}, meaning to observe what the student may be thinking, interpreting what the student may understand or not, as well as what you are not sure whether they understand, and responding.
 
-\emph{Recognizing and explaining correspondence and} \emph{covariation views}, meaning to attend to which view or combination of views is being used, and constructing explanations from both views. 
+\emph{Recognizing and explaining correspondence and covariation views}, meaning to attend to which view or combination of views is being used, and constructing explanations from both views. 
 \end{tabular}
 
 %%%%%%%%%%%%%%
 \header{Summary}
 
-This lesson comes in three parts: reviewing key examples from Homework 2, working with functions from a correspondence point of view, and working with functions from a covariation point of view.
+This chapter comes in three parts: reviewing key examples from Homework 2, working with functions from a correspondence point of view, and working with functions from a covariation point of view.
 
 {\bf Review of Homework 2.} We review how graphs can be used to represent relations (and hence functions) using Homework 2 Problem \ref{h: composition correspondence}. We also review the functions used in Homework 2 Problem \ref{h: key graphs} so that the discussion of partial inverses can focus on how to construct partial inverses as opposed to details about the functions themselves, particularly sine and cosine graphs.
 
-{\bf Functions and the correspondence view.} After defining {\it functions}, we introduce the teaching practices of {\it introducing a definition} and {\it explaining a mathematical ``test'' of a property}. The latter uses the example of the {\it vertical line test}.   We then define {\it invertible function}. We continue practicing how to explain a mathematical test of a property by looking at the {\it horizontal line test}. We then define {\it partial inverses of functions} and discuss {\it how to construct viable partial inverses of functions}. We construct partial inverses for sine and cosine functions.
+{\bf Functions and the correspondence view.} After defining {\it functions}, and reviewing Homework 2 Problem \ref{h: function definition}, we introduce the teaching practices of {\it introducing a definition} and {\it explaining a mathematical ``test'' of a property}. The latter uses the example of the {\it vertical line test}.   We then define {\it invertible function}. We continue practicing how to explain a mathematical test of a property by looking at the {\it horizontal line test}. We then define {\it partial inverses of functions} and discuss {\it how to construct viable partial inverses of functions}. We construct partial inverses for sine and cosine functions.
 
 {\bf Covariational view.} We use the Morgan Minicase to introduce the difference between correspondence and covariational views. By covariational view, we mean understanding how changing the value of one variable impacts the value of the other variable, and learning to coordinate changes in one variable with changes in the other. This minicase introduces the teaching practice of {\it recognizing and explaining correspondence and covariation views}. We revisit composition and inverse to compare and contrast these views and provide an opportunity engage in this teaching practice. 
 
@@ -3254,10 +3270,9 @@ Compare your responses to Homework 2 Problem \ref{h: composition correspondence}
 \end{task} 
 
 \begin{solution}({\it Partial.})
-By definition of a graph of an equation, $(a, b)$ is on the graph of $y=f(x)$ if and only if $b=f(a)$. There is only one coordinate on the graph of $f$ with the $x$-value 1, so that coordinate's $y$-value must be $f(1)$.
+By definition of a graph of an equation, $(a, b)$ is on the graph of $y=f(x)$ if and only if $b=f(a)$. There is only one coordinate on the graph of $f$ with the $x$-value 3, so that coordinate's $y$-value must be $f(3)$. We then find where $g$ sends the input $f(3)$ using similar logic.
 
-For finding where $h\circ g$ maps $1$, we first seek where $g$ maps $1$. Just as for $f$, there is only one coordinate on the graph of $g$ with the $x$-value 1, so that coordinate's $y$-value must be $g(1)$.
-There are multiple possible values for where $h\circ g$ maps $1$, because the graph of $h$ contains multiple coordinate points whose $x$-value is $g(1)$.
+For finding where $h\circ g$ maps $2$, we first seek where $g$ maps $2$. That coordinate's $y$-value must be $g(2)$. There are multiple possible values for where $h\circ g$ maps $2$, because the graph of $h$ contains multiple coordinate points whose $x$-value is $g(2)$.
 \end{solution}
 
 \vspace*{-4pt}
@@ -3312,7 +3327,7 @@ $\sin$ and its inverse relation & $\cos$ and its inverse relation & $\tn{Abs}$ a
 % Part 1 of this lesson:
 % Define functions
 
-As you saw in Problem \ref{h: function definition} in Chapter \ref{s: relations}, a function is a special kind of relation, where every element of the domain is assigned to exactly one element of the range. Here are two ways to think about functions: 
+As you saw in the previous homework Problem \ref{h: function definition} (p.~\pageref{h: function definition}), a function is a special kind of relation, where every element of the domain is assigned to exactly one element of the range. Here are two ways to think about functions: 
 
 \begin{definition}[Function: Middle and High school version]\label{d: function middle high school}
 A \emph{function} $f$ from $D$ to $R$ is a relation from $D$ to $R$ where each input in $D$ is assigned to no more than one output in $R$.
@@ -3590,6 +3605,10 @@ If $f:D\to R$ is an invertible function, then the {\bf inverse function} of $f$ 
 	$$f^{-1}\circ f(x)=x.$$
 \end{definition}
 
+\begin{task}
+Suppose $f$ and $g$ are invertible functions. Is $g\circ f$ invertible? If so, what is its inverse?
+\end{task}
+
 \subsubsection{Constructing partial inverses of functions (aka ``fake inverses'')}
 % Define partial inverses of functions
 % (Construction: viable partial inverses of functions.)
@@ -3603,11 +3622,7 @@ There are two procedures that are often discussed in high school related to inve
 We previously discussed why the first procedure makes sense. It is because reflecting over the line $y=x$ always sends the coordinate $(a,b)$ to the coordinate $(b,a)$. The coordinates represent assignments, and inverses switch input with output. We can use similar reasoning to explain why the second procedure makes sense. 
 
 \begin{task}
-Explain why the following procedure works:
-
-To find the formula for the inverse of a function, switch the $y$'s and $x$'s then solve for $y$.
-
-Your explanation should consist of two parts: specific and general. For the specific version, you might use an example such as $f(x)=x^3+1$. The general version should not rely on any example and instead apply to all functions.
+Explain why the following procedure works: {\it To find the formula for the inverse of a function, switch the $y$'s and $x$'s then solve for $y$.} Your explanation should consist of two parts: specific and general. For the specific version, you might use an example such as $f(x)=x^3+1$. The general version should not rely on any example and instead apply to all functions.
 \end{task}
 
 \begin{solution} [Homework.] \end{solution}
@@ -3616,10 +3631,7 @@ What if a function is non-invertible but we would like to be able to create some
 
 \begin{task}
 The function $\tn{Sq}:\R\to\R, x\mapsto x^2$ does not have an inverse function. However, suppose you wanted to construct an function that is like an inverse, given that we know we can't have a true inverse.
-
-Rank these from best to worst as candidates for an ``inverse'' for $\tn{Sq}$:
-
-(Remember that $\sqrt{x}$ is defined as the zero or positive root of $x$, when a real root exists.)
+Rank these from best to worst as candidates for an ``inverse'' for $\tn{Sq}$: (Remember that $\sqrt{x}$ is defined as the zero or positive root of $x$, when a real root exists.)
 
 \begin{itemize}[label=$\circ$]
 \item $\tn{Rt}_1(x)=-\sqrt{x}$ 
@@ -3631,7 +3643,7 @@ Rank these from best to worst as candidates for an ``inverse'' for $\tn{Sq}$:
 
 Each of the functions $\tn{Rt}_1, \tn{Rt}_2, \tn{Rt}_3, \tn{Rt}_4$ are called ``partial inverses''. They are like inverse functions, except that they don't work everywhere; they only work some of the time. So they are ``fake'' in the sense that they don't work on the entire domain, but they are still an ``inverse'' in the sense that they will be an inverse in a restricted subset of the domain.
 
-\smallnote{In our experience, pre-service teachers find the nickname ``fake inverse'' memorable and helpful for understanding partial inverses. We coined this nickname well before 2017. In 2017, we tried using the nickname ``good enough inverse'' to avoid reference to current event usage of the term ``fake'', but this did not have the same effect and pre-service teachers forgot both the terms and meanings of ``partial inverse'' and ``good enough inverse''.  Why do we nickname things that already have perfectly good names? As a memory aid. The concept of ``partial inverse'' is important to high school mathematics, especially trigonometry. However, if teachers never remember the idea of ``partial inverse'', then the fact that arcsine or arccosine are not true inverses will not be passed along. Although coming up with nicknames can seem little cheesy, we have found it on the whole more beneficial than detrimental.}
+\smallnote{In our experience, pre-service teachers find the nickname ``fake inverse'' memorable and helpful for understanding partial inverses. We coined this nickname prior to 2017. In 2017, we tried  ``good enough inverse'' to avoid reference to current event usage of ``fake'', but this did not have the same effect.  Why do we nickname things that already have perfectly good names? As a memory aid. The concept of ``partial inverse'' is important to high school mathematics, especially trigonometry. However, if teachers never remember the idea of ``partial inverse'', then the fact that arcsine or arccosine are not true inverses will not be passed along. We have found nicknames on the whole more beneficial than detrimental.}
 
 \smallnote{We recommend doing this next activity quickly, as a class, with numerical examples.}
 \begin{task}
@@ -3664,9 +3676,334 @@ On what subset of the domain of cosine do each of your candidates serve as a tru
 You may have concluded that the ``best'' inverse is the candidate whose domain of being a true inverse is $[\frac{\pi}{2}, \frac{\pi}{2}]$. This is in fact how the function that you may have seen before, with the (unfortunate) notation $\sin^{-1}$, is defined. (An alternative notation is $\arcsin$.) In general, when working with functions for which we would like to have an inverse but the functions are not actually invertible, we can define partial inverses (``fake inverses'') for them which we take to be standard. Examples of this include $x\mapsto \sqrt{x}$ for Sq, arcsin for sine, and arccosine for cosine. They usually are the candidate where if you looked at the alternatives, you would agree that there's something about that candidate that seems to work better: they are continuous, the subset of the domain on which they are a ``true'' inverse is close to zero or symmetric around zero, etc.
 
 
-%%%%%%% 3-4 COVARIATIONAL VIEW  %%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% 3 IN-CLASS RESOURCES %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage \subsection{In-Class Resources}  
+\handout{Opener: Review of key examples}
+
+Compare your responses to Homework 2 Problem \ref{h: composition correspondence}. How did you use the definition of graph in your reasoning? Use $g\circ f(3)$ as an example to illustrate your use of these definitions. Then illustrate your reasoning using $h\circ g$ and where it sends $2$.
+
+\vspace*{-12pt}
+\begin{center}
+\begin{tikzpicture}[scale=0.3]
+\draw (0,-2.5) -- (0, 3.5) node[above]{$y$};
+\draw (-6.25,0) -- (8.25,0) node [right]{$x$};
+\foreach \x in {-6,-5,-4,...,8}
+	\draw (\x,-0.1) -- (\x, 0.1);
+\foreach \x in {-2,-1, ..., 3}
+	\draw (-0.1,\x) -- (0.1,\x);
+\draw[xshift=1cm, ultra thick, red] (-2,-2) -- (2,2);
+\draw[ultra thick, red] (3,2) -- (5,2) node[above]{$f$} -- (8,2);
+\draw[ultra thick, red] (-1,-2) -- (-6,-2);
+\draw[yshift=1cm, ultra thick, dashed, blue] (-2,2) -- (2,-2);
+\draw[ultra thick, dashed, blue] (2,-1) -- (5,-1)node[below]{$g$}-- (7.5,-1);
+\draw[ultra thick, dashed, blue] (-2,3) -- (-5.5,3); 
+\end{tikzpicture}
+%
+\begin{tikzpicture}[scale=0.3]
+\draw (0,-2.5) -- (0, 3.5) node[above]{$y$};
+\draw (-6.25,0) -- (8.25,0) node [right]{$x$};
+\foreach \x in {-6,-5,-4,...,8}
+	\draw (\x,-0.1) -- (\x, 0.1);
+\foreach \x in {-2,-1, ..., 3}
+	\draw (-0.1,\x) -- (0.1,\x);
+\draw[ultra thick, green] (-6,-2) -- (6,2) node[above]{$h$}  (-6,2) -- (6,-2) ;
+\end{tikzpicture}
+\end{center}
+
+
+\vfill 
+
+
+In the homework, you worked with the graphs of $y=\sin(x)$, $y=\cos(x)$, $y=|x|$, $y=x^2$, and $y=x^3$ and their inverse relations. We also learned last time that a point $(a,b)$ is on the graph of a relation $r$ if and only if $(b,a)$ is on the graph of its inverse relation $r^{-1}$. 
+
+You may have obtained graphs that looked like this:
+
+\begin{tabular}{C{1.1in}C{1.1in}C{1.1in}C{1.1in}C{1.1in}}
+$\sin$ and its inverse relation & $\cos$ and its inverse relation & $\tn{Abs}$ and its inverse relation
+ & $\tn{Sq}$ and its inverse relation &   $\tn{Cu}$ and its inverse relation \\ 
+\begin{tikzpicture} [scale=0.14]
+\draw (-10, 0) -- (10,0) (0,-10)--(0,10);
+\draw[domain=-9.7:9.7,smooth,variable=\x]    plot (\x,{sin(\x r)});
+\draw[domain=-9.7:9.7,smooth,variable=\y] plot ({sin(\y r)},\y);
+\end{tikzpicture}
+&
+\begin{tikzpicture} [scale=0.14]
+\draw (-10, 0) -- (10,0) (0,-10)--(0,10);
+\draw[domain=-9.7:9.7,smooth,variable=\x]    plot (\x,{cos(\x r)});
+\draw[domain=-9.7:9.7,smooth,variable=\y] plot ({cos(\y r)},\y);
+\end{tikzpicture}
+& 
+\begin{tikzpicture} [scale=0.14]
+\draw (-10, 0) -- (10,0) (0,-10)--(0,10);
+\draw[domain=-9.5:9.5,smooth,variable=\x]    plot (\x, {abs(\x)});
+\draw[domain=-9.5:9.5,smooth,variable=\y] plot ({abs(\y)},\y);
+\end{tikzpicture}
+&
+\begin{tikzpicture} [scale=0.14]
+\draw (-10, 0) -- (10,0) (0,-10)--(0,10);
+\draw[domain=-3.2:3.2,smooth,variable=\x]  plot ({\x},{\x*\x});
+\draw[domain=-3.2:3.2,smooth,variable=\y] plot ({\y*\y},{\y});
+\end{tikzpicture}
+&
+\begin{tikzpicture} [scale=0.14]
+\draw (-10, 0) -- (10,0) (0,-10)--(0,10);
+\draw[domain=-2.2:2.2,smooth,variable=\x]  plot ({\x},{\x*\x*\x});
+\draw[domain=-2.2:2.2,smooth,variable=\y] plot ({\y*\y*\y},{\y});
+\end{tikzpicture} 
+\end{tabular}
+
+What comments or questions do you have about these graphs?
+
+\newpage
+
+Compare your response to problem \ref{h: function definition} from the last homework with someone next to you. What comments or questions do you have about the definition of function?
+
+{\bf Definition.} A {\it function} from $D$ to $R$ is defined as a relation from $D$ to $R$ where each input in $D$ is assigned to no more than one output in $R$.
+
+\begin{center}
+\begin{tabular}{C{1in}|C{0.5in}|C{0.5in}|C{0.5in}|C{0.5in}|C{0.5in}|C{0.5in}|}
+	& $r$ & $r^{-1}$ & $s$ & $s^{-1}$ & $t$ & $t^{-1}$ \\ \hline
+is a function & &&&&& \\ \hline
+is NOT a function &&&&&& \\ \hline 
+\end{tabular}
+\end{center}
+
+
+\bigskip
+
+\begin{tabular}{C{2in}C{2in}C{2in}}
+$r$ & $s$ & $t$ \\ 
+%r
+\begin{tikzpicture}
+% [cloud diagram r - is not a function, inverse is not a function]
+	\def\pt{circle (0.05)}
+	\foreach \x in {0, 1, 2}
+	{\filldraw(0,-0.5*\x)  \pt;
+	\draw[->] (0,-0.5*\x) -- (2.94, -0.5-0.03*\x+0.03);
+	\draw[->] (0,-0.5*\x) -- (2.94, -1.5-0.03*\x+0.03);
+	}
+	\foreach \y in {0, 1, 2, 3}
+	{\filldraw(3,-0.5*\y) \pt;}
+	\draw[xshift=-0.5cm] (0,0) arc (180:0:0.5) (0,-1.5) arc (180:360:0.5) (0,0)-- (0,-1.5) (1,0) -- (1,-1.5); 
+	\draw[xshift=2.5cm] (0,0) arc (180:0:0.5) (0,-1.5) arc (180:360:0.5) (0,0)-- (0,-1.5) (1,0) -- (1,-1.5); 
+\end{tikzpicture}
+&
+\begin{tikzpicture}
+% [cloud diagram s - is a function and its inverse is a function]
+	\def\pt{circle (0.05)}
+	\foreach \x in {0, 1, 2}
+	{\filldraw(0,-0.5*\x)  \pt;}
+	\foreach \y in {0, 1, 2, 3}
+	{\filldraw(3,-0.5*\y) \pt;}
+	\draw[xshift=-0.5cm] (0,0) arc (180:0:0.5) (0,-1.5) arc (180:360:0.5) (0,0)-- (0,-1.5) (1,0) -- (1,-1.5); 
+	\draw[xshift=2.5cm] (0,0) arc (180:0:0.5) (0,-1.5) arc (180:360:0.5) (0,0)-- (0,-1.5) (1,0) -- (1,-1.5); 
+	%\draw[->] (0,-0.5*\x) -- (2.94, -0.5*\y)
+	\draw[->] (0,-0.5*0) -- (2.94, -0.5*3);
+	\draw[->] (0,-0.5*2) -- (2.94, -0.5*1);
+\end{tikzpicture}
+&
+\begin{tikzpicture}
+% [cloud diagram t - inverse is a function but it is not itself a function]
+	\def\pt{circle (0.05)}
+	\foreach \x in {0, 1, 2}
+	{\filldraw(0,-0.5*\x)  \pt;}
+	\foreach \y in {0, 1, 2, 3}
+	{\filldraw(3,-0.5*\y) \pt;}
+	\draw[xshift=-0.5cm] (0,0) arc (180:0:0.5) (0,-1.5) arc (180:360:0.5) (0,0)-- (0,-1.5) (1,0) -- (1,-1.5); 
+	\draw[xshift=2.5cm] (0,0) arc (180:0:0.5) (0,-1.5) arc (180:360:0.5) (0,0)-- (0,-1.5) (1,0) -- (1,-1.5);
+	%\draw[->] (0,-0.5*\x) -- (2.94, -0.5*\y)
+	\draw[->] (0,-0.5*0) -- (2.94, -0.5*3);
+	\draw[->] (0,-0.5*2) -- (2.94, -0.5*1); 
+	\draw[->] (0,-0.5*1) -- (2.94, -0.5*2); 
+	\draw[->] (0,-0.5*2) -- (2.94, -0.5*0); 
+\end{tikzpicture}
+\end{tabular}
+
+
+
 \newpage 
-\section{Comparing Correspondence and Covariational Views of Functions}
+%%%%%%%%% 3-4 TEACHING DEFINITIONS: GRAPH OF FUNCTIONS %%%% 
+
+\handout{Teaching definitions: Graphs of functions}
+
+\begin{mdframed}
+\begin{center}
+{\bf Teaching definitions}
+\end{center}
+\vspace*{-4pt}
+	\begin{itemize*}
+	\item Introductory examples and/or non-examples of the definition
+	\item Precise statement of the definition
+	\item Interpreting the precise statement, especially any new terminology or key rules, in terms of the introductory example and/or non-example
+	\item Interpreting the terminology and rules in terms of the introductory examples, often using different \\ representations that students will continue to encounter.
+	\end{itemize*}
+\end{mdframed}
+
+
+Review the definition of the graph of a relation. (We can use this definition for functions, too, because all functions are relations.)
+
+Graph the relations $f(x)=\frac{1}{x}$, $g(x)=\sqrt{x}$ and $\tn{Abs}^{-1}$ on separate graphs. For each, how could you use the graph to understand the definition of function?
+
+Suppose your students are seeing graphs of functions for the very first time. How would you explain the definition of a function using a graph, in general terms? (meaning, not relying on any particular example; an explanation whose wording would apply to all possible cases)
+
+
+\newpage
+%%%%%%%%%% 3-4 VLT %%%%%%%%%
+\handout{Explaining a mathematical ``test'' of a property: The Vertical Line Test}
+
+
+What does the ``vertical line test'' do? How do you perform this ``test''? How does a graph of a relation to pass or fail the ``vertical line test''? What does it mean about the relation if its graph passes or fails? Why is this conclusion true?
+
+\vfill 
+
+Based on discussion of the above questions, how would you do the following?
+
+\begin{center}
+{\bf Explaining a Mathematical ``Test'' of a Property: The Vertical Line Test}
+
+\begin{tabular}{|L{2.5in}|L{4in}|}
+\hline 
+Introduce {\it what}:	
+	\begin{itemize*}
+	\item Name the test.
+	\item What is the test supposed to tell us? (Be precise!) 
+	\item What are you testing? (Be precise!) 
+	\end{itemize*} \vspace*{-12pt}$\;$
+	& 
+
+	\\ \hline 
+Describe {\it how}:
+	\begin{itemize*}
+	\item How do you do the test?
+	\item How do you tell whether the thing passes or fails the test?
+	\end{itemize*} \vspace*{-12pt}$\;$
+	& 
+
+	\\ \hline 
+Deliver the {\it punchline}: What happens when the thing ``passes'' the test? What happens when the thing ``fails'' the test?
+	& 
+
+	 \\ \hline 
+Explain {\it why} the test ``works'': 
+	& \vspace*{2in}\\ 
+	\hline 
+\end{tabular}
+\end{center}
+
+%%%%%%%%% 3-4 INVERTIBLE 
+\newpage \handout{Teaching definitions: Invertible function}
+
+\begin{mdframed}\raggedright
+{\bf Definition \ref{d: invertible function}}.
+ A function $f:D\to R$ is \emph{invertible function} if its inverse relation $f^{-1}:R\to D$ is a function.
+
+A function $f:D\to R$ is \emph{non-invertible function} if its inverse relation $f^{-1}:R\to D$ is a not a function.
+\end{mdframed}
+
+Examples of functions we have seen include sine, cosine, Abs, Sq, Cu, $x\mapsto \frac{1}{x}$, and $x\mapsto \sqrt{x}$. 
+
+How would you use these examples as a way to teach the definitions of {\it invertible function} and {\it non-invertible function}? As you think about this, focus on interpreting the terminology and rules in terms of the introductory examples.
+
+\newpage 
+%%%%%%%% 3-4 HLT 
+\handout{Explaining a mathematical ``test'' of a property: The Horizontal Line Test}
+
+What is the ``horizontal line test''? Explain this test of a mathematical property.  
+
+\begin{center}
+{\bf Explaining  \underline{\hspace*{2in}}}
+\end{center}
+\begin{tabular}{|L{2.2in}|L{3.7in}|}
+\hline 
+Introduce {\it what}:	
+	\begin{itemize*}
+	\item Name the test.
+	\item What is the test supposed to tell us? (Be precise!) 
+	\item What are you testing? (Be precise!) 
+	\end{itemize*} \vspace*{-12pt}$\;$
+	& 
+
+	\\ \hline 
+Describe {\it how}:
+	\begin{itemize*}
+	\item How do you do the test?
+	\item How do you tell whether the thing passes or fails the test?
+	\end{itemize*}
+	& 
+
+	\\ \hline 
+Deliver the {\it punchline}: What happens when the thing ``passes'' the test? What happens when the thing ``fails'' the test?
+	& 
+
+	 \\ \hline 
+Explain {\it why} the test ``works'': 
+	& \vspace*{2in}
+	\\ \hline 
+\end{tabular}
+
+%%%%%%%%%%
+\newpage
+\handout{Inverses and partial inverses}
+Suppose $f$ and $g$ are invertible functions. Is $g\circ f$ invertible? If so, what is its inverse?
+
+
+\vfill
+Explain why the following procedure works:
+
+\begin{quote}
+To find the formula for the inverse of a function, switch the $y$'s and $x$'s then solve for $y$.
+\end{quote}
+
+Your explanation should consist of two parts: specific and general. For the specific version, you might use an example such as $f(x)=x^3+1$. The general version should not rely on any example and instead apply to all functions.
+
+\vfill 
+
+\vspace*{2pt}\hrule\vspace*{2pt}
+What if a function is non-invertible but we would like to be able to create some sort of inverse anyway? 
+The function $\tn{Sq}:\R\to\R, x\mapsto x^2$ does not have an inverse function. However, suppose you wanted to construct an function that is like an inverse, given that we know we can't have a true inverse.
+
+Rank these from best to worst as candidates for an ``inverse'' for $\tn{Sq}$:
+
+(Remember that $\sqrt{x}$ is defined as the zero or positive root of $x$, when a real root exists.)
+
+\begin{itemize}[label=$\circ$]
+\item $\tn{Rt}_1(x)=-\sqrt{x}$ 
+\item $\tn{Rt}_2(x)=\sqrt{x}$
+\item $\tn{Rt}_3(x)$ is defined to be $-\sqrt{x}$ when $x\in[0,1)$ and $\sqrt{x}$ when $x\in [1,\infty)$.
+\item $\tn{Rt}_4(x)$ is defined to be $-\sqrt{-x}$ when $x\leq 0$ and $\sqrt{x}$ when $x\geq 0$.
+\end{itemize}
+
+\vfill
+\newpage
+\subsubsection*{Partial inverses, continued}
+
+Construct at least three candidates for partial inverses (``fake inverses'') for $f(x)=\sin(x)$. 
+
+Rank the candidates you have constructed from best to worst ``inverse'' for the sine function.
+
+On what subset of the domain of sine do each of your candidates serve as a true inverse? On what subset of the domain of sine do your candidates serve as a fake inverse? 
+
+\vspace*{2pt} \hrule \vspace*{2pt}
+Construct at least three candidates for partial inverses (``fake inverses'') for $f(x)=\cos(x)$. 
+
+Rank the candidates you have constructed from best to worst ``inverse'' for the cosine function.
+
+On what subset of the domain of cosine do each of your candidates serve as a true inverse? On what subset of the domain of cosine do your candidates serve as a fake inverse? 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% 4 COVARIATIONAL VIEW  %%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage 
+\section{Comparing Correspondence and Covariation Views of Functions}
+\label{s: function covariation}
+
+\subsection{Introducing covariation}
 
 So far we have been looking at things from a {\it correspondence view}, meaning that we primarily think of functions in terms of individual inputs and the images to which they are assigned. In other words, we focus on how inputs and outputs correspond. This perspective can be very useful for defining things like domain, range, composition, or inverse. However, this perspective can be at a distinct disadvantage when it comes to looking at the behavior of a function or of understanding how changes in the input and output variables influence each other. 
 
@@ -4087,319 +4424,11 @@ When noticing student thinking, it can be helpful to interpret whether they are 
 %%%%%%%%%%%%%%
 % \header{Preparation for next lesson}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%% 3-4 IN-CLASS RESOURCES %%%%%%%%%%%%%%%%%
+%%%%%%%%% 4 IN-CLASS RESOURCES %%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage \subsection{In-Class Resources}  
-\handout{Opener: Review of key examples}
-
-Compare your responses to Homework 2 Problem \ref{h: composition correspondence}. How did you use the definition of graph in your reasoning? Use $g\circ f(3)$ as an example to illustrate your use of these definitions. Then illustrate your reasoning using $h\circ g$ and where it sends $2$.
-
-\vspace*{-12pt}
-\begin{center}
-\begin{tikzpicture}[scale=0.3]
-\draw (0,-2.5) -- (0, 3.5) node[above]{$y$};
-\draw (-6.25,0) -- (8.25,0) node [right]{$x$};
-\foreach \x in {-6,-5,-4,...,8}
-	\draw (\x,-0.1) -- (\x, 0.1);
-\foreach \x in {-2,-1, ..., 3}
-	\draw (-0.1,\x) -- (0.1,\x);
-\draw[xshift=1cm, ultra thick, red] (-2,-2) -- (2,2);
-\draw[ultra thick, red] (3,2) -- (5,2) node[above]{$f$} -- (8,2);
-\draw[ultra thick, red] (-1,-2) -- (-6,-2);
-\draw[yshift=1cm, ultra thick, dashed, blue] (-2,2) -- (2,-2);
-\draw[ultra thick, dashed, blue] (2,-1) -- (5,-1)node[below]{$g$}-- (7.5,-1);
-\draw[ultra thick, dashed, blue] (-2,3) -- (-5.5,3); 
-\end{tikzpicture}
-%
-\begin{tikzpicture}[scale=0.3]
-\draw (0,-2.5) -- (0, 3.5) node[above]{$y$};
-\draw (-6.25,0) -- (8.25,0) node [right]{$x$};
-\foreach \x in {-6,-5,-4,...,8}
-	\draw (\x,-0.1) -- (\x, 0.1);
-\foreach \x in {-2,-1, ..., 3}
-	\draw (-0.1,\x) -- (0.1,\x);
-\draw[ultra thick, green] (-6,-2) -- (6,2) node[above]{$h$}  (-6,2) -- (6,-2) ;
-\end{tikzpicture}
-\end{center}
-
-
-\vfill 
-
-
-In the homework, you worked with the graphs of $y=\sin(x)$, $y=\cos(x)$, $y=|x|$, $y=x^2$, and $y=x^3$ and their inverse relations. We also learned last time that a point $(a,b)$ is on the graph of a relation $r$ if and only if $(b,a)$ is on the graph of its inverse relation $r^{-1}$. 
-
-You may have obtained graphs that looked like this:
-
-\begin{tabular}{C{1.1in}C{1.1in}C{1.1in}C{1.1in}C{1.1in}}
-$\sin$ and its inverse relation & $\cos$ and its inverse relation & $\tn{Abs}$ and its inverse relation
- & $\tn{Sq}$ and its inverse relation &   $\tn{Cu}$ and its inverse relation \\ 
-\begin{tikzpicture} [scale=0.14]
-\draw (-10, 0) -- (10,0) (0,-10)--(0,10);
-\draw[domain=-9.7:9.7,smooth,variable=\x]    plot (\x,{sin(\x r)});
-\draw[domain=-9.7:9.7,smooth,variable=\y] plot ({sin(\y r)},\y);
-\end{tikzpicture}
-&
-\begin{tikzpicture} [scale=0.14]
-\draw (-10, 0) -- (10,0) (0,-10)--(0,10);
-\draw[domain=-9.7:9.7,smooth,variable=\x]    plot (\x,{cos(\x r)});
-\draw[domain=-9.7:9.7,smooth,variable=\y] plot ({cos(\y r)},\y);
-\end{tikzpicture}
-& 
-\begin{tikzpicture} [scale=0.14]
-\draw (-10, 0) -- (10,0) (0,-10)--(0,10);
-\draw[domain=-9.5:9.5,smooth,variable=\x]    plot (\x, {abs(\x)});
-\draw[domain=-9.5:9.5,smooth,variable=\y] plot ({abs(\y)},\y);
-\end{tikzpicture}
-&
-\begin{tikzpicture} [scale=0.14]
-\draw (-10, 0) -- (10,0) (0,-10)--(0,10);
-\draw[domain=-3.2:3.2,smooth,variable=\x]  plot ({\x},{\x*\x});
-\draw[domain=-3.2:3.2,smooth,variable=\y] plot ({\y*\y},{\y});
-\end{tikzpicture}
-&
-\begin{tikzpicture} [scale=0.14]
-\draw (-10, 0) -- (10,0) (0,-10)--(0,10);
-\draw[domain=-2.2:2.2,smooth,variable=\x]  plot ({\x},{\x*\x*\x});
-\draw[domain=-2.2:2.2,smooth,variable=\y] plot ({\y*\y*\y},{\y});
-\end{tikzpicture} 
-\end{tabular}
-
-What comments or questions do you have about these graphs?
-
 \newpage
+\subsection{In-Class Resources}
 
-Compare your response to problem \ref{h: function definition} from the last homework with someone next to you. What comments or questions do you have about the definition of function?
-
-{\bf Definition.} A {\it function} from $D$ to $R$ is defined as a relation from $D$ to $R$ where each input in $D$ is assigned to no more than one output in $R$.
-
-\begin{center}
-\begin{tabular}{C{1in}|C{0.5in}|C{0.5in}|C{0.5in}|C{0.5in}|C{0.5in}|C{0.5in}|}
-	& $r$ & $r^{-1}$ & $s$ & $s^{-1}$ & $t$ & $t^{-1}$ \\ \hline
-is a function & &&&&& \\ \hline
-is NOT a function &&&&&& \\ \hline 
-\end{tabular}
-\end{center}
-
-
-\bigskip
-
-\begin{tabular}{C{2in}C{2in}C{2in}}
-$r$ & $s$ & $t$ \\ 
-%r
-\begin{tikzpicture}
-% [cloud diagram r - is not a function, inverse is not a function]
-	\def\pt{circle (0.05)}
-	\foreach \x in {0, 1, 2}
-	{\filldraw(0,-0.5*\x)  \pt;
-	\draw[->] (0,-0.5*\x) -- (2.94, -0.5-0.03*\x+0.03);
-	\draw[->] (0,-0.5*\x) -- (2.94, -1.5-0.03*\x+0.03);
-	}
-	\foreach \y in {0, 1, 2, 3}
-	{\filldraw(3,-0.5*\y) \pt;}
-	\draw[xshift=-0.5cm] (0,0) arc (180:0:0.5) (0,-1.5) arc (180:360:0.5) (0,0)-- (0,-1.5) (1,0) -- (1,-1.5); 
-	\draw[xshift=2.5cm] (0,0) arc (180:0:0.5) (0,-1.5) arc (180:360:0.5) (0,0)-- (0,-1.5) (1,0) -- (1,-1.5); 
-\end{tikzpicture}
-&
-\begin{tikzpicture}
-% [cloud diagram s - is a function and its inverse is a function]
-	\def\pt{circle (0.05)}
-	\foreach \x in {0, 1, 2}
-	{\filldraw(0,-0.5*\x)  \pt;}
-	\foreach \y in {0, 1, 2, 3}
-	{\filldraw(3,-0.5*\y) \pt;}
-	\draw[xshift=-0.5cm] (0,0) arc (180:0:0.5) (0,-1.5) arc (180:360:0.5) (0,0)-- (0,-1.5) (1,0) -- (1,-1.5); 
-	\draw[xshift=2.5cm] (0,0) arc (180:0:0.5) (0,-1.5) arc (180:360:0.5) (0,0)-- (0,-1.5) (1,0) -- (1,-1.5); 
-	%\draw[->] (0,-0.5*\x) -- (2.94, -0.5*\y)
-	\draw[->] (0,-0.5*0) -- (2.94, -0.5*3);
-	\draw[->] (0,-0.5*2) -- (2.94, -0.5*1);
-\end{tikzpicture}
-&
-\begin{tikzpicture}
-% [cloud diagram t - inverse is a function but it is not itself a function]
-	\def\pt{circle (0.05)}
-	\foreach \x in {0, 1, 2}
-	{\filldraw(0,-0.5*\x)  \pt;}
-	\foreach \y in {0, 1, 2, 3}
-	{\filldraw(3,-0.5*\y) \pt;}
-	\draw[xshift=-0.5cm] (0,0) arc (180:0:0.5) (0,-1.5) arc (180:360:0.5) (0,0)-- (0,-1.5) (1,0) -- (1,-1.5); 
-	\draw[xshift=2.5cm] (0,0) arc (180:0:0.5) (0,-1.5) arc (180:360:0.5) (0,0)-- (0,-1.5) (1,0) -- (1,-1.5);
-	%\draw[->] (0,-0.5*\x) -- (2.94, -0.5*\y)
-	\draw[->] (0,-0.5*0) -- (2.94, -0.5*3);
-	\draw[->] (0,-0.5*2) -- (2.94, -0.5*1); 
-	\draw[->] (0,-0.5*1) -- (2.94, -0.5*2); 
-	\draw[->] (0,-0.5*2) -- (2.94, -0.5*0); 
-\end{tikzpicture}
-\end{tabular}
-
-
-
-\newpage 
-%%%%%%%%% 3-4 TEACHING DEFINITIONS: GRAPH OF FUNCTIONS %%%% 
-
-\handout{Teaching definitions: Graphs of functions}
-
-\begin{mdframed}
-\begin{center}
-{\bf Teaching definitions}
-\end{center}
-\vspace*{-4pt}
-	\begin{itemize*}
-	\item Introductory examples and/or non-examples of the definition
-	\item Precise statement of the definition
-	\item Interpreting the precise statement, especially any new terminology or key rules, in terms of the introductory example and/or non-example
-	\item Interpreting the terminology and rules in terms of the introductory examples, often using different \\ representations that students will continue to encounter.
-	\end{itemize*}
-\end{mdframed}
-
-
-Review the definition of the graph of a relation. (We can use this definition for functions, too, because all functions are relations.)
-
-Graph the relations $f(x)=\frac{1}{x}$, $g(x)=\sqrt{x}$ and $\tn{Abs}^{-1}$ on separate graphs. For each, how could you use the graph to understand the definition of function?
-
-Suppose your students are seeing graphs of functions for the very first time. How would you explain the definition of a function using a graph, in general terms? (meaning, not relying on any particular example; an explanation whose wording would apply to all possible cases)
-
-
-\newpage
-%%%%%%%%%% 3-4 VLT %%%%%%%%%
-\handout{Explaining a mathematical ``test'' of a property: The Vertical Line Test}
-
-
-What does the ``vertical line test'' do? How do you perform this ``test''? How does a graph of a relation to pass or fail the ``vertical line test''? What does it mean about the relation if its graph passes or fails? Why is this conclusion true?
-
-\vfill 
-
-Based on discussion of the above questions, how would you do the following?
-
-\begin{center}
-{\bf Explaining a Mathematical ``Test'' of a Property: The Vertical Line Test}
-
-\begin{tabular}{|L{2.5in}|L{4in}|}
-\hline 
-Introduce {\it what}:	
-	\begin{itemize*}
-	\item Name the test.
-	\item What is the test supposed to tell us? (Be precise!) 
-	\item What are you testing? (Be precise!) 
-	\end{itemize*} \vspace*{-12pt}$\;$
-	& 
-
-	\\ \hline 
-Describe {\it how}:
-	\begin{itemize*}
-	\item How do you do the test?
-	\item How do you tell whether the thing passes or fails the test?
-	\end{itemize*} \vspace*{-12pt}$\;$
-	& 
-
-	\\ \hline 
-Deliver the {\it punchline}: What happens when the thing ``passes'' the test? What happens when the thing ``fails'' the test?
-	& 
-
-	 \\ \hline 
-Explain {\it why} the test ``works'': 
-	& \vspace*{2in}\\ 
-	\hline 
-\end{tabular}
-\end{center}
-
-%%%%%%%%% 3-4 INVERTIBLE 
-\newpage \handout{Teaching definitions: Invertible function}
-
-\begin{mdframed}\raggedright
-{\bf Definition \ref{d: invertible function}}.
- A function $f:D\to R$ is \emph{invertible function} if its inverse relation $f^{-1}:R\to D$ is a function.
-
-A function $f:D\to R$ is \emph{non-invertible function} if its inverse relation $f^{-1}:R\to D$ is a not a function.
-\end{mdframed}
-
-Examples of functions we have seen include sine, cosine, Abs, Sq, Cu, $x\mapsto \frac{1}{x}$, and $x\mapsto \sqrt{x}$. 
-
-How would you use these examples as a way to teach the definitions of {\it invertible function} and {\it non-invertible function}? As you think about this, focus on interpreting the terminology and rules in terms of the introductory examples.
-
-\newpage 
-%%%%%%%% 3-4 HLT 
-\handout{Explaining a mathematical ``test'' of a property: The Horizontal Line Test}
-
-What is the ``horizontal line test''? Explain this test of a mathematical property.  
-
-\begin{center}
-{\bf Explaining  \underline{\hspace*{2in}}}
-\end{center}
-\begin{tabular}{|L{2.2in}|L{3.7in}|}
-\hline 
-Introduce {\it what}:	
-	\begin{itemize*}
-	\item Name the test.
-	\item What is the test supposed to tell us? (Be precise!) 
-	\item What are you testing? (Be precise!) 
-	\end{itemize*} \vspace*{-12pt}$\;$
-	& 
-
-	\\ \hline 
-Describe {\it how}:
-	\begin{itemize*}
-	\item How do you do the test?
-	\item How do you tell whether the thing passes or fails the test?
-	\end{itemize*}
-	& 
-
-	\\ \hline 
-Deliver the {\it punchline}: What happens when the thing ``passes'' the test? What happens when the thing ``fails'' the test?
-	& 
-
-	 \\ \hline 
-Explain {\it why} the test ``works'': 
-	& \vspace*{2in}
-	\\ \hline 
-\end{tabular}
-
-%%%%%%%%%%
-\newpage
-\handout{Inverses and partial inverses}
-
-Explain why the following procedure works:
-
-\begin{quote}
-To find the formula for the inverse of a function, switch the $y$'s and $x$'s then solve for $y$.
-\end{quote}
-
-Your explanation should consist of two parts: specific and general. For the specific version, you might use an example such as $f(x)=x^3+1$. The general version should not rely on any example and instead apply to all functions.
-
-\vfill 
-
-\vspace*{2pt}\hrule\vspace*{2pt}
-What if a function is non-invertible but we would like to be able to create some sort of inverse anyway? 
-The function $\tn{Sq}:\R\to\R, x\mapsto x^2$ does not have an inverse function. However, suppose you wanted to construct an function that is like an inverse, given that we know we can't have a true inverse.
-
-Rank these from best to worst as candidates for an ``inverse'' for $\tn{Sq}$:
-
-(Remember that $\sqrt{x}$ is defined as the zero or positive root of $x$, when a real root exists.)
-
-\begin{itemize}[label=$\circ$]
-\item $\tn{Rt}_1(x)=-\sqrt{x}$ 
-\item $\tn{Rt}_2(x)=\sqrt{x}$
-\item $\tn{Rt}_3(x)$ is defined to be $-\sqrt{x}$ when $x\in[0,1)$ and $\sqrt{x}$ when $x\in [1,\infty)$.
-\item $\tn{Rt}_4(x)$ is defined to be $-\sqrt{-x}$ when $x\leq 0$ and $\sqrt{x}$ when $x\geq 0$.
-\end{itemize}
-
-\vfill
-\newpage
-\subsubsection*{Partial inverses, continued}
-
-Construct at least three candidates for partial inverses (``fake inverses'') for $f(x)=\sin(x)$. 
-
-Rank the candidates you have constructed from best to worst ``inverse'' for the sine function.
-
-On what subset of the domain of sine do each of your candidates serve as a true inverse? On what subset of the domain of sine do your candidates serve as a fake inverse? 
-
-\vspace*{2pt} \hrule \vspace*{2pt}
-Construct at least three candidates for partial inverses (``fake inverses'') for $f(x)=\cos(x)$. 
-
-Rank the candidates you have constructed from best to worst ``inverse'' for the cosine function.
-
-On what subset of the domain of cosine do each of your candidates serve as a true inverse? On what subset of the domain of cosine do your candidates serve as a fake inverse? 
-
-\newpage
 %%%%%% 3-4 MORGAN MINICASE
 \handout{Morgan Minicase}
 
@@ -4538,7 +4567,7 @@ What about for $h\circ f$?  $f\circ h$? What is your reasoning?
 
 \item Suppose that $L$ is a linear function, and $Q$ is a quadratic function.  What is $Q\circ L$? Circle your response.
 
-\vspace*{-12pt}
+
 \begin{center}
 linear \quad\quad quadratic \quad\quad cubic \quad\quad something else
 \end{center}
@@ -4620,44 +4649,218 @@ Let us look back at a key example from the beginning of class.
 \end{enumerate}
 
 %%%%%%%%% 3-4 HOMEWORK %%%%%%%%%%%%
-\newpage \subsection{Homework}
+\newpage \subsection{Homework for Chapters \ref{s: function correspondence}-\ref{s: function covariation}}
+
+
+\begin{bignote}
+We recommend assigning one or two parts of each of a subset of the questions, depending on your perception of what your students would most benefit from. If you assign part of question 0, you might use google forms or another online submission so that you can read over responses prior to the next time you see your class. 
+
+When grading the proof questions, we have often awarded full credit only to proofs that are both correct and that follow the proof communication guidelines established in Chapters 0 and 1. 
+
+The purpose of the problems here are as follows:
+	\begin{enumerate}
+	\item  Invertible functions; inverse of an invertible functions and non-invertible functions; correspondence view.
+	\item Invertible functions; correspondence view; exploratory. If you assign this question, you may want to warn your students that you do not expect a complete response, but you do expect them to try their best.
+	\item Invertible function; correspondence view.
+	\item Partial inverse of a function and how to construct them; correspondence view
+	\item Introducing a definition
+	\item Explaining a mathematical ``test'' of a property
+	\end{enumerate}
+	
+	\begin{enumerate}[resume]
+	\item Invertible function; recognizing and explaining correspondence and covariation views
+	\item Correspondence and covariation views for inverse and composition; follow up from Homework 2 Problem \ref{h: composition correspondence} (p.~\pageref{h: composition correspondence})
+	\end{enumerate}
+	
+Additionally, we include two Simulations of Practice (SoP), whose titles and purposes are:
+	\begin{itemize}
+	\item (Written) Concept of Function: Noticing student thinking; Using definition of graph of an equation; covariation view.
+	\item (Video) Concepts of Linear Equations and Graphs: Noticing student thinking; Comparing covariation and correspondence views.
+	\end{itemize}
+	
+Throughout the \MODULES materials, written SoPs engage prospective teachers in planning to lead a whole-class discussion on a given task; and video SoPs engage prospective teachers in noticing student thinking.
+\end{bignote}
+
 
 \begin{enumerate}
-\item asdf
+\setcounter{enumi}{-1}
+\item In these chapters, we learned about:
+ 	\begin{itemize}
+	\item Functions and invertible functions
+	\item Partial inverse of a function and how to construct them
+	\item Correspondence and covariation views for inverse and composition
+	\item The mathematical/teaching practices of:
+		\begin{itemize*}
+		\item Introducing a definition
+		\item Explaining a mathematical ``test'' of a property
+		\item Noticing student thinking
+		\item Recognizing and explaining correspondence and covariation views.
+		\end{itemize*}
+	\end{itemize}
+	For each of these ideas: 
+	\begin{enumerate}
+	\item Where in the text are these ideas located?
+	\item Review this section of the text. What definitions and results were important? How do examples use these definitions and results?
+	\item What questions or comments do you have about the ideas in this section?
+	\end{enumerate}
 \end{enumerate}
 
-\todo{Ch 3-4: write homework. Write SoP for Vertical Line Test? SoP for why procedures for finding inverses work?}
+\subsubsection*{Chapter \ref{s: function correspondence}}
 
-Note to self about homework followup from Homework 2: 
-Composition of graphs (from the canadian textbook; also draw compositions of graphs and their inverses) (probably need to scaffold this more. think about relationship between linear function and linear function, also think about where points go, not sure what else needs to go here. Will probably need to re-assign in Lesson 3) (Maybe instead of doing entire graph, do something like a series of questions -- what is $f(g(f(g(1)))), g(f(g(1)))$, etc. Do this for a bunch of points, especially for the combination $g(f(x))$ (or whichever composition is easier to do.). Then assign the actual composition in Hwk 3 after discussing correspondence and covariational views and ask students to analyze where they used each viewpoint. In Hwk 3 also assign composition of linear and quadratic, analyze which parts are constant, linear non-constant, quadratic, none of the above.)
+\begin{enumerate}[resume]	
+\item 
+% Invertible functions; inverse of an invertible functions and non-invertible functions; correspondence view.
+Explain why the following procedure works: 
+
+\begin{quote}To find the formula for the inverse of an invertible function, switch the $y$'s and $x$'s then solve for $y$. \end{quote}
+
+Explain why this procedure works in terms of the example:
+	\begin{enumerate}
+	\item $f(x) = 5x$
+	\item $f(x) = x^3 -1$
+	\item $f(x) = \frac{1}{x-3}$
+	\end{enumerate}
+Then:
+	\begin{enumerate}[resume] 
+	\item Explain why this procedure in general terms.
+	\item Explain why this procedure is equivalent to reflecting the graph of the function about the line $y=x$.
+	\item Explain what would work and what would not work if you were to use this procedure on non-invertible functions.
+	\end{enumerate}
+	
+\item %  Invertible functions; correspondence view; exploratory. If you assign this question, you may want to warn your students that you do not expect a complete response, but you do expect them to try their best. 
+(This problem comes from Mason, Burton, and Stacey (2010, p.~203)\footnote{Mason, J., Burton, L., Stacey, K. (2010). {\it Thinking Mathematically}. Essex, England: Pearson Education Limited.}) Under what conditions can you rotate the graph of a function about the origin, and still have the resulting graph being the graph of a function? If the graph of a function cannot be rotated about the origin without ceasing to be the graph of a function, might there be other points which could act as center of rotation and preserve the property of being the graph of a function?
+
+\item % Invertible function; correspondence view.
+	\begin{enumerate}
+	\item Let $f$ and $g$ be two invertible functions.
+	Explain why $g\circ f$ is invertible in terms of the middle school and university versions of the definition of relation.
+	\item Explain why the inverse of $g\circ f$ should be $(f^{-1})\circ (g^{-1})$ in terms of the middle school version of the definition of composition.
+	\item Explain why the inverse of $g\circ f$ should be $(f^{-1})\circ (g^{-1})$ in terms of the university version of the definition of invertible function.
+	\end{enumerate}
+	
+\item % Partial inverse of a function and how to construct them; correspondence view
+	\begin{enumerate}
+	\item Construct three candidates for partial inverses for the sine function.
+	\item On what subset of the domain of sine do each of your candidates serve as a true inverse? On what subset of the domain of sine do your candidates serve as only a partial inverse?
+	\item Construct three candidates for partial inverses for the cosine function?
+	\item On what subset of the domain of cosine do each of your candidates serve as a true inverse? On what subset of the domain of cosine do your candidates serve as only a partial inverse?
+	\end{enumerate}
+	
+\item % Introducing a definition
+Plan an introduction to the definitions of 
+	\begin{enumerate}
+	\item invertible function and non-invertible function
+	\item inverse of an invertible function
+	\end{enumerate}
+Break down your plan into the following sections. In communicating this plan, place these sections separately from each other and label them.
+	\begin{itemize}
+	\item An activity that introduces examples and non-examples of the definition. State the activity in exactly the way that you would provide it to students on a worksheet or presentation.
+	\item Why this activity is appropriate for motivating the definition. 
+	\item Precise statement of the definition.
+	\item Interpreting the statement of the definition in terms of the examples/non-examples.
+	\item An activity that you would use to help students work with the definition in terms of two different representations of the same idea. (These representations may include: algebraic, tabular, graphical, verbal.)
+	\item An ideal response to the question: ``How do these representations show the same mathematical idea?'' 
+	\end{itemize}
+
+% Explaining a mathematical ``test'' of a property
+\item  Explain the following tests of a mathematical property using the structure 
+discussed in Section \ref{s: mathematical test of a property} (beginning p.~\pageref{s: mathematical test of a property}). In communicating your explanation, place the different sections of the structure separately from each other and label them.
+	\begin{enumerate}
+	\item Vertical line test.
+	\item Horizontal line test.
+	\end{enumerate}
+	For the following tests of mathematical properties, in the section on {\it why} it works, provide an explanation in two parts, first in terms of a specific example, and second as a general explanation.
+	\begin{enumerate}[resume]
+	\item Testing points on a graph of a linear inequality to see which side to shade (e.g., \url{http://www.wtamu.edu/academic/anns/mps/math/mathlab/beg_algebra/beg_alg_tut24_ineq.htm}).
+	
+	{\it Note:} The definition of graph of an inequality in $x$ and $y$ is similar to that of graph of an equation: It is the set of points $(a, b)$ that if you evaluate the inequality at $x=a$ and $y=b$, you get a true statement.
+	
+	\item Direct comparison test (for convergence of a series).
+	\item Ratio test (for convergence of a series).
+	\end{enumerate}
+\end{enumerate}	
+
+\subsubsection*{Chapter \ref{s: function covariation}}
+\begin{enumerate}[resume]
+\item % Invertible function; recognizing and explaining correspondence and covariation views.
+Suppose you are teaching the idea of inverse of a composition of invertible functions in a high school class. You want to explain why the inverse of $g\circ f$ should be $(f^{-1})\circ (g^{-1})$ with the example
+of $f(x)=x+5$ and $g(x)=3x$.
+	\begin{enumerate}
+	\item Give an explanation from a correspondence view.
+	\item Give an explanation from a covariation view.
+	\end{enumerate}
+	
+\item 
+% Correspondence and covariation views for inverse and composition; follow up from Homework 2 \ref{h: function composition} (p.~\pageref{h: composition correspondence}).
+
+Below are graphs of the relations $f$ and $g$. The pieces of these graphs are lines and line segments, and their  turning points are integer coordinate points. Consecutive tick marks on the axes are distance 1 from each other.
+    \begin{enumerate}
+    \item What is the rate of change of each section of $f$? What is the domain of each section?
+     What is the image of each section?
+    
+    \item What is the rate of change of each section of $g$? What is the domain of each section?  What is the image of each section?
+    
+    \item How many sections are there of $g\circ f$? What are they? What is the rate of change of each section?
+    
+    \item How would you use the above information to graph $g\circ f$? Cite specifically where you use each piece of information from (a), (b), and (c).
+    
+    \item How did you use correspondence and covariation views in your reasoning?
+    \end{enumerate}
 
 
-Crib homework problems from combination of Bremigan, Bremigan, and Lorch and Sultan and Artzt. They have some good conceptual problems in there about relations and functions.
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+\draw (0,-2.5) -- (0, 3.5) node[above]{$y$};
+\draw (-6.25,0) -- (8.25,0) node [right]{$x$};
+\foreach \x in {-6,-5,-4,...,8}
+	\draw (\x,-0.1) -- (\x, 0.1);
+\foreach \x in {-2,-1, ..., 3}
+	\draw (-0.1,\x) -- (0.1,\x);
+\draw[xshift=1cm, ultra thick, red] (-2,-2) -- (2,2);
+\draw[ultra thick, red] (3,2) -- (5,2) node[above]{$f$} -- (8,2);
+\draw[ultra thick, red] (-1,-2) -- (-6,-2);
+\draw[yshift=1cm, ultra thick, dashed, blue] (-2,2) -- (2,-2);
+\draw[ultra thick, dashed, blue] (2,-1) -- (5,-1)node[below]{$g$}-- (7.5,-1);
+\draw[ultra thick, dashed, blue] (-2,3) -- (-5.5,3); 
+\end{tikzpicture}
+\end{center}
+
+% noticing student thinking: SoP 1 and SoP 2
+\end{enumerate}
+
+%%%%%%%%% PART II WRITTEN SIMULATION OF PRACTICE  %%%%%%%%%%%%
+\newpage \subsection{Simulation of Practice: Concept of Function}
+
+% SoP goals: Noticing student thinking; Using definition of graph of an equation; covariation view.
+
+% Written SoPs might have the structure:
+%Providing an example of a task or context that high school students would encounter (for geometry and algebra or statistics, this might be a task that could be found in curricular materials; for modeling and also statistics, this might be a real world context that high school students would work with)
+%Ask pre-service teachers to solve the task or work with the context with multiple strategies and/or representations.
+%Possibly providing a high school student response to the task or context.
+%Ask pre-service teachers to describe how they would conduct a whole class discussion to elicit student thinking, including a list of discussion questions and how students might respond.
+%Ask pre-service teachers to write a summary sentence or two they would use to conclude the discussion to get at the mathematical point of the discussion.
+%Ask pre-service teachers to write a follow-up task or context that they might assign after this discussion concludes.
+
+Something with Hillyard item question
+
+%%%%%%%%% PART II VIDEO SIMULATION OF PRACTICE  %%%%%%%%%%%%
+\newpage \subsection{Simulation of Practice: Concepts of Linear Equations and Graphs}
+
+% SoP goals: Noticing student thinking; Comparing covariation and correspondence views
+
+%Video SoPs might have the structure:
+%Providing an example of a task or context that high school students would encounter (for geometry and algebra or statistics, this might be a task that could be found in curricular materials; for modeling and also statistics, this might be a real world context that high school students would work with)
+%Providing a high school student response to the task or context.
+%Ask pre-service teachers to respond to the student and
+%Summarize the student?s thinking
+%Say what is worthwhile about student thinking
+%Help the student complete their thinking (if there are gaps in the thinking), prompts the student to investigate an error, or helps the student move forward in their thinking.
+%Give feedback to student that they would be able to use in their future work in mathematics
+%
 
 
-Under what conditions can you rotate the graph of a function about the origin, and still have the resulting graph being the graph of a function? If the graph of a function cannot be rotated about the origin without ceasing to be the graph of a function, might there be other points which could act as centre of rotation and preserve the property of being the graph of a function?
-
-Explain why the following procedure works:
-
-To find the formula for the inverse of a function, switch the $y$'s and $x$'s then solve for $y$.
-
-Your explanation should consist of two parts: specific and general. For the specific version, you might use an example such as $f(x)=x^3+1$. The general version should not rely on any example and instead apply to all functions.
-
-%%%%%%%%% PART 1 WRITTEN SIMULATION OF PRACTICE  %%%%%%%%%%%%
-\newpage \subsection{Simulation of Practice: Title of Simulation 1}
-
-something with vertical line test
-
-%%%%%%%%% PART 1 VIDEO SIMULATION OF PRACTICE  %%%%%%%%%%%%
-\newpage \subsection{Simulation of Practice: Title of Simulation 2}
-
-function/relation transformation maybe 
-
-Allen item SoP? (wait until Chapter 4 on covariational perspective)
-
-Vertical line test SoP?  (wait until next time)
-
- Composition of graphs, again. Correspondence view.  Repeat from Homework 2. 
+Allen item SoP
+specify that Jing's solution is not correct
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
